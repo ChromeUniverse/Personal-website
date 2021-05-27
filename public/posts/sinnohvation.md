@@ -1,4 +1,4 @@
-# My thoughts on insaneinthearinmusic's _Sinnohvation_
+# My thoughts on insaneintherainmusic's _Sinnohvation_
 ---
 
 _Sinnohvation_ is a jazz-fusion videogame music cover album, and is arguably the best album released so far by the youtuber/Berklee College of Music grad/multi-instrumentalist extraordinaire/cowbell virtuoso/tenor sax mainer/jazz madlad Carlos Eiene, a.k.a "insaneintherainmusic".
