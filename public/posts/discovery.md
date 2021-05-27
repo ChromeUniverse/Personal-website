@@ -1,4 +1,4 @@
-# My thoughts on _Discovery_
+# My thoughts on Daft Punk's _Discovery_
 ---
 
 Whoa, check this out:

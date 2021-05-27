@@ -1,4 +1,4 @@
-# My thoughts on _Random Access Memories_
+# My thoughts on Daft Punk's _Random Access Memories_
 ---
 
 A great album! Go give it a listen.
