@@ -1,17 +1,39 @@
-.sidebar {
-  width: 270px;
-}
-
-.main {
-	width: 600px;	
-}
-
 body {
   background-color: #3D405B;
 	display: flex;
   font-family: 'Roboto', sans-serif;
-  color: #F4F1DE;
+  color: #F4F1DE;  
 }
+
+div {
+  padding: 10px;
+}
+
+.sidebar {
+  padding-top: 38px;
+  width: 270px;
+  overflow-wrap: break-word;
+}
+
+.sidebar header {
+  font-size: 25px;
+  text-align: left;
+}
+
+.main {
+	width: 800px;	
+  overflow-wrap: break-word;
+  text-align: justify;
+}
+
+h1 {
+  text-align: left;
+}
+
+footer {
+  text-align: center;
+}
+
 
 a {
   text-decoration: none;
