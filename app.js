@@ -25,12 +25,9 @@ function get_page(file_name) {
     html = html.replace('CONTENTGOESHERE', text);    
     return [true, html];
   }
-  catch (e) {
-    // console.log(e);
-    console.log('404');
+  catch (e) {    
     text = marked("# 404\n\nSorry, couldn't find what you're looking for.");
-    html = html.replace('CONTENTGOESHERE', text);
-    console.log(html);
+    html = html.replace('CONTENTGOESHERE', text);    
     return [false, html];    
   }   
   
