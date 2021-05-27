@@ -1,0 +1,11 @@
+.sidebar {
+  width: 250px;
+}
+
+.main {
+	width: 600px;	
+}
+
+body {
+	display: flex;
+}
