@@ -1,4 +1,4 @@
-# Hi, welcome to my webpage!
+# Just testing
 -------------
 
 ## Section 1
