@@ -11,7 +11,7 @@
 </p>
 
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-<script src="http://localhost:3000/scripts/github-fetch.js"></script>
+<script src="http://34.200.98.64:3000/scripts/github-fetch.js"></script>
 
 
 
