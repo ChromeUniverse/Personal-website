@@ -1,3 +1,0 @@
-# Posts
-
-Posts go here.
