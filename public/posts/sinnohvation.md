@@ -3,7 +3,9 @@
 
 _**Note**: this review is a work-in-progress!_
 
-## Preface
+<iframe src="https://open.spotify.com/embed/album/0vbD4L4GvVkxrfwdN6iL5e" width="800" height="200" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+
+## Introduction
 
 The YouTube-based VGM (videogame music) cover scene has grown a lot over the last couple of years. While you might think that it's still a tiny space in the huge world of music productions on the video streaming platform, chances are, you've probably encountered one of the many up and coming VGM artists, especially if you watch anything gaming-related on YouTube.
 
@@ -23,6 +25,8 @@ Carlos Eiene is an American-Filipino composer, multi-instrumentalist and arrange
 
 He is one of the few big names in the VGM scene with a background in Jazz. He studied Contemporary Composition and Jazz Performance at the Berkelee College of Music in Boston. 
 
+---
+
 ## The Album
 
 _Sinnohvation_ is best decribed as a jazz-focused VGM cover album, even if the music doesn't 
@@ -33,7 +37,35 @@ This album features jazz arrangements of 50 iconic tunes from the Pokémon Diamo
 
 The sheer number (60+) of featured and guest musicians on this album is rarely heard of, even in the highest production quality albums in the history of modern music.
 
-The album
+
+### The Opening
+
+The album starts off with [_Opening Movie_](https://www.youtube.com/watch?v=HJw6JAkkBTY&list=OLAK5uy_nAMy4Tld9n9JY8r-56mo1HHunMpLCcAcI&index=1), a recreation of the song that accompanies _Pokémon D/P/Pt_'s opening sequence. Arrangement-wise, it's a pretty faithful recreation at that, but what's impressive about this track is the tone it sets for the rest of the album. 
+
+From the get-go, the listener is greeted with a twenty-piece student orchestra with strings, harp, grand piano, and bombastic brass. _Sinnohvation_ is, first and foremost, a (mostly )live-recorded studio album with a diverse set of passionate student musicians led by Carlos Eiene. The extensive use of human musicians as opposed to software/virtual instruments was a deliberate choice by Carlos, who once stated that 
+
+> _"Not even the greatest MIDI [sound] library can come even close to a good performer. [It] doesn't quite replace the interaction you get between musicians in a room or a musician who spent hours and hours practicing a single note. That is something I really believe in - the power of live instruments"_.
+
+The following track, [_Sinnohvation_](https://www.youtube.com/watch?v=HG1sTfsXnuI&list=OLAK5uy_nAMy4Tld9n9JY8r-56mo1HHunMpLCcAcI&index=2). Long-time insaneintherainmusic fans might recognize this track as a re-arrangement/re-recording of Carlos's [_Professor Rowan's Lab_](https://www.youtube.com/watch?v=d6PrCE_Vy0E) cover in the form of a recreation of the _Opening Sequence_ track from _D/P/Pt_'s OST. 
+
+Carlos's single vocal verse in this track,
+
+> _Welcome to Sinnoh, everybody! Here we go!_
+
+followed by the energetic piano/string/sax/flute jam, is an invitation to the listener, who's about to embark in a 50-track, 3 hour and 50 minute-long journey across the musical landscape of Pokémon Gen. 4. 
+
+So if you're really commited to embark on this musical quest, take an afternoon off, grab a seat and a pair of headphones, because this album takes the listener on a unique, interesting and often times charming adventure.
+
+### The Journey Begins
+
+
+## Where to Buy
+
+_Sinnovation_ is available for streaming on Spotify, Apple Music, YouTube/YouTube Music, Pandora, Deezer and Amazon Music.
+
+Additionally, you can purchase the digital download in high-quality MP3 and FLAC on iTunes, Bandcamp and Amazon.
+
+The album is also available as a 12" vinyl featuring the Sinnoh Fusion Ensemble tracks and as a 3-disc CD pack, both of which can be purchased on Bandcamp, though these are usually manufactured in small batches and are often sold out. Signed copies were available for some time in the latter part of 2020, but are already sold out.
 
 
 ## Verdict
@@ -42,5 +74,5 @@ Overall, a fantastic album and a must-listen for jazz, VGM and Pokémon fans ali
 
 A solid **9/10**.
 
-<iframe src="https://open.spotify.com/embed/album/0vbD4L4GvVkxrfwdN6iL5e" width="800" height="200" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+
 
