@@ -1,7 +1,3 @@
-<script>
-  let url = "https://github.com/user/reponame/";
-</script>
-
 <p id="readme">
   I hope you haven't disabled JavaScript on this page, or else this won't work 😬
 </p>

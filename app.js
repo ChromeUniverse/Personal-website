@@ -10,34 +10,66 @@ const fs = require("fs");
 // markdown parser
 const marked = require("marked");
 
+// yaml parser
+const yaml = require('js-yaml');
+
 // load page with file name
 function get_page(file_name) {  
-  // load template
-  let html = fs.readFileSync(__dirname + '/public/templates/base.html').toString();
-  let text;
+
+  // load base template
+  let html = '';
+  html += fs.readFileSync(__dirname + '/public/templates/base.html').toString();
 
   try {
-    // load content   
-    text = fs.readFileSync(__dirname + '/public/posts/' + file_name + '.md').toString();
-    // convert markdown -> HTML
-    text = marked(text);
+    // load main file   
+    file = fs.readFileSync(__dirname + '/public/posts/' + file_name + '.md').toString();
+
+    // get yaml meta data
+    let index = file.substr(3, file.length).indexOf('---');
+    let yaml_meta = yaml.load(file.substr(3, index));
+    console.log(yaml_meta);
+
+    // get post time 
+    let unixtime = Date.parse(yaml_meta["date"])/1000;
+    console.log(unixtime);
+
+    let content = '';
+
+    // get post content
+    content = marked(file.substr(index + 6)); 
+
+    // loading post templates
+    let templates = yaml_meta["templates"];
+    console.log(templates);
+    templates.forEach(t_name => {
+      // adding templates to content
+      t = fs.readFileSync(__dirname + '/public/templates/' + t_name).toString();
+      content += t;
+    });
+    
     // add content to template
-    html = html.replace('CONTENTGOESHERE', text);    
+    html = html.replace('CONTENTGOESHERE', content);    
     return [true, html];
   }
-  catch (e) {    
-    text = marked("# 404\n\nSorry, couldn't find what you're looking for.");
-    html = html.replace('CONTENTGOESHERE', text);    
+  catch (e) {   
+    console.log(e);
+    
+    content = marked("# 404\n\nSorry, couldn't find what you're looking for.");
+    html = html.replace('CONTENTGOESHERE', content);    
     return [false, html];    
   }   
   
 }
 
+// load all posts
+function get_posts() {
+
+}
 
 // get request to /test -> index page
 app.get('/*', (req,res) => {  
   // build page
-  //let page = get_page('index');  
+  // let page = get_page('index');  
   // res.status(200);  
   // res.send(page);    
 
@@ -45,8 +77,17 @@ app.get('/*', (req,res) => {
     let index = get_page('index');  
     res.status(200);  
     res.send(index[1]);
+    return;
   } 
   else {    
+
+    // if (req.url == '/posts') {
+    //   res.status(200);
+    //   let page = get_posts(req.url);
+    //   res.send(page);
+    //   return;
+    // }
+
     let page = get_page(req.url);
     if (page[0]) {
       res.status(200);

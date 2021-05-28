@@ -1,3 +1,9 @@
+---
+title: My thoughts on Daft Punk's _Discovery_
+templates: []
+date: 2021-05-27 14:30:00
+--- 
+
 # My thoughts on Daft Punk's _Discovery_
 ---
 

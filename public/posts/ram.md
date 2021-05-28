@@ -1,3 +1,10 @@
+---
+title: My thoughts on Daft Punk's _Random Access Memories_
+templates: []
+date: 2021-05-27 14:30:00
+--- 
+
+
 # My thoughts on Daft Punk's _Random Access Memories_
 ---
 
