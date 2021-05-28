@@ -7,6 +7,9 @@ app.use(express.static('public'));
 // filesystem
 const fs = require("fs");
 
+// path
+// const path = require('path');
+
 // markdown parser
 const marked = require("marked");
 
@@ -14,11 +17,10 @@ const marked = require("marked");
 const yaml = require('js-yaml');
 
 // load page with file name
-function get_page(file_name) {  
+function get_page(file_name, load_base = true) {  
 
   // load base template
   let html = '';
-  html += fs.readFileSync(__dirname + '/public/templates/base.html').toString();
 
   try {
     // load main file   
@@ -27,11 +29,11 @@ function get_page(file_name) {
     // get yaml meta data
     let index = file.substr(3, file.length).indexOf('---');
     let yaml_meta = yaml.load(file.substr(3, index));
-    console.log(yaml_meta);
+    // console.log(yaml_meta);
 
     // get post time 
     let unixtime = Date.parse(yaml_meta["date"])/1000;
-    console.log(unixtime);
+    // console.log(unixtime);
 
     let content = '';
 
@@ -40,15 +42,46 @@ function get_page(file_name) {
 
     // loading post templates
     let templates = yaml_meta["templates"];
-    console.log(templates);
+    // console.log(templates);
     templates.forEach(t_name => {
-      // adding templates to content
-      t = fs.readFileSync(__dirname + '/public/templates/' + t_name).toString();
-      content += t;
+
+      // check if post requires a GitHub fetch template
+      if (t_name = 'github-fetch.md') {  
+
+        console.log('got here!');
+
+        // formatting URLs
+        let github_url = yaml_meta["github-url"].toString();
+        let mini_url = github_url.slice(19);
+        console.log(mini_url);
+
+        // loading and modifying template
+        t = fs.readFileSync(__dirname + '/public/templates/' + t_name).toString();
+        t = t
+              .replace('FULLURL', github_url)
+              .replace('MINIURL', mini_url)
+              .replace(/readme/g, mini_url)
+              .replace(/repo-link/g, github_url)
+              // .replace('mini', 'mini' + mini_url)
+        content += t;
+      } else {
+        // adding templates to content
+        t = fs.readFileSync(__dirname + '/public/templates/' + t_name).toString();
+        content += t;
+      }
+
+      
     });
+
+    if (load_base == true) {
+      // load base template
+      html += fs.readFileSync(__dirname + '/public/templates/base.html').toString();
+      // add content to base template
+      html = html.replace('CONTENTGOESHERE', content);    
+    } else {
+      html = content;
+    }      
     
-    // add content to template
-    html = html.replace('CONTENTGOESHERE', content);    
     return [true, html];
   }
   catch (e) {   
@@ -62,8 +95,47 @@ function get_page(file_name) {
 }
 
 // load all posts
-function get_posts() {
+function get_posts(res) {
 
+  let html = '';
+  // add base template
+  html += fs.readFileSync(__dirname + '/public/templates/base.html').toString();
+  // load content from all files
+  content = '';
+
+  // scan posts directory for all posts
+  fs.readdir(__dirname + '/public/posts/', function (err, files) {
+    //handling error
+    if (err) {
+        return console.log('Unable to scan directory: ' + err);
+    } 
+    console.log(files);
+
+    // looping over files
+    files.forEach(f => {
+
+      // get post whitout loading base template
+      let post = get_page(f.substr(0,f.length-3), false);
+      // console.log(post)
+      let post_content = post[1]      
+
+      // add post content
+      content += post_content;
+    });
+    // add content to template
+    html = html.replace('CONTENTGOESHERE', content);        
+
+    // console.log(html)
+
+    res.status(200);
+    res.send(html);
+    
+  });
+
+  
+  // console.log(posts)
+
+  // return html;
 }
 
 // get request to /test -> index page
@@ -72,22 +144,25 @@ app.get('/*', (req,res) => {
   // let page = get_page('index');  
   // res.status(200);  
   // res.send(page);    
+  console.log(req.url);
+
+  if (req.url == '/all') {
+    console.log('got here!');    
+    let posts = get_posts(res);
+  
+    return;
+  }
 
   if (req.url == '/') {
-    let index = get_page('index');  
+    console.log('got here!');    
+    let page = get_page('index');  
     res.status(200);  
-    res.send(index[1]);
+    res.send(page[1]);   
     return;
-  } 
+  }
+
+
   else {    
-
-    // if (req.url == '/posts') {
-    //   res.status(200);
-    //   let page = get_posts(req.url);
-    //   res.send(page);
-    //   return;
-    // }
-
     let page = get_page(req.url);
     if (page[0]) {
       res.status(200);
