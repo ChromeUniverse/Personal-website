@@ -1,7 +1,7 @@
 ---
-title: My thoughts on insaneintherainmusic's _Sinnohvation_
+title: My thoughts on insaneintherainmusic's Sinnohvation
 templates: []
-date: 2021-05-27 14:30:00
+date: 2021-05-27 17:30:00
 --- 
 
 # My thoughts on insaneintherainmusic's _Sinnohvation_

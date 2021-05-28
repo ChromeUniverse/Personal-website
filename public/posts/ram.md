@@ -1,7 +1,7 @@
 ---
-title: My thoughts on Daft Punk's _Random Access Memories_
+title: My thoughts on Daft Punk's Random Access Memories
 templates: []
-date: 2021-05-27 14:30:00
+date: 2021-05-27 12:00:00
 --- 
 
 
