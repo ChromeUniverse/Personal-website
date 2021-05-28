@@ -29,7 +29,9 @@ He is one of the few big names in the VGM scene with a background in Jazz. He st
 
 ## The Album
 
-_Sinnohvation_ is best decribed as a jazz-focused VGM cover album, even if the music doesn't 
+The tracks in _Sinnohvation_ is comprised of mostly jazz-inspired arrangements of tracks from _Pokémon Diamond/Pearl/Platinum_. It's a  really, _**really**_ long album clocking in at just under 3 hours and 54 minutes of music. The tracks vary widly in length, with some lasting only 2 or 3 minutes, while most fall into the 4 to 6 minute category, which is appropritate for a colletion of jazz tunes, and some more ambitious tracks even dip into the 7 minute territory. 
+
+The original soundtrack for _Pokémon Diamond/Pearl/Platinum_ was composed by GAME FREAK sound team members Junichi Masuda, Go Ichinose, Hitomi Sato and Morikazu Aoki, who all have a history of composing and producing songs for Pokémon games on the GBA, Nintendo DS and Nintendo 3DS.
 
 It's arguably the best album released so far by the youtuber/Berklee College of Music grad/multi-instrumentalist extraordinaire/cowbell virtuoso/tenor sax mainer/jazz madlad Carlos Eiene, a.k.a "insaneintherainmusic".
 
@@ -57,6 +59,15 @@ followed by the energetic piano/string/sax/flute jam, is an invitation to the li
 So if you're really commited to embark on this musical quest, take an afternoon off, grab a seat and a pair of headphones, because this album takes the listener on a unique, interesting and often times charming adventure.
 
 ### The Journey Begins
+
+The next couple of tracks, namely, _Twinleaf Town_ and _Route 201_, instantly remind you about the "Pokémon-iness" of this music collection. This is the start of your Pokémon-catching, Team Galactic-squashing, Gym Leader-battling adventure across the Sinnoh region, and there's no better way to start it than with the iconic home town theme and the first route theme.
+
+_Twinleaf Town_ revolves around a cool and minimalist groove with a clean electric guitar, electric bass, drums and tenor sax, and slowly gets more energetic as the flutes and piano join the mix. Carlos' solo on the tenor sax clearly borrows tone and improvisation ideas from infamous jazz-fusion saxophonist Michael Brecker of the _The Brecker Brothers_.
+
+On _Route 201_, the listener is instroduced to a fairly esoteric synthesizer-like instrument - the [_EWI_](https://en.wikipedia.org/wiki/EWI_(musical_instrument)) (Electronic Wind Instrument), a woodwind-shaped MIDI controller, also made famous by Michael Brecker. Carlos' ability to take the simplistic melody of the original _Route 201_ theme and bring it to life with a rich instrumentation, unique reharmonization and jazz-fusion-like sound is immediately noticable. 
+
+The following track, _Lake Verity_, is a more traditional jazz tune, with a song structure which clearly takes inspiration from the hard bop era. The alto/tenor/baritone saxophone solis, although simple at times, are a joy to listen to. In the head of the tune, the call and response interplay between saxophones and the electric jazz guitar/marimba duo, courtesy of jazz percussionist Doug Perry, is wonderful. The song as a whole is has a distinctly chill atmosphere which slowly builds energy and releases it all at once in the final sax soli.
+
 
 
 ## Where to Buy
