@@ -7,7 +7,19 @@
 </p>
 
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-<script src="http://34.200.98.64:3000/scripts/github-fetch.js"></script>
+<script>
+  mini = 'MINIURL';
+  console.log('Trying to fetch from', mini);
+  fetch("https://raw.githubusercontent.com/" + mini + "/main/README.md")
+    .then(response => {
+      response.text().then(text => {
+        console.log(text);
+        document.getElementById("readme").innerHTML = marked(text);          
+      })        
+    }
+  );
+  document.getElementById("repo-link").href = 'FULLURL';
+</script>
 
 
 

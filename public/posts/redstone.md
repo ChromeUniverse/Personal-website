@@ -1,9 +1,6 @@
 ---
-title: Just testing
+title: RedstoneBot
 templates: [github-fetch.md]
-date: 2021-05-27 14:30:00
+github-url: https://github.com/ChromeUniverse/RedstoneBot/ 
+date: 2021-05-27 14:33:00
 ---
-
-<script>
-  let url = "https://github.com/ChromeUniverse/RedstoneBot/";
-</script>

@@ -1,9 +1,6 @@
 ---
-title: The Box World
+title: Tank Battle!
 templates: [github-fetch.md]
-date: 2021-05-27 14:30:00
+github-url: https://github.com/ChromeUniverse/Tank-Battle/ 
+date: 2021-05-27 14:36:00
 --- 
-
-<script>
-  let url = "https://github.com/ChromeUniverse/Tank-Battle";
-</script>
