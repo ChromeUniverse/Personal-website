@@ -1,15 +1,12 @@
 ---
-title: My thoughts on insaneintherainmusic's Sinnohvation
+title: My thoughts on insaneintherainmusic's _Sinnohvation_
 templates: []
 date: 2021-05-27 17:30:00
 --- 
 
-# My thoughts on insaneintherainmusic's _Sinnohvation_
----
-
 _**Note**: this review is a work-in-progress!_
 
-<iframe src="https://open.spotify.com/embed/album/0vbD4L4GvVkxrfwdN6iL5e" width="800" height="200" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+<iframe src="https://open.spotify.com/embed/album/0vbD4L4GvVkxrfwdN6iL5e" width=100% height="200" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 
 ## Introduction
 
@@ -72,7 +69,7 @@ The next couple of tracks, namely, _Twinleaf Town_ and _Route 201_, instantly re
 
 On [_Route 201_](https://www.youtube.com/watch?v=zD5sJO0Y7Nk&list=OLAK5uy_nAMy4Tld9n9JY8r-56mo1HHunMpLCcAcI&index=4), the listener is instroduced to a fairly esoteric synthesizer-like instrument - the [_EWI_](https://en.wikipedia.org/wiki/EWI_(musical_instrument)) (Electronic Wind Instrument), a woodwind-shaped MIDI controller, also made famous by Michael Brecker. Carlos' ability to take the simplistic melody of the original _Route 201_ theme and bring it to life with a rich instrumentation, unique reharmonization and jazz-fusion-like sound is immediately noticable. 
 
-The following track, [_Lake Verity_](https://www.youtube.com/watch?v=sXajUkHjghk&list=OLAK5uy_nAMy4Tld9n9JY8r-56mo1HHunMpLCcAcI&index=5), is a more traditional jazz tune, with a song structure and instrumentation which clearly takes inspiration from the hard bop era. The alto/tenor/baritone saxophone solis, although simple at times, are a joy to listen to. In the head of the tune, the call and response interplay between saxophones and the electric jazz guitar/vibraphone duo, courtesy of jazz percussionist Doug Perry, is a small touch, but it's wonderfully well executed. The song as a whole is has a distinctly chill atmosphere which slowly builds energy and releases it all at once in the final sax soli.
+The following track, [_Lake Verity_](https://www.youtube.com/watch?v=sXajUkHjghk&list=OLAK5uy_nAMy4Tld9n9JY8r-56mo1HHunMpLCcAcI&index=5), features jazz percussionist Doug Perry on vibraphone. It's a more traditional jazz tune, with a song structure and instrumentation which clearly takes inspiration from the hard bop era. The alto/tenor/baritone saxophone solis, although simple at times, are a joy to listen to. In the head of the tune, the playful call and response between saxophones and the electric jazz guitar/vibes duo is a small touch, but it's wonderfully well executed. The song as a whole is has a distinctly chill atmosphere which slowly builds energy and releases it all at once in the final sax soli.
 
 
 
