@@ -37,11 +37,22 @@ function get_page(file_name, load_base = true) {
 
     let content = '';
 
-    // get post content
-    content = marked(file.substr(index + 6)); 
-
     // loading post templates
     let templates = yaml_meta["templates"];
+    if (!templates.includes('github-fetch.md')) {
+      // add post title
+      content += marked('# ' + yaml_meta["title"]);  // add title
+      content += marked('\n---\n');
+              
+      // add post date
+      let date = yaml_meta["date"];
+      content += '<p class="date">Published on ' + date.getFullYear() + '-' + (date.getMonth() + 1).toString() + '-' + date.getDate() + '</p>';
+    }
+    
+    // get post content
+    content += marked(file.substr(index + 6)); 
+
+    
     // console.log(templates);
     templates.forEach(t_name => {
 
@@ -99,7 +110,7 @@ function get_posts(res) {
 
   let html = '';
   // add base template
-  html += fs.readFileSync(__dirname + '/public/templates/base.html').toString();
+  html += fs.readFileSync(__dirname + '/public/templates/all.html').toString();
   // load content from all files
   content = '';
 
@@ -115,12 +126,17 @@ function get_posts(res) {
     files.forEach(f => {
 
       // get post whitout loading base template
-      let post = get_page(f.substr(0,f.length-3), false);
+      let endpoint = f.substr(0,f.length-3);
+
+      let post = get_page(endpoint, false);
       // console.log(post)
       let post_content = post[1]      
 
       // add post content
+      content += marked('[_Read this post in full_](' + 'http://localhost:' + port + '/' + endpoint + ')');
+      content += '<div class="post">'
       content += post_content;
+      content += '</div>'
     });
     // add content to template
     html = html.replace('CONTENTGOESHERE', content);        

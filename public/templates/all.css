@@ -64,3 +64,11 @@ img {
   color: #a5a28b;
   text-align: right;
 }
+
+.main .post {
+  margin: auto;
+  padding-left: 40px;
+  padding-right: 40px;
+  width: 650px;
+  background-color: #353850;
+}
