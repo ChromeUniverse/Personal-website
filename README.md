@@ -29,7 +29,7 @@ date: 2021-05-27 10:30:00
 ```
 
 * and then some regular Markdown content:
-```md
+```markdown
 Hi, I'm Lucca and this is my personal webpage.
 
 Here you'll find lots of programming, music, electronics and life shenanigans.
