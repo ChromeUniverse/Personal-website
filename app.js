@@ -152,7 +152,7 @@ function get_posts(res, group) {
       let post_groups = post_meta["groups"];
 
       if (post_groups.includes(group)) {        
-        content += marked('[_Read this post in full_](' + 'http://34.200.98.64:' + port + '/' + post_endpoint + ')');
+        content += marked('[_Read this post in full_](' + '/' + post_endpoint + ')');
         content += '<div class="post">'
         content += post_content;
         content += '</div>'
