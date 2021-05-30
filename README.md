@@ -8,7 +8,7 @@ This is the source code for my personal website.
 
 My website is powered by a custom-made dynamic website generator that I built from scratch. It's geared towards building a blog-style website: simple post creation with Markdown files and YAML metadata, post groups, and templates.
 
-Unlike static-site generators, where the full HTML for the pages are already laid out, the pages for my website are built when then user requests data to the server. The generator processes the request, gets the base templates, includes additional templates, loads post metadata (title, date, groups, etc.), fetches the post's content, and finally bundles it up into a single HTML to be sent to the client.
+Unlike static-site generators, where the full HTML for the pages is already laid out, the pages for my website are built when then user requests data to the server. The generator processes the request, gets the base templates, includes additional templates, loads post metadata (title, date, groups, etc.), fetches the post's content, and finally bundles it up into a single HTML to be sent to the client.
 
 Currently, my generator is using:
 * Backend: [Node.js](https://nodejs.dev/) + [Express.js](https://www.npmjs.com/package/express)
