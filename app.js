@@ -14,7 +14,7 @@ const marked = require("marked");
 const yaml = require('js-yaml');
 
 // post group list
-const groups = ['all', 'github-readme', 'music', 'album-review', 'programming'];
+const groups = ['all', 'github-readme', 'music', 'album-review', 'programming', 'daft-punk'];
 
 // load page with file name
 function get_page(file_name, load_base = true) {  
