@@ -175,6 +175,40 @@ function get_posts(res, group) {
   // return html;
 }
 
+
+function get_random_post(res) {
+
+  // add base template
+  let html = '';
+  html += fs.readFileSync(__dirname + '/public/templates/all.html').toString();
+
+  fs.readdir(__dirname + '/public/posts/', (err, files) => {
+    
+    if (err) {
+      return console.log('Unable to scan directory: ' + err);
+    } 
+
+    let f = files[Math.floor(Math.random() * files.length)];
+
+    // load post metadata and content
+    let post_endpoint = f.substr(0,f.length-3);      
+    let post = get_page(post_endpoint, false);   // don't load base template!
+    let post_meta = post[2];
+    let post_content = post[1];      
+
+    // add content to template
+    html = html.replace('CONTENTGOESHERE', post_content);        
+
+    // console.log(html)
+
+    res.status(200);
+    res.send(html);
+
+  }); 
+
+}
+
+
 // get request to /test -> index page
 app.get('/*', (req,res) => {  
   console.log(req.url);
@@ -195,6 +229,11 @@ app.get('/*', (req,res) => {
       res.send(page[1]);   
       return;
     }
+
+    if (req.url == '/random') {
+      get_random_post(res);
+    }
+
   
     else {    
       let page = get_page(req_endpoint);      
