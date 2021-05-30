@@ -59,8 +59,41 @@ img {
   max-height: 100%;
 }
 
+.main .header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
 .date {
   font-style: italic;
   color: #a5a28b;
-  text-align: right;
+  padding: 0px;
 }
+
+.groups {
+  font-style: italic;
+  color: #a5a28b;
+  padding: 0px;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  height: 440px;
+}
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: white; 
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(194, 194, 194); 
+}
+
+
