@@ -6,7 +6,7 @@ This is the source code for my personal website.
 
 ## Static site generator
 
-My website is powered by a custom-made static website generator that I built from scratch. 
+My website is powered by a custom-made [static website generator](https://www.youtube.com/watch?v=3INXQ_4W42g) that I built from scratch. It's geared towards building a blog-style website: simple post creation with Markdown files and YAML metadata, post groups, and templates.
 
 Currently, my generator is using:
 * Backend: [Node.js](https://nodejs.dev/) + [Express.js](https://www.npmjs.com/package/express)
