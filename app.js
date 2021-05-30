@@ -219,7 +219,7 @@ function get_random_post(res) {
 
   // add base template
   let html = '';
-  html += fs.readFileSync(__dirname + '/public/templates/all.html').toString();
+  html += fs.readFileSync(__dirname + '/public/templates/group.html').toString();
 
   fs.readdir(__dirname + '/public/posts/', (err, files) => {
     
