@@ -1,6 +1,7 @@
 ---
 title: My thoughts on Daft Punk's _Discovery_
 templates: []
+groups: [all, album-reviewm, music, daft-punk]
 date: 2021-05-27 11:30:00
 --- 
 

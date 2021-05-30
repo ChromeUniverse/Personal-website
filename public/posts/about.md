@@ -1,6 +1,7 @@
 ---
 title: About myself
 templates: []
+groups: [all]
 date: 2021-05-29 01:02:00
 --- 
 

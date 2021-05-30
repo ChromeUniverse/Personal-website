@@ -1,6 +1,7 @@
 ---
 title: My thoughts on insaneintherainmusic's _Sinnohvation_
 templates: []
+groups: [all, music, album-review, insaneintherainmusic]
 date: 2021-05-27 17:30:00
 --- 
 

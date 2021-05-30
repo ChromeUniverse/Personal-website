@@ -1,6 +1,7 @@
 ---
 title: My thoughts on Daft Punk's _Random Access Memories_
 templates: []
+groups: [all, album-reviewm, music, daft-punk]
 date: 2021-05-27 12:00:00
 --- 
 
