@@ -14,7 +14,15 @@ const marked = require("marked");
 const yaml = require('js-yaml');
 
 // post group list
-const groups = ['all', 'github-readme', 'music', 'album-review', 'programming', 'daft-punk'];
+const groups = [
+  'all', 
+  'github-readme', 
+  'music', 
+  'album-review', 
+  'programming', 
+  'daft-punk',
+  'website',
+];
 
 // load page with file name
 function get_page(file_name, load_base = true) {  
@@ -127,7 +135,7 @@ function get_posts(res, group) {
 
   // add base template
   let html = '';
-  html += fs.readFileSync(__dirname + '/public/templates/all.html').toString();
+  html += fs.readFileSync(__dirname + '/public/templates/group.html').toString();
 
   // add header
   content = '';
@@ -140,13 +148,43 @@ function get_posts(res, group) {
         return console.log('Unable to scan directory: ' + err);
     } 
 
+    // list of posts to be sorted by timestamp 
+    let sorted_posts = [];
+
     files.forEach(f => {
 
       // load post metadata and content
       let post_endpoint = f.substr(0,f.length-3);      
-      let post = get_page(post_endpoint, false);   // don't load base template!
+      let post = get_page(post_endpoint, false);      // don't load base template!
       let post_meta = post[2];
-      let post_content = post[1];      
+      let post_content = post[1];    
+      
+      // add object with post information to sorted posts list
+      let post_object = {
+        "endpoint": post_endpoint,
+        "date": Date.parse(post_meta["date"])/1000,   // unix timestamp 
+        "meta": post_meta,                            // metadata object
+        "content": post_content                       // post text content
+      }
+      sorted_posts.push(post_object);      
+      
+    });
+
+    // sort posts by *decreasing* UNIX timestamp
+    sorted_posts.sort( ( p1, p2 )  => {
+      let d1 = p1["date"];
+      let d2 = p2["date"];
+
+      if (d1 < d2) { return  1; }
+      if (d1 > d2) { return -1; }
+      return 0;
+    });
+
+    sorted_posts.forEach(p => {
+
+      let post_meta = p["meta"];
+      let post_content = p["content"];
+      let post_endpoint = p["endpoint"];
 
       // add only posts from the specified group
       let post_groups = post_meta["groups"];
@@ -157,8 +195,9 @@ function get_posts(res, group) {
         content += post_content;
         content += '</div>'
       }
-      
     });
+
+
     // add content to template
     html = html.replace('CONTENTGOESHERE', content);        
 
