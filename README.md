@@ -86,4 +86,18 @@ The above example post would show up in the _all_, _album-review_, _music_ and _
 
 * Clone this repo, `cd` into it
 
-* 
+`git clone https://github.com/ChromeUniverse/Personal-website.git`
+
+`cd Personal-website`
+
+* Install Node.js if you haven't already
+
+`sudo apt install nodejs`
+
+* Install NPM packages
+
+`sudo npm install`
+
+* Start server with pm2
+
+`pm2 start app`
