@@ -1,13 +1,17 @@
 ---
-title: Prism.js testing
+title: Trying out Prism.js
 templates: []
 groups: [all, programming]
 date: 2021-05-30 17:38:00
 --- 
 
-I've just added a new library to my website, [Prism.js](https://prismjs.com/), for making better code snippets. 
+I've just added a new library to my website, [Prism.js](https://prismjs.com/), for improved code snippets. 
 
-Looks like it's working out pretty well. The following code snippet is part of the main `bot.py` file from my [RedstoneBot](https://github.com/ChromeUniverse/RedstoneBot) project.
+Since my posts often place a heavy emphasis on coding, I figured that having quality code snippets with adequate syntax highlighting (among other things) will add a lot of value to my programming-related posts. 
+
+And from the looks of it, Prism is working pretty well. Just to demonstrate, here are a couple of example code snippets.
+
+The first example code snippet is a small part of the main `bot.py` file from my [RedstoneBot](https://github.com/ChromeUniverse/RedstoneBot) project, written in Python.
 
 
 ```python
@@ -113,7 +117,7 @@ async def ping(ctx):
 
 ```
 
-Now let's try a code snippet in C++. This is a Reverse Polish Notation parser and evaluator that I wrote.
+For the second example, I'll try a code snippet in C++. This is a [Reverse Polish Notation](https://en.wikipedia.org/wiki/Reverse_Polish_notation) parser and evaluator that I wrote a couple of months ago with the help of my friend [Eduardo Quirino](https://github.com/qrno).
 
 ```c++
 /*
@@ -383,7 +387,7 @@ int main() {
 }
 ```
 
-Finally, I'm going to try out some Javascript. This is a Fibonacci sequence program in JS:
+Finally, I'm going to try out some Javascript. This is the classic memoized Fibonacci sequence program in JS:
 
 ```js
 var fibList = [];
@@ -408,4 +412,6 @@ main(50);
 
 ```
 
-Yep, works as advertised. 👌👍😃
+Yep, Prism.js is definetely working as advertised. 😃
+
+Expect to see it used quite regularly in my future posts.
