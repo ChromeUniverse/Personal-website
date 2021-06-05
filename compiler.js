@@ -101,8 +101,8 @@ function apply_templates(meta_obj, post_HTML, load_base=true) {
 
   // adding base HTML, base CSS and Prism
   let html = fs.readFileSync(__dirname + '/public/templates/test_template.html').toString();
-  let css = '<link rel="stylesheet" href="http://localhost:3000/templates/base.css">';
-  css += '\n<link rel="stylesheet" href="http://localhost:3000/templates/prism.css">'
+  let css = '<link rel="stylesheet" href="http://34.200.98.64:3000/templates/base.css">';
+  css += '\n<link rel="stylesheet" href="http://34.200.98.64:3000/templates/prism.css">'
 
   // building page content 
   let content = '';  
@@ -117,7 +117,7 @@ function apply_templates(meta_obj, post_HTML, load_base=true) {
     // CSS templates
     if (t_ext == ".css"){
       // link to stylesheet: <link rel="stylesheet" href="http://localhost:3000//templates/base.css">
-      css += '\n<link rel="stylesheet" href="http://localhost:3000/templates/' + t_name + '">'
+      css += '\n<link rel="stylesheet" href="http://34.200.98.64:3000/templates/' + t_name + '">'
     }
       
   });
