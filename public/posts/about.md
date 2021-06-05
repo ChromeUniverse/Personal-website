@@ -1,11 +1,11 @@
 ---
 title: About myself
 templates: []
-groups: [all]
+groups: [all, me]
 date: 2021-05-29 01:02:00
 --- 
 
-Hi I'm Lucca! I'm a musician, programmer and aspiring engineer.
+Hi I'm Lucca! I'm a musician, programmer and an aspiring engineer.
 
 ## My education
 

@@ -5,7 +5,7 @@ groups: [all, website]
 date: 2021-05-27 10:30:00
 --- 
 
-Hi, I'm Lucca and this is my personal webpage.
+Hi, I'm Lucca and this is my personal website. 
 
 Here you'll find lots of programming, music, electronics and life shenanigans.
 
