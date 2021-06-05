@@ -2,9 +2,13 @@
 const express = require("express");
 const app = express();
 const port = 3000;
+app.use(express.static('public'));
 
 // filesystem
 const fs = require("fs");
+
+// extra consts
+const path_to_htmls = __dirname + '/public/htmls/'
 
 // get request to /test -> index page
 app.get('/*', (req,res) => {  
@@ -13,7 +17,7 @@ app.get('/*', (req,res) => {
   let req_endpoint = req.url.substr(1);
 
   if (req.url == '/') {
-    let page = fs.readFileSync(__dirname + '/public/htmls/index.html', 'UTF-8').toString();
+    let page = fs.readFileSync(path_to_htmls + 'index.html', 'UTF-8').toString();
     res.status(200);
     res.send(page);
     return;
@@ -21,14 +25,14 @@ app.get('/*', (req,res) => {
   
   else {
     try {
-      let page = fs.readFileSync(__dirname + '/public/htmls/' + req_endpoint + '.html', 'UTF-8').toString();
+      let page = fs.readFileSync(path_to_htmls + req_endpoint + '.html', 'UTF-8').toString();
       res.status(200);
       res.send(page);
       return;
     } 
 
     catch (err) {
-      let page = fs.readFileSync(__dirname + '/public/htmls/404.html', 'UTF-8').toString();
+      let page = fs.readFileSync(path_to_htmls + '404.html', 'UTF-8').toString();
       res.status(404);
       res.send(page);
       return;
