@@ -38,7 +38,7 @@ function generateHTML(meta_obj, post_content) {
   let post_html = '';
 
   // adding post header with date and groups
-  if (!templates.includes('github-fetch.md')) {
+  if (!templates.includes('github-fetch.md') && !templates.includes('ignore')) {
 
     // add post title
     post_html += marked('# ' + title);  // add title
@@ -62,7 +62,13 @@ function generateHTML(meta_obj, post_content) {
     post_html += '</div>'               // close "header" div
     post_html += post_content;
 
-  } else {
+  }
+
+  if (templates.includes('ignore')) {
+    post_html = post_content;
+  }
+  
+  if (templates.includes('github-fetch.md')) {
          
     // load template file
     let t = fs.readFileSync(__dirname + '/public/templates/github-fetch.md').toString();
@@ -195,8 +201,7 @@ function generate_post_pages () {
       let html = apply_templates(data[0], content_HTML);  
   
       // update groups object
-      let post_groups = data[0]["groups"]; 
-      
+      let post_groups = data[0]["groups"];       
   
       post_groups.forEach(g => {
         if (!groups.hasOwnProperty(g)) {
