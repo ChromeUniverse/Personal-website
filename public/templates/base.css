@@ -23,7 +23,7 @@ div {
 .main {
 	width: 800px;	
   overflow-wrap: break-word;
-  /* text-align: justify; */
+  text-align: left;
   overflow-y: auto;
   overflow-x: auto;
 }
@@ -59,6 +59,8 @@ a:active {
 img {
   max-width: 100%;
   max-height: 100%;
+  background: #1f2138;
+  padding: 3px;
 }
 
 .main .header {
