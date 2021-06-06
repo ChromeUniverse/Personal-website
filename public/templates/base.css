@@ -23,7 +23,7 @@ div {
 .main {
 	width: 800px;	
   overflow-wrap: break-word;
-  text-align: justify;
+  /* text-align: justify; */
   overflow-y: auto;
   overflow-x: auto;
 }
