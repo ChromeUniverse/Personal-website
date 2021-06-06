@@ -168,7 +168,16 @@ function get_data(file_name) {
 }
 
 
+function clear_htmls() {
 
+  let path = __dirname + '/public/htmls/';
+
+  let filenames = fs.readdirSync(path);
+
+  filenames.forEach(f => {
+    fs.unlinkSync(path + f);
+  });
+}
 
 
 // generates web pages for all posts
@@ -177,9 +186,18 @@ function generate_post_pages () {
     let filenames = fs.readdirSync(__dirname + '/public/posts/')
     // console.log(filenames);
   
-    filenames.forEach(f => {
+    filenames.forEach(f => {      
+
       // get file name, remove extension
       let f_name = f.substr(0,f.substr(1, f.length).indexOf('.')+1);
+
+      // create file path  
+      let new_f_name = f_name + '.html';      
+      let path = __dirname + '/public/htmls/' + new_f_name;
+
+      // delete current existing HTML
+      // fs.unlinkSync(path);
+      // console.log('Deleted: ' + new_f_name);
   
       // fetch post metadata and content
       let data = get_data(f);
@@ -212,11 +230,7 @@ function generate_post_pages () {
       });
       
           
-      // create file path
       
-      let new_f_name = f_name + '.html';   // can also ignore .dotfiles
-  
-      let path = __dirname + '/public/htmls/' + new_f_name;
     
       try {
         // fs.unlink();
@@ -247,6 +261,14 @@ function generate_group_pages() {
   
   // looping over groups, generating group pages
   Object.keys(groups).forEach(g => {
+
+    // build path to appropriate file
+    let f_name = g + '.html';
+    let path = __dirname + '/public/htmls/' + f_name;
+
+    // delete current existing HTML
+    // fs.unlinkSync(path);
+    // console.log('Deleted: ' + f_name);
 
     // list of posts by group
     let p_list = [];
@@ -284,9 +306,7 @@ function generate_group_pages() {
     // add templates, get final HTML
     let html = apply_templates({"templates": ["group.css"]}, content);
 
-    // build path to appropriate file
-    let f_name = g + '.html';
-    let path = __dirname + '/public/htmls/' + f_name;
+    
 
     // write data to HTML
     fs.writeFile(path, html, 'UTF-8', (err => {
@@ -300,6 +320,7 @@ function generate_group_pages() {
 
 // collecting main functions
 function main() {
+  clear_htmls();
   generate_post_pages();
   generate_group_pages();
 }
