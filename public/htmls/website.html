@@ -50,7 +50,43 @@
   <div class="main">        
     <h1 id="group-website">Group: <em>website</em></h1>
 <hr>
-<p><a href="/making-the-website"><em>Read this post in full</em></a></p>
+<p><a href="/no-justify"><em>Read this post in full</em></a></p>
+<div class="post"><h1 id="begone-justified-text">Begone, justified text!</h1>
+<hr>
+<div class="header"><div class="date">Published on 2021-6-6</div><div class="groups">Groups: <a href="/all">all</a>, <a href="/website">website</a>, <a href="/typography">typography</a></div></div><p><em>Disclaimer: I don&#39;t know a single thing about typography. This is just a quick post about why I&#39;m removing all text justification from my website. I&#39;ve included links to additional resources and reading materials from folks that are much more qualified to write about this sort of stuff than I am.</em></p>
+<p>Over the last couple of days, I noticed that the justified text on my website can sometimes look quite off-putting.
+As an example, check out this introductory section from <a href="http://34.200.98.64:3000/sinnohvation">my review on <em>Sinnohvation</em></a>.</p>
+<p><img src="https://media.discordapp.net/attachments/693296031982682184/851171575847321700/unknown.png?width=830&height=632" alt="image1"></p>
+<p>Notice the (oftentimes huge) gaping holes between words. In particular, check out the 3rd line of the 3rd paragraph and the 2nd and 4th lines of the 4th paragraph. </p>
+<p>It looks horrible. Atrocious. Awful. Disturbing. Ridiculous, even. Besides being unberably ugly, it makes text somewhat harder to read, and since I often invest a lot of time writing and proofreading these posts, I feel cheated on by ugly justification.</p>
+<p>In web development/design, text justification is taken care of by  CSS (short for <em>Cascading Style Sheets</em>), a special language that goes hand in hand with HTML and whose sole purpose is to style webpages and make them prettier to the human eye. In CSS, we can specify <em>properties</em> which essentially tell how the browser should render a certain part of your webpage. </p>
+<p>Take a look at an example CSS code snippet. Here, I&#39;m using a set of properties (<code>width</code>, <code>text-align</code>, <code>overflow-x</code>, etc.) to style a <code>div</code> with a class of <code>main</code>.</p>
+<pre><code class="language-css">.main {
+  width: 800px;    
+  overflow-wrap: break-word;
+  text-align: justify;
+  overflow-y: auto;
+  overflow-x: auto;
+}
+</code></pre>
+<p>Notice the <code>text-align: justify;</code> property - basically, it&#39;s telling the broswer to take the text inside that <code>div</code> and <em>justify</em> it, which means stretching out the words so that they touch the edges of the <code>div</code>, in the same way that justified text on a book touches the margins of the page.</p>
+<p>Earlier today I read <a href="https://designforhackers.com/blog/justify-text-html-css/">this post</a> on <em>Design on Hackers</em> showing why <code>text-align: justify;</code> is so bad, and honestly, I agree with Mr. David Kadavy. After digging a little bit deeper, though, it appears that using justified text on the web <a href="https://www.futurehosting.com/blog/why-does-justified-text-have-such-a-bad-reputation-on-the-web/">has had a bad reputation for quite some time</a>. Even worse, it often looks like a <a href="https://meetchopz.medium.com/10-bad-typography-habits-that-scream-amateur-8bac07f9c041">rookie typography mistake</a>.</p>
+<p>Apparently, this is becuase the text justification algorithm used by CSS and HTML is incredibly poor, since it basically just adds gaps between words to stretch a line of text to touch the edges of a container, without adding hyphenation, word-splitting or any other sort of modifications to the line of text. This seems to constrat starkly with the process of justification in regular print media, notably, books and newspapers. <a href="http://theworldsgreatestbook.com/book-design-basics-hyphens-justification/">This post</a> by David Bricker in his <em>Book Design Basics</em> series does a good job of explaining how to use hyphenation to justify text for books.</p>
+<p>For web developers/designers such as myself, it looks like the best option as of right now is to just ditch justification all together in favor of left-aligned text. Thankfully, all I need to do is to change a single line of CSS:</p>
+<pre><code class="language-css">.main {
+  width: 800px;    
+  overflow-wrap: break-word;
+  /* Begone, justified text! */
+  text-align: left;
+  overflow-y: auto;
+  overflow-x: auto;
+}
+</code></pre>
+<p>Here&#39;s how that same section from my <em>Sinnohvation</em> review looks like now:</p>
+<p><img src="https://media.discordapp.net/attachments/693296031982682184/851171420952199198/unknown.png?width=858&height=631" alt="image"></p>
+<p>And while, symmetrical, perfectly aligned blocks of text can look pretty, they can really be an eyesore when it comes to webpages. For the time being, removing text justification seems to be a decent compromise.</p>
+<p>Expect more typography and web design posts in the next couple of weeks as I spend a little more time working on my website, including improving my webpage generator/templating system, learning responsive design, and improving readability, and adding even more ✨fancy CSS✨.</p>
+</div><p><a href="/making-the-website"><em>Read this post in full</em></a></p>
 <div class="post"><h1 id="how-i-made-my-personal-website">How I made my personal website</h1>
 <hr>
 <div class="header"><div class="date">Published on 2021-5-30</div><div class="groups">Groups: <a href="/all">all</a>, <a href="/programming">programming</a>, <a href="/website">website</a></div></div><p><strong><em>This page is still a work-in progress!</em></strong></p>
