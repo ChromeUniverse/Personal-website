@@ -57,6 +57,8 @@ a:active {
 }
 
 img {
+  display: block;
+  margin: auto;
   max-width: 80%;
   background: #1f2138;
   padding: 3px;
