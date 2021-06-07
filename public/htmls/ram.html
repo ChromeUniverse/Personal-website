@@ -48,25 +48,26 @@
 
   <div class="topbar">
     <div class="title">
-      <b>The Lucca Logs</b>
+      <a href="/"><b>The Lucca Logs</b></a>
     </div>
     <br>
-    <div class="topbar-button">
-      <button>📜</button>    
-
-      <div class="topbar-menu">
-
-        <div class="topbar-menu-item"><a href="/all"><b>All posts</b></a></div>
-        <div class="topbar-menu-item"><a href="/programming"><b>Programming</b></a></div>
-        <div class="topbar-menu-item"><a href="/music"><b>Music</b></a></div>
-        <div class="topbar-menu-item"><a href="/website"><b>Website Things</b></a></div>
-        <!-- <div class="topbar-menu-item"><a href="/programming"><b>Programming</b></a></div> -->
-    
-      </div>
-    </div>
-    
+    <div class="button" onclick="toggleMenu()"> 
+      <button>📄</button>    
+    </div>    
 
   </div>
+
+  <div class="topbar-menu" id="topbar-menu">
+
+    <div class="topbar-menu-item"><a href="/all"><b>All posts</b></a></div>
+    <div class="topbar-menu-item"><a href="/programming"><b>Programming</b></a></div>
+    <div class="topbar-menu-item"><a href="/music"><b>Music</b></a></div>
+    <div class="topbar-menu-item"><a href="/album-review"><b>Album Reviews</b></a></div>
+    <div class="topbar-menu-item"><a href="/webdesign"><b>Webdesign</b></a></div>
+    <!-- <div class="topbar-menu-item"><a href="/programming"><b>Programming</b></a></div> -->
+
+  </div>
+
 
   <div class="main">        
     <h1 id="my-thoughts-on-daft-punks-random-access-memories">My thoughts on Daft Punk&#39;s <em>Random Access Memories</em></h1>
