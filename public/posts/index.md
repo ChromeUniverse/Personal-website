@@ -1,9 +1,13 @@
 ---
 title: Welcome to my webpage!
-templates: []
+templates: [ignore]
 groups: [all, webdesign]
 date: 2021-05-27 10:30:00
 --- 
+
+# Welcome to my webpage!
+
+---
 
 Hi, I'm Lucca and this is my personal website. 
 
