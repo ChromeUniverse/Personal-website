@@ -127,6 +127,10 @@ img {
     width: 90%;
   }
 
+  .main .header {
+   flex-direction: column; 
+  }
+
   .topbar {
     width: 90%;
     
