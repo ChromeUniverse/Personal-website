@@ -2,8 +2,9 @@ body {
   background-color: #3D405B;
 	display: flex;
   flex-direction: row;
-  font-family: 'Roboto', sans-serif;
+  
   color: #F4F1DE;  
+  font-size: 17px;
 }
 
 div {
@@ -11,12 +12,14 @@ div {
 }
 
 .sidebar {
+  font-family: 'Roboto', sans-serif;
   padding-top: 38px;
-  width: 270px;
+  width: 310px;
   overflow-wrap: break-word;
 }
 
 .sidebar header {
+  font-family: 'Recursive', sans-serif;
   font-size: 25px;
   text-align: left;
 }
@@ -26,6 +29,7 @@ div {
 }
 
 .main {
+  font-family: 'Roboto', sans-serif;
 	width: 800px;	
   overflow-wrap: break-word;
   text-align: left;
@@ -54,11 +58,6 @@ a:link, a:visited {
 /* mouse over link */
 a:hover {
   color: #E07A5F;
-}
-
-/* selected link */
-a:active {
-  color: #ff5628;
 }
 
 img {
@@ -92,30 +91,40 @@ img {
 }
 
 ::-webkit-scrollbar {
-  height: 12px;
-  width: 12px;  
+  height: 5px;
+  width: 5px;  
 }
 ::-webkit-scrollbar-track {
   background: transparent; 
 }
 ::-webkit-scrollbar-thumb {
   border-radius: 5px;
-  background: white; 
+  background: #F4F1DE; 
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(194, 194, 194); 
+  background: #838070; 
 }
 
 ::-webkit-scrollbar-corner {
   background: transparent;
 }
 
-@media screen and (max-width: 605px) {
+@media screen and (min-width: 733px) {
+  .topbar-menu {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 733px) {
 
   body {
     /* background-color: lightgreen; */
     flex-direction: column;
     align-items: center;
+  }
+
+  .main {
+    width: 90%;
   }
 
   .topbar {
@@ -124,17 +133,42 @@ img {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 
     /* padding-top: 38px; */
     overflow-wrap: break-word;
+    background-color: #353850;
   }
   
   .topbar .title {
-    font-size: 25px;
+    color: #F4F1DE;
+    font-family: 'Recursive', sans-serif;
+    padding: 0px;
+    font-size: 35px;
     /* text-align: left; */
   }
 
-  .topbar button {
+  /* unvisited link */
+  .topbar .title a:link, .topbar .title a:visited {
+    color: #F4F1DE;
+  }
+
+  /* mouse over link */
+  .topbar .title a:hover {
+    color: #E07A5F;
+  }
+
+  .topbar .title:hover {
+    color: #E07A5F;
+  }
+
+  .topbar .button {
+    width: 40px;
+    height: 40px;
+    padding: 0px;
+  }
+
+  .topbar button {    
     height: 100%;
     width: 100%;
     border-radius: 4px;
@@ -143,13 +177,20 @@ img {
   }
 
   /* mouse over link */
-  .topbar button:hover {
+  .button:hover button {
     background-color: #E07A5F;   
   }
 
-  .topbar-menu {    
+  .button:hover .topbar-menu {
+    /* background-color: #E07A5F;    */
     display: flex;
-    flex-direction: row;
+  }
+
+  .topbar-menu { 
+    font-family: 'Roboto', sans-serif;   
+    /* display: flex; */
+    display: none;
+    flex-direction: column;
     justify-content: space-between;
 
     width: 90%;
@@ -167,9 +208,5 @@ img {
 
   .sidebar {
     display: none;
-  }
-
-  .main {
-    width: 100%;
   }
 }
