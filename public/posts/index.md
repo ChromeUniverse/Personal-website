@@ -15,5 +15,5 @@ Here you'll find lots of programming, music, electronics and life shenanigans.
 
 Check the sidebar to the left (or use the navbar above if you're on mobile) for essays, posts, project write-ups, interesting/relevant links and more.
 
-Wanna see how this website was built? [Check out the GitHub repo.](https://github.com/ChromeUniverse/personal-website)
+Wanna see how this website was built? [Check out this GitHub repo](https://github.com/ChromeUniverse/personal-website) or [read this post](http://34.200.98.64:3000/making-the-website).
 
