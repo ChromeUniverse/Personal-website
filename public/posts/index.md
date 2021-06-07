@@ -1,7 +1,7 @@
 ---
 title: Welcome to my webpage!
 templates: []
-groups: [all, website]
+groups: [all, webdesign]
 date: 2021-05-27 10:30:00
 --- 
 

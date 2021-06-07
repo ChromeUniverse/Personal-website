@@ -1,7 +1,7 @@
 ---
 title: Trying out Prism.js
 templates: []
-groups: [all, programming]
+groups: [all, programming, webdesign]
 date: 2021-05-30 17:38:00
 --- 
 

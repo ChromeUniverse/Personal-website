@@ -1,7 +1,7 @@
 ---
 title: How I made my personal website
 templates: []
-groups: [all, programming, website]
+groups: [all, programming, webdesign]
 date: 2021-05-30 11:44:00
 ---
 

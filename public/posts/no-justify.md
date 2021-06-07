@@ -1,7 +1,7 @@
 ---
 title: Begone, justified text!
 templates: []
-groups: [all, website, typography]
+groups: [all, webdesign, typography]
 date: 2021-06-06 15:57:00
 --- 
 
