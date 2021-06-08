@@ -1,5 +1,5 @@
 ---
-title: My thoughts on Daft Punk's _Discovery_
+title: "Album review: _Discovery_"
 templates: []
 groups: [all, album-review, music, daft-punk]
 date: 2021-05-27 11:30:00
