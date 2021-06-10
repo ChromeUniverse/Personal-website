@@ -9,7 +9,11 @@ name: Build and deploy website
 
 on: 
   push:
-    branches: [ main, test ]
+    branches: 
+      # Main branch
+      - main
+      # Testing branch
+      - test
 
 env:
   DEPLOY: true
@@ -31,10 +35,6 @@ jobs:
       uses: actions/setup-node@v1    
       with:
         node-version: 14.x
-
-    # Make sure we set up Node.js properly
-    - name: Check Node.js version
-      run: node --version
 
     # Install packages with NPM
     - name: Install dependencies
@@ -66,6 +66,7 @@ jobs:
       run: |
         chmod +x commit-push.sh
         ./commit-push.sh
+        echo $DEPLOY
       
 
 
