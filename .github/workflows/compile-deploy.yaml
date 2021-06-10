@@ -7,6 +7,9 @@
  
 name: Build and deploy website
 
+env:
+  DEPLOY: true
+
 on: 
   push:
     branches: [ main, test ]
@@ -58,21 +61,18 @@ jobs:
         git config --global user.email '33258966+ChromeUniverse@users.noreply.github.com'
     
     # Commit changes
-    - name: Commit changes
+    - name: Commit and push changes
       # run: git commit -m "* Automated webpage compilation *"
       # run commit bash script
       run: |
-        chmod +x commit.sh
-        ./commit.sh
-
-    # Push changes to remote
-    - name: Push changes
-      run: git push origin main
+        chmod +x commit-push.sh
+        ./commit-push.sh
       
 
 
   # deploy website to AWS Lightsail
   deploy:
+    if: ${{ env.DEPLOY == true }}
 
     # only run after "build" job is complete
     needs: build
@@ -84,6 +84,7 @@ jobs:
     # Creating SSH private key
     - name: Create identity file
       
+
       # Get BASE64-encoded private key stored in secret
       env:        
         DEPLOYMENTKEY: ${{ secrets.DEPLOYKEY }}
@@ -95,6 +96,7 @@ jobs:
 
     # SSH into AWS Lightsail
     - name: SSH Login + Update
+
       # Login with deployment.key, run bash script 
       run: |
         ssh -v -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i deployment.key ubuntu@34.200.98.64 /home/ubuntu/Personal-website/update.sh
