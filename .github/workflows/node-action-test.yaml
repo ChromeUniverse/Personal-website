@@ -37,15 +37,19 @@ jobs:
       run: node compiler.js
 
     # Check that there are indeed changes
-    - name: Check for changes
+    - name: Log file changes
       run: git status
+
+    # Stage all changes
+    - name: Stage all files
+      run: git add .
 
     # Commit new HTMLS
     - name: Commit compiled webpages
       run: |
         git config --global user.name 'ChromeUniverse'
         git config --global user.email '33258966+ChromeUniverse@users.noreply.github.com'
-        git commit -am "Ya boi just did an automated commit, yo!"
+        git commit -m "Ya boi just did an automated commit, yo!"
         git push origin test
 
     
