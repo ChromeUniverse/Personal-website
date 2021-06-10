@@ -31,3 +31,7 @@ jobs:
     # Check if packages were installed correctly
     - name: List installed dependencies
       run: npm ls -depth=0
+
+    # Compile webpages
+    - name: Compile all webpages
+      run: node compiler.js
