@@ -1,0 +1,32 @@
+name: Deploy website
+
+on: 
+  push:
+    branches: [ main, test ]
+
+
+jobs:
+  deploy-website:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+    # Check out code
+    - uses: actions/checkout@v2
+
+    # SSH private key stuff
+    - name: Create identity file
+      env:
+        DEPLOYMENTKEY: ${{ secrets.DEPLOYKEY }}
+      run: |
+        echo "$DEPLOYMENTKEY" | base64 --decode  >deployment.key
+        chmod 400 deployment.key
+
+    # SSH into AWS Lightsail
+    - name: SSH login
+      run:
+        ssh -i deployment.key ubuntu@34.200.98.64 ./update.sh
+        
+
+    
