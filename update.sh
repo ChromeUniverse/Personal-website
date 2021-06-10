@@ -1,5 +1,5 @@
 #!/bin/bash
-# Update script for AWS Lightsail VPS
+# Update script for AWS Lightsail
 
 # enter appropriate directory
 cd ~/Personal-website
