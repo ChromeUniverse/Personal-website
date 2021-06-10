@@ -1,0 +1,33 @@
+name: Build Website pages
+
+on: 
+  push:
+    branches: [ main ]
+
+jobs:
+  build-website:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+    # Check out code
+    - uses: actions/checkout@v2
+
+    # Node.js setup
+    - name: Setting up Node.js!
+      uses: actions/setup-node@v1    
+      with:
+        node-version: 14.x
+
+    # Make sure we set up Node.js properly
+    - name: Check Node.js version
+      run: node --version
+
+    # Install packages with NPM
+    - name: Install dependencies
+      run: npm ci
+
+    # Check if packages were installed correctly
+    - name: List installed dependencies
+      run: npm ls -depth=0
