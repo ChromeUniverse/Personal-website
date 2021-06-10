@@ -42,6 +42,6 @@ jobs:
         git config --global user.name 'ChromeUniverse'
         git config --global user.email '33258966+ChromeUniverse@users.noreply.github.com'
         git commit -am "Ya boi just did an automated commit, yo!"
-        git push
+        git push origin test
 
     
