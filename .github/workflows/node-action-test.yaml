@@ -46,8 +46,7 @@ jobs:
 
     # User Config
     - name: Git config
-      run: |
-        git config --global user.name 'ChromeUniverse' --global user.email '33258966+ChromeUniverse@users.noreply.github.com'
+      run: git config --global user.name 'ChromeUniverse' --global user.email '33258966+ChromeUniverse@users.noreply.github.com'
     
     # Commit changes
     - name: Commit changes
