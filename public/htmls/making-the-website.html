@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Recursive&display=swap" rel="stylesheet">
+  <script src="http://34.200.98.64:3000/scripts/navbar.js"></script>  
+  
+  <link rel="stylesheet" href="http://34.200.98.64:3000/templates/base.css">
+<link rel="stylesheet" href="http://34.200.98.64:3000/templates/prism.css">  
+
+  <title>The Lucca Logs</title>
+</head>
+<body>
+
+  <div class="sidebar">    
+    <header><b>The Lucca Logs</b></header>
+    <br>
+    <b>General</b>
+    <ul>
+      <li><a href="/index">Index</a></li>
+      <li><a href="/test">Just testing</a></li>                 
+      <li><a href="/about">About myself</a></li>
+      <li><a href="/all">All posts</a></li>
+      <li><a href="/random">Random post</a></li>
+    </ul>
+
+    <p><a href="/website"><b>Website Things</b></a></p>
+
+    <p><a href="/programming"><b>Programming</b></a></p>
+
+    <p><a href="/music"><b>Music</b></a></p>
+
+    <p><a href="/album-review"><b>Album reviews</b></a></p>    
+      
+    <p><a href="/github-readme"><b>GitHub READMEs</b></a></p>
+
+    <b>Links</b>
+    <ul>
+      <li><a href="https://www.github.com/ChromeUniverse">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/lucca-rodrigues-61b8271b3/">LinkedIn</a></li>
+      <li><a href="https://www.youtube.com/channel/UCjpQ2w6Di2f-tyCiK6mVGlA">YouTube</a></li>
+    </ul>
+
+  </div>
+
+  <div class="topbar">
+    <div class="title">
+      <a href="/"><b>The Lucca Logs</b></a>
+    </div>
+    <br>
+    <div class="button" onclick="toggleMenu()"> 
+      <button>📄</button>    
+    </div>    
+
+  </div>
+
+  <div class="topbar-menu" id="topbar-menu">
+
+    <div class="topbar-menu-item"><a href="/all"><b>All posts</b></a></div>
+    <div class="topbar-menu-item"><a href="/programming"><b>Programming</b></a></div>
+    <div class="topbar-menu-item"><a href="/music"><b>Music</b></a></div>
+    <div class="topbar-menu-item"><a href="/album-review"><b>Album Reviews</b></a></div>
+    <div class="topbar-menu-item"><a href="/webdesign"><b>Webdesign</b></a></div>
+    <!-- <div class="topbar-menu-item"><a href="/programming"><b>Programming</b></a></div> -->
+
+  </div>
+
+
+  <div class="main">        
+    <h1 id="how-i-made-my-personal-website">How I made my personal website</h1>
+<hr>
+<div class="header"><div class="date">Published on 2021-5-30</div><div class="groups">Groups: <a href="/all">all</a>, <a href="/programming">programming</a>, <a href="/webdesign">webdesign</a></div></div><p><strong><em>This page is still a work-in progress!</em></strong></p>
+<p>...</p>
+<p>This is a little guide for those who might be interested in knowing how this website was made and the rationale behind of the decisions that I made while building this website</p>
+<p>The full source code for my website is available <a href="https://github.com/ChromeUniverse/Personal-website">here</a>.</p>
+<h2 id="introduction">Introduction</h2>
+<p>To be perfectly honest, I don&#39;t have any experience at all when it comes to building websites. I&#39;ve never tried services like Squarespace or Wix or Wordpress, and I&#39;ve yet to try using a static website generator like Jekyll or Hugo, but I&#39;ve heard that these tools/services can yield some pretty interesting results.</p>
+<p>In fact, a good friend of mine who&#39;s also a programmer uses Hugo on <a href="https://bykoga.com/">his personal website</a> and it ended up looking quite spiffy!</p>
+<p>But instead of diving straight into learning how to to use some sort of website making tool, I wanted to build something myself that I had almost complete control over and that abstracted the least amount of code away from me. In other words, I wanted to build my website from near scratch. </p>
+<p>I have some experience building some basic full-stack web applications with Node.js, but no experience so far with frontend libraries like React, Angular or Vue. Naturally I chose Node as my backend and wrote all the front-end stuff in plain HTML, CSS and JavaScript.</p>
+<h2 id="my-vision">My vision</h2>
+<p>Content-wise, I wanted a reasonably simple website for displaying a couple of blog-style posts in which I could talk about anything to my heart&#39;s content: music, coding, science, technology, you name it.</p>
+<p>I wanted to build a system that made it ease for me to write new posts without having to mess around with complicated databases and third-party libraries (both for the frontend and backend) had to be kept to a minimum to reduce complexity.</p>
+<p>And for whoever might be consuming content on this website, I wanted them to be greeted with something that was minimalist in nature to avoid distractions, but still somewhat aesthetically pleasing. I also wanted to build something that made it easy to browse posts and topics easily and quickly, in the case that the reader wished to do so.</p>
+<h2 id="the-solution">The solution</h2>
+<p>To meet these goals, I came up with the following system.</p>
+<p>Unlike static site generators, where the full HTML for the pages is already laid out and ready to be served to the website&#39;s client, I chose to use a dynamic site generator, where the server is responsible for building the webpage on-the-fly. It&#39;s probably not as efficient as a pure static file server, but it has proven to be working quite well, at least for now.</p>
+<p>The Node.js server script would process the incoming request and pass some information to the generator, which would generate and return the appropriate HTML to the server, which  would serve the final webpage to the client.</p>
+<p>As far as the actual posts go, I chose to go with Markdown (.md) files which contain both metadata in YAML and actual text written in Markdown. The server-side script splits the file in half and parses the YAML with <a href="https://www.npmjs.com/package/js-yaml">JS-YAML</a> to extract the metadata and the actual text with <a href="https://marked.js.org/">Marked.js</a> to convert Markdown into pure HTML, which can be rendered by a web browser.</p>
+<p>Markdown makes it super duper easy to write nicely formatted text with headers, section, subsections, links, images, etc. It&#39;s mush less cumbersome than raw HTML and writing and formatting text-based content, but since it can&#39;t be rendered by a browser, it needs to be converted to HTML somehow first, which is where Marked.js comes in.</p>
+<h2 id="creating-posts">Creating Posts</h2>
+<p>New posts are created by simply creating a new Markdown (.md) file in a specific directory and populating it with: </p>
+<ul>
+<li><p>a YAML front matter (basically a header with some metadata) in a similar manner to <a href="https://jekyllrb.com/">Jekyll</a> or <a href="https://gohugo.io/">Hugo</a>, with the post&#39;s title, templates, groups and publishing date, like so:</p>
+<pre><code class="language-yaml">---
+title: Welcome to my webpage!
+templates: []
+groups: [all, website]
+date: 2021-05-27 10:30:00
+--- 
+</code></pre>
+</li>
+<li><p>And then, some regular Markdown content:</p>
+<pre><code class="language-markdown">Hi, I&#39;m Lucca and this is my personal webpage.
+
+Here you&#39;ll find lots of programming, music, electronics and life shenanigans.
+
+Check the sidebar to the left for essays, posts, project write-ups, interesting/relevant links and more.
+
+Wanna see how this website was built? [Check out the GitHub repo.](https://github.com/ChromeUniverse/personal-website)
+</code></pre>
+</li>
+</ul>
+<p>And something like this will be generated in real-time, as soon as the request to the page is made:</p>
+<p><img src="https://media.discordapp.net/attachments/760252264723644426/848589820125249566/unknown.png" alt="image"></p>
+<p>Notice how the title is clearly displayed at the top with a big, readable font and a horizontal line that makes it stand out from the rest of the post. The date in which the post was made and groups in which the post belongs are neatly shown under the horizontal line in unobtrusive italicized text with a gray color.</p>
+<p>This system certainly accomplishes the goal of being easy to write posts and modify them if I need to, but I think the true beauty comes from the fact that all the information is neatly stored in a human-readable single file.</p>
+<h2 id="templates">Templates</h2>
+<p>The generator features a basic templating engine as well.</p>
+<p>To include a template, simply specify which template file to include in the <code>templates</code> section in the post&#39;s front matter. The file must be included in the <code>/public/templates/</code> directory <em>(check example below)</em>. </p>
+<p>By default, two templates called <code>base.html</code> and <code>base.css</code> are included with every single page.</p>
+<p>There&#39;s even a nifty template for fetching GitHub READMEs:</p>
+<pre><code class="language-yaml">---
+templates: [github-fetch.md]
+groups: [all, github-readme, me]
+github-url: https://github.com/ChromeUniverse/Personal-Website 
+date: 2021-05-27 14:33:00
+---
+</code></pre>
+<p>In the above example, the <code>base.html</code>, <code>base.css</code> and <code>github-fetch.md</code> templates are included with the post.</p>
+<h2 id="groups">Groups</h2>
+<p>Posts can be filered by groups by simply visiting <code>www.websiteurl.net/group-name</code>, which will display all posts that belong in the group <em>group-name</em>, from newest to oldest.</p>
+<p>Groups basically work like tags for your posts.</p>
+<p>To assign groups to posts, specify which groups that post should belong to in the <code>groups</code> section in the post&#39;s front matter.</p>
+<pre><code class="language-yaml">title: My thoughts on Daft Punk&#39;s _Random Access Memories_
+templates: []
+groups: [all, album-review, music, daft-punk]
+date: 2021-05-27 12:00:00
+</code></pre>
+<p>The above example post would show up in the <em>all</em>, <em>album-review</em>, <em>music</em> and <em>daft-punk</em> groups.</p>
+<h2 id="the-all-powerful-website-generator">The all-powerful website generator</h2>
+<p>Okay so obviously, my website generator is quite limited in what it can do, so it&#39;s pretty damn far from &quot;all-powerful&quot;, but it&#39;s the one doing the heavylifting behind this website. It&#39;s not very flexible, but at least it gets the job done, in addition to being  easy to maintain and expand on.</p>
+<p>This is basically how the generator works:</p>
+<ul>
+<li><p><strong>Templates</strong>: the generator loads some base templates in the form of some HTML and CSS. It includes whatever additional templates are required for a specific page.</p>
+</li>
+<li><p><strong>Metadata</strong>: the generator then loads the metadata for a specific post - these would be things like the title, date, and groups (a sort of tagging system I developed). The information in the metadata would be displayed in the page&#39;s header and could also be used by the server to filter posts by groups, sort them by date, etc.</p>
+</li>
+<li><p><strong>Content</strong>: then, the generator gets the post&#39;s actual content. Since it&#39;s still in plain Markdown, it reads the content, and parses it with Marked.js to get raw HTML.</p>
+</li>
+<li><p><strong>Serve page</strong>: finally, the server bundles it up into a single HTML file to and sends it out to the client as the body of the HTTP response.</p>
+</li>
+</ul>
+
+    <hr>
+    <footer>© Lucca Rodrigues 2021</footer>    
+  </div>
+
+  <script src="http://34.200.98.64:3000//scripts/prism.js"></script>
+</body>
+</html>
