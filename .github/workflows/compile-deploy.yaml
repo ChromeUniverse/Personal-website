@@ -63,7 +63,7 @@ jobs:
 
     # Push changes to remote
     - name: Push changes
-      run: git push origin test
+      run: git push origin main
       
 
 
