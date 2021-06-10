@@ -46,10 +46,9 @@ jobs:
 
     # Commit new HTMLS
     - name: Commit compiled webpages
-      run: |
-        git config --global user.name 'ChromeUniverse'
-        git config --global user.email '33258966+ChromeUniverse@users.noreply.github.com'
-        git commit -m "Ya boi just did an automated commit, yo!"
-        git push origin test
+      run: git config --global user.name 'ChromeUniverse'
+      run: git config --global user.email '33258966+ChromeUniverse@users.noreply.github.com'
+      run: git commit -m "Ya boi just did an automated commit, yo!"
+      run: git push origin test
 
     
