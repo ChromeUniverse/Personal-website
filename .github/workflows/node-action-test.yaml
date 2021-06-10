@@ -44,11 +44,18 @@ jobs:
     - name: Stage all files
       run: git add .
 
-    # Commit new HTMLS
-    - name: Commit compiled webpages
-      run: git config --global user.name 'ChromeUniverse'
-      run: git config --global user.email '33258966+ChromeUniverse@users.noreply.github.com'
+    # User Config
+    - name: Git config
+      run: |
+        git config --global user.name 'ChromeUniverse' --global user.email '33258966+ChromeUniverse@users.noreply.github.com'
+    
+    # Commit changes
+    - name: Commit changes
       run: git commit -m "Ya boi just did an automated commit, yo!"
+
+    # Push changes to remote
+    - name: Push changes
       run: git push origin test
+        
 
     
