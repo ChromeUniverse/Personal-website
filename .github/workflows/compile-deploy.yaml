@@ -7,12 +7,12 @@
  
 name: Build and deploy website
 
-env:
-  DEPLOY: true
-
 on: 
   push:
     branches: [ main, test ]
+
+env:
+  DEPLOY: true
 
 jobs:
 
