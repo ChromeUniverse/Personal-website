@@ -16,7 +16,6 @@ env:
 
 jobs:
 
-
   # compile webpages 
   build:
 
@@ -71,8 +70,7 @@ jobs:
 
 
   # deploy website to AWS Lightsail
-  deploy:
-    if: ${{ env.DEPLOY == true }}
+  deploy:    
 
     # only run after "build" job is complete
     needs: build
@@ -83,7 +81,7 @@ jobs:
 
     # Creating SSH private key
     - name: Create identity file
-      
+      if: ${{ env.DEPLOY == true }}
 
       # Get BASE64-encoded private key stored in secret
       env:        
@@ -96,6 +94,7 @@ jobs:
 
     # SSH into AWS Lightsail
     - name: SSH Login + Update
+      if: ${{ env.DEPLOY == true }}
 
       # Login with deployment.key, run bash script 
       run: |
