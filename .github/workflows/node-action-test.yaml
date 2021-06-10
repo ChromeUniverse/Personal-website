@@ -2,7 +2,7 @@ name: Build Website pages
 
 on: 
   push:
-    branches: [ main ]
+    branches: [ test ]
 
 jobs:
   build-website:
