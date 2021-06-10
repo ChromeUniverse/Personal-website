@@ -52,7 +52,7 @@ jobs:
     
     # Commit changes
     - name: Commit changes
-      run: git commit -m "Ya boi just did an automated commit, yo!"
+      run: git commit -m "* Automated webpage compilation *"
 
     # Push changes to remote
     - name: Push changes
