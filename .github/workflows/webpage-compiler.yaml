@@ -2,7 +2,7 @@ name: Build Website pages
 
 on: 
   push:
-    branches: [ test ]
+    branches: [ main, test ]
 
 jobs:
   build-website:
@@ -28,13 +28,9 @@ jobs:
     - name: Install dependencies
       run: npm ci
 
-    # Check if packages were installed correctly
-    - name: List installed dependencies
-      run: npm ls -depth=0
-
     # Compile webpages
     - name: Compile all webpages
-      run: node compiler.js
+      run: node compiler.js 34.200.98.64:3000
 
     # Check that there are indeed changes
     - name: Log file changes
