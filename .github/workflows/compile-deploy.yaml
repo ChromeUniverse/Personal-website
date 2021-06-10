@@ -1,0 +1,99 @@
+#
+# This is a GitHub Workflow for building and deploying my personal website.
+# A generous supply of comments is included with this workflow.
+#
+# Author: Lucca Rodrigues
+#
+ 
+name: Build and deploy website
+
+on: 
+  push:
+    branches: [ main, test ]
+
+jobs:
+
+
+  # compile webpages 
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+    # Check out code
+    - uses: actions/checkout@v2
+
+    # Node.js setup
+    - name: Setting up Node.js!
+      uses: actions/setup-node@v1    
+      with:
+        node-version: 14.x
+
+    # Make sure we set up Node.js properly
+    - name: Check Node.js version
+      run: node --version
+
+    # Install packages with NPM
+    - name: Install dependencies
+      run: npm ci
+
+    # Compile webpages
+    - name: Compile all webpages
+      # NOTE: specify server address - in this case, it's 34.200.98.64:3000
+      run: node compiler.js 34.200.98.64:3000
+
+    # List file changes
+    - name: Log file changes
+      run: git status
+
+    # Stage all changes
+    - name: Stage all files
+      run: git add .
+
+    # Push Config
+    - name: Git config
+      run: | 
+        git config --global user.name 'ChromeUniverse' 
+        git config --global user.email '33258966+ChromeUniverse@users.noreply.github.com'
+    
+    # Commit changes
+    - name: Commit changes
+      run: git commit -m "* Automated webpage compilation *"
+
+    # Push changes to remote
+    - name: Push changes
+      run: git push origin test
+      
+
+
+  # deploy website to AWS Lightsail
+  deploy:
+
+    # only run after "build" job is complete
+    needs: build
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+    # Creating SSH private key
+    - name: Create identity file
+      
+      # Get BASE64-encoded private key stored in secret
+      env:        
+        DEPLOYMENTKEY: ${{ secrets.DEPLOYKEY }}
+
+      # Decode with BASE64, change permissions with chmod        
+      run: | 
+        echo "$DEPLOYMENTKEY" | base64 --decode  >deployment.key
+        chmod 400 deployment.key
+
+    # SSH into AWS Lightsail
+    - name: SSH Login + Update
+      # Login with deployment.key, run bash script 
+      run: |
+        ssh -v -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i deployment.key ubuntu@34.200.98.64 /home/ubuntu/Personal-website/update.sh
+        
+
+    
