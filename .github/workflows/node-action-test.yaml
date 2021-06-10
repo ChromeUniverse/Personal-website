@@ -36,6 +36,10 @@ jobs:
     - name: Compile all webpages
       run: node compiler.js
 
+    # Check that there are indeed changes
+    - name: Check for changes
+      run: git status
+
     # Commit new HTMLS
     - name: Commit compiled webpages
       run: |
