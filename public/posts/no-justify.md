@@ -5,7 +5,7 @@ groups: [all, webdesign, typography]
 date: 2021-06-06 15:57:00
 --- 
 
-_Disclaimer: I don't know a single thing about typography. This is just a quick post about why I'm removing all text justification from my website. I've included links to additional resources and reading materials from folks that are much more qualified to write about this sort of stuff than I am._
+_Disclaimer: I don't know anything about typography. This is just a quick post about why I'm removing all text justification from my website. I've included links to additional resources and reading materials from folks that are much more qualified to write about this sort of stuff than I am._
 
 Over the last couple of days, I noticed that the justified text on some of my posts can sometimes look quite jarring.
 As an example, take a look at the following section from my [review on _Sinnohvation_](http://34.200.98.64:3000/sinnohvation).

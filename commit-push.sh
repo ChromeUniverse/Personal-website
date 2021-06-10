@@ -12,7 +12,7 @@ then
   git push origin main
 else
   # Probably no changes to commit - ignore and exit
-  $DEPLOY=false
+  # $DEPLOY=false
   echo "No changes to commit!"
 fi
 

@@ -15,8 +15,8 @@ on:
       # Testing branch
       - test
 
-env:
-  DEPLOY: true
+# env:
+#   DEPLOY: true
 
 jobs:
 
@@ -66,7 +66,6 @@ jobs:
       run: |
         chmod +x commit-push.sh
         ./commit-push.sh
-        echo $DEPLOY
       
 
 
@@ -82,7 +81,7 @@ jobs:
 
     # Creating SSH private key
     - name: Create identity file
-      if: ${{ env.DEPLOY == true }}
+      # if: ${{ env.DEPLOY == true }}
 
       # Get BASE64-encoded private key stored in secret
       env:        
@@ -95,7 +94,7 @@ jobs:
 
     # SSH into AWS Lightsail
     - name: SSH Login + Update
-      if: ${{ env.DEPLOY == true }}
+      # if: ${{ env.DEPLOY == true }}
 
       # Login with deployment.key, run bash script 
       run: |
