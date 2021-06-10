@@ -59,7 +59,11 @@ jobs:
     
     # Commit changes
     - name: Commit changes
-      run: git commit -m "* Automated webpage compilation *"
+      # run: git commit -m "* Automated webpage compilation *"
+      # run commit bash script
+      run: |
+        chmod +x commit.sh
+        ./commit.sh
 
     # Push changes to remote
     - name: Push changes
