@@ -227,22 +227,18 @@ Since I couldn't find any specific actions for deploying to AWS Lightsail (my VP
 
 The really cool thing about doing it "the hard way" is that you can use it for deploying code to just about any VPS and any cloud service provider, not just AWS' Lightsail or EC2 machines. You could most certainly use this same approach for VPSes from Linode, GCP, Azure, Digital Ocean or even a self-hosted server of your own, like a Raspberry Pi 4.
 
-I originally read about this method in [this post](https://blog.bugout.dev/2020/06/19/using-github-actions-to-deploy-to-aws-lightsail/) by Neeraj Kashyap of the [bugout.dev](https://blog.bugout.dev/) blog. In the article, he mentions this [great guide](https://www.linode.com/docs/guides/use-public-key-authentication-with-ssh) by Linode **(which you should definitely read ASAP)** on how to properly generate and setup SSH public/private key pairs with `ssh-keygen`.
+I originally discovered about this method in [this post](https://blog.bugout.dev/2020/06/19/using-github-actions-to-deploy-to-aws-lightsail/) by Neeraj Kashyap of the [bugout.dev](https://blog.bugout.dev/) blog. In the article, he mentions this [great guide](https://www.linode.com/docs/guides/use-public-key-authentication-with-ssh) by Linode **(which you should definitely read ASAP)** on how to properly generate and setup SSH public/private key pairs with `ssh-keygen`.
 
-In short, after generating the SSH private key, you should encode it with Base64 and store the encoded key as a secret in your GitHub repository. 
-
-Actions has support for GitHub [secrets](https://docs.github.com/en/actions/reference/encrypted-secrets), which are super handy for hiding oh-so-precious auth tokens for APIs and Discord Bots, SSH keys, credentials such as username/password combinations and other sensitive data.
-
-On Mac and Linux, you can use the `base64` command to encode your private SSH key. Be sure to use a `-w0` flag to remove line breaks 
+In short, after generating your SSH private key, you'll encode it with Base64 and [store the encoded key as a _secret_ in your GitHub repository](https://docs.github.com/en/actions/reference/encrypted-secrets#creating-encrypted-secrets-for-a-repository) (read below for more on secrets). On Mac/Linux, you can use the `base64` command to encode your private SSH key - chances are it's called `id_rsa`. Be sure to use `-w0` to remove line breaks:
 
 ```sh
-$user@hostmachine base64 -w0 <filename>
+lucca@ThinkBook-13s:~$ base64 -w0 ~/.ssh/id_rsa
 ```
 
-The Actions workflow can fetch the secret, decode it and use it to generate an identity file on the runner to use as a private key for SSH login.
+[Secrets](https://docs.github.com/en/actions/reference/encrypted-secrets) are super handy for hiding oh-so-precious auth tokens for APIs and Discord bots, SSH keys, credentials such as username/password combinations and other sensitive data. Your workflow can fetch the secret, decode it and use it to generate an identity file on the runner to use it as a private key for SSH login.
 
-Some extra notes:
-* Since jobs in a workflow run in parallel by default, you'll need to use the_ `needs:` _keyword to specify the other jobs that should before the current one._
+Some additional notes:
+* Since jobs in a workflow run in parallel by default, you'll need to use the `needs:` keyword to specify the other jobs that should before the current one.
 
 * You'll need to use `chmod` to make the identify file readable by the root user, at least - something like `chmod 400` should work just fine.
 
