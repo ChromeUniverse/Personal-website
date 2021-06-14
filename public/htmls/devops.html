@@ -263,16 +263,14 @@ exit 0
 <h3 id="4-creating-an-ssh-identity-file">4. Creating an SSH identity file</h3>
 <p>Since I couldn&#39;t find any specific actions for deploying to AWS Lightsail (my VPS of choice), I chose to deploy my website the hard way: use SSH to log in to my Lightsail instance and then run whatever commands I need to on the remote host. All of this SSH stuff is handled in the <code>deploy</code> job. </p>
 <p>The really cool thing about doing it &quot;the hard way&quot; is that you can use it for deploying code to just about any VPS and any cloud service provider, not just AWS&#39; Lightsail or EC2 machines. You could most certainly use this same approach for VPSes from Linode, GCP, Azure, Digital Ocean or even a self-hosted server of your own, like a Raspberry Pi 4.</p>
-<p>I originally read about this method in <a href="https://blog.bugout.dev/2020/06/19/using-github-actions-to-deploy-to-aws-lightsail/">this post</a> by Neeraj Kashyap of the <a href="https://blog.bugout.dev/">bugout.dev</a> blog. In the article, he mentions this <a href="https://www.linode.com/docs/guides/use-public-key-authentication-with-ssh">great guide</a> by Linode <strong>(which you should definitely read ASAP)</strong> on how to properly generate and setup SSH public/private key pairs with <code>ssh-keygen</code>.</p>
-<p>In short, after generating the SSH private key, you should encode it with Base64 and store the encoded key as a secret in your GitHub repository. </p>
-<p>Actions has support for GitHub <a href="https://docs.github.com/en/actions/reference/encrypted-secrets">secrets</a>, which are super handy for hiding oh-so-precious auth tokens for APIs and Discord Bots, SSH keys, credentials such as username/password combinations and other sensitive data.</p>
-<p>On Mac and Linux, you can use the <code>base64</code> command to encode your private SSH key. Be sure to use a <code>-w0</code> flag to remove line breaks </p>
-<pre><code class="language-sh">$user@hostmachine base64 -w0 &lt;filename&gt;
+<p>I originally discovered about this method in <a href="https://blog.bugout.dev/2020/06/19/using-github-actions-to-deploy-to-aws-lightsail/">this post</a> by Neeraj Kashyap of the <a href="https://blog.bugout.dev/">bugout.dev</a> blog. In the article, he mentions this <a href="https://www.linode.com/docs/guides/use-public-key-authentication-with-ssh">great guide</a> by Linode <strong>(which you should definitely read ASAP)</strong> on how to properly generate and setup SSH public/private key pairs with <code>ssh-keygen</code>.</p>
+<p>In short, after generating your SSH private key, you&#39;ll encode it with Base64 and <a href="https://docs.github.com/en/actions/reference/encrypted-secrets#creating-encrypted-secrets-for-a-repository">store the encoded key as a <em>secret</em> in your GitHub repository</a> (read below for more on secrets). On Mac/Linux, you can use the <code>base64</code> command to encode your private SSH key - chances are it&#39;s called <code>id_rsa</code>. Be sure to use <code>-w0</code> to remove line breaks:</p>
+<pre><code class="language-sh">lucca@ThinkBook-13s:~$ base64 -w0 ~/.ssh/id_rsa
 </code></pre>
-<p>The Actions workflow can fetch the secret, decode it and use it to generate an identity file on the runner to use as a private key for SSH login.</p>
-<p>Some extra notes:</p>
+<p><a href="https://docs.github.com/en/actions/reference/encrypted-secrets">Secrets</a> are super handy for hiding oh-so-precious auth tokens for APIs and Discord bots, SSH keys, credentials such as username/password combinations and other sensitive data. Your workflow can fetch the secret, decode it and use it to generate an identity file on the runner to use it as a private key for SSH login.</p>
+<p>Some additional notes:</p>
 <ul>
-<li><p>Since jobs in a workflow run in parallel by default, you&#39;ll need to use the_ <code>needs:</code> <em>keyword to specify the other jobs that should before the current one.</em></p>
+<li><p>Since jobs in a workflow run in parallel by default, you&#39;ll need to use the <code>needs:</code> keyword to specify the other jobs that should before the current one.</p>
 </li>
 <li><p>You&#39;ll need to use <code>chmod</code> to make the identify file readable by the root user, at least - something like <code>chmod 400</code> should work just fine.</p>
 </li>
