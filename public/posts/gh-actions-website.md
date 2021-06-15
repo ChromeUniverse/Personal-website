@@ -281,6 +281,12 @@ jobs:
 
 ### 5. Running the update script
 
+Run the update script over SSH:
+
+```sh
+ssh -v -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i deployment.key ubuntu@34.200.98.64 /home/ubuntu/Personal-website/update.sh
+```
+
 
 
 
