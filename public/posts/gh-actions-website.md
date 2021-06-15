@@ -1,5 +1,5 @@
 ---
-title: Learning to use GitHub actions - workflows, CI/CD, and automation galore!
+title: GitHub Actions - automation galore!
 templates: []
 groups: [all, programming, devops, webdesign]
 date: 2021-06-14 09:34:00
