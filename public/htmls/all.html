@@ -79,14 +79,27 @@
 <p><a href="/making-the-website"><em>Read this post in full</em></a></p>
 <div class="post"><h1 id="how-i-built-my-personal-website">How I built my personal website</h1>
 <hr>
-<div class="header"><div class="date">Published on 2021-6-15</div><div class="groups">Groups: <a href="/all">all</a>, <a href="/programming">programming</a>, <a href="/webdesign">webdesign</a></div></div><p><strong><em>Note: This post is almost done, but it&#39;s still a work-in progress!</em></strong></p>
-<p><em>This is an updated edition of a post I made a couple of weeks ago, which can be viewed <a href="/old-making-the-website">here</a>.</em></p>
+<div class="header"><div class="date">Published on 2021-6-16</div><div class="groups">Groups: <a href="/all">all</a>, <a href="/programming">programming</a>, <a href="/webdesign">webdesign</a></div></div><p><em>This is an updated edition of a post I made a couple of weeks ago, which can be viewed <a href="/old-making-the-website">here</a>.</em></p>
 <p>This is a little guide for those who might be interested in knowing how <em>The Lucca Logs</em> was made and my reasoning behind some of the design choices that I made while building this website.</p>
 <p>All files and source code for my website are available <a href="https://github.com/ChromeUniverse/Personal-website">here</a>.</p>
+<p>Now buckle up, dear reader, because this post is quite a lengthy one. I&#39;ve included a table of contents for your convenience.</p>
+<blockquote>
+<p><strong>Table of contents</strong></p>
+<ol>
+<li><a href="#a-brief-introduction">A brief introduction</a></li>
+<li><a href="#my-vision">My vision</a>  </li>
+<li><a href="#the-solution">The solution</a>  </li>
+<li><a href="#creating-posts">Creating posts</a></li>
+<li><a href="#templates">Templates</a></li>
+<li><a href="#groups">Groups</a></li>
+<li><a href="#theall-powerful-static-webpage-generator">The all-powerful static webpage generator</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ol>
+</blockquote>
 <h2 id="a-brief-introduction">A brief introduction</h2>
 <p>To be perfectly honest, I don&#39;t have any experience at all when it comes to building websites. I&#39;ve never tried services like Squarespace, Wix or Wordpress, and I&#39;ve yet to try using a &quot;real&quot; static website generator like Jekyll or Hugo, but I&#39;ve heard that these tools/services can yield some pretty nice results. In fact, a good friend of mine who&#39;s also a programmer uses Hugo on <a href="https://bykoga.com/">his personal website</a> and it ended up looking very unique and quite spiffy!</p>
 <p>But instead of diving straight into learning how to to use some sort of website making tool, I wanted to try building something that was truly my own. I wanted something that had just the right balance of control and expandability. I wanted to build something that I had almost complete control over and that abstracted the least amount of code from me, but at the same time would give me the flexibility to add libraries and additional third-party features as I saw fit. Or in other words, I basically wanted to build my website (both frontend and backend) from scratch.</p>
-<p>I have some experience building basic full-stack web applications with Node.js, but no experience so far with frontend libraries like React, Angular or Vue. Naturally I chose Node as my backend and I decided to write all of the frontend stuff in plain HTML, CSS and JavaScript.</p>
+<p>I have some experience building basic full-stack web applications with <a href="https://nodejs.dev/">Node.js</a>, but no experience so far with frontend libraries like React, Angular or Vue. Naturally I chose Node as my backend and I decided to write all of the frontend stuff in plain HTML, CSS and JavaScript.</p>
 <hr>
 <h2 id="my-vision">My vision</h2>
 <p>Content-wise, I wanted a reasonably simple website for displaying a couple of blog-style posts in which I could talk about anything to my heart&#39;s content: music, coding, science, technology, you name it.</p>
@@ -95,7 +108,7 @@
 <hr>
 <h2 id="the-solution">The solution</h2>
 <p>To meet these goals, I came up with the following system.</p>
-<p>My website uses a custom-built static site generator (<a href="https://www.youtube.com/watch?v=3INXQ_4W42g">What&#39;s that?</a>) which takes in plaintext files with post content and metadata, adds some CSS templates, and generates all of the HTMLs for the website. It&#39;s simple script written in Javascript that runs in Node.js. The files are served by a Node.js + Express static file webserver. All of the static files and the webserver are hosted on a basic AWS Lightsail instance running Ubuntu 20.04, which costs about $4 USD/month to run. I&#39;ve also set up a CI/CD pipeline with GitHub Actions for automatically building and deploying my website to AWS, which you can read more about <a href="http://34.200.98.64:3000/gh-actions-website">here</a>.</p>
+<p>My website uses a custom-built static site generator (<a href="https://www.youtube.com/watch?v=3INXQ_4W42g">What&#39;s that?</a>) which takes in plaintext files with post content and metadata, adds some CSS templates, and generates all of the HTMLs for the website. It&#39;s simple script written in Javascript that runs in Node.js. The files are served by a Node.js + <a href="https://www.npmjs.com/package/express">Express</a> static file webserver. All of the static files and the webserver are hosted on a basic AWS Lightsail instance running Ubuntu 20.04, which costs about $4 USD/month to run. I&#39;ve also set up a CI/CD pipeline with GitHub Actions for automatically building and deploying my website to AWS, which you can read more about <a href="/gh-actions-website">here</a>.</p>
 <p><em>Note: I&#39;ll be often referring to the static site generator as a &quot;compiler&quot;, because that&#39;s just the name I chose for the script -</em> &quot;<a href="https://github.com/ChromeUniverse/Personal-website/blob/main/compiler.js"><code>compiler.js</code></a>&quot;.</p>
 <p>Even though Express.js is quite a chonky Node.js library, it&#39;s by far the simplest web framework I&#39;ve ever used. It&#39;s ridiculously simple to use, and I love how simple it is to setup Express as a static file server and how easily you can create custom routes. </p>
 <p><em><strong>Unpopular opinion/Digression</strong>: Django&#39;s &quot;all batteries included&quot; approach quite honestly <strong>sucks</strong> and is very alienating for beginner web developers, even if you&#39;re an intermediate Python programmer with a couple of years of experience under your belt, like myself. You&#39;ll quickly find yourself constantly switching between a huge amount of additional (read: unnecessary) files, even if all you want to do is setup a minimal webserver with some basic routes. Flask and Express.js did it <strong>way</strong> better - change my mind.</em></p>
@@ -131,9 +144,9 @@ Wanna see how this website was built? [Check out the GitHub repo.](https://githu
 <p>This system certainly accomplishes the goal of making it really easy to write and update posts, but I think the true beauty comes from the fact that all the information is neatly stored in a single human-readable file.</p>
 <hr>
 <h2 id="templates">Templates</h2>
-<p>The generator features a basic templating engine as well.</p>
-<p>Templates can be included to a post by specifying the template file in the <code>templates</code> list in the post&#39;s front matter. The file needs to be located in the <code>/public/templates/</code> directory <em>(check example below)</em>. </p>
-<p>By default, two templates called <code>base.html</code> and <code>base.css</code> are included with every single page. Pages for displaying posts in a specific group also include the <code>group.css</code> template.</p>
+<p>The compiler has a basic templating engine as well, in the form of stylesheets and HTML content templates</p>
+<p>Templates can be applied to a post by specifying the template file in the <code>templates</code> list in the post&#39;s front matter. The file needs to be located in the <code>/public/templates/</code> directory <em>(check example below)</em>. </p>
+<p>By default, two templates called <code>base.html</code> and <code>base.css</code> are included with every single page. Pages for displaying posts in a specific group also include the <code>group.css</code> template (more on that in the &quot;Groups&quot; section below).</p>
 <p>I even made a nifty template for fetching GitHub READMEs! You can see it in action for yourself <a href="http://localhost:3000/boxworld">here</a>. Now I don&#39;t have to redo my old project write-ups! 😄</p>
 <pre><code class="language-yaml">---
 templates: [github-fetch.md]
@@ -146,7 +159,7 @@ date: 2021-05-27 14:33:00
 <hr>
 <h2 id="groups">Groups</h2>
 <p>&quot;Groups&quot; basically work like tags for the posts.</p>
-<p>Posts can be filered by groups by simply visiting <code>mywebsiteurl.net/group-name</code>, which will display all posts that belong in the group <em>group-name</em>, from newest to oldest.</p>
+<p>Posts can be filtered by groups by simply visiting <code>mywebsiteurl.net/group-name</code>, which will display all posts that belong in the group <em>group-name</em>, from newest to oldest. For example, if I wanted to see all posts that belong to the &quot;music&quot; group, I would go to <a href="/music"><code>/music</code></a>.</p>
 <p>Groups are assigned to posts by specifying which groups that post should belong to in the <code>groups</code> list in the post&#39;s front matter.</p>
 <pre><code class="language-yaml">title: My thoughts on Daft Punk&#39;s _Random Access Memories_
 templates: []
@@ -156,17 +169,26 @@ date: 2021-05-27 12:00:00
 <p>The example post above would show up in the <em>all</em>, <em>album-review</em>, <em>music</em> and <em>daft-punk</em> groups.</p>
 <hr>
 <h2 id="the-all-powerful-static-webpage-generator">The all-powerful static webpage generator</h2>
-<p>Okay so obviously, my website generator is quite limited in what it can do, so it&#39;s pretty damn far from &quot;all-powerful&quot;, but it&#39;s the one doing the heavylifting behind this website. It&#39;s not very flexible, but at least it gets the job done, in addition to being easy to maintain and expand on. This is how it works:</p>
+<p>Okay so obviously, my website generator (a.k.a the &quot;compiler&quot;) is quite limited in what it can do, so it&#39;s pretty damn far from &quot;all-powerful&quot;, but it&#39;s the one doing the heavylifting behind this website. It gets the job done at least, in addition to being easy to maintain and expand on. It&#39;s just a simple Node.js script which I have set up to run using <a href="https://www.npmjs.com/package/nodemon">nodemon</a>. It watches for changes in post and template files and re-runs the compiler on every file save.</p>
+<p>This is how it works:</p>
 <ul>
 <li><p><strong>Content</strong>: First, the generator fetches the post&#39;s actual content. Since it&#39;s still in plain Markdown, it reads the content and parses it with Marked.js to get the raw HTML. </p>
 </li>
-<li><p><strong>Metadata</strong>: The generator then loads the metadata for a specific post - these would be things like the title, date, and groups (a sort of tagging system I developed). The information in the metadata would be displayed in the page&#39;s header and could also be used by the server to filter posts by groups, sort them by date, etc.</p>
+<li><p><strong>Metadata</strong>: The generator then loads the metadata for a specific post - these would be things like the title, date, and groups. The information in the metadata would be displayed in the page&#39;s header and could also be used by the server to filter posts by groups, sort them by date, etc.</p>
 </li>
-<li><p><strong>Templates</strong>: The generator loads and applies some base templates in the form of some HTML and CSS. It includes whatever additional templates are required for a specific page.</p>
+<li><p><strong>Templates</strong>: The generator loads and applies some base templates in the form of some HTMLs and CSS. It includes whatever additional templates are required for a specific page, such as <a href="https://github.com/ChromeUniverse/Personal-website/blob/main/public/templates/group.css"><code>groups.css</code></a> for group pages and <a href="https://github.com/ChromeUniverse/Personal-website/blob/main/public/templates/github-fetch.md"><code>github-fetch.md</code></a> for GitHub README posts.</p>
 </li>
-<li><p><strong>Write to HTML file</strong>: Finally, the server bundles it up into a single HTML file, which can be served by the Node.js webserver.</p>
+<li><p><strong>Write to HTML file</strong>: Finally, the server bundles it all up and writes it to an HTML file, which can be served by the Node.js webserver.</p>
 </li>
 </ul>
+<hr>
+<h2 id="conclusion">Conclusion</h2>
+<p>Writing these posts and building the infrastructure for this website have both been very time-consuming and quite the adventure, but honestly, I think I&#39;ve done a pretty acceptable job, regarding the quality of both the actual content and the underlying programming. Creating and editing new posts is now an effortless process, group pages are generated automatically by the compiler, and my automated integration and deployment pipeline is working flawlessly. I&#39;ve also grown quite fond of Markdown and YAML during the making of this project.</p>
+<p>I truly believe my current setup for maintaining this website is a viable solution for a well-designed personal blog/website such as my own. And no, I don&#39;t mean it&#39;s complete by any stretch of the imagination - there&#39;s still a lot of work to do and loads of features to add. But I&#39;m certain it has the potential to create websites which are aesthetically pleasing and minimalist in nature, yet still very functional and expandable.</p>
+<p>Hopefully people can see what this system is capable of and will adapt it to their own use cases, or at least learn a thing or two from my <a href="/webdesign">webdesign adventures</a>. </p>
+<p>And it turns out that this project also helped me learn that I actually really enjoy writing! This project was a surprisingly enjoyable way to combine my programming skills with writing, and I never thought creating a personal blog could be this fun. I can totally see myself writing posts for the remainder of this year, at least.</p>
+<p>For the time being, this is all I have to share about my website. If you&#39;ve made it this far, thank you very much for reading this, I&#39;ve put a lot of effort into making all of what you see right now. </p>
+<p>Have a good one! Lucca out. 👋</p>
 </div><p><a href="/gh-actions-website"><em>Read this post in full</em></a></p>
 <div class="post"><h1 id="github-actions---automation-galore">GitHub Actions - automation galore!</h1>
 <hr>
@@ -1065,12 +1087,13 @@ The sheer number (60+) of featured and guest musicians on this album is rarely h
 <h3 id="subsection-2">Subsection 2</h3>
 <p>...dolor sit amet.</p>
 </div><p><a href="/index"><em>Read this post in full</em></a></p>
-<div class="post"><h1 id="welcome-to-my-webpage">Welcome to my webpage!</h1>
+<div class="post"><h1 id="welcome">Welcome!</h1>
 <hr>
-<p>Hi, I&#39;m Lucca and this is my personal website. </p>
-<p>Here you&#39;ll find lots of programming, music, electronics and life shenanigans.</p>
-<p>Check the sidebar to the left (or use the navbar above if you&#39;re on mobile) for essays, posts, project write-ups, interesting/relevant links and more.</p>
-<p>If you want to know how this website was built from stratch, consider <a href="http://34.200.98.64:3000/making-the-website">reading this post</a>.</p>
+<p>Hi, I&#39;m Lucca! Welcome to my personal website. </p>
+<p>Here you&#39;ll find lots of programming, music, electronics and life things. Check the sidebar to the left (or use the navbar above if you&#39;re on mobile) for essays, posts, project write-ups, and more.</p>
+<p>If you want to know more about myself, check this post <a href="/profile">here</a>.</p>
+<p>Not sure where to start? Then consider reading <a href="/making-the-website">this post</a> on how I built this website from scratch.</p>
+<p>You can also check all of my posts <a href="/all">here</a>.</p>
 </div>
     <hr>
     <footer>© Lucca Rodrigues 2021</footer>    
