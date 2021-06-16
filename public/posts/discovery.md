@@ -18,4 +18,3 @@ Long live the masters of French house.
 A solid **9 out of a 10**. 
 
 <iframe src="https://open.spotify.com/embed/album/2noRn2Aes5aoNVsU6iWThc" width=100% height="200" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-
