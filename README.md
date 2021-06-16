@@ -2,7 +2,7 @@
 
 (...a.k.a. _The Lucca Logs_)
 
-This is the source code for my personal website.
+This is the source code for [my personal website](http://34.200.98.64:3000/).
 
 ## Site generator
 
