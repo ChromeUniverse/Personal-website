@@ -165,7 +165,7 @@ I truly believe my current setup for maintaining this website is a viable soluti
 
 Hopefully people can see what this system is capable of and will adapt it to their own use cases, or at least learn a thing or two from my ongoing [webdesign adventures](/webdesign).
 
-And it turns out that this project also helped me learn that I actually really enjoy writing! This project was a surprisingly enjoyable way to combine my programming skills with writing, and I never thought creating a personal blog could be this fun. I can totally see myself writing posts for the remainder of this year, at least.
+And it turns out that this project also helped me realize that I actually really enjoy writing! This project was a surprisingly enjoyable way to combine my programming skills with writing, and I never thought creating a personal blog could be this fun. I can totally see myself writing posts for the remainder of this year, at least.
 
 For the time being, this is all I have to share about my website. If you've made it this far, thank you soooo much for reading this - I've put a lot of effort into making all of what you see right now. 
 
