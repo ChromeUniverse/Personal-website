@@ -18,11 +18,14 @@ div {
   overflow-wrap: break-word;
 }
 
-.sidebar header {
+.sidebar .header {
   font-family: 'Recursive', sans-serif;
   font-size: 25px;
   text-align: left;
 }
+
+
+
 
 .topbar, .topbar-menu {
   display: none;
@@ -67,6 +70,17 @@ a:link, a:visited {
 a:hover {
   color: #E07A5F;
 }
+
+/* header link */
+.sidebar .header {
+  color: #F4F1DE;
+}
+
+/* mouse over header link */
+.sidebar .header :hover {
+  color: #E07A5F;
+}
+
 
 img {
   display: block;
