@@ -161,7 +161,7 @@ This is how it works:
 
 Writing these posts and building the infrastructure for this website have both been very time-consuming and quite the adventure, but honestly, I think I've done a pretty acceptable job, regarding the quality of both the actual content and the underlying programming. Creating and editing new posts is now an effortless process, group pages are generated automatically by the compiler, and my automated integration and deployment pipeline is working flawlessly. I've also grown quite fond of Markdown and YAML during the making of this project.
 
-I truly believe my current setup for maintaining this website is a viable solution for a well-designed personal blog/website such as my own. And no, I don't mean it's complete by any stretch of the imagination - there's still a lot of work to do and loads of features to add. But I'm certain it has the potential to create websites which are aesthetically pleasing and minimalist in nature, yet still very functional and expandable.
+I truly believe my current setup for maintaining this website is a viable solution for a personal blog-style website such as my own. And no, I don't mean it's complete by any stretch of the imagination - there's still a lot of work to do and loads of features to add. But I'm certain it has the potential to create websites which are aesthetically pleasing and minimalist in nature, yet still very functional and expandable.
 
 Hopefully people can see what this system is capable of and will adapt it to their own use cases, or at least learn a thing or two from my [webdesign adventures](/webdesign). 
 
