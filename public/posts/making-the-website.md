@@ -163,7 +163,7 @@ Writing these posts and building the infrastructure for this website have both b
 
 I truly believe my current setup for maintaining this website is a viable solution for a personal blog-style website such as my own. And no, I don't mean it's complete by any stretch of the imagination - there's still a lot of work to do and loads of features to add. But I'm certain it has the potential to create websites which are aesthetically pleasing and minimalist in nature, yet still very functional and expandable.
 
-Hopefully people can see what this system is capable of and will adapt it to their own use cases, or at least learn a thing or two from my [webdesign adventures](/webdesign). 
+Hopefully people can see what this system is capable of and will adapt it to their own use cases, or at least learn a thing or two from my ongoing [webdesign adventures](/webdesign).
 
 And it turns out that this project also helped me learn that I actually really enjoy writing! This project was a surprisingly enjoyable way to combine my programming skills with writing, and I never thought creating a personal blog could be this fun. I can totally see myself writing posts for the remainder of this year, at least.
 
