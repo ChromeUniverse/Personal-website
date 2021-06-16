@@ -203,11 +203,11 @@ img {
   }
 
   /* mouse over link */
-  .button:hover button {
+  .button:active button {
     background-color: #E07A5F;   
   }
 
-  .button:hover .topbar-menu {
+  .button:active .topbar-menu {
     /* background-color: #E07A5F;    */
     display: flex;
   }
