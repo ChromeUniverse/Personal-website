@@ -101,14 +101,14 @@ function generateHTML(meta_obj, post_content) {
 // apply templates
 // -> gets post metadata and content and adds templates to generate final HTML
 
-function apply_templates(meta_obj, post_HTML, load_base=true) {
+function apply_templates(meta_obj, post_HTML, server) {
 
   let templates = meta_obj["templates"];  
 
   // adding base HTML, base CSS and Prism
   let html = fs.readFileSync(__dirname + '/public/templates/base.html').toString();
-  let css = '<link rel="stylesheet" href="http://34.200.98.64:3000/templates/base.css">';
-  css += '\n<link rel="stylesheet" href="http://34.200.98.64:3000/templates/prism.css">'
+  let css = '<link rel="stylesheet" href="http://'+ server +'/templates/base.css">';
+  css += '\n<link rel="stylesheet" href="http://'+ server +'/templates/prism.css">'
 
   // building page content 
   let content = '';  
@@ -123,7 +123,7 @@ function apply_templates(meta_obj, post_HTML, load_base=true) {
     // CSS templates
     if (t_ext == ".css"){
       // link to stylesheet: <link rel="stylesheet" href="http://localhost:3000//templates/base.css">
-      css += '\n<link rel="stylesheet" href="http://34.200.98.64:3000/templates/' + t_name + '">'
+      css += '\n<link rel="stylesheet" href="http://' + server + '/templates/' + t_name + '">'
     }
       
   });
@@ -181,7 +181,7 @@ function clear_htmls() {
 
 
 // generates web pages for all posts
-function generate_post_pages () {
+function generate_post_pages (server) {
   try {
     let filenames = fs.readdirSync(__dirname + '/public/posts/')
     // console.log(filenames);
@@ -216,7 +216,7 @@ function generate_post_pages () {
       posts[f_name] = post_obj;
   
       // get final page with templates
-      let html = apply_templates(data[0], content_HTML);  
+      let html = apply_templates(data[0], content_HTML, server);  
   
       // update groups object
       let post_groups = data[0]["groups"];       
@@ -257,7 +257,7 @@ function generate_post_pages () {
 
 
 // generates pages for browsing posts in a specified group
-function generate_group_pages() {
+function generate_group_pages(server) {
   
   // looping over groups, generating group pages
   Object.keys(groups).forEach(g => {
@@ -304,7 +304,7 @@ function generate_group_pages() {
     });
 
     // add templates, get final HTML
-    let html = apply_templates({"templates": ["group.css"]}, content);
+    let html = apply_templates({"templates": ["group.css"]}, content, server);
 
     
 
@@ -318,11 +318,27 @@ function generate_group_pages() {
 }
 
 
+// Gets CLI arguments
+
+function get_arg() {
+  let arg = process.argv.slice(2, 3);
+
+  if (arg.length == 0) {
+    console.log('Empty argument!');
+    return 'localhost:' + port.toString();
+  } else {
+    return arg.toString();
+  }
+
+} 
+
+
 // collecting main functions
-function main() {
+function main() {  
+  let server = get_arg();
   clear_htmls();
-  generate_post_pages();
-  generate_group_pages();
+  generate_post_pages(server);
+  generate_group_pages(server);
 }
 
 
