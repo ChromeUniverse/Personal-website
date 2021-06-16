@@ -30,6 +30,7 @@ div {
 
 .main {
   font-family: 'Roboto', sans-serif;
+  line-height: 1.4;
 	width: 800px;	
   overflow-wrap: break-word;
   text-align: left;
