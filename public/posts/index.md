@@ -5,15 +5,16 @@ groups: [all, webdesign]
 date: 2021-05-27 10:30:00
 --- 
 
-# Welcome to my webpage!
+# Welcome!
 
 ---
 
-Hi, I'm Lucca and this is my personal website. 
+Hi, I'm Lucca! Welcome to my personal website. 
 
-Here you'll find lots of programming, music, electronics and life shenanigans.
+Here you'll find lots of programming, music, electronics and life things. Check the sidebar to the left (or use the navbar above if you're on mobile) for essays, posts, project write-ups, and more.
 
-Check the sidebar to the left (or use the navbar above if you're on mobile) for essays, posts, project write-ups, interesting/relevant links and more.
+If you want to know more about myself, check this post [here](/profile).
 
-If you want to know how this website was built from stratch, consider [reading this post](http://34.200.98.64:3000/making-the-website).
+Not sure where to start? Then consider reading [this post](/making-the-website) on how I built this website from scratch.
 
+You can also check all of my posts [here](/all).
