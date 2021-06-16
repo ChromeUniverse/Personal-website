@@ -20,7 +20,7 @@ Now buckle up, dear reader, because this post is quite a lengthy one. I've inclu
 4. [Creating posts](#creating-posts)
 5. [Templates](#templates)
 6. [Groups](#groups)
-7. [The all-powerful static webpage generator](#theall-powerful-static-webpage-generator)
+7. [The all-powerful static webpage generator](#the-all-powerful-static-webpage-generator)
 8. [Conclusion](#conclusion)
 
 ## A brief introduction
