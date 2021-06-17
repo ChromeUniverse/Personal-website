@@ -9,7 +9,7 @@ _This is an updated edition of a post I made a couple of weeks ago, which can be
 
 This is a little guide for those who might be interested in knowing how _The Lucca Logs_ was made and my reasoning behind some of the design choices that I made while building this website.
 
-All files and source code for my website are available [here](https://github.com/ChromeUniverse/Personal-website).
+All files and source code for my website are available [on GitHub](https://github.com/ChromeUniverse/Personal-website). If you're looking to use any part of this website's code in a project of your own, you can find a more straightforward and easier to follow guide [here](https://github.com/ChromeUniverse/Personal-website/blob/main/README.md).
 
 Now buckle up, dear reader, because this post is quite a lengthy one. I've included a table of contents for your convenience.
 
