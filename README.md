@@ -1,7 +1,5 @@
 # Lucca's personal website 
 
-(...a.k.a. _The Lucca Logs_)
-
 This is the source code for [my personal website](http://34.200.98.64:3000/).
 
 ## About the static site generator
@@ -11,21 +9,17 @@ My website is powered by a custom-made static website generator that I built fro
 The generator fetches the post's content, loads post metadata (title, date, groups, etc.), gets the base templates, includes additional templates, and finally bundles it up and writes it all to a single HTML file which is served by a simple static file webserver.
 
 Currently, my generator is using:
-* Backend: 
-  * [Node.js](https://nodejs.dev/) + [Express.js](https://www.npmjs.com/package/express)
-  * NPM packages: 
-    * Express.js - static file server
-    * Markdown parser: [marked.js](https://marked.js.org/)
-    * YAML parser: [JS-YAML](https://www.npmjs.com/package/js-yaml)
-    * Daemonizer: [pm2](https://www.npmjs.com/package/pm2)
-    * [Nodemon](https://www.npmjs.com/package/nodemon) for local development
+* Backend: [Node.js](https://nodejs.dev/)
+    * [Express.js](https://www.npmjs.com/package/express) - static file server
+    * [marked.js](https://marked.js.org/) - Markdown parser
+    * [JS-YAML](https://www.npmjs.com/package/js-yaml) - YAML parser
+    * [pm2](https://www.npmjs.com/package/pm2) - Deamonizer
+    * [Nodemon](https://www.npmjs.com/package/nodemon) - local development
 
 * Frontend:
-
-
-
-
-
+  * Custom templates: [base.html](https://github.com/ChromeUniverse/Personal-website/blob/main/public/templates/base.html), [base.css](https://github.com/ChromeUniverse/Personal-website/blob/main/public/templates/base.css), [group.css](https://github.com/ChromeUniverse/Personal-website/blob/main/public/templates/group.css), [github-fetch.md](https://github.com/ChromeUniverse/Personal-website/blob/main/public/templates/github-fetch.md)
+  * [Prism.js](prismjs.com/) - improved code snippets
+  * [marked.js](https://marked.js.org/) - Markdown parser
 
 ## Creating Posts
 
