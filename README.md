@@ -115,7 +115,7 @@ The above example post would show up in the _all_, _album-review_, _music_ and _
 * Create and edit a new markdown file
 
 `touch my-new-post.md`  
-`vim my-newpost.md`
+`vim my-new-post.md`
 
 ```markdown
 ---
