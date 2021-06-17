@@ -4,16 +4,27 @@
 
 This is the source code for [my personal website](http://34.200.98.64:3000/).
 
-## Site generator
+## About the static site generator
 
-My website is powered by a custom-made dynamic website generator that I built from scratch. It's geared towards building a blog-style website: simple post creation with Markdown files and YAML metadata, post groups, and templates.
+My website is powered by a custom-made static website generator that I built from scratch. It's geared towards building a blog-style website: a simple post creation with Markdown files and YAML metadata, a tagging system ("groups"), and support for templates.
 
-Unlike static-site generators, where the full HTML for the pages is already laid out, the pages for my website are built when then user requests data to the server. The generator processes the request, gets the base templates, includes additional templates, loads post metadata (title, date, groups, etc.), fetches the post's content, and finally bundles it up into a single HTML to be sent to the client.
+The generator fetches the post's content, loads post metadata (title, date, groups, etc.), gets the base templates, includes additional templates, and finally bundles it up and writes it all to a single HTML file which is served by a simple static file webserver.
 
 Currently, my generator is using:
-* Backend: [Node.js](https://nodejs.dev/) + [Express.js](https://www.npmjs.com/package/express)
-* Markdown parser: [marked.js](https://marked.js.org/)
-* YAML parser: [JS-YAML](https://www.npmjs.com/package/js-yaml)
+* Backend: 
+  * [Node.js](https://nodejs.dev/) + [Express.js](https://www.npmjs.com/package/express)
+  * NPM packages: 
+    * Express.js - static file server
+    * Markdown parser: [marked.js](https://marked.js.org/)
+    * YAML parser: [JS-YAML](https://www.npmjs.com/package/js-yaml)
+    * Daemonizer: [pm2](https://www.npmjs.com/package/pm2)
+    * [Nodemon](https://www.npmjs.com/package/nodemon) for local development
+
+* Frontend:
+
+
+
+
 
 
 ## Creating Posts
@@ -88,18 +99,39 @@ The above example post would show up in the _all_, _album-review_, _music_ and _
 
 * Clone this repo, `cd` into it
 
-`git clone https://github.com/ChromeUniverse/Personal-website.git`
-
+`git clone https://github.com/ChromeUniverse/Personal-website.git`   
 `cd Personal-website`
 
-* Install Node.js if you haven't already
+* Install Node.js
 
 `sudo apt install nodejs`
 
 * Install NPM packages
 
-`sudo npm install`
+`npm install`
 
 * Start server with pm2
 
-`pm2 start app`
+`pm2 start app.js`
+
+* Start webpage compiler with nodemon for local webpage preview
+
+`nodemon compiler.js`
+
+* Create and edit a new markdown file
+
+`touch my-new-post.md`  
+`vim my-newpost.md`
+
+```markdown
+---
+title: Pizza appreciation post
+templates: []
+groups: [all, shenanigans, pizza]
+date: 2021-04-20 04:20:00
+---
+![image-of-pizza](https://pictures-of-pizza-pans.com)
+
+This is some **delicious** pizza! 🍕
+
+```
