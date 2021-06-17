@@ -126,6 +126,9 @@ date: 2021-04-20 04:20:00
 ---
 ![image-of-pizza](https://pictures-of-pizza-pans.com)
 
-This is some **delicious** pizza! 🍕
-
+That's some **delicious** pizza! 🍕😋
 ```
+
+* Access the development server on `localhost`. The default port is 3000.
+
+`http://localhost:3000/`
