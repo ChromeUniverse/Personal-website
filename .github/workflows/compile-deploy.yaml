@@ -18,7 +18,7 @@ on:
 jobs:
 
   # compile webpages 
-  build:
+  build-and-deploy:
 
     runs-on: ubuntu-latest
 
@@ -43,17 +43,6 @@ jobs:
       # NOTE: specify server address - in this case, it's 34.200.98.64:3000
       run: node compiler.js 34.200.98.64:3000
 
-
-  # deploy website to AWS Lightsail
-  deploy:    
-
-    # only run after "build" job is complete
-    needs: build
-
-    runs-on: ubuntu-latest
-
-    steps:
-
     # Creating SSH private key
     - name: Create identity file
 
@@ -72,4 +61,6 @@ jobs:
       # Login with deployment.key, run bash script 
       run: |
         rsync -zaPv -e "ssh -v -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i deployment.key" ./ ubuntu@34.200.98.64:~/Personal-website/
-        
+     
+
+       
