@@ -71,5 +71,5 @@ jobs:
 
       # Login with deployment.key, run bash script 
       run: |
-        rsync -zaPv -e "ssh -v -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i deployment.key ubuntu@34.200.98.64" ./ ubuntu@34.200.98.64:~/Personal-website/
+        rsync -zaPv -e "ssh -v -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i deployment.key" ./ ubuntu@34.200.98.64:~/Personal-website/
         
