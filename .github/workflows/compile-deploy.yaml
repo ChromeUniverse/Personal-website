@@ -15,9 +15,6 @@ on:
       # Testing branch
       - test
 
-# env:
-#   DEPLOY: true
-
 jobs:
 
   # compile webpages 
@@ -42,31 +39,9 @@ jobs:
 
     # Compile webpages
     - name: Compile all webpages
+    
       # NOTE: specify server address - in this case, it's 34.200.98.64:3000
       run: node compiler.js 34.200.98.64:3000
-
-    # List file changes
-    - name: Log file changes
-      run: git status
-
-    # Stage all changes
-    - name: Stage all files
-      run: git add .
-
-    # Push Config
-    - name: Git config
-      run: | 
-        git config --global user.name 'ChromeUniverse' 
-        git config --global user.email '33258966+ChromeUniverse@users.noreply.github.com'
-    
-    # Commit changes
-    - name: Commit and push changes
-      # run: git commit -m "* Automated webpage compilation *"
-      # run commit bash script
-      run: |
-        chmod +x commit-push.sh
-        ./commit-push.sh
-      
 
 
   # deploy website to AWS Lightsail
@@ -81,7 +56,6 @@ jobs:
 
     # Creating SSH private key
     - name: Create identity file
-      # if: ${{ env.DEPLOY == true }}
 
       # Get BASE64-encoded private key stored in secret
       env:        
@@ -93,12 +67,9 @@ jobs:
         chmod 400 deployment.key
 
     # SSH into AWS Lightsail
-    - name: SSH Login + Update
-      # if: ${{ env.DEPLOY == true }}
+    - name: Sync files with AWS Lightsail      
 
       # Login with deployment.key, run bash script 
       run: |
-        ssh -v -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i deployment.key ubuntu@34.200.98.64 /home/ubuntu/Personal-website/update.sh
+        rsync -zaPv -e "ssh -v -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i deployment.key ubuntu@34.200.98.64" ./ ubuntu@34.200.98.64:~/Personal-website/
         
-
-    
