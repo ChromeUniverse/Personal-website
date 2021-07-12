@@ -1,5 +1,5 @@
 #
-# This is a GitHub Workflow for building and deploying my personal website.
+# This is a GitHub Actions workflow for building and deploying my personal website.
 # A generous supply of comments is included with this workflow.
 #
 # Author: Lucca Rodrigues
@@ -44,9 +44,9 @@ jobs:
       run: node compiler.js 34.200.98.64:3000
 
     # Creating SSH private key
-    - name: Create identity file
+    - name: Create SSH identity file
 
-      # Get BASE64-encoded private key stored in secret
+      # Get BASE64-encoded private key stored in repo secret
       env:        
         DEPLOYMENTKEY: ${{ secrets.DEPLOYKEY }}
 
@@ -55,12 +55,13 @@ jobs:
         echo "$DEPLOYMENTKEY" | base64 --decode  >deployment.key
         chmod 400 deployment.key
 
-    # SSH into AWS Lightsail
+    # Rsync over SSH
     - name: Sync files with AWS Lightsail      
 
-      # Login with deployment.key, run bash script 
+      # transfer files ith SSH key, restart static file server
       run: |
-        rsync -zaPv -e "ssh -v -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i deployment.key" ./ ubuntu@34.200.98.64:~/Personal-website/
+        rsync -zaPv -e "ssh -v -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i deployment.key" ./ ubuntu@34.200.98.64:/home/ubuntu/Personal-website/      
+        ssh -v -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i deployment.key ubuntu@34.200.98.64 'pm2 restart app'
      
 
        
