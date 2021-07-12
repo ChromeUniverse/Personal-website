@@ -1,3 +1,3 @@
-# Teamplates
+# Templates
 
-HTML and CSS templates go here.
+Markdown/HTML and CSS templates go here.
