@@ -1,7 +1,10 @@
 ---
 title: "Album review: _Random Access Memories_"
 templates: []
-description: 
+description: |
+    My review of the fourth and final full-length release from French electronica / dance / house duo Daft Punk, realeased in 2013.
+album-embed: | 
+    <iframe src="https://open.spotify.com/embed/album/4m2880jivSbbyEGAKfITCa" width="100%" height="200" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 groups: [all, album-review, music, daft-punk]
 date: 2021-05-27 12:00:00
 --- 

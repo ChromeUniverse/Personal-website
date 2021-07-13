@@ -2,7 +2,10 @@
 title: "Album review: _Discovery_"
 templates: []
 groups: [all, album-review, music, daft-punk]
-description: 
+description: |
+    My review of the revolutionary sophomore album from French electronic dance duo Daft Punk, released in 2001.
+album-embed: | 
+    <iframe src="https://open.spotify.com/embed/album/2noRn2Aes5aoNVsU6iWThc" width=100% height="200" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 date: 2021-05-27 11:30:00
 --- 
 > _Music's got me feeling so free   
