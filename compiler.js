@@ -132,9 +132,13 @@ function apply_templates(meta_obj, post_HTML, server) {
   html = html.replace('CSS_TEMPLATE', css);
   html = html.replace('CONTENTGOESHERE', content);
 
-  // Change title
+  // Add title
   let title = meta_obj["title"];
-  html = html.replace('TITLE', title)
+  html = html.replace('TITLE', title);
+
+  // Add meta description tag
+  let description = meta_obj["description"];
+  html = html.replace('DESCRIPTION', description);
   
   return html;
 }
@@ -304,15 +308,18 @@ function generate_group_pages(server) {
       content += '<div class="post">'
       // content += p["HTML"];
 
-      description = "";
+      // display album embed code
+      let description = "";
+      let album_embed = "";
       try {
         description = marked(p["meta"]["description"]);
+
+        album_embed = marked(p["meta"]["album-embed"]);
+        console.log('Got album-embed for post', p["name"]);
       } 
-      catch (e) {
-        console.log('WARNING: no description for post', p["name"]);
-      }
+      catch (e) {}
       finally {
-        content += generateHTML(p["meta"], description);      
+        content += generateHTML(p["meta"], description + album_embed);      
       }
       
       content += '<div class="read-more"> <p> <a href="/' + p["name"] + '">Read More</a> </p> </div>';
@@ -322,7 +329,7 @@ function generate_group_pages(server) {
     });
 
     // add templates, get final HTML
-    let html = apply_templates({"templates": ["group.css"], "title": "Group: " + g.toString()}, content, server);
+    let html = apply_templates({"templates": ["group.css"], "title": "Group: " + g.toString(), "description": "View Lucca's posts in the \"" + g.toString() + "\" group. "}, content, server);
 
     // write data to HTML
     fs.writeFile(path, html, 'UTF-8', (err => {
