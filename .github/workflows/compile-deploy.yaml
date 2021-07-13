@@ -41,7 +41,7 @@ jobs:
     - name: Compile all webpages
     
       # NOTE: specify server address - in this case, it's 34.200.98.64:3000
-      run: node compiler.js 34.200.98.64:3000
+      run: node compiler.js 34.200.98.64
 
     # Creating SSH private key
     - name: Create SSH identity file
