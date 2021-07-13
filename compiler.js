@@ -131,6 +131,10 @@ function apply_templates(meta_obj, post_HTML, server) {
   // apply final CSS and content to base HTML
   html = html.replace('CSS_TEMPLATE', css);
   html = html.replace('CONTENTGOESHERE', content);
+
+  // Change title
+  let title = meta_obj["title"];
+  html = html.replace('TITLE', title)
   
   return html;
 }
@@ -304,7 +308,7 @@ function generate_group_pages(server) {
     });
 
     // add templates, get final HTML
-    let html = apply_templates({"templates": ["group.css"]}, content, server);
+    let html = apply_templates({"templates": ["group.css"], "title": "Group: " + g.toString()}, content, server);
 
     
 
