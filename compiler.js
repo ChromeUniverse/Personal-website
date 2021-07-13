@@ -105,10 +105,19 @@ function apply_templates(meta_obj, post_HTML, server) {
 
   let templates = meta_obj["templates"];  
 
-  // adding base HTML, base CSS and Prism
+  // adding base HTML
   let html = fs.readFileSync(__dirname + '/public/templates/base.html').toString();
-  let css = '<link rel="stylesheet" href="http://'+ server +'/templates/base.css">';
-  css += '\n<link rel="stylesheet" href="http://'+ server +'/templates/prism.css">'
+  
+  // adding base CSS + extra CSS
+  let css = '';
+  css += '<link rel="stylesheet" href="http://'+ server +'/templates/base.css">';
+  css += '\n<link rel="stylesheet" href="http://'+ server +'/templates/prism.css">';
+
+  // adding Prism JS + navbar.js
+  let js = '';
+  js += '\n<link rel="stylesheet" href="http://'+ server +'/scripts/prism.js">';
+  js += '\n<link rel="stylesheet" href="http://'+ server +'/scripts/navbar.js">';
+  
 
   // building page content 
   let content = '';  
@@ -129,7 +138,8 @@ function apply_templates(meta_obj, post_HTML, server) {
   });
 
   // apply final CSS and content to base HTML
-  html = html.replace('CSS_TEMPLATE', css);
+  html = html.replace('CSS', css);
+  html = html.replace('JS', js)
   html = html.replace('CONTENTGOESHERE', content);
 
   // Add title
