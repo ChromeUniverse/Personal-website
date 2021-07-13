@@ -1,6 +1,7 @@
 ---
 title: "Album review: _Sinnohvation_" 
 templates: []
+description: 
 groups: [all, music, album-review, insaneintherainmusic]
 date: 2021-05-27 17:30:00
 --- 

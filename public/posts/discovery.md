@@ -2,6 +2,7 @@
 title: "Album review: _Discovery_"
 templates: []
 groups: [all, album-review, music, daft-punk]
+description: 
 date: 2021-05-27 11:30:00
 --- 
 > _Music's got me feeling so free   

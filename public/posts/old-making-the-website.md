@@ -2,6 +2,7 @@
 title: _DEPRECATED_ - How I made my personal website
 templates: []
 groups: []
+description: 
 date: 2021-06-15 10:59:00
 ---
 

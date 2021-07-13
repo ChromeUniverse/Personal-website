@@ -1,11 +1,13 @@
 ---
 title: Trying out Prism.js
 templates: []
+description: | 
+  A short essay about trying out a frontend library for syntax highlighting and improved code blocks, [Prism.js](https://prismjs.com/).
 groups: [all, programming, webdesign]
 date: 2021-05-30 17:38:00
 --- 
 
-I've just added a new library to my website, [Prism.js](https://prismjs.com/), for improved code snippets. 
+I've just added a new library to my website, [Prism.js](https://prismjs.com/), which adds syntax highlighting and overall better code snippets. 
 
 Since my posts often place a heavy emphasis on coding, I figured that having quality code snippets with adequate syntax highlighting (among other things) will add a lot of value to my programming-related posts. 
 

@@ -1,6 +1,8 @@
 ---
 title: GitHub Actions - automation galore!
 templates: []
+description: |
+  A brief look at the basics of setting up GitHub Actions workflows and a step-by-step walkthrough of my automated workflow for building and deploying this website.
 groups: [all, programming, devops, webdesign]
 date: 2021-07-07 10:44:10
 ---
