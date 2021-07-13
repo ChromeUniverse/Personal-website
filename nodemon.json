@@ -1,7 +1,8 @@
 {
   "watch": [
     "./public/posts", 
-    "./public/templates"
+    "./public/templates",
+    "./compiler.js"
   ],
   "ext": "md"
 }
