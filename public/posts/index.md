@@ -1,5 +1,5 @@
 ---
-title: Welcome to my webpage!
+title: Welcome!
 templates: [ignore]
 groups: [all, webdesign]
 date: 2021-05-27 10:30:00
