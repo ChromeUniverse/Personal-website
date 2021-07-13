@@ -8,3 +8,34 @@
   background-color: #353850;
   border-radius: 5px;
 }
+
+.main .read-more {
+  padding: 5px;  
+  width: 140px;
+  height: 29px;
+  margin: 20px auto 10px;
+  border-radius: 6px;
+
+  text-align: center;
+
+  font-size: 20px;
+
+  
+  /* background-color: #F2CC8F; */
+  /* background-color: #F4F1DE; */
+  /* background-color: #3D405B; */
+
+  background-color: #2a2f49;
+  
+}
+
+.main .read-more :hover {
+  color: #E07A5F;
+}
+
+.main .read-more a, .main .read-more p {
+  margin: 0;
+  color: #F4F1DE;
+  /* color: #F2CC8F; */
+  /* color: #3D405B; */
+}

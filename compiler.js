@@ -146,7 +146,7 @@ function apply_templates(meta_obj, post_HTML, server) {
 
 
 // get_data
-// -> taks in file_name and returns metadata and post_content
+// -> takes in file_name and returns metadata and post_content
 
 function get_data(file_name) {
 
@@ -300,17 +300,29 @@ function generate_group_pages(server) {
     content += marked('# Group: *' + g.toString() + '* \n --- \n');
 
     // adding a new div for each post
-    p_list.forEach(p => {
-      content += marked('[_Read this post in full_](' + '/' + p["name"] + ')');        
+    p_list.forEach(p => {                    
       content += '<div class="post">'
-      content += p["HTML"];
+      // content += p["HTML"];
+
+      description = "";
+      try {
+        description = marked(p["meta"]["description"]);
+      } 
+      catch (e) {
+        console.log('WARNING: no description for post', p["name"]);
+      }
+      finally {
+        content += generateHTML(p["meta"], description);      
+      }
+      
+      content += '<div class="read-more"> <p> <a href="/' + p["name"] + '">Read More</a> </p> </div>';
       content += '</div>'
+      content += '<br>'
+      
     });
 
     // add templates, get final HTML
     let html = apply_templates({"templates": ["group.css"], "title": "Group: " + g.toString()}, content, server);
-
-    
 
     // write data to HTML
     fs.writeFile(path, html, 'UTF-8', (err => {
