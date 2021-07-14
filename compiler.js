@@ -12,6 +12,7 @@ const marked = require("marked");
 
 // yaml parser
 const yaml = require('js-yaml');
+const { Script } = require("vm");
 
 // key-value list with group name and list of posts
 let groups = {};
@@ -115,8 +116,8 @@ function apply_templates(meta_obj, post_HTML, server) {
 
   // adding Prism JS + navbar.js
   let js = '';
-  js += '\n<link rel="stylesheet" href="http://'+ server +'/scripts/prism.js">';
-  js += '\n<link rel="stylesheet" href="http://'+ server +'/scripts/navbar.js">';
+  js += '<script src="' + 'http://' + server + '/scripts/prism.js"' + '></script>'; // prism.js  
+  js += '<script src="' + 'http://' + server + '/scripts/navbar.js"' + '></script>'; // navbar.js
   
 
   // building page content 
@@ -358,7 +359,10 @@ function get_arg() {
 
   if (arg.length == 0) {
     console.log('Empty argument!');
-    return 'localhost:' + port.toString();
+    // Nginx not configured yet
+    // return 'localhost:' + port.toString();
+    // Nginx already configured
+    return 'localhost'
   } else {
     return arg.toString();
   }
