@@ -2,8 +2,7 @@
 title: How I built my personal website
 templates: []
 description: |
-  An in-depth essay about my vision for this website, and I how I built the tech that powers it.
-  _This is an updated edition of a post I made a couple of weeks ago, which can be viewed [here](/old-making-the-website)._
+  An in-depth essay about my vision, goals, and plans for my personal website, and a detailed look at how I built the tech that powers it from scratch.
 groups: [all, programming, webdesign]
 date: 2021-06-16 11:27:00
 ---
