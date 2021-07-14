@@ -3,10 +3,17 @@
 This is the source code for [my personal website](http://34.200.98.64/).
 
 Here's what my website is currently using:
+
+* Local development:
+
+  * [compiler.js](https://github.com/ChromeUniverse/Personal-website/blob/main/compiler.js) - custom-built static site generator
+  * [marked.js](https://marked.js.org/) - Markdown parser
+  * [JS-YAML](https://www.npmjs.com/package/js-yaml) - YAML parser
+  
+
 * Backend: [Node.js](https://nodejs.dev/)
+    
     * [Express.js](https://www.npmjs.com/package/express) - static file server
-    * [marked.js](https://marked.js.org/) - Markdown parser
-    * [JS-YAML](https://www.npmjs.com/package/js-yaml) - YAML parser
     * [pm2](https://www.npmjs.com/package/pm2) - Node.js process manager/deamonizer
     * [Nodemon](https://www.npmjs.com/package/nodemon) - local development
 
