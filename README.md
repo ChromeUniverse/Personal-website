@@ -1,14 +1,8 @@
 # Lucca's personal website 
 
-This is the source code for [my personal website](http://34.200.98.64:3000/).
+This is the source code for [my personal website](http://34.200.98.64/).
 
-## About the static site generator
-
-My website is powered by a custom-made static website generator that I built from scratch. It's geared towards building a blog-style website: a simple post creation with Markdown files and YAML metadata, a tagging system ("groups"), and support for templates.
-
-The generator fetches the post's content, loads post metadata (title, date, groups, etc.), gets the base templates, includes additional templates, and finally bundles it up and writes it all to a single HTML file which is served by a simple static file webserver.
-
-Currently, my generator is using:
+Here's what my website is currently using:
 * Backend: [Node.js](https://nodejs.dev/)
     * [Express.js](https://www.npmjs.com/package/express) - static file server
     * [marked.js](https://marked.js.org/) - Markdown parser
@@ -21,34 +15,43 @@ Currently, my generator is using:
   * [Prism.js](prismjs.com/) - improved code snippets
   * [marked.js](https://marked.js.org/) - Markdown parser
 
+## About the static site generator
+
+My website is powered by a custom-made static website generator that I built from scratch. It's geared towards building a blog-style website: simple post creation with human-readable Markdown files and YAML metadata, a tagging system ("groups"), and support for templates.
+
+The generator fetches the post's content, loads post metadata (title, date, description, template file names, groups, etc.), gets the base templates, includes additional templates, and finally bundles it up and writes it all to a single HTML file which is served by a simple static file webserver.
+
+
 ## Creating Posts
 
 New posts are created by simply creating a new Markdown (.md) file in the `/public/posts/` directory and populating with: 
-* a YAML front matter (read: _metadata_) header, in a similar manner to [Jekyll](https://jekyllrb.com/) or [Hugo](https://gohugo.io/), with the post's title, templates (optional), groups (optional) and publishing date:
+* a YAML front matter (read: _metadata_) header, in a similar manner to [Jekyll](https://jekyllrb.com/) or [Hugo](https://gohugo.io/), with the post's title, templates (optional), description, groups (optional) and publishing date:
 
-```yaml
----
-title: Welcome to my webpage!
-templates: []
-groups: [all, website]
-date: 2021-05-27 10:30:00
---- 
-```
+  ```yaml
+  ---
+  title: Welcome!
+  templates: []
+  groups: [all, website]
+  description: |
+    Welcome to my webpage!
+  date: 2021-05-27 10:30:00
+  --- 
+  ```
 
 * and then some regular Markdown content:
-```markdown
-Hi, I'm Lucca and this is my personal webpage.
+  ```markdown
+  Hi, I'm Lucca and this is my personal webpage.
 
-Here you'll find lots of programming, music, electronics and life shenanigans.
+  Here you'll find lots of programming, music, electronics and life shenanigans.
 
-Check the sidebar to the left for essays, posts, project write-ups, interesting/relevant links and more.
+  Check the sidebar to the left for essays, posts, project write-ups, interesting/relevant links and more.
 
-Wanna see how this website was built? [Check out the GitHub repo.](https://github.com/ChromeUniverse/personal-website)
-```
+  Wanna see how this website was built? [Check out the GitHub repo.](https://github.com/ChromeUniverse/personal-website)
+  ```
 
-And something like this will be generated in real-time, as soon as the request to the page is made:
+  And something like this will be generated and written to an HTML file, ready to be served by a static file webserver.
 
-![image](https://media.discordapp.net/attachments/760252264723644426/848589820125249566/unknown.png)
+  ![image](https://media.discordapp.net/attachments/760252264723644426/848589820125249566/unknown.png)
 
 ## Templates
 
@@ -83,52 +86,84 @@ To assign groups to posts, specify which groups that post should belong to in th
 title: My thoughts on Daft Punk's _Random Access Memories_
 templates: []
 groups: [all, album-review, music, daft-punk]
+description: |
+  My review of Daft Punk's 2013 full-length LP, _Random Acess Memories_
 date: 2021-05-27 12:00:00
 ``` 
 
-The above example post would show up in the _all_, _album-review_, _music_ and _daft-punk_ groups.
+The above example post will appear in the _all_, _album-review_, _music_ and _daft-punk_ groups.
+
+## Description
+
+The post's author can specify a description for the post in the YAML front matter. The description's text will be displayed in group page previews and will appear on the post page's 
+`<meta name="description" content="">` tag.
+
+```yaml
+title: My thoughts on Daft Punk's _Random Access Memories_
+templates: []
+groups: [all, album-review, music, daft-punk]
+description: |
+  My review of Daft Punk's 2013 full-length LP, Random Access Memories.
+date: 2021-05-27 12:00:00
+``` 
+
+In the example post above, there's a short summary about the post's content: "My review of Daft Punk's 2013 full-length LP, Random Access Memories".
 
 
 ## Usage (Ubuntu Linux)
 
 * Clone this repo, `cd` into it
 
-`git clone https://github.com/ChromeUniverse/Personal-website.git`   
-`cd Personal-website`
+  `git clone https://github.com/ChromeUniverse/Personal-website.git`   
+  `cd Personal-website`
 
 * Install Node.js
 
-`sudo apt install nodejs`
+  `sudo apt install nodejs`
 
-* Install NPM packages
+* Install NPM packages using `package.json`
 
-`npm install`
+  `npm install`
+
+  _Note:_ You'll need to install pm2 and nodemon globally
+
+  `sudo npm install -g pm2`   
+  `sudo npm install -g nodemon`
 
 * Start server with pm2
 
-`pm2 start app.js`
+  `pm2 start app.js`
 
 * Start webpage compiler with nodemon for local webpage preview
 
-`nodemon compiler.js`
+  `nodemon compiler.js`
 
-* Create and edit a new markdown file
+* Create and open a new markdown file with your editor of choice
 
-`touch my-new-post.md`  
-`vim my-new-post.md`
+  `touch my-new-post.md`  
+  `vim my-new-post.md`
 
-```markdown
----
-title: Pizza appreciation post
-templates: []
-groups: [all, shenanigans, pizza]
-date: 2021-04-20 04:20:00
----
-![image-of-pizza](https://pictures-of-pizza-pans.com)
+  ```md
+  ---
+  title: Pizza appreciation post
+  templates: []
+  groups: [all, shenanigans, pizza]
+  description: | 
+    This is a pizza appreciation post!
+  date: 2021-04-20 04:20:00
+  ---
 
-That's some **delicious** pizza! 🍕😋
-```
+  ![image-of-pizza](https://pictures-of-pizza-pans.com/pizza.png)
+
+  That's some **delicious** pizza! 🍕😋
+  ```
 
 * Access the development server on `localhost`. The default port is 3000.
 
-`http://localhost:3000/`
+  `http://localhost:3000/`
+
+  _Note:_ By default, the website's root will point to a post called `index.md`. If it doesn't exist, you'll probably get a 404 error.
+
+  To view your new post, visit:
+
+  `http://localhost:3000/my-new-post`
