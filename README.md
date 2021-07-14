@@ -7,7 +7,7 @@ Here's what my website is currently using:
     * [Express.js](https://www.npmjs.com/package/express) - static file server
     * [marked.js](https://marked.js.org/) - Markdown parser
     * [JS-YAML](https://www.npmjs.com/package/js-yaml) - YAML parser
-    * [pm2](https://www.npmjs.com/package/pm2) - Deamonizer
+    * [pm2](https://www.npmjs.com/package/pm2) - Node.js process manager/deamonizer
     * [Nodemon](https://www.npmjs.com/package/nodemon) - local development
 
 * Frontend:
