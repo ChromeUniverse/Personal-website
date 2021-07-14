@@ -2,7 +2,8 @@
 title: Welcome!
 templates: [ignore]
 groups: []
-description: 
+description: | 
+    Welcome to my blog! I'm Lucca, and I write about science, technology, music, and more.
 date: 2021-05-27 10:30:00
 --- 
 
