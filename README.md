@@ -171,3 +171,11 @@ In the example post above, there's a short summary about the post's content: "My
   To view your new post, visit:
 
   `http://localhost:3000/my-new-post`
+
+### Deployment
+
+_To-Do_
+
+Simple explanation: 
+* Upload your cloned repo to GitHub, steal my automated build/deploy [workflow file](https://github.com/ChromeUniverse/Personal-website/blob/main/.github/workflows/compile-deploy.yaml) and adjust it your needs
+*  Don't forget to add your SSH Private Key as a Base64 encoded secret in your GitHub repo!
