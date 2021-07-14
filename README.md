@@ -53,7 +53,7 @@ New posts are created by simply creating a new Markdown (.md) file in the `/publ
 
   ![image](https://media.discordapp.net/attachments/760252264723644426/848589820125249566/unknown.png)
 
-## Templates
+### Templates
 
 The generator features a basic templating engine as well.
 
@@ -74,7 +74,7 @@ date: 2021-05-27 14:33:00
 
 In the above example, the `base.html`, `base.css` and `github-fetch.md` templates are included with the post.
 
-## Groups
+### Groups
 
 Posts can be filered by groups by simply visiting `www.websiteurl.net/group-name`, which will display all posts that belong in the group _group-name_, from newest to oldest.
 
@@ -93,7 +93,7 @@ date: 2021-05-27 12:00:00
 
 The above example post will appear in the _all_, _album-review_, _music_ and _daft-punk_ groups.
 
-## Description
+### Description
 
 The post's author can specify a description for the post in the YAML front matter. The description's text will be displayed in group page previews and will appear on the post page's 
 `<meta name="description" content="">` tag.
@@ -111,6 +111,8 @@ In the example post above, there's a short summary about the post's content: "My
 
 
 ## Usage (Ubuntu Linux)
+
+### Basics
 
 * Clone this repo, `cd` into it
 
@@ -157,6 +159,8 @@ In the example post above, there's a short summary about the post's content: "My
 
   That's some **delicious** pizza! 🍕😋
   ```
+
+  Nodemon will automatically recompile the webpages every time the `.md` files are saved.
 
 * Access the development server on `localhost`. The default port is 3000.
 
