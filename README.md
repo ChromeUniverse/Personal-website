@@ -9,13 +9,16 @@ Here's what my website is currently using:
   * [compiler.js](https://github.com/ChromeUniverse/Personal-website/blob/main/compiler.js) - custom-built static site generator
   * [marked.js](https://marked.js.org/) - Markdown parser
   * [JS-YAML](https://www.npmjs.com/package/js-yaml) - YAML parser
-  
+  * [Nodemon](https://www.npmjs.com/package/nodemon) - file watcher for local development
+
+* Deployment: 
+
+  * GitHub Actions [workflow](https://github.com/ChromeUniverse/Personal-website/blob/main/.github/workflows/compile-deploy.yaml)
 
 * Backend: [Node.js](https://nodejs.dev/)
     
     * [Express.js](https://www.npmjs.com/package/express) - static file server
-    * [pm2](https://www.npmjs.com/package/pm2) - Node.js process manager/deamonizer
-    * [Nodemon](https://www.npmjs.com/package/nodemon) - local development
+    * [pm2](https://www.npmjs.com/package/pm2) - Node.js process manager/deamonizer    
 
 * Frontend:
   * Custom templates: [base.html](https://github.com/ChromeUniverse/Personal-website/blob/main/public/templates/base.html), [base.css](https://github.com/ChromeUniverse/Personal-website/blob/main/public/templates/base.css), [group.css](https://github.com/ChromeUniverse/Personal-website/blob/main/public/templates/group.css), [github-fetch.md](https://github.com/ChromeUniverse/Personal-website/blob/main/public/templates/github-fetch.md)
