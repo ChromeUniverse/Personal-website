@@ -144,6 +144,23 @@ date: 2021-05-27 12:00:00
 The example post above would show up in the _all_, _album-review_, _music_ and _daft-punk_ groups.
 
 
+## Description
+
+The post's author can specify a description for the post in the YAML front matter. The description's text will be displayed in group page previews and will appear on the post page's 
+`<meta name="description" content="">` tag.
+
+```yaml
+title: My thoughts on Daft Punk's _Random Access Memories_
+templates: []
+groups: [all, album-review, music, daft-punk]
+description: |
+  My review of Daft Punk's 2013 full-length LP, Random Access Memories.
+date: 2021-05-27 12:00:00
+``` 
+
+In the example post above, there's a short summary about the post's content: "My review of Daft Punk's 2013 full-length LP, Random Access Memories".
+
+
 ---
 
 ## The all-powerful static webpage generator
@@ -154,7 +171,7 @@ This is how it works:
 
 * **Content**: First, the generator fetches the post's actual content. Since it's still in plain Markdown, it reads the content and parses it with Marked.js to get the raw HTML. 
 
-* **Metadata**: The generator then loads the metadata for a specific post - these would be things like the title, date, and groups. The information in the metadata would be displayed in the page's header and could also be used by the server to filter posts by groups, sort them by date, etc.
+* **Metadata**: The generator then loads the metadata for a specific post - these would be things like the title, template file names, description, date, and groups. The information in the metadata would be displayed in the page's header and could also be used by the server to filter posts by groups, sort them by date, etc.
 
 * **Templates**: The generator loads and applies some base templates in the form of some HTMLs and CSS. It includes whatever additional templates are required for a specific page, such as [`groups.css`](https://github.com/ChromeUniverse/Personal-website/blob/main/public/templates/group.css) for group pages and [`github-fetch.md`](https://github.com/ChromeUniverse/Personal-website/blob/main/public/templates/github-fetch.md) for GitHub README posts.
 
