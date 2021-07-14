@@ -143,13 +143,34 @@ function apply_templates(meta_obj, post_HTML, server) {
   html = html.replace('JS', js)
   html = html.replace('CONTENTGOESHERE', content);
 
-  // Add title
+  const regex = /_*\[*\]*\(*\)*\**/g;
+  
   let title = meta_obj["title"];
-  html = html.replace('TITLE', title);
+  // Add title
+  try {
+    title = title.toString().replace(regex, '');
+  }
+  catch (e) {
+    console.log(e);
+  }
+  finally {
+    html = html.replace('TITLE', title);
+  }
+  
 
   // Add meta description tag
+
   let description = meta_obj["description"];
-  html = html.replace('DESCRIPTION', description);
+  
+  try {
+    description = description.toString().replace(regex, '');
+  }
+  catch (e) {
+    console.log(e);
+  }
+  finally {
+    html = html.replace('DESCRIPTION', description);
+  }
   
   return html;
 }
@@ -340,7 +361,8 @@ function generate_group_pages(server) {
     });
 
     // add templates, get final HTML
-    let html = apply_templates({"templates": ["group.css"], "title": "Group: " + g.toString(), "description": "View Lucca's posts in the \"" + g.toString() + "\" group. "}, content, server);
+    // g_name = g.toString().replaceAll(/_*\[*\]*\(*\)*\**/, '');
+    let html = apply_templates({"templates": ["group.css"], "title": "Group: " + g.toString(), "description": "View Lucca's posts in the " + g.toString() + " group."}, content, server);
 
     // write data to HTML
     fs.writeFile(path, html, 'UTF-8', (err => {
