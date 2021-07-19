@@ -9,11 +9,11 @@ date: 2021-07-17 20:15:00
 
 Hello, and welcome to the official webpage of RedstoneBot! 
 
-**Want to use Redstone in your Discord server? Check the User Manual [here!](/redstone-manual)**
+**Want to use RedstoneBot in your Discord server? Read the Quickstart Guide [here!](/redstone-quickstart)**
 
-**Want to see what Redstone is capable of? Take a look at the [Features page](/redstone-features)!**
+**Want to see what RedstoneBot is capable of? Take a look at the [Features page](/redstone-features)!**
 
-**Want to contribute to the development of RedstoneBot? [Fork and open a Pull Request!](https://github.com/ChromeUniverse/RedstoneBot)**
+**Want to contribute to the development of RedstoneBot? [Open a Pull Request or a new issue!](https://github.com/ChromeUniverse/RedstoneBot)**
 
 ---
 
