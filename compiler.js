@@ -430,8 +430,7 @@ function get_arg() {
 
 // collecting main functions
 function main() {  
-  // let server = get_arg();
-  let server = '192.168.1.117'
+  let server = get_arg();
   clear_htmls();
   generate_post_pages(server);
   generate_group_pages(server);
