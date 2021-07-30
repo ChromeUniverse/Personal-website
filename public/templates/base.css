@@ -88,6 +88,7 @@ img {
   max-width: 80%;
   background: #1f2138;
   padding: 3px;
+  max-height: 350px
 }
 
 .main .header {
@@ -143,6 +144,12 @@ img {
     /* background-color: lightgreen; */
     flex-direction: column;
     align-items: center;
+  }
+
+  img {
+    max-width: 95%;
+    max-height: 180px;
+    /* height: 200px; */
   }
 
   .main {
