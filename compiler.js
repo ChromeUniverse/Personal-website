@@ -20,7 +20,7 @@ let posts = {};
 
 
 // apply templates
-// -> takes in post metadata and Marked content generates HTML with header
+// -> takes in post metadata and Marked content, generates HTML with header
 
 function generateHTML(meta_obj, post_content) {
 
@@ -139,13 +139,14 @@ function apply_templates(meta_obj, post_HTML, server) {
 
   const regex = /_*\[*\]*\(*\)*\**/g;
   
-  let title = meta_obj["title"];
+  let title = "";
   // Add title
   try {
+    title = meta_obj["title"];
     title = title.toString().replace(regex, '');
   }
   catch (e) {
-    console.log(e);
+    console.log("WARNING - No find description for a post!");
   }
   finally {
     html = html.replace('TITLE', title);
@@ -154,13 +155,14 @@ function apply_templates(meta_obj, post_HTML, server) {
 
   // Add meta description tag
 
-  let description = meta_obj["description"];
+  let description = '';
   
   try {
+    description = meta_obj["description"];
     description = description.toString().replace(regex, '');
   }
   catch (e) {
-    console.log(e);
+    console.log("WARNING - No find description for post: " + meta_obj['title']);
   }
   finally {
     html = html.replace('DESCRIPTION', description);
@@ -245,7 +247,7 @@ function generate_post_pages (server) {
       let post_obj = {
         "name": f_name,
         "meta": data[0],
-        "HTML": content_HTML
+        "HTML": content_HTML        
       }
       posts[f_name] = post_obj;
   
@@ -332,22 +334,62 @@ function generate_group_pages(server) {
     // adding a new div for each post
     p_list.forEach(p => {                    
       content += '<div class="post">'
-      // content += p["HTML"];
 
-      // display album embed code
+      // generate preview content
+      let preview_content = '';
+
+
+
+      // display album description
       let description = "";
-      let album_embed = "";
+
       try {
         description = marked(p["meta"]["description"]);
-
-        album_embed = marked(p["meta"]["album-embed"]);
-        console.log('Got album-embed for post', p["name"]);
-      } 
-      catch (e) {}
-      finally {
-        content += generateHTML(p["meta"], description + album_embed);      
       }
-      
+      catch (e){ 
+        console.log("WARNING: Couldn't find description for post", p["name"]);
+      }
+      finally {
+        //content += generateHTML(p["meta"], description + album_embed);
+        preview_content += description;
+      }
+
+
+      // display album embed code
+      let album_embed = "";
+
+      try {
+        album_embed = marked(p["meta"]["album-embed"]);
+        console.log("NOTE: Found album-embed for post", p["name"]);
+      }
+      catch (e){         
+      }
+      finally {
+        //content += generateHTML(p["meta"], description + album_embed);
+        preview_content += album_embed;
+      }
+
+      // display album embed code
+      let img_preview = "";
+
+      try {
+        // img_preview = marked(p["meta"]["img-preview"]);
+        img_src = p["meta"]["img-preview"]
+
+        if (img_src != undefined) { 
+          img_preview = '<img src="' + img_src + '" alt="">' 
+          console.log("NOTE: Found img-preview for post", p["name"]);
+        }
+        
+      }
+      catch (e){         
+      }
+      finally {
+        //content += generateHTML(p["meta"], description + album_embed);
+        preview_content += img_preview;
+      }
+
+      content += generateHTML(p["meta"], preview_content);        
       content += '<div class="read-more"> <p> <a href="/' + p["name"] + '">Read More</a> </p> </div>';
       content += '</div>'
       content += '<br>'
@@ -388,7 +430,8 @@ function get_arg() {
 
 // collecting main functions
 function main() {  
-  let server = get_arg();
+  // let server = get_arg();
+  let server = '192.168.1.117'
   clear_htmls();
   generate_post_pages(server);
   generate_group_pages(server);
