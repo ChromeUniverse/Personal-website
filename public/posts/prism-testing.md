@@ -2,7 +2,7 @@
 title: Trying out Prism.js
 templates: []
 description: | 
-  A short essay about trying out a frontend library for syntax highlighting and improved code blocks, [Prism.js](https://prismjs.com/).
+  A short essay about trying out a frontend library for syntax highlighting and improved code blocks, **Prism.js**
 groups: [all, programming, webdesign]
 date: 2021-05-30 17:38:00
 --- 
