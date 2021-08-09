@@ -4,7 +4,7 @@ templates: []
 description: |
     Shutdown notice for RedstoneBot.
 groups: [redstone-posts]
-date: 2021-08-09 00:09:00
+date: 2021-08-07 00:09:00
 --- 
 
 Hi internet. Lucca here.
