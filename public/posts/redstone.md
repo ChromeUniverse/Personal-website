@@ -7,6 +7,21 @@ groups: [redstone-posts]
 date: 2021-07-17 20:15:00
 --- 
 
+## DEPRECATION NOTICE
+
+### RedstoneBot will be shut down, permanently, no later than August 14, 2021.
+
+All RedstoneBot-related development activities have been ceased and this repo will soon be archived.
+
+Documentation for RedstoneBot (including technical docs, guides, etc.) will still be available for the foresseable future.
+
+**For more information, please read[ this post](http://34.200.98.64/redstone-shutdown).**
+
+Thank you for using RedstoneBot!
+
+---
+
+
 Hello, and welcome to the official webpage of RedstoneBot! 
 
 **Want to use RedstoneBot in your Discord server? Read the Quickstart Guide [here!](/redstone-quickstart)**
