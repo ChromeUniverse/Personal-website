@@ -6,7 +6,6 @@ const marked = require("marked");
 
 // yaml parser
 const yaml = require('js-yaml');
-const { Script } = require("vm");
 
 // key-value list with group name and list of posts
 let groups = {};
@@ -23,6 +22,10 @@ let posts = {};
 // -> takes in post metadata and Marked content, generates HTML with header
 
 function generateHTML(meta_obj, post_content) {
+
+  // console.log('here is metaobj:', post_content);
+
+  if (meta_obj === undefined) {return console.error('ERROR: Post without metadata!!!')}
 
   // get metadata fields
   let title = meta_obj["title"];
@@ -194,7 +197,7 @@ function get_data(file_name) {
     return [yaml_meta, post_content];
   }
   catch (err) {
-    console.log('Oopsie:', err);
+    console.error(err);
 
     let post_content = marked("# 404\n\nSorry, couldn't find what you're looking for.");    
 
@@ -223,6 +226,8 @@ function generate_post_pages (server) {
     // console.log(filenames);
   
     filenames.forEach(f => {      
+
+
 
       // get file name, remove extension
       let f_name = f.substr(0,f.substr(1, f.length).indexOf('.')+1);
@@ -285,7 +290,8 @@ function generate_post_pages (server) {
   }
   
   catch (e) {
-    return console.log('Unable to scan directory: ' + e);
+    // return console.log('Unable to scan directory: ' + e);
+    return console.error(e);
   }
 }
 
