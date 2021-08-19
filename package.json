@@ -2,7 +2,7 @@
   "name": "my_webpage",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,6 +15,7 @@
     "js-yaml": "^4.1.0",
     "marked": "^2.0.5",
     "nodemon": "^2.0.12",
-    "pm2": "^4.5.6"
+    "pm2": "^4.5.6",
+    "serve-favicon": "^2.5.0"
   }
 }
