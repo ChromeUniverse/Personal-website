@@ -1,5 +1,5 @@
 body {
-  background-color: #3D405B;
+  background-color: #3D405B; 
 	display: flex;
   flex-direction: row;
   
@@ -136,13 +136,13 @@ img {
   background: transparent;
 }
 
-@media screen and (min-width: 733px) {
+@media screen and (min-width: 790px) {
   .topbar-menu {
     display: none;
   }
 }
 
-@media screen and (max-width: 733px) {
+@media screen and (max-width: 790px) {
 
   body {
     /* background-color: lightgreen; */
@@ -152,7 +152,7 @@ img {
 
   img {
     max-width: 95%;
-    max-height: 180px;
+    max-height: 220px;
     /* height: 200px; */
   }
 
@@ -181,7 +181,7 @@ img {
     color: #F4F1DE;
     font-family: 'Recursive', sans-serif;
     padding: 0px;
-    font-size: 30px;
+    font-size: 27px;
     /* text-align: left; */
   }
 
