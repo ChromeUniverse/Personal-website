@@ -105,6 +105,7 @@ At the time of writing this, [Clockwork Pi's official online storefront](https:/
 
 Once the shop reopens, though, you should be able to purchase a DevTerm from anywhere between **$219 USD** for the RPi CM3 version and **$319 USD** for the Rockchip RK3399 model. Pricey indeed.
 
+---
 
 ## WiFiWart 
 
