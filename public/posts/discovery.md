@@ -1,7 +1,7 @@
 ---
 title: "Album review: _Discovery_"
 templates: []
-groups: [all, album-review, music, daft-punk]
+groups: []
 description: |
     My review of the revolutionary sophomore album from French electronic dance duo Daft Punk, released in 2001.
 album-embed: | 

@@ -5,7 +5,7 @@ description: |
     An in-depth analysis of _Sinnohvation_, the late 2020 mega-release from composer, arranger, YouTuber and multi-instrumentalist Carlos Eiene.
 album-embed: | 
     <iframe src="https://open.spotify.com/embed/album/0vbD4L4GvVkxrfwdN6iL5e" width=100% height="200" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> 
-groups: [all, music, album-review, insaneintherainmusic]
+groups: []
 date: 2021-05-27 17:30:00
 --- 
 
