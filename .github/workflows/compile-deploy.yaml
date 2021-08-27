@@ -60,7 +60,7 @@ jobs:
 
       # transfer files ith SSH key, restart static file server
       run: |
-        rsync -zaPv -e "ssh -v -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i deployment.key" ./ ubuntu@34.200.98.64:/home/ubuntu/Personal-website/      
+        rsync -zaPv -e --delete "ssh -v -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i deployment.key" ./ ubuntu@34.200.98.64:/home/ubuntu/Personal-website/      
         ssh -v -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i deployment.key ubuntu@34.200.98.64 'pm2 restart app'
      
 
