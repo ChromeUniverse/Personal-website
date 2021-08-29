@@ -70,7 +70,7 @@ Look, it's a retro-futuristic cyberdeck! No, it's a Tandy TRS-80! It's... neithe
 
 Meet the [DevTerm](https://www.clockworkpi.com/devterm) by Clockwork Pi. It's an [open hardware](https://github.com/clockworkpi/DevTerm) ARM-powered portable computer that looks like it came straight out of a Radio Shack catalog from 1980's. The official website describes it as a "portable terminal for every dev", but it's actually a fully-fledged computer perfectly capable of running Debian-based Linux distros, such as Raspberry Pi OS, Ubuntu and Clockwork's own flavor of Linux, clockworkOS (which apparently is still in development).
 
-The DevTerm clearly takes a lot of inspiration from old-school portables from the 80's and early 90's like the NEC PC-8200 and the infamous Tandy TRS-80 Model 100. Folks craving some retrocomputing nostalgia will definitely find a lot to love with the DevTerm, and it manages to capture the core aesthetics of machines from the past while still maintaining a clean and very fascinating design.
+The DevTerm clearly takes a lot of inspiration from old-school portables from the 80's and early 90's like the NEC PC-8200 and the infamous Tandy TRS-80 Model 100. Folks craving some nostalgic retrocomputing vibes will definitely find a lot to love with this device - the DevTerm really manages to capture the core aesthetics of machines from the past while still maintaining a clean and very fascinating design.
 
 Like any good 21st century computing machine should, the DevTerm can run development tools for a wide range of programming languages and frameworks, including C/C++, Python, JavaScript/Node.js, Lua, Rust, Go, Processing, Arduino, and, of course, good ol' Basic and Lisp. You should also be able to run some basic gaming software, including fantasy consoles like PICO-8 and TIC-80 and retro emulators like RetroArch.
 
@@ -86,7 +86,7 @@ For input, you've got a (very!) tiny QWERTY keyboard, a really small trackball a
 
 ClockworkPi's not-a-retrocomputer can be powered either by a [Raspberry Pi Compute Module 3+ Lite](https://www.raspberrypi.org/products/compute-module-3-plus/) or a range of pinout-compatible System-on-Modules developed by ClockworkPi, nicknamed ["Cores"](https://www.clockworkpi.com/devterm#bgLayers_comp-khfqg1tp). They use ARM-based CPUs (Rockchip RK3399 or Allwinner H6) with varying amounts of processing/graphical power and RAM (up to 4GB LPDDR3).
 
-As for the rest, the device comes with an "ultrawide" 6.8-inch 16:6 display - the wide aspect ratio (which apparently is exactly 2xVGA) is kind of wonky, but might work well enough with most software and some games. The DevTerm's mainboard also has a wireless module with support for WiFi and Bluetooth 5. The machine is powered by 2 Li-Ion 18650 cells (not included due to shipping restrictions) and has built-in power management for charging over USB-C.
+As for the rest, the device comes with an "ultrawide" 6.8-inch 16:6 display - the wide aspect ratio (which apparently is exactly 2xVGA) is kind of wonky, but might work well enough with most software and some games. The DevTerm's mainboard also has a wireless module with support for WiFi and Bluetooth 5. The machine is powered by two Li-Ion 18650 cells (not included due to shipping restrictions) and has built-in power management circuitry for charging over USB-C.
 
 There's also a good number of ports on the mini-computer, including USB-C with charging, Micro HDMI, an SD card reader (which is where the device boots from), a headphone jack (it comes with stereo speakers too) and three USB-As. Oh, and it comes with a thermal printer (!) which can be attached to an expansion port.
 
@@ -103,7 +103,9 @@ Curiously though, I wasn't able to find a whole lot about the company - I've spe
 
 At the time of writing this, [Clockwork Pi's official online storefront](https://www.clockworkpi.com/shop) is temporarily closed as the team is working to get the first batches of DevTerms out to the folks who pre-ordered the device earlier this year. After checking the [ClockworkPi forums](https://forum.clockworkpi.com/t/devterm-production-status-update/6413/391) today, it appears that some people are already receiving their DevTerms in the mail. 
 
-Once the shop reopens, though, you should be able to purchase a DevTerm from anywhere between **$219 USD** for the RPi CM3 version and **$319 USD** for the Rockchip RK3399 model. Pricey indeed.
+**Aug. 29th Update** - one of the CPi's forum and Discord moderators, who goes by the handle _Godzil_, has posted an unboxing and assembly video of their very own DevTerm, which can be viewed [viewed on YouTube](https://www.youtube.com/watch?v=BgtxEx7YT1M&t=1184s).
+
+Once the shop reopens, though, you should be able to purchase a DevTerm from anywhere between **$219 USD** for the base RPi CM3 version and **$319 USD** for the Rockchip RK3399 model. Pricey indeed.
 
 ---
 
