@@ -23,7 +23,7 @@ If you've been following any tech news at all lately, then chances are you've he
 
 Framework, a hardware startup from Burlingame, California, has been making headlines recently for the long-antipicated release of the Framework Laptop, a one-of-a-kind laptop that prioritizes users' freedom to dissassemble, repair, customize and upgrade their machine as they see fit.
 
-> Our philosophy is that by making well-considered design tradeoffs and trusting customers and repair shops with the access and information they need, we can make fantastic devices that are still easy to repair. Even better, what we’ve done to enable repair also opens up upgradeability and customization. This lets you get exactly the product you need and extends usable lifetime too.
+> Our philosophy is that by making well-considered design tradeoffs and trusting customers and repair shops with the access and information they need, we can make fantastic devices that are still easy to repair. Even better, what we’ve done to enable repair also opens up upgradeability and customization. This lets you get exactly the product you need and extends usable lifetime too.  <p style="opacity: 0.5">_- [About page](https://frame.work/about), Framework Computer Inc._</p>
 
 ![img](https://images.prismic.io/frameworkmarketplace/5d87bd50-8e78-4a7a-ade9-4356e3693416_Pre-Marketplace+-+image_02.jpg?auto=compress,format)
 
@@ -121,7 +121,7 @@ Its purpose? To do all sorts of ~nasty network exploits~ important penetration t
 Oh, and did I mention that it's all [open-source hardware and software](https://github.com/Machine-Hum/wifiwart)?
 
 
-> Drop one of these in a McDonald's, and nobody’s going to expect a thing. You can leave it for days, while it collects data and marshals it back to your home network.
+> Drop one of these in a McDonald's, and nobody’s going to expect a thing. You can leave it for days, while it collects data and marshals it back to your home network. <p style="opacity: 0.5">_- Ryan Walker, owner of Interrupt Labs_</p>
 
 ![img](https://media.discordapp.net/attachments/760252264723644426/872341313679396874/unknown.png?width=741&height=656)
 
