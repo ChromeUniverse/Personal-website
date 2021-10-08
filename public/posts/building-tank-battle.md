@@ -7,6 +7,8 @@ groups: []
 date: 2021-10-07 18:52:00
 --- 
 
+_`Note: this post is a WIP.`_
+
 Back in April 2021, I decided to mess around with the awesome [p5.js](https://p5js.org/) graphics library for the first time with the help of my friends Eduardo and Heitor, just for fun. Soon enough, I found myself watching Daniel Shiffman's (a.k.a The Coding Train) great [p5.js tutorials](https://www.youtube.com/watch?v=HerCR8bw_GE&list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA) on YouTube to learn some p5 basics: how to draw some colorful shapes on the p5 canvas, how to read keyboard inputs, how to use JS classes, integrating p5 into HTML pages... 
 
 We ended up building a simple game where you could control a box-like character and move around around in a blank background - this eventually turned into [_The Box World_](https://github.com/ChromeUniverse/The-Box-World), a Club Penguin-like lounge game where you can create rooms, invite your friends, walk around and chat with your buddies by sending messages in the room chat.
@@ -27,9 +29,9 @@ Nevertheless, I managed to once again cross the gruesome valley of coding confus
 
 Before I began this long and arduous web/game development journey, my primary goal was just to get a small prototype working to show off to my friends. However, as with literally any software side project ever, [feature creep](https://en.wikipedia.org/wiki/Feature_creep) started to kick in. 
 
-The project's scope grew quickly and my goals started expanding. I started thinking about adding things which, at the time, I didn't have any prior experience: How about a fully fledged database? Maybe even user authentication? An API for fetching leaderboard rankings, player stats and user data? Things like that. 
+I started thinking to myself: what features and technologies could I add to make this game cooler? The project's scope grew quickly and my goals started expanding. How about a fully fledged database? Maybe even a user authentication system? An API for fetching leaderboard rankings, player stats and user data? Things like that. 
 
-Even so, eventually I decided that these extra features added useful fucntionality to the "end product", so to speak, and warranted some extra blood, sweat and tears to bring them to life. And so, [filled with detemmienation](https://www.youtube.com/watch?v=i9KKnll-RN0), I added them to the to-do list and started implementing some extra spicy features to the game.
+Even without any prior experience in any of those things, eventually I decided that these extra features added useful fucntionality to the "end product", so to speak, and warranted some extra blood, sweat and tears to bring them to life. And so, [filled with detemmienation](https://www.youtube.com/watch?v=i9KKnll-RN0), I added them to the to-do list and started implementing some extra spicy features to the game.
 
 In the end, these were the final goals I decided on:
 
@@ -96,7 +98,7 @@ One of them acts as the main webserver, powered by the good ol' [Express.js](htt
 
 The other Node program is the main game server. It acts as a WebSockets server and also runs all of the game logic. Out of the two Node servers, the main game server is the one doing the heavylifting here:
 
-* It handles all of the real-time bidirectional communication by exchanging messages with clients (i.e. players and spectators) over [WebSockets](https://www.npmjs.com/package/websockets)
+* It handles all of the real-time bidirectional communication by exchanging messages with clients (i.e. players and spectators) over Websockets using the [ws](https://www.npmjs.com/package/websockets) package.
 
 * Manages the states of all the game rooms, including room metadata (number of players, current match state, etc.), spectators, players, obstacles, and bullets.
 
@@ -126,6 +128,7 @@ I've been using the Node.js + Express combo for literally 100% of my web project
 
 The Router also proved to be very useful for making a simple API. It only has a couple of endpoints, notably, `/lb`, which returns a JSON with the leaderboard data, and `/user`, which returns a JSON with player stats.
 
+
 ### User authentication
 
 Authentication systems for web services are notoriously difficult to implement by yourself in a production setting. If you plan on shipping your code as part of an actual product, you'll most likely have to use an Identity-as-a-Service provider like [Firebase Auth](https://firebase.google.com/docs/auth/) by Google, [Auth0](https://auth0.com/), [Okta](https://www.okta.com/), [Cognito](https://auth0.com/) by AWS, etc. If you're wondering why, I recommend taking a look at this [great article](https://withblue.ink/2020/04/08/stop-writing-your-own-user-authentication-code.html) by Alessando Segala.
@@ -134,29 +137,51 @@ That being said, since _Tank Battle_ isn't a serious product (like, at all), I c
 
 While this approach _might_ be prone to a [CSRF](https://en.wikipedia.org/wiki/Cross-site_request_forgery) attack, it's simple and quite effective, and any vulnerabilities should be mitigated by using the `HttpOnly`, `SameSite` and `Secure` cookie attributes. 
 
+
 ### SQL relational database
 
 I took this opportunity to try out the [SQL](https://www.youtube.com/watch?v=zsjvFFKOm3c&t=56s) language and a [relational database](https://en.wikipedia.org/wiki/Relational_database#RDBMS) system for the first time. If you're looking for a quick and easy way to get started with SQL too, I suggest taking a look at Khan Academy's awesome [Intro to SQL](https://www.khanacademy.org/computing/computer-programming/sql) course. It's just as good as any other course from Khan Academy, and I'm sure you'll find it as engaging as I did. Plus: it's 100% free!
 
 When it comes to setting up a actual SQL database for your app, though, two common open-source options come to mind: [MySQL](https://en.wikipedia.org/wiki/MySQL) and [SQLite](https://en.wikipedia.org/wiki/SQLite). These are completely different relational database systems that work in very different ways. MySQL is a fully-fledged program (i.e. a database server) that requires a local or remote TCP connection in order to perform SQL queries. On the other hand, a SQLite database is contained entirely inside a single file. For more on MySQL vs. SQlite, consider reading this [comparison](https://www.hostinger.com/tutorials/sqlite-vs-mysql-whats-the-difference/) by Hostinger. 
 
-In the end, I chose MySQL as it's more commonly used with Node.js than SQLite. As far as Node packages go, I'm using [`mysql2`](https://www.npmjs.com/package/mysql2) to connect to MySQL (don't forget to use [connection pooling](https://github.com/sidorares/node-mysql2/issues/939#issuecomment-932748114)!) and perform all sorts of queries. You could also use a popular Object-Relational Mapper (ORM) like [`sequelize`](https://www.npmjs.com/package/sequelize), which works with lots of different flavors of SQL, including MySQL and SQLite.
+In the end, I chose MySQL as it's more commonly used with Node.js than SQLite. As far as Node packages go, I'm using [`mysql2`](https://www.npmjs.com/package/mysql2) to connect to MySQL (don't forget to use [connection pooling](https://github.com/sidorares/node-mysql2/issues/939#issuecomment-932748114)!) and perform all sorts of queries. You could also use an Object-Relational Mapper (ORM) like [`sequelize`](https://www.npmjs.com/package/sequelize), which works well with lots of different flavors of SQL, including MySQL and SQLite.
 
 If you're looking for a tutorial on how to setup a MySQL server on your system, then check out this awesome [article](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04) from DigitalOcean or this great [tutorial](https://www.youtube.com/watch?v=Cz3WcZLRaWc) from Fireship on YouTube. 
 
+
 ### Async programming
+
+Being able to write asynchronous code is a necessity for any web application in the 21st century. Present-day JS (both server-side and client-side) already have support for modern `async`/`await` syntax since the introduction of ECMAScript 2017. Many Node frameworks and libraries like Express, `ws`, `mysql2` and `jsonwebtoken` make extensive use of Promises and async functions.
+
 
 ### Client-Server game model
 
-G. Gambetta article tips
+Building multiplayer, near-real time, wide-area networked games is an entirely different beast compared to slow, single player or even locally networked games. Of the biggest problems with making quick, online multiplayer games is the issue of trust. 
 
-[Fast-Paced Multiplayer](https://www.gabrielgambetta.com/client-server-game-architecture.html)
+Between an ideally unexploitable server and potentially cheating clients, who should you trust with vital game state information, like the player's health, points, position, speed, direction, etc.? Well, in the real world, game servers are vulnerable and can be hacked, but that takes an enourmous amount of effort and skill - it's much easier to hack game clients, so the server must be treated as game state's source of truth.
+
+This is exactly what [Gabriel Gambetta](https://www.gabrielgambetta.com/), a senior software engineer at Google Zürich, argues and explains in great detail in his series of posts titled [Fast-Paced Multiplayer](https://www.gabrielgambetta.com/client-server-game-architecture.html). He explains the basic of a [Client-Server game architecture](https://www.gabrielgambetta.com/client-server-game-architecture.html) and proposes the use of an authoritative server and dumb clients as the basis for making online multiplayer games, in addition to describing techniques such as [client-side prediction](https://www.gabrielgambetta.com/client-side-prediction-server-reconciliation.html), [server reconciliation](https://www.gabrielgambetta.com/client-side-prediction-server-reconciliation.html), [entity interpolation](https://www.gabrielgambetta.com/entity-interpolation.html), and [lag compensation](https://www.gabrielgambetta.com/lag-compensation.html) to mitigate perceived delay and lag.
+
+If you're interested in making your own online multiplayer games as well, I highly recommend reading Gambetta's articles - they're remarkably well written and explain challenging technical concepts in a clear manner. They helped me a lot when I wass building my main game server. Kudos to you, Mr. Gambetta, for the awesome content!
+
 
 ### Elo Rating System (Simple Multiplayer Elo)
 
-SME
+If you've spent literally any amount of time playing online games, then you've already heard of Elo ratings - these are used to measure a player's "true" abilities and to prediction how well they will fare against other players. The OG [Elo rating system](https://en.wikipedia.org/wiki/Elo_rating_system) was created in the 1960s for use in FIDE Chess Player ratings, by Hungarian-American physics professor [Arpad Elo](https://en.wikipedia.org/wiki/Arpad_Elo), who just so happened be _really_ good at chess.
 
-[post by Tom Kerrigan](http://www.tckerrigan.com/Misc/Multiplayer_Elo/)
+Over time, Elo's algorithm was adapted and perfected for use in all sorts of games, including multiplayer games, and a very popular Elo-based system in use today is the proprietary [TrueSkill rating system](https://en.wikipedia.org/wiki/TrueSkill) created by Microsoft. If you wanted to use it in your project, though, you'd need to pay Big M some hefty dough to get a license, or implement it yourself with the helpg of the [original paper](https://www.microsoft.com/en-us/research/publication/trueskilltm-a-bayesian-skill-rating-system/).
+
+Fortunately, Tom Kerrigan, an independent iOS app developer from Seattle, WA, created a much simpler (and free!) implementation of a multiplayer rating system which he calls [Simple Multiplayer Elo](http://www.tckerrigan.com/Misc/Multiplayer_Elo/). Here's how he describes it:
+
+<blockquote>
+I've come up with a simple and effective way to apply the two-player Elo system to multiplayer scenarios: 
+<ul>
+<li>At the end of a game, make a list of all the players and sort it by performance.   </li>
+<li>Think of each player as having played two matches: a loss vs. the player right above him on the list, and a win vs. the player right below him.   </li>
+<li>Update each player's rating accordingly using the two-player Elo equations.   </li>
+</ul>
+I call this method "Simple Multiplayer Elo" (SME) and am making it public domain.  
+</blockquote>
 
 > _Hi Lucca,   
 Cool, thanks for letting me know that you're using it. I'm glad the system is working well for you!   
