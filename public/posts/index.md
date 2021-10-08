@@ -11,10 +11,12 @@ date: 2021-05-27 10:30:00
 
 ---
 
-Hi, I'm Lucca! Welcome to my personal website. 
+**Hi, I'm Lucca!** Welcome to my personal blog. 
 
-Here you'll find lots of programming, music, electronics and life things. Check the sidebar to the left (or use the navbar above if you're on mobile) for essays, posts, project write-ups, and more.
+Here you'll find lots of essays I've written on tech, coding, music, electronics and life in general. Use the navbar above to browse my posts, project write-ups, album reviews and more.
 
-Not sure where to start? Then consider reading [this post](/making-the-website) on how I built this website from scratch. You can also check all of my posts [here](/all). If you want to know more about myself, check this post [here](/profile).
+Not sure where to start? Then consider reading [this post](/making-the-website) on how I built this website from scratch. You can also view a list of all of my posts [here](/all). If you would like to know more about myself, then feel free to check this post [here](/profile).
 
-You're more than welcome to reach out to me on Discord. Send a friend request to *Lucca hash two seven four four*. Promise not to spam me?
+You're more than welcome to reach out to me on Discord - just send a friend request to *Lucca hash two seven four four*. Promise not to spam me?
+
+Enjoy. 😉
