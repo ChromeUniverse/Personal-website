@@ -9,7 +9,7 @@ date: 2021-10-07 18:52:00
 
 _`> Note: this post is a WIP!`_ 
 
-_`> If you've reading this post right now, I'd appreciate some feedback.`_
+_`> If you've reading this post right now, I'd appreciate your feedback.`_
 
 <!-- Back in April 2021, I decided to mess around with the awesome [p5.js](https://p5js.org/) graphics library for the first time with the help of my friends Eduardo and Heitor, just for fun. Soon enough, I found myself watching Daniel Shiffman's (a.k.a The Coding Train) great [p5.js tutorials](https://www.youtube.com/watch?v=HerCR8bw_GE&list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA) on YouTube to learn some p5 basics: how to draw some colorful shapes on the p5 canvas, how to read keyboard inputs, how to use JS classes, integrating p5 into HTML pages...  -->
 
