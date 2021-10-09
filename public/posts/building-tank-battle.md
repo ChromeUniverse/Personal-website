@@ -7,17 +7,24 @@ groups: []
 date: 2021-10-07 18:52:00
 --- 
 
-_`Note: this post is a WIP.`_
+_`> Note: this post is a WIP!`_ 
 
-Back in April 2021, I decided to mess around with the awesome [p5.js](https://p5js.org/) graphics library for the first time with the help of my friends Eduardo and Heitor, just for fun. Soon enough, I found myself watching Daniel Shiffman's (a.k.a The Coding Train) great [p5.js tutorials](https://www.youtube.com/watch?v=HerCR8bw_GE&list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA) on YouTube to learn some p5 basics: how to draw some colorful shapes on the p5 canvas, how to read keyboard inputs, how to use JS classes, integrating p5 into HTML pages... 
+_`> If you've reading this post right now, I'd appreciate some feedback.`_
 
-We ended up building a simple game where you could control a box-like character and move around around in a blank background - this eventually turned into [_The Box World_](https://github.com/ChromeUniverse/The-Box-World), a Club Penguin-like lounge game where you can create rooms, invite your friends, walk around and chat with your buddies by sending messages in the room chat.
+<!-- Back in April 2021, I decided to mess around with the awesome [p5.js](https://p5js.org/) graphics library for the first time with the help of my friends Eduardo and Heitor, just for fun. Soon enough, I found myself watching Daniel Shiffman's (a.k.a The Coding Train) great [p5.js tutorials](https://www.youtube.com/watch?v=HerCR8bw_GE&list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA) on YouTube to learn some p5 basics: how to draw some colorful shapes on the p5 canvas, how to read keyboard inputs, how to use JS classes, integrating p5 into HTML pages...  -->
 
-Around the same time, I happened to find a pretty neat .io game, [TankRoyale.io](https://tankroyale.io/), and it didn't take me long to realize that I could probably build my own version of that game with the technologies that I already knew. So that's exactly what I did, and that's how _**Tank Battle**_ was born! 
+Back in April 2021, I decided to tinker around with [p5.js](https://p5js.org/) graphics the first time while coding along with Daniel Shiffman's (a.k.a The Coding Train) great [p5.js tutorials](https://www.youtube.com/watch?v=HerCR8bw_GE&list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA) on YouTube.
 
-Over the next couple of months, I would work on the project sporadically, implementing cool features, learning tons of new things, and of course, breaking my code hundreds of times, doing complete project rewrites, and banging my head on the wall endlessly while fixing my neverending problems. 
 
-Nevertheless, I managed to once again cross the gruesome valley of coding confusion and emerged victorius with my project finally completed in early October of 2021. As of writing this, _Tank Battle_ is online and you can check it out [here](http://18.229.196.24:4000/).
+My friends Eduardo and Heitor soon joined in on the fun, and we ended up building a simple game where you could control a box-like character and move around around in a blank background - this eventually turned into [_The Box World_](https://github.com/ChromeUniverse/The-Box-World), a Club Penguin-like lounge game where you can create rooms, invite your friends, walk around and chat with your buddies by sending messages in the room chat.
+
+Around the same time, I happened to find a pretty neat .io game, [TankRoyale.io](https://tankroyale.io/), and it didn't take me long to realize that I could probably build my own version with the technologies that I already knew. So that's exactly what I did, and that's how _**Tank Battle**_ was born!
+
+Over the next couple of months, I would work on the project sporadically, implementing cool features, learning tons of new things, and of course, breaking my code hundreds of times, doing complete project rewrites, and debugging all sorts of unforeseen issues. Nevertheless, I managed to power through it all and finally completed the game in early October of 2021. As of writing this, _Tank Battle_ is online and you can check it out [here](http://18.229.196.24:4000/).
+
+<!-- Nevertheless, I managed to once again cross the gruesome valley of coding confusion and emerged victorius with my project finally completed in early October of 2021. As of writing this, _Tank Battle_ is online and you can check it out [here](http://18.229.196.24:4000/). -->
+
+
 
 ![](https://media.discordapp.net/attachments/760252264723644426/895442475278274580/unknown.png?width=1343&height=665)
 
