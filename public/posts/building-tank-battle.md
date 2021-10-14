@@ -131,7 +131,7 @@ The other Node program is the main game server. It acts as a WebSockets server a
   * Sending the current game state back to all players and spectators in all rooms
 
 
-A very important aspect that made the game's backend **waaay** easier to work on is being able to [split your app into multiple files](https://www.youtube.com/watch?v=nt9M-rlbWc8) This might sound trivial, but separating your app logic into discrete, manageable units allows you to plan your system at a higher level first and get into the nitty-gritty coding later, which is essential for larger projects like _Tank Battle_. Using multiple files makes your code easier to maintain and expand on in the future, and it's a lot less distracting.
+A very important aspect that made the game's backend **waaay** easier to work on is being able to [split your app into multiple files](https://www.youtube.com/watch?v=nt9M-rlbWc8). This might sound trivial, but separating your app logic into discrete, manageable units allows you to plan your system at a higher level first and get into the nitty-gritty coding later, which is essential for larger projects like _Tank Battle_. Using multiple files makes your code easier to maintain and expand on in the future, and it's a lot less distracting.
 
 The backend is hosted on an AWS EC2 instance (a free-tier eligible one, of course!) located in São Paulo, in order to minimize latency. Most of the people who will try out _Tank Battle_ are most likely going to be relatives or close friends of mine who live here in Brazil anyways, so I might as well deploy my app to a nearby host.
 
