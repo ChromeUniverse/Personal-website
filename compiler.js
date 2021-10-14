@@ -18,7 +18,7 @@ let posts = {};
 
 
 
-// apply templates
+// generate HTML
 // -> takes in post metadata and Marked content, generates HTML with header
 
 function generateHTML(meta_obj, post_content) {
@@ -152,7 +152,7 @@ function apply_templates(meta_obj, post_HTML, server) {
     console.log("WARNING - No find description for a post!");
   }
   finally {
-    html = html.replace('TITLE', title);
+    html = html.replace(/TITLE/g, title);
   }
   
 
@@ -168,11 +168,44 @@ function apply_templates(meta_obj, post_HTML, server) {
     console.log("WARNING - No find description for post: " + meta_obj['title']);
   }
   finally {
-    html = html.replace('DESCRIPTION', description);
+    html = html.replace(/DESCRIPTION/g, description);
   }
+
+  // Add meta post URL
+
+  let url = '';
+  
+  try {
+    url = meta_obj["file_name"].slice(0, url.length-3);
+    url = url.toString().replace(regex, '');
+  }
+  catch (e) {
+    console.log("WARNING - No find URL for post: " + meta_obj['title']);
+  }
+  finally {
+    html = html.replace(/URL/g, 'http://' + server + '/' + url);
+  } 
+
+  // Add meta post URL
+
+  let img_src = '';
+  
+  try {
+    img_src = meta_obj["img-preview"];
+    img_src = img_src.toString().replace(regex, '');
+  }
+  catch (e) {
+    console.log("WARNING - No find IMG-SRC for post: " + meta_obj['title']);
+  }
+  finally {
+    html = html.replace(/IMAGE/g, img_src);
+  } 
   
   return html;
 }
+
+
+
 
 
 
@@ -191,7 +224,8 @@ function get_data(file_name) {
 
     // split file, get YAML metadata, get Markdown content and convert it to HTML
     let index = file.substr(3, file.length).indexOf('---');
-    let yaml_meta = yaml.load(file.substr(3, index));    
+    let yaml_meta = yaml.load(file.substr(3, index)); 
+    yaml_meta.file_name = file_name;   
     let post_content = marked(file.substr(index + 6));
 
     return [yaml_meta, post_content];
