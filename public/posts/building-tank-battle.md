@@ -7,18 +7,15 @@ groups: []
 date: 2021-10-07 18:52:00
 --- 
 
-_`> Note: this post is a WIP!`_ 
+<!-- _`> Note: this post is a WIP!`_  -->
 
-_`> If you've reading this post right now, I'd appreciate your feedback.`_
-
-<!-- Back in April 2021, I decided to mess around with the awesome [p5.js](https://p5js.org/) graphics library for the first time with the help of my friends Eduardo and Heitor, just for fun. Soon enough, I found myself watching Daniel Shiffman's (a.k.a The Coding Train) great [p5.js tutorials](https://www.youtube.com/watch?v=HerCR8bw_GE&list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA) on YouTube to learn some p5 basics: how to draw some colorful shapes on the p5 canvas, how to read keyboard inputs, how to use JS classes, integrating p5 into HTML pages...  -->
+<!-- _`> If you've reading this post right now, I'd appreciate your feedback.`_ -->
 
 Back in April 2021, I decided to tinker around with [p5.js](https://p5js.org/) graphics the first time while coding along with Daniel Shiffman's (a.k.a The Coding Train) great [p5.js tutorials](https://www.youtube.com/watch?v=HerCR8bw_GE&list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA) on YouTube.
 
+My friends Eduardo and Heitor soon joined in on the fun, and we ended up building a simple game where you controlled a box-like character and moved around around in an open 2D world. This eventually turned into [_The Box World_](https://github.com/ChromeUniverse/The-Box-World), a Club Penguin-like lounge game where you can create rooms, invite your friends, walk around and chat with your buddies by sending messages in the room chat.
 
-My friends Eduardo and Heitor soon joined in on the fun, and we ended up building a simple game where you could control a box-like character and move around around in a blank background - this eventually turned into [_The Box World_](https://github.com/ChromeUniverse/The-Box-World), a Club Penguin-like lounge game where you can create rooms, invite your friends, walk around and chat with your buddies by sending messages in the room chat.
-
-Around the same time, I happened to find a pretty neat .io game, [TankRoyale.io](https://tankroyale.io/), and it didn't take me long to realize that I could probably build my own version with the technologies that I already knew. So that's exactly what I did, and that's how _**Tank Battle**_ was born!
+Around the same time, I happened to find a pretty neat .io game, [TankRoyale.io](https://tankroyale.io/), and it didn't take me long to realize that I might be able build my own version with the technologies that I already knew. So that's exactly what I did, and thus _**Tank Battle**_ was born!
 
 Over the next couple of months, I would work on the project sporadically, implementing cool features, learning tons of new things, and of course, breaking my code hundreds of times, doing complete project rewrites, and debugging all sorts of unforeseen issues. Nevertheless, I managed to power through it all and finally completed the game in early October of 2021. 
 
@@ -119,9 +116,9 @@ One of them acts as the main [webserver](https://developer.mozilla.org/en-US/doc
 
 The other Node program is the main game server. It acts as a WebSockets server and also runs all of the game logic. Out of the two Node servers, the main game server is the one doing the heavylifting here, including:
 
-* Handling all of the real-time bidirectional communication by exchanging messages with clients (i.e. players and spectators) over Websockets using the [ws](https://www.npmjs.com/package/websockets) package.
+* Handling all of the near real-time bidirectional communication by exchanging messages with clients (i.e. players and spectators) over Websockets using the [ws](https://www.npmjs.com/package/websockets) package.
 
-* Managing the internal states of all the game rooms, including room metadata (number of players, current match state, etc.), spectators, players, obstacles, and bullets.
+* Managing the internal states of all game rooms, including room metadata (number of players, current match state, etc.), spectators, players, obstacles, and bullets.
 
 * Running the main game loop, which consists of:
 
@@ -134,9 +131,7 @@ The other Node program is the main game server. It acts as a WebSockets server a
   * Sending the current game state back to all players and spectators in all rooms
 
 
-A very important aspect that made the game's backend 10x easier to work on is being able to split the code into multiple files. This might sound like trivial advice, but separating your application logic into discrete and manageable units allows you to plan how you'll build your system at a higher level first, which is essential for larger projects like _Tank Battle_. 
-
-This makes your code easier to maintain and expand on in the future, and when it comes to implementing the actual functionality, you can focus entirely on getting that specific feature working, without having to worry about other things.
+A very important aspect that made the game's backend **waaay** easier to work on is being able to [split your app into multiple files](https://www.youtube.com/watch?v=nt9M-rlbWc8) This might sound trivial, but separating your app logic into discrete, manageable units allows you to plan your system at a higher level first and get into the nitty-gritty coding later, which is essential for larger projects like _Tank Battle_. Using multiple files makes your code easier to maintain and expand on in the future, and it's a lot less distracting.
 
 The backend is hosted on an AWS EC2 instance (a free-tier eligible one, of course!) located in São Paulo, in order to minimize latency. Most of the people who will try out _Tank Battle_ are most likely going to be relatives or close friends of mine who live here in Brazil anyways, so I might as well deploy my app to a nearby host.
 
@@ -154,16 +149,7 @@ I've been using the Node.js + Express combo for literally 100% of my web project
 
 The Router also proved to be very useful for making a simple API. It only has a couple of endpoints, notably, `/lb`, which returns a JSON with the leaderboard data, and `/user`, which returns a JSON with player stats.
 
-In addition, I integrated various new packages into my app, including
-
-`bcrypt`
-
-`mysql2`
-
-`jwt`
-
-...etc.
-
+I also got to try out some very useful npm packages, like [`bcrypt`]([bcrypt](https://www.npmjs.com/package/bcrypt)) for secure password storage, [`mysql2`](https://www.npmjs.com/package/mysql2) for querying data from a MySQL database, [`jsonwebtoken`](https://www.npmjs.com/package/jsonwebtoken) for user authentication, [`validator`](https://www.npmjs.com/package/validator) for validating user emails, [`dotenv`](https://www.npmjs.com/package/dotenv) for environment variables, and more.
 
 ### User authentication
 
@@ -238,7 +224,7 @@ Unfortunately, adding these extra features to game will be quite time-consuming,
 
 In its current state, the game's UI does the bare minimum of what it need to do. I managed to implement a somewhat consistent design across the game's webpages, but that could certainly use some work - the website as a whole just feels kind of hacked together and unpolished. 
 
-In addition to that, I learned the hard way that HTML DOM manipulation with vanilla JS is ridiculously tedious - I guess libraries like [JQuery](https://en.wikipedia.org/wiki/JQuery) could help, but I wanted to build my frontend without any extra libraries (as stated in the project's goals). Even so, it might be high time to try out a proper frontend framework like [React](https://reactjs.org/) to minimize these headaches in future projects.
+I also learned the hard way that HTML DOM manipulation with vanilla JS is ridiculously tedious. I'm guessing libraries like [JQuery](https://en.wikipedia.org/wiki/JQuery) could help, but I wanted to build my frontend without any extra libraries (as stated in the project's goals). Even so, it might be high time to try out a proper frontend framework like [React](https://reactjs.org/) to minimize these headaches in future projects.
 
 --- 
 
@@ -248,10 +234,10 @@ Overall, I'd say that working on _Tank Battle_ has a been a very positive experi
 
 Over the course of making this game, I've come to realize that web apps are still the undisputed king of software in the 2020's and that's not going to change anytime soon. Facebook, Twitter, Discord, Instagram, Google Docs, Twitch, Spotify, and even VS Code are all web apps made for browsers or that have been adapted as native desktop apps (using [Electron](https://www.electronjs.org/), for instance) or mobile apps. 
 
-Being a competent "full-stack" web developer will ensure that your apps and ideas can reach a massive pool of potential users, so learning web technologies is an absolute must for the up-and-coming software engineer. Plus, companies are still [offering a lot of money](https://money.usnews.com/careers/best-jobs/web-developer/salary) for those who can master the art of web app development.
+Being a competent web dev will ensure that your apps and ideas can reach a massive pool of potential users, so learning web technologies is an absolute must for the up-and-coming software engineer. Plus, companies are still [offering a LOT of money](https://money.usnews.com/careers/best-jobs/web-developer/salary) for expert web dev ninjas.
 
-That being said, as someone who hasn't even started college yet, I'm not sure I'd like to work as a full-time web developer. Sure, having that sort of skillset is very valuable (and honestly, pretty cool too), but surely there must be cooler things to do than centering a `div` or styling webpages or whatever. 
+That being said, as someone who hasn't even started college yet, I'm not sure I'd be happy working as a full-time web developer. Sure, having that sort of skillset is very valuable (and honestly, pretty awesome too), but surely there must be cooler things to do than styling webpages with [Sass](https://sass-lang.com/) or choosing the best [React State](https://areknawo.com/top-5-react-state-management-libraries-in-late-2020/) library, whatever the hell that means.
 
-Doing web dev for _Tank Battle_ has been fun, but I'm looking forward to exploring other things now. Maybe some lower level C/C++ coding on microcontrollers? Or studying computer architectures and try out some FPGAs? Embedded Linux, why not? Something totally different? Honestly, I don't know. Guess we'll have to see.
+Doing web dev for _Tank Battle_ has been fun, but I'm looking forward to exploring other things now. Maybe some low-level C/C++ coding on microcontrollers? Studying computer [ISAs](https://en.wikipedia.org/wiki/Instruction_set_architecture)? Embedded Linux? Something else? Honestly, I don't know. Guess we'll have to see. If you've somehow made it this far, I'd love to hear your suggestions.
 
 **Thanks for reading!** Lucca out. ✌
