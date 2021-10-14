@@ -5,7 +5,7 @@ description: |
   The full project write-up and development log for _Tank Battle_.
 groups: [all, programming, projects, games, webdesign]
 img-preview: |  
-    https://media.discordapp.net/attachments/760252264723644426/871849219701506058/collage1.png?width=1165&height=655
+  https://media.discordapp.net/attachments/760252264723644426/895442475278274580/unknown.png?width=1343&height=665
 date: 2021-10-13 23:43:00
 --- 
 
