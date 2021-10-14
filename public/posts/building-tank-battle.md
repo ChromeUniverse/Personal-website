@@ -238,6 +238,6 @@ Being a competent web dev will ensure that your apps and ideas can reach a massi
 
 That being said, as someone who hasn't even started college yet, I'm not sure I'd be happy working as a full-time web developer. Sure, having that sort of skillset is very valuable (and honestly, pretty awesome too), but surely there must be cooler things to do than styling webpages with [Sass](https://sass-lang.com/) or choosing the best [React State](https://areknawo.com/top-5-react-state-management-libraries-in-late-2020/) library, whatever the hell that means.
 
-Doing web dev for _Tank Battle_ has been fun, but I'm looking forward to exploring other things now. Maybe some low-level C/C++ coding on microcontrollers? Studying computer [ISAs](https://en.wikipedia.org/wiki/Instruction_set_architecture)? Embedded Linux? Something else? Honestly, I don't know. Guess we'll have to see. If you've somehow made it this far, I'd love to hear your suggestions.
+Doing web dev for _Tank Battle_ has been fun, but I'm looking forward to exploring other things now. Maybe some low-level C/C++ coding on microcontrollers? Studying computer [ISAs](https://en.wikipedia.org/wiki/Instruction_set_architecture)? Embedded Linux? Something else? Honestly, I don't know. Guess we'll have to see. If you've somehow made it this far, [I'd love to hear your suggestions](mailto:omnichrome2@gmail.com).
 
 **Thanks for reading!** Lucca out. ✌
