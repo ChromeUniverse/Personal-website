@@ -3,7 +3,7 @@ title: "Bulding _Tank Battle_, an online multiplayer combat game"
 templates: []
 description: |
   The full project write-up and development log for _Tank Battle_.
-groups: []
+groups: [all, programming, projects, games, webdesign]
 date: 2021-10-07 18:52:00
 --- 
 
