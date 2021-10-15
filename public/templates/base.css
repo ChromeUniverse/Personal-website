@@ -213,6 +213,10 @@ figcaption, .img-caption {
   /* padding-top: 7px; */
 }
 
+.spotify {
+  margin:auto;
+}
+
 ::-webkit-scrollbar {
   height: 5px;
   width: 5px;  
@@ -241,7 +245,7 @@ figcaption, .img-caption {
 /* @media screen and (max-width: 2000px) { */
 
   .master-div{
-    max-width: 800px;
+    width:90%;
   }
 
   img {
