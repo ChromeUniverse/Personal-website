@@ -136,9 +136,9 @@ function apply_templates(meta_obj, post_HTML, server) {
   });
 
   // apply final CSS and content to base HTML
-  html = html.replace('CSS', css);
-  html = html.replace('JS', js)
-  html = html.replace('CONTENTGOESHERE', content);
+  html = html.replace('$CSS', css);
+  html = html.replace('$JS', js)
+  html = html.replace('$CONTENTGOESHERE', content);
 
   const regex = /_*\[*\]*\(*\)*\**/g;
   
@@ -152,7 +152,7 @@ function apply_templates(meta_obj, post_HTML, server) {
     console.log("WARNING - No find description for a post!");
   }
   finally {
-    html = html.replace(/TITLE/g, title);
+    html = html.replace(/\$TITLE/g, title);
   }
   
 
@@ -168,7 +168,7 @@ function apply_templates(meta_obj, post_HTML, server) {
     console.log("WARNING - No find description for post: " + meta_obj['title']);
   }
   finally {
-    html = html.replace(/DESCRIPTION/g, description);
+    html = html.replace(/\$DESCRIPTION/g, description);
   }
 
   // Add meta post URL
@@ -183,7 +183,7 @@ function apply_templates(meta_obj, post_HTML, server) {
     console.log("WARNING - No find URL for post: " + meta_obj['title']);
   }
   finally {
-    html = html.replace(/URL/g, 'http://' + server + '/' + url);
+    html = html.replace(/\$URL/g, 'http://' + server + '/' + url);
   } 
 
   // Add meta post URL
@@ -198,7 +198,7 @@ function apply_templates(meta_obj, post_HTML, server) {
     console.log("WARNING - No find IMG-SRC for post: " + meta_obj['title']);
   }
   finally {
-    html = html.replace(/IMAGE/g, img_src);
+    html = html.replace(/\$IMAGE/g, img_src);
   } 
   
   return html;
