@@ -11,7 +11,7 @@ Hi internet. Lucca here.
 
 Some really weird things happened last Friday, August 6th, which some of you may have noticed, and some new information has come to light which significantly impacts RedstoneBot's future.
 
-**TL;DR: I have decided to officially shut down RedstoneBot.**
+#### TL;DR: I have decided to officially shut down RedstoneBot.
 
 * **RedstoneBot will be still be available for up to 1 week as of writing this. The official shutdown will happen no later than Saturday, August 14th.**
 *  **All development on RedstoneBot will be ceased, effective immediately, and RedstoneBot's GitHub repo will be archived soon.**
