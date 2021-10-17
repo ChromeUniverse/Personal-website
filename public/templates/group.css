@@ -6,11 +6,21 @@
   /* max-height: 450px; */
   /* overflow: auto; */
   background-color: #353850;
+  /* background-color: #282c34; */
   border-radius: 5px;
+}
+
+.main .header {
+  display: none;
+}
+
+.post {
+  text-align: center;
 }
 
 .main .read-more {
   padding: 5px;  
+  padding-bottom: 10px;
   width: 140px;
   height: 29px;
   margin: 20px auto 10px;
