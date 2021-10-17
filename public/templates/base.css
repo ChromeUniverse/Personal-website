@@ -50,7 +50,7 @@ div {
   font-family: 'Lato', sans-serif;
 
   line-height: 1.6;
-	width: 800px;	
+  width: 90%;  
   overflow-wrap: break-word;
   text-align: left;
   overflow-y: overlay;
@@ -168,11 +168,6 @@ li {
 .date a:hover {
   color: #E07A5F;  
   border-bottom: 2px solid #E07A5F;
-}
-
-
-.main {
-  width: 90%;
 }
 
 .main .header {
