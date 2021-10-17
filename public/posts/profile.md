@@ -1,4 +1,5 @@
 ---
+title: My GitHub Profile
 templates: [github-fetch.md]
 groups: [github-readme]
 github-url: https://github.com/ChromeUniverse/ChromeUniverse 

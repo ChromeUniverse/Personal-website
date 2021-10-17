@@ -1,4 +1,5 @@
 ---
+title: Tank Battle!
 templates: [github-fetch.md]
 groups: [github-readme]
 github-url: https://github.com/ChromeUniverse/Tank-Battle/ 
