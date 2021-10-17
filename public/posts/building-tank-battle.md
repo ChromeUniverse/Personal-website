@@ -13,7 +13,7 @@ date: 2021-10-13 23:43:00
 
 <!-- _`> If you've reading this post right now, I'd appreciate your feedback.`_ -->
 
-Back in April 2021, I decided to tinker around with [p5.js](https://p5js.org/) graphics the first time while coding along with Daniel Shiffman's (a.k.a The Coding Train) great [p5.js tutorials](https://www.youtube.com/watch?v=HerCR8bw_GE&list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA) on YouTube.
+Back in April 2021, I decided to tinker around with [p5.js](https://p5js.org/) for the first time while coding along with Daniel Shiffman's (a.k.a The Coding Train) great [p5.js tutorials](https://www.youtube.com/watch?v=HerCR8bw_GE&list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA) on YouTube.
 
 My friends Eduardo and Heitor soon joined in on the fun, and we ended up building a simple game where you controlled a box-like character and moved around around in an open 2D world. This eventually turned into [_The Box World_](https://github.com/ChromeUniverse/The-Box-World), a Club Penguin-like lounge game where you can create rooms, invite your friends, walk around and chat with your buddies by sending messages in the room chat.
 
