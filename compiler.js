@@ -40,27 +40,32 @@ function generateHTML(meta_obj, post_content) {
 
     // add post title
     post_html += marked('# ' + title);  // add title
-    post_html += marked('\n---\n');     // horizontal row  
-    post_html += '<div class="header">' // header
 
     // add post date
-    post_html += '<div class="date">Published on ' + date.getFullYear() + '-' + (date.getMonth() + 1).toString() + '-' + date.getDate() + '</div>';
+    // post_html += marked('\n---\n');     // horizontal row  
+    post_html += '<div class="header">' // header
 
+    post_html += '<div class="date">Written by <a class="author" href="/me">Lucca</a> on ' + date.toLocaleString('default', { month: 'long' }) + ' ' + date.getDate() + ' ' + date.getFullYear() + '</div>';
+  
     // add post groups
-    post_html += '<div class="groups">Groups: '
+    // post_html += '<div class="groups">Groups: '
+    post_html += '<div class="groups">'
 
     for (let i = 0; i < post_groups.length; i++) {
       let g = post_groups[i];
-      post_html += `<a href="/${g}">${g}</a>`;
-      if (i < post_groups.length-1) {
-        post_html += ', '
-      }
+      // post_html += `<a href="/${g}">${g}</a>`;
+      post_html += `<a href="${g}"> <div class="group-link"> ${g} </div> </a>`;
+      // if (i < post_groups.length-1) {
+      //   // post_html += ', '
+      // }
     }
     post_html += '</div>'               // close "groups" div
+
+    
     post_html += '</div>'               // close "header" div
     post_html += post_content;
 
-  }
+  } 
 
   if (templates.includes('ignore')) {
     post_html = post_content;
