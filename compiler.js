@@ -45,7 +45,7 @@ function generateHTML(meta_obj, post_content) {
     // post_html += marked('\n---\n');     // horizontal row  
     post_html += '<div class="header">' // header
 
-    post_html += '<div class="date">Written by <a class="author" href="/me">Lucca</a> on ' + date.toLocaleString('default', { month: 'long' }) + ' ' + date.getDate() + ' ' + date.getFullYear() + '</div>';
+    post_html += '<div class="date">Written by <a class="author" href="/me">Lucca</a> on ' + date.toLocaleString('default', { month: 'long' }) + ' ' + date.getDate() + ', ' + date.getFullYear() + '</div>';
   
     // add post groups
     // post_html += '<div class="groups">Groups: '
