@@ -14,9 +14,10 @@ _`Note: this page is a WIP!`_
 
 <!-- ## The grooviest coder on the planet 🕺🎵🎸🎧 -->
 
-Hi, I'm Lucca! I'm an 18-year-old Brazilian self-taught technologist, programmer and musician.
-
 ![](http://34.200.98.64/images/bass.jpg)
+
+
+Hi, I'm Lucca! I'm an 18-year-old Brazilian self-taught technologist, programmer and musician.
 
 I enjoy doing to do all sorts of techonologic wizardry: coding, building web apps, making games, tinkering with electronics, coding some more, and writing about tech on my blog.
 
