@@ -11,9 +11,9 @@ date: 2021-05-27 10:30:00
 
 ---
 
-**Hi, I'm Lucca!** Welcome to my personal blog. 
+**Hi, I'm Lucca!** Welcome to my corner of the Internet.
 
-Here you'll essays on science, technology, coding, electronics, music and life in general. Use the navbar above to browse my posts, project write-ups, album reviews and more.
+Here you'll find essays on science, technology, coding, electronics, music and life in general. Use the navbar above to browse my posts, project write-ups, album reviews and more.
 
 ## Not sure where to start? 
 
