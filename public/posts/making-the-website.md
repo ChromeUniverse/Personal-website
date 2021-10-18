@@ -2,8 +2,8 @@
 title: How I built my personal website
 templates: []
 description: |
-  An in-depth essay about my vision, goals, and plans for my personal website, and a detailed look at how I built the tech that powers it from scratch.
-groups: [all, programming, webdesign]
+  An in-depth project write-up on my vision, goals, and plans for my personal blog, and a detailed look at how I built the tech that powers it from scratch.
+groups: [all, programming, projects, webdesign]
 date: 2021-06-16 11:27:00
 ---
 
@@ -22,7 +22,7 @@ Now buckle up, dear reader, because this post is quite a lengthy one. I've inclu
 4. [Creating posts](#creating-posts)   
 5. [Templates](#templates)    
 6. [Groups](#groups)   
-7. [The all-powerful static webpage generator](#the-all-powerful-static-webpage-generator)    
+7. [The static webpage generator](#the-static-webpage-generator)    
 8. [Conclusion](#conclusion)
 
 ## A brief introduction
@@ -163,9 +163,9 @@ In the example post above, there's a short summary about the post's content: "My
 
 ---
 
-## The all-powerful static webpage generator
+## The static webpage generator 
 
-Okay so obviously, my website generator is quite limited in what it can do, so it's pretty damn far from "all-powerful", but it's the one doing the heavylifting behind this website. It gets the job done at least, in addition to being easy to maintain and expand on. It's just a simple Node.js script which I have set up to run using [nodemon](https://www.npmjs.com/package/nodemon). It watches for changes in post and template files and re-runs the compiler on every file save.
+My website generator ("compiler") is quite limited in what it can do, but it's the one doing the heavylifting behind this website. It gets the job done, and it's proven to be quite easy to maintain and expand on. It's a relatively simple Node.js script which I have set up to run using [nodemon](https://www.npmjs.com/package/nodemon). Nodemon watches for changes in post files and template files and re-runs the compiler on every file save.
 
 This is how it works:
 
