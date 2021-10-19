@@ -61,7 +61,7 @@ div {
 }
 
 .main {
-  font-family: var(--font-family), sans-serif;
+  font-family: var(--main-font), sans-serif;
 
   line-height: 1.6;
   width: 90%;  
@@ -72,7 +72,7 @@ div {
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: 'Recursive', sans-serif;
+  font-family: var(--h-tag-font), sans-serif;
 }
 
 h1 {
@@ -196,7 +196,7 @@ ul {
 
 .topbar .title {
   color: var(--font-color);
-  font-family: 'Recursive', sans-serif;
+  font-family: var(--h-tag-font), sans-serif;
   padding: 0px;
   font-size: 27px;
   /* text-align: left; */
@@ -241,7 +241,7 @@ ul {
 }
 
 .topbar-menu { 
-  font-family: 'Lato', sans-serif;   
+  font-family: var(--main-font), sans-serif;   
   /* display: flex; */
   display: none;
   flex-direction: column;
