@@ -17,9 +17,9 @@ _`Note: this page is a WIP!`_
 ![](http://34.200.98.64/images/bass.jpg)
 
 
-Hi, I'm Lucca! I'm an 18-year-old Brazilian self-taught technologist, programmer and musician.
+**Hi, I'm Lucca!** I'm an 18-year-old Brazilian self-taught technologist, programmer and musician.
 
-I enjoy doing to do all sorts of techonologic wizardry: coding, building web apps, making games, tinkering with electronics, coding some more, and writing about tech on my blog.
+I enjoy doing all sorts of techonologic wizardry: coding, building web apps, making games, tinkering with electronics, coding some more, and writing about tech on my blog.
 
 I love music, too! 
 
@@ -30,11 +30,11 @@ I love music, too!
 * Marista João Paulo II
 * Colégio Militar de Brasília
 * Farias Brito/Ari de Sá - Brazilian Math/Physics Olympiad prep
-* Pódion - Turma ITA/IME
+* Pódion - ITA/IME prep
 
 ### High School 
 
-CMB
+CMB Class of 2020
 
 ### Brazilian Science Olympiads
 
