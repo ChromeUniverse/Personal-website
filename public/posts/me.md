@@ -164,3 +164,9 @@ CMB Class of 2020
 > The best of Carlos Eiene! Featuring Years 3-9, Precipitation, Grillby's, Sinnohvation, featured performances and original compositions.
 
 <iframe src="https://open.spotify.com/embed/playlist/48YqiDVQEkPyDCnfe6ZPaE" width="100%" height="200" frameBorder="0" allowtransparency="true" allow="encrypted-media" class="spotify"></iframe>
+
+#### _lofi & jazz hop_ - chill and easygoing tunes
+
+> a nice lofi hip hop playlist curated by Lucca
+
+<iframe src="https://open.spotify.com/embed/playlist/6mf18jfMUyvQyvmlL05CIA" width="100%" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
