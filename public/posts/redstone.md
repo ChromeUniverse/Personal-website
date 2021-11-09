@@ -2,8 +2,8 @@
 title: "RedstoneBot"
 templates: []
 description: |
-    The official page of the RedstoneBot, a Discord bot for controlling Minecraft servers hosted by PloudOS.
-groups: [redstone-posts]
+    The official page of RedstoneBot, a Discord bot for managing Minecraft servers hosted by PloudOS.
+groups: [redstone-posts, projects]
 date: 2021-07-17 20:15:00
 --- 
 
