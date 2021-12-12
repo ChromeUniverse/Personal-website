@@ -15,7 +15,7 @@ All RedstoneBot-related development activities have been ceased and this repo wi
 
 Documentation for RedstoneBot (including technical docs, guides, etc.) will still be available for the foresseable future.
 
-**For more information, please read[ this post](http://34.200.98.64/redstone-shutdown).**
+**For more information, please read [this post](http://34.200.98.64/redstone-shutdown).**
 
 Thank you for using RedstoneBot!
 
@@ -58,7 +58,7 @@ Here are some of the modules I used. Some of them already come pre-installed wit
 
 **JSON** - Decodes and encodes JSON objects
 
-**CSV** - Read/write operations for Comma Separated Value (CSV) files
+**CSV** - Read/write operations for Comma Separated Value (CSV) files 
 
 **Beautiful Soup** - HTML Parsing and web scraping
 

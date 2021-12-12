@@ -14,7 +14,7 @@
     .then(response => {
       response.text().then(text => {
         console.log(text);
-        document.getElementById("readme").innerHTML = marked(text);          
+        document.getElementById("readme").innerHTML = marked.parse(text);          
       })        
     }
   );
