@@ -1,21 +1,35 @@
 {
   "name": "my_webpage",
   "version": "1.0.0",
+  "private": true,
   "description": "",
-  "main": "app.js",
+  "author": "",
   "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "main": "app.js",
   "dependencies": {
     "chokidar": "^3.5.1",
+    "core-js": "^3.6.5",
     "express": "^4.17.1",
     "js-yaml": "^4.1.0",
     "marked": "^2.0.5",
     "nodemon": "^2.0.12",
     "pm2": "^4.5.6",
-    "serve-favicon": "^2.5.0"
-  }
+    "serve-favicon": "^2.5.0",
+    "vue": "^3.0.0",
+    "vue-router": "^4.0.0-0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0"
+  },
+  "_id": "my_webpage@1.0.0",
+  "keywords": [],
+  "license": "ISC",
+  "readme": "ERROR: No README data found!"
 }
