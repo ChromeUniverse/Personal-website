@@ -189,3 +189,24 @@ _To-Do_
 Simple explanation: 
 * Upload your cloned repo to GitHub, steal my automated build/deploy [workflow file](https://github.com/ChromeUniverse/Personal-website/blob/main/.github/workflows/compile-deploy.yaml) and adjust it your needs
 *  Don't forget to add your SSH Private Key as a Base64 encoded secret in your GitHub repo!
+
+
+# my_webpage
+
+## Project setup
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).

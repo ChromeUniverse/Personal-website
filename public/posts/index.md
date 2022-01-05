@@ -28,3 +28,7 @@ If you would like to know more about myself, feel free to check this post [here]
 You're more than welcome to reach out to me on Discord - just send a friend request to *Lucca hash two seven four four*. Promise not to spam me?
 
 Enjoy. 😉
+
+```py
+print('Hello World!')
+```
