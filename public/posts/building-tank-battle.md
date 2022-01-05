@@ -1,5 +1,5 @@
 ---
-title: "Bulding _Tank Battle_, an online multiplayer combat game" 
+title: "Building _Tank Battle_, an online multiplayer combat game" 
 templates: []
 description: |
   The full project write-up and development log for _Tank Battle_.
