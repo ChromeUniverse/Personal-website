@@ -11,31 +11,61 @@
 
   </div>
 
-  <div class="topbar-menu" id="topbar-menu" v-show="show" @click="$emit('nav-menu-click')">
+  <div class="topbar-menu" id="topbar-menu" v-show="show">
 
     <div class="topbar-menu-item">
-      <router-link to="/groups/all"><b>📝 All posts</b></router-link>
+      <router-link 
+        to="/groups/all" 
+        @click="$emit('nav-menu-click')"
+      >
+        <b>📝 All posts</b>
+      </router-link>
     </div>
 
     <div class="topbar-menu-item">
-      <router-link to="/groups/programming"><b>👨‍💻 Programming</b></router-link>
+      <router-link
+        to="/groups/programming"
+        @click="$emit('nav-menu-click')"
+      >
+        <b>👨‍💻 Programming</b>
+      </router-link>
     </div>
 
     <div class="topbar-menu-item">
-      <router-link to="/groups/projects"><b>🏗 Projects</b></router-link>
+      <router-link 
+        to="/groups/projects" 
+        @click="$emit('nav-menu-click')"
+      >
+        <b>🏗 Projects</b>
+      </router-link>
     </div>
 
     <div class="topbar-menu-item">
-      <router-link to="/groups/games"><b>🎮 Games</b></router-link>
+      <router-link 
+        to="/groups/games" 
+        @click="$emit('nav-menu-click')"
+      >
+        <b>🎮 Games</b>
+      </router-link>
     </div>
 
     <div class="topbar-menu-item">
-      <router-link to="/groups/webdesign"><b>🖥 Webdesign</b></router-link>
+      <router-link 
+        to="/groups/webdesign" 
+        @click="$emit('nav-menu-click')"
+      >
+        <b>🖥 Webdesign</b>
+      </router-link>
     </div>
 
-    <div class="topbar-menu-item">
-      <router-link to="/groups/github-readme"><b>📚 GitHub READMEs</b></router-link>
-    </div>
+    <!-- <div class="topbar-menu-item">
+      <router-link 
+        to="https://www.google.com"
+        @click="$emit('nav-menu-click')"
+      >
+        <b>📚 GitHub READMEs</b>
+      </router-link>
+    </div> -->
 
   </div>
 
