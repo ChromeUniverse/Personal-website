@@ -1,21 +1,37 @@
 <template>
-  <Nav />
+  <Nav 
+    :show="showNavMenu"
+    @toggle-nav-menu="toggleNavMenu"
+    @nav-menu-click="closeNavMenu"
+  />
   <router-view/>
   <Footer />
 </template>
 
 <script>
 
-import Footer from './components/Footer.vue'
-import Nav from './components/Nav.vue'
+// using @ as alias for /src
+import Footer from '@/components/Footer.vue'
+import Nav from '@/components/Nav.vue'
 
 export default {
-
   name: 'App',
+  data(){
+    return {
+      showNavMenu: false
+    }
+  },
   components: {
     Nav, Footer
+  },
+  methods: {
+    toggleNavMenu(){
+      this.showNavMenu = !this.showNavMenu;
+    },
+    closeNavMenu(){
+      this.showNavMenu = false;
+    }
   }
-  
 }
 </script>
 

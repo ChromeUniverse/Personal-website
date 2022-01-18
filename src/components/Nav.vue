@@ -5,13 +5,13 @@
       <router-link to="/"><b>The Lucca Logs</b> 🚀</router-link>
     </div>
     <br>
-    <div class="button" @click="toggleMenu">
+    <div class="button" @click="$emit('toggle-nav-menu')">
       <button>📄</button>
     </div>
 
   </div>
 
-  <div class="topbar-menu" id="topbar-menu" v-show="showMenu">
+  <div class="topbar-menu" id="topbar-menu" v-show="show" @click="$emit('nav-menu-click')">
 
     <div class="topbar-menu-item">
       <router-link to="/groups/all"><b>📝 All posts</b></router-link>
@@ -47,16 +47,12 @@ export default {
 
   data(){
     return {
-      showMenu: false,
+      // showMenu: false,
     }
   },
-
-  methods: {
-    toggleMenu(){
-      console.log('Clicked!')
-      this.showMenu = !this.showMenu;
-      console.log(this.showMenu);
-    }
-  }
+  props: {
+    'show': Boolean
+  },
+  emits: ['toggle-nav-menu', 'nav-menu-click']
 }
 </script>
