@@ -4,6 +4,7 @@
     @toggle-nav-menu="toggleNavMenu"
     @nav-menu-click="closeNavMenu"
   />
+  <!-- <router-view :routes="routes"/> -->
   <router-view/>
   <Footer />
 </template>
@@ -18,7 +19,8 @@ export default {
   name: 'App',
   data(){
     return {
-      showNavMenu: false
+      showNavMenu: false,
+      routes: {}
     }
   },
   components: {
@@ -31,6 +33,15 @@ export default {
     closeNavMenu(){
       this.showNavMenu = false;
     }
+  },
+  async created(){
+    // fetch list of routes
+    // const res1 = await fetch('/routes.json');
+    // const routes = await res1.json();
+    // this.routes = routes;
+
+    // console.log('Main App component fetched routes, here:', routes);
+
   }
 }
 </script>
@@ -132,7 +143,6 @@ div {
   /* flexbox */
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 /* #main span {
@@ -154,8 +164,9 @@ span .content {
 
 hr {
   border: 2px solid var(--font-color);
-  border-radius: 2px;
+  border-radius: 0px;
   background-color: var(--font-color);
+  width: 100%
 }
 
 h1, h2, h3, h4, h5 {
