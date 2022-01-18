@@ -26,6 +26,8 @@
 
 const yaml = require('js-yaml');
 const marked = require('marked');
+import routes_json from '@/assets/routes.json';
+import random_file from '../assets/making-the-website.md';
 
 export default {
   name: 'Post',
@@ -38,7 +40,12 @@ export default {
       groups: [],
       templates: [],
       html: '',
+      routes: routes_json
     }
+  },
+
+  props: {
+    // routes: Object
   },
 
   methods: {
@@ -53,16 +60,17 @@ export default {
 
     async fetch_post(){
 
-      console.log(this.$route.fullPath);
+      this.post_path = this.$route.params.name;
 
-      if (this.$route.fullPath == '/') {
-        this.post_path = 'index';
-      } else {
-        this.post_path = this.$route.params.name;
-      }
+      // serve index page on website root
+      if (this.$route.fullPath == '/') this.post_path = 'index';
       
-      const response = await fetch('/posts/' + this.post_path + '.md');
-      const md = await response.text();    
+      // check if post exists
+      if (!this.routes.posts.includes(this.post_path)) this.post_path = '404'; 
+      
+      // fetch post content
+      const res = await fetch('/posts/' + this.post_path + '.md');
+      const md = await res.text();    
 
       // parse YAML frontmatter
       const [ meta, html ] = this.get_data(md);
@@ -74,11 +82,10 @@ export default {
       this.groups = meta.groups;
       this.templates = meta.templates;
 
-      // update author
-      // post_html += '<div class="date">Written by <a class="author" href="/me">Lucca</a> on ' + date.toLocaleString('default', { month: 'long' }) + ' ' + date.getDate() + ', ' + date.getFullYear() + '</div>';
-
-      console.log(meta);
-      // console.log(meta.date.getDate());   
+      // Highlight code snippets with Prism
+      setTimeout(function() {
+        Prism.highlightAll();      
+      }, 5);
     }
   },
 
@@ -91,14 +98,14 @@ export default {
 
   created() {
     this.fetch_post();
-    console.log('Loaded Post component');
+
+    console.log(random_file);
+
   },
 
   watch: {
     $route: function(){
-      console.log('Post path changed!');
       this.fetch_post();
-      
     }
   }
 

@@ -1,32 +1,42 @@
 <template>
 
-  <h1> Group: <i> {{ group_path }} </i> </h1>
+  <div class="content">
 
-  <div class="post" v-for="meta in meta_list" :key="meta">
-    
-    <!-- <h1> {{ meta.title }} </h1> -->
-    <h1 v-html="meta.title"></h1>
-    <p v-html="meta.description"></p>
+    <!-- Show current group being browsed -->
+    <!-- <br> -->
+    <h1> Group: <i> {{ group_path }} </i> </h1>
+    <!-- <br> -->
 
-    <img 
-      v-if="meta.hasOwnProperty('img-preview')" 
-      :src="meta['img-preview']
-    ">
+    <!-- Making post previews: iterating through metadata objects list -->
+    <div class="post" v-for="meta in meta_list" :key="meta">
+      
+      <h2 v-html="meta.title"></h2>
+      <p v-html="meta.description"></p>
 
-    <div class="read-more"> 
-      <router-link :to=" '/' + meta.link ">
-        Read More
-      </router-link> 
+      <img 
+        v-if="meta.hasOwnProperty('img-preview')" 
+        :src="meta['img-preview']"
+      >
+
+      <div class="read-more"> 
+        <router-link :to=" '/' + meta.link ">
+          Read More
+        </router-link> 
+      </div>
+
     </div>
 
-  </div>
+  </div>    
+    
 
+  
 </template>
 
 <script>
 
 const yaml = require('js-yaml');
 const marked = require('marked');
+import routes_json from '@/assets/routes.json';
 
 export default {
   name: 'Group',
@@ -64,15 +74,13 @@ export default {
       this.group_path = this.$route.params.name;
       
       // get list of links
-      const response = await fetch('/routes.json');
-      const data = await response.json();
-      const groups = data.groups;
+      const groups = routes_json.groups;
       const links = groups[this.group_path];
 
       // fetching post previews for each link
       for (const link of links) {
         const meta = await this.fetch_meta(link);
-      
+
         meta.title = marked(meta.title);
         meta.description = marked(meta.description);
         meta.link = link;
