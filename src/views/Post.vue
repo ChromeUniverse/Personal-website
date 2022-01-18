@@ -18,14 +18,11 @@
 
     <!-- post content -->
     <span v-html="html" class="content"></span>    
+    
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-// import HelloWorld from '@/components/HelloWorld.vue'
-
-// import { marked } from 'marked';
 
 const yaml = require('js-yaml');
 const marked = require('marked');
@@ -86,22 +83,22 @@ export default {
   },
 
   computed: {
-
     fetch_date(){
       const date = this.date;
       return date.toLocaleString('default', { month: 'long' }) + " " + date.getDate() + ", " + date.getFullYear();
     }
-
   },
 
   created() {
     this.fetch_post();
+    console.log('Loaded Post component');
   },
 
   watch: {
     $route: function(){
       console.log('Post path changed!');
       this.fetch_post();
+      
     }
   }
 

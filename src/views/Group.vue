@@ -14,7 +14,9 @@
     ">
 
     <div class="read-more"> 
-      <router-link to="/posts/building-tank-battle">Read More</router-link> 
+      <router-link :to=" '/' + meta.link ">
+        Read More
+      </router-link> 
     </div>
 
   </div>
@@ -36,6 +38,7 @@ export default {
   },
   methods: {
 
+    // parses .md file -> returns YAML metadata and post HTML content
     get_data(file){
       let index = file.substr(3, file.length).indexOf('---');
       let yaml_meta = yaml.load(file.substr(3, index)); 
@@ -44,38 +47,55 @@ export default {
       return [yaml_meta, post_content];
     },
 
-    async fetch_links(){
-      this.group_path = this.$route.params.name;
-
-      const response = await fetch('/groups/' + this.group_path + '.json');
-      const data = await response.json();
-      
-      for (const link of data.links) {
-        const meta = await this.fetch_meta(link);
-
-        console.log(meta);
-
-        meta.title = marked(meta.title);
-        meta.description = marked(meta.description);
-
-        this.meta_list.push(meta); 
-      }
-
-    },
-
+    // fetches metadata for one post -> returns metadata object
     async fetch_meta(path){
       
       const response = await fetch('/posts/' + path + '.md');
       const md = await response.text();    
 
-      // parse YAML frontmatter
+      // parse YAML frontmatter and post content
       const [ meta, html ] = this.get_data(md);
             
       return meta;
+    }, 
+
+    // fetches all post previews for current group 
+    async fetch_posts(){
+      this.group_path = this.$route.params.name;
+      
+      // get list of links
+      const response = await fetch('/routes.json');
+      const data = await response.json();
+      const groups = data.groups;
+      const links = groups[this.group_path];
+
+      // fetching post previews for each link
+      for (const link of links) {
+        const meta = await this.fetch_meta(link);
+      
+        meta.title = marked(meta.title);
+        meta.description = marked(meta.description);
+        meta.link = link;
+
+        this.meta_list.push(meta); 
+      }
+
     }
   },
+
   async created() {
-    await this.fetch_links();
+    // fetch links on page load
+    await this.fetch_posts();
+  },
+
+  watch: {
+    $route: function(){
+      console.log('Group path changed!');
+      // reset list of metadata objects
+      this.meta_list = [];
+      // fetch links once more
+      this.fetch_posts();      
+    }
   }
 }
 </script>
