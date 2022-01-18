@@ -1,16 +1,28 @@
 # _The Lucca Logs_ Redesign
 
-## Vue 
+## Issues to debug
 
-- [ ] Build components
+- [X] ~~Close nav menu on click~~
+- [X] Fetch new posts or previews on every new route change
+- [ ] Change `href`s that point to the website itself to Vue `<router-link>`s
+- [X] ~~Switching between group pages just adds extra post previews to webpage instead of clearing old ones~~
+- [ ] Prism code snippets are broken
+- [ ] Weird error fired when parsing dates from YAMl frontmatter
 
-## Vue Router
+## Views
+- [ ] Post
+- [ ] Group
 
-- [ ] Implement new paths in Vue Router:
+## Components
 
-  - Posts: `/post-name-here`
+- [ ] App
+- [ ] Nav
+- [ ] Post preview
+- [ ] Footer
 
-  - Groups: `/groups/group-name-here`
+## Router
+
+- [X] ~~Implement new paths in Vue Router:~~
 
 ## Backend
 
@@ -19,15 +31,3 @@
 ## Design
 
 - [ ] Improve styles
-
---- 
-
-**Notes**:
-
-Post `.md` files exposed in simple API or available as static files?
-
-Should the frontend fetch:
-* `.md` files and then parse them with marked.js?
-* Pre-rendered HTMLs and inject them into the DOM?
-
-How will the custom-built website compiler fit into all of this?
