@@ -6,7 +6,7 @@
 
     <!-- post author and date -->
     <div class="date" v-if="!templates.includes('ignore')">
-      Written by <router-link class="author" to="/posts/me">Lucca</router-link> on {{fetch_date}}
+      Written by <router-link class="author" to="/me">Lucca</router-link> on {{fetch_date}}
     </div>
 
     <!-- list of post groups -->
@@ -27,7 +27,7 @@
 const yaml = require('js-yaml');
 const marked = require('marked');
 import routes_json from '@/assets/routes.json';
-import random_file from '../assets/making-the-website.md';
+// import random_file from '../assets/making-the-website.md';
 
 export default {
   name: 'Post',
@@ -98,9 +98,6 @@ export default {
 
   created() {
     this.fetch_post();
-
-    console.log(random_file);
-
   },
 
   watch: {
