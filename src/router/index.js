@@ -17,12 +17,18 @@ const routes = [
     path: '/groups/:name',
     name: 'Group',
     component: Group
+  },
+  { 
+    path: '/:catchAll(.*)', 
+    name: 'NotFound',
+    component: Post,
   }
 ]
 
+
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-  routes
+  history: createWebHistory(),
+  routes: routes
 })
 
-export default router
+export default router;
