@@ -1,4 +1,5 @@
 <template>
+
   <div id="main">
 
     <!-- post title -->
@@ -20,14 +21,13 @@
     <span v-html="html" class="content"></span>    
     
   </div>
+
 </template>
 
 <script>
 
-const yaml = require('js-yaml');
 const marked = require('marked');
 import routes_json from '@/assets/routes.json';
-// import random_file from '../assets/making-the-website.md';
 
 export default {
   name: 'Post',
@@ -44,40 +44,26 @@ export default {
     }
   },
 
-  props: {
-    // routes: Object
-  },
-
   methods: {
-    // split file, return YAML metadata, get Markdown content and convert it to HTML
-    get_data(file){
-      let index = file.substr(3, file.length).indexOf('---');
-      let yaml_meta = yaml.load(file.substr(3, index)); 
-      let post_content = marked(file.substr(index + 6));
+ 
+    fetch_post(){
 
-      return [yaml_meta, post_content];
-    },
-
-    async fetch_post(){
-
-      this.post_path = this.$route.params.name;
+      this.post_path = this.$route.params.post;
 
       // serve index page on website root
       if (this.$route.fullPath == '/') this.post_path = 'index';
       
       // check if post exists
-      if (!this.routes.posts.includes(this.post_path)) this.post_path = '404'; 
-      
-      // fetch post content
-      const res = await fetch('/posts/' + this.post_path + '.md');
-      const md = await res.text();    
+      if (!Object.keys(this.routes.posts).includes(this.post_path)) this.post_path = "404"; 
 
-      // parse YAML frontmatter
-      const [ meta, html ] = this.get_data(md);
+      // get metadata and post content
+      const post = this.routes.posts[this.post_path];
+      const meta = post.meta;
+      const md = post.md;
 
       // update data
-      this.html = html;
-      this.title = marked.parse('# ' + meta.title);
+      this.html = marked(md);
+      this.title = marked('# ' + meta.title);
       this.date = new Date(meta.date);
       this.groups = meta.groups;
       this.templates = meta.templates;

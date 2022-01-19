@@ -3,9 +3,7 @@
   <div class="content">
 
     <!-- Show current group being browsed -->
-    <!-- <br> -->
     <h1> Group: <i> {{ group_path }} </i> </h1>
-    <!-- <br> -->
 
     <!-- Making post previews: iterating through metadata objects list -->
     <div class="post" v-for="meta in meta_list" :key="meta">
@@ -27,14 +25,11 @@
     </div>
 
   </div>    
-    
-
   
 </template>
 
 <script>
 
-const yaml = require('js-yaml');
 const marked = require('marked');
 import routes_json from '@/assets/routes.json';
 
@@ -42,63 +37,53 @@ export default {
   name: 'Group',
   data(){
     return {
+      routes: routes_json,
       group_path: '',
       meta_list: []
     }
   },
   methods: {
 
-    // parses .md file -> returns YAML metadata and post HTML content
-    get_data(file){
-      let index = file.substr(3, file.length).indexOf('---');
-      let yaml_meta = yaml.load(file.substr(3, index)); 
-      let post_content = marked(file.substr(index + 6));
-
-      return [yaml_meta, post_content];
-    },
-
-    // fetches metadata for one post -> returns metadata object
-    async fetch_meta(path){
-      
-      const response = await fetch('/posts/' + path + '.md');
-      const md = await response.text();    
-
-      // parse YAML frontmatter and post content
-      const [ meta, html ] = this.get_data(md);
-            
-      return meta;
-    }, 
-
     // fetches all post previews for current group 
-    async fetch_posts(){
-      this.group_path = this.$route.params.name;
+    fetch_posts(){
+      try {
+        this.group_path = this.$route.params.group;
       
-      // get list of links
-      const groups = routes_json.groups;
-      const links = groups[this.group_path];
+        // get list of links
+        const groups = routes_json.groups;
 
-      // fetching post previews for each link
-      for (const link of links) {
-        const meta = await this.fetch_meta(link);
+        if (!Object.keys(groups).includes(this.group_path)) { 
+          // return this.$router.push('/404');
+          return;
+        }
 
-        meta.title = marked(meta.title);
-        meta.description = marked(meta.description);
-        meta.link = link;
+        const links = groups[this.group_path];
 
-        this.meta_list.push(meta); 
+        // fetching post previews for each link
+        for (const link of links) {
+
+          const meta = this.routes.posts[link].meta;
+
+          meta.title = marked(meta.title);
+          meta.description = marked(meta.description);
+          meta.link = link;
+
+          this.meta_list.push(meta); 
+        }
+      } catch (err) {
+        console.error('BIG POOPIE DETECTED', err);
       }
 
     }
   },
 
-  async created() {
+  created() {
     // fetch links on page load
-    await this.fetch_posts();
+    this.fetch_posts();
   },
 
   watch: {
     $route: function(){
-      console.log('Group path changed!');
       // reset list of metadata objects
       this.meta_list = [];
       // fetch links once more
