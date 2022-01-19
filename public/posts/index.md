@@ -17,18 +17,14 @@ Here you'll find essays on science, technology, coding, electronics, music and l
 
 ## Not sure where to start? 
 
-Consider reading [this post](/making-the-website) on how I built this website from scratch. 
+Consider reading my write-up on [how I built this website from scratch](/making-the-website). This essay is now outdated since I've redesigned my website to 
 
-You can also view a list of all of my posts [here](/all). 
+You can also view a list of [all of my public posts](/groups/all). 
 
-If you would like to know more about myself, feel free to check this post [here](/me).
+If you would like to [know more about myself](/me), feel free to check my personal page.
 
 ## Get in touch!
 
 You're more than welcome to reach out to me on Discord - just send a friend request to *Lucca hash two seven four four*. Promise not to spam me?
 
 Enjoy. 😉
-
-```py
-print('Hello World!')
-```
