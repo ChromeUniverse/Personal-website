@@ -133,6 +133,7 @@ div {
 #main {
 
   /* size */
+  width: 92%;
   max-width: 800px;  
 
   /* overflow */
@@ -175,7 +176,7 @@ h1, h2, h3, h4, h5 {
 
 h1 {
   display: block;
-  font-size: 1.5em;
+  font-size: 1.4em;
   text-align: center;
   margin-top: 10px;
   margin-bottom: 10px;
