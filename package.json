@@ -7,7 +7,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "create-routes": "node compiler2.js",
+    "create-routes": "node compiler.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "main": "app.js",
