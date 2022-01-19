@@ -9,12 +9,12 @@ const routes = [
     component: Post
   },
   {
-    path: '/:name',
+    path: '/:post',
     name: 'Post',
     component: Post
   },
   {
-    path: '/groups/:name',
+    path: '/groups/:group',
     name: 'Group',
     component: Group
   },
