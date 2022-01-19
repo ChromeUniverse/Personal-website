@@ -60,7 +60,7 @@ function main() {
 
   console.log(routes);
 
-  fs.writeFileSync(__dirname + '/public/routes.json', routes);
+  fs.writeFileSync(__dirname + '/src/assets/routes.json', routes);
  
 }
 
