@@ -1,5 +1,12 @@
 # Lucca's personal website 
 
+---
+## Deprecation Notice
+
+As of January 2021, the website has been upgraded with a Vue.js frontend. This README is now outdated, but will be updated soon to reflect recent changes.
+
+---
+
 This is the source code for [my personal website](http://34.200.98.64/).
 
 Here's what my website is currently using:
