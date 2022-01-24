@@ -1,16 +1,15 @@
 {
-  "name": "my_webpage",
-  "version": "1.0.0",
+  "name": "the-lucca-logs",
+  "version": "2.0.0",
   "private": true,
   "description": "",
-  "author": "",
+  "author": "Lucca Rodrigues",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "create-routes": "node compiler.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "content": "node compiler.js"
   },
-  "main": "app.js",
+  "main": "",
   "dependencies": {
     "chokidar": "^3.5.1",
     "core-js": "^3.6.5",
