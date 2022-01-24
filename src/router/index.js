@@ -30,10 +30,14 @@ const router = createRouter({
   routes: routes,
   scrollBehavior (to, from, savedPosition) {
     if (savedPosition) {
-      return savedPosition
-    } else {
-      return { top: 0 }
+      return savedPosition;
     }
+    if (to.hash) {
+      return { el: to.hash };
+      // return { selector: to.hash };
+    }
+    return { top: 0 };
+    
   }
 
 })
