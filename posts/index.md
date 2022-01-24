@@ -11,17 +11,17 @@ date: 2021-05-27 10:30:00
 
 ---
 
-**Hi, I'm Lucca!** Welcome to my corner of the Internet.
+**Hi, I'm Lucca!** 👋 Welcome to my corner of the Internet!
 
 Here you'll find essays on science, technology, coding, electronics, music and life in general. Use the navbar above to browse my posts, project write-ups, album reviews and more.
 
 ## Not sure where to start? 
 
-Consider reading my write-up on [how I built this website from scratch](/making-the-website). This essay is now outdated since I've redesigned my website to 
+* 💻 Consider reading my write-up on [how I built this website from scratch](/making-the-website).
 
-You can also view a list of [all of my public posts](/groups/all). 
+* 📝 You can also view a list of [all of my public posts](/groups/all). 
 
-If you would like to [know more about myself](/me), feel free to check my personal page.
+* 🤓 If you would like to know more about myself, feel free to check out [my personal page](/me).
 
 ## Get in touch!
 

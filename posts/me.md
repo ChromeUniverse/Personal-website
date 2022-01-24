@@ -27,14 +27,13 @@ I love music, too!
 
 ## Education
 
-* Marista João Paulo II
-* Colégio Militar de Brasília
-* Farias Brito/Ari de Sá - Brazilian Math/Physics Olympiad prep
-* Pódion - ITA/IME prep
+* Colégio Militar de Brasília - Middle/High School
+* Farias Brito/Ari de Sá - Brazilian Math/Physics Olympiad winter/summer prep courses
+* Pódion - ITA/IME prep course
 
 ### High School 
 
-CMB Class of 2020
+Colégio Militar de Brasília - Class of 2020
 
 ### Brazilian Science Olympiads
 
@@ -161,12 +160,12 @@ CMB Class of 2020
 
 #### _Rainy VideoGame Jazz_ - the Carlos Eiene VGM jazz collection
 
-> The best of Carlos Eiene! Featuring Years 3-10, Precipitation, Grillby's, Sinnohvation, featured performances and original compositions.
+> Farewell, insaneintherain! The best of Carlos Eiene, featuring Years 3-10, Precipitation, Grillby's, Sinnohvation, featured performances and originals.
 
 <iframe src="https://open.spotify.com/embed/playlist/48YqiDVQEkPyDCnfe6ZPaE" width="100%" height="250" frameBorder="0" allowtransparency="true" allow="encrypted-media" class="spotify"></iframe>
 
 #### _lofi & jazz hop_ - chill and easygoing tunes
 
-> a nice lofi hip hop playlist curated by Lucca
+> just a nice and chill lofi playlist, curated by Lucca
 
 <iframe src="https://open.spotify.com/embed/playlist/6mf18jfMUyvQyvmlL05CIA" width="100%" height="250" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>

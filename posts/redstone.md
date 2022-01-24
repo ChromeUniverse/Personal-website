@@ -19,16 +19,13 @@ Documentation for RedstoneBot (including technical docs, guides, etc.) will stil
 
 Thank you for using RedstoneBot!
 
----
+--- 
 
+Want to use RedstoneBot in your Discord server? **[Read the Quickstart Guide!](/redstone-quickstart)**
 
-Hello, and welcome to the official webpage of RedstoneBot! 
+Want to see what RedstoneBot is capable of? **Take a look at the [Features page](/redstone-features)!**
 
-**Want to use RedstoneBot in your Discord server? Read the Quickstart Guide [here!](/redstone-quickstart)**
-
-**Want to see what RedstoneBot is capable of? Take a look at the [Features page](/redstone-features)!**
-
-**Want to contribute to the development of RedstoneBot? [Open a Pull Request or a new issue!](https://github.com/ChromeUniverse/RedstoneBot)**
+Want to contribute to the development of RedstoneBot? **[Open a Pull Request or a new issue!](https://github.com/ChromeUniverse/RedstoneBot)**
 
 ---
 
