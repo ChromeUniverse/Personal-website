@@ -2,7 +2,7 @@
 
   <hr>
   <footer>
-    <p>&copy; Lucca Rodrigues 2021</p>
+    <p>&copy; Lucca Rodrigues 2022</p>
     <a href="https://github.com/ChromeUniverse"> GitHub </a> • 
     <a href="https://www.linkedin.com/in/lucca-rodrigues-61b8271b3/">LinkedIn</a> • 
     <a href="https://www.youtube.com/channel/UCjpQ2w6Di2f-tyCiK6mVGlA">YouTube</a>
