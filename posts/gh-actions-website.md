@@ -7,9 +7,16 @@ groups: [all, programming, devops]
 date: 2021-07-07 10:44:10
 ---
 
-_This is an updated edition of a post I made last month, which can be viewed [here](/old-gh-actions-website)._
-
 I've finally gotten around to using GitHub actions for the first time, and boy, can it automate the living crap out of building, testing and deployment. In fact, I've updated this website's [GitHub repo](https://github.com/ChromeUniverse/Personal-website) with a custom workflow built around GitHub Actions to automate static file generation and deployment of my website. It's a really useful tool that you might be interested in using for web app development.
+
+> Table of Contents
+> - [GitHub Actions basics](#github-actions-basics)
+> - [Actions workflow for my personal website](#actions-workflow-for-my-personal-website)
+>   - [1. Events](#1-events)
+>   - [2. Webpage compilation](#2-webpage-compilation)
+>   - [3. Creating an SSH identity file](#3-creating-an-ssh-identity-file)
+>   - [4. Syncing files with Rsync](#4-syncing-files-with-rsync)
+> - [Conclusion](#conclusion)
 
 ## [GitHub Actions](https://github.com/features/actions) basics
 

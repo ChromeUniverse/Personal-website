@@ -9,10 +9,6 @@ img-preview: |
 date: 2021-10-13 23:43:00
 --- 
 
-<!-- _`> Note: this post is a WIP!`_  -->
-
-<!-- _`> If you've reading this post right now, I'd appreciate your feedback.`_ -->
-
 Back in April 2021, I decided to tinker around with [p5.js](https://p5js.org/) for the first time while coding along with Daniel Shiffman's (a.k.a The Coding Train) great [p5.js tutorials](https://www.youtube.com/watch?v=HerCR8bw_GE&list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA) on YouTube.
 
 My friends Eduardo and Heitor soon joined in on the fun, and we ended up building a simple game where you controlled a box-like character and moved around around in an open 2D world. This eventually turned into [_The Box World_](https://github.com/ChromeUniverse/The-Box-World), a Club Penguin-like lounge game where you can create rooms, invite your friends, walk around and chat with your buddies by sending messages in the room chat.
@@ -23,20 +19,26 @@ Over the next couple of months, I would work on the project sporadically, implem
 
 As of writing this, _Tank Battle_ is online and you can check it out [here](http://18.229.196.24:4000/).
 
-<!-- Nevertheless, I managed to once again cross the gruesome valley of coding confusion and emerged victorius with my project finally completed in early October of 2021. As of writing this, _Tank Battle_ is online and you can check it out [here](http://18.229.196.24:4000/). -->
-
-
-
 ![](https://media.discordapp.net/attachments/760252264723644426/895442475278274580/unknown.png?width=1343&height=665)
 
 <p class="img-caption"> <i>Tank Battle</i> game room with two players </p>
 
->**Table of contents**
->* [Goals](#goals)   
-> * [How I built it](#how-i-built-it)      
-> * [New technologies that I learned](#new-technologies-that-i-learned)  
-> * [Next steps](#next-steps)   
-> * [Conclusion](#conclusion)
+> **Table of Contents**
+> - [Goals](#goals)  
+> - [How I built it](#how-i-built-it)  
+>   - [Frontend](#frontend)  
+>   - [Backend](#backend)  
+> - [New technologies that I learned](#new-technologies-that-i-learned)  
+>   - [Node.js/Express backend](#nodejsexpress-backend)  
+>   - [User authentication](#user-authentication)  
+>   - [Relational Databases with SQL](#relational-databases-with-sql)  
+>   - [Async programming](#async-programming)  
+>   - [Client-Server game model](#client-server-game-model)  
+>   - [Elo Rating System (Simple Multiplayer Elo)](#elo-rating-system-simple-multiplayer-elo)  
+> - [Next Steps](#next-steps)  
+>   - [Mitigating Lag](#mitigating-lag)  
+>   - [Improving the UI/UX](#improving-the-uiux)  
+> - [Conclusion](#conclusion)  
 
 
 ---
