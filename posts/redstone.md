@@ -15,20 +15,17 @@ All RedstoneBot-related development activities have been ceased and this repo wi
 
 Documentation for RedstoneBot (including technical docs, guides, etc.) will still be available for the foresseable future.
 
-**For more information, please read[ this post](http://34.200.98.64/redstone-shutdown).**
+**For more information, please read [this post](http://34.200.98.64/redstone-shutdown).**
 
 Thank you for using RedstoneBot!
 
----
+--- 
 
+Want to use RedstoneBot in your Discord server? **[Read the Quickstart Guide!](/redstone-quickstart)**
 
-Hello, and welcome to the official webpage of RedstoneBot! 
+Want to see what RedstoneBot is capable of? **Take a look at the [Features page](/redstone-features)!**
 
-**Want to use RedstoneBot in your Discord server? Read the Quickstart Guide [here!](/redstone-quickstart)**
-
-**Want to see what RedstoneBot is capable of? Take a look at the [Features page](/redstone-features)!**
-
-**Want to contribute to the development of RedstoneBot? [Open a Pull Request or a new issue!](https://github.com/ChromeUniverse/RedstoneBot)**
+Want to contribute to the development of RedstoneBot? **[Open a Pull Request or a new issue!](https://github.com/ChromeUniverse/RedstoneBot)**
 
 ---
 
@@ -58,7 +55,7 @@ Here are some of the modules I used. Some of them already come pre-installed wit
 
 **JSON** - Decodes and encodes JSON objects
 
-**CSV** - Read/write operations for Comma Separated Value (CSV) files
+**CSV** - Read/write operations for Comma Separated Value (CSV) files 
 
 **Beautiful Soup** - HTML Parsing and web scraping
 

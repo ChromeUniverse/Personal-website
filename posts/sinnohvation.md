@@ -7,11 +7,20 @@ album-embed: |
     <iframe src="https://open.spotify.com/embed/album/0vbD4L4GvVkxrfwdN6iL5e" width=100% height="200" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> 
 groups: []
 date: 2021-05-27 17:30:00
---- 
+---   
+
 
 _**Note**: this review is a work-in-progress!_
 
 <iframe src="https://open.spotify.com/embed/album/0vbD4L4GvVkxrfwdN6iL5e" width=100% height="200" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+
+> Table of contents
+> - [Introduction](#introduction)    
+> - [The Album](#the-album)    
+>   - [Opening](#opening)    
+>   - [The Journey Begins](#the-journey-begins)    
+> - [Where to Buy](#where-to-buy)     
+> - [Verdict](#verdict)   
 
 ## Introduction
 

@@ -1,5 +1,12 @@
 # Lucca's personal website 
 
+---
+## Deprecation Notice
+
+As of January 2021, the website has been upgraded with a Vue.js frontend. This README is now outdated, but will be updated soon to reflect recent changes.
+
+---
+
 This is the source code for [my personal website](http://34.200.98.64/).
 
 Here's what my website is currently using:
@@ -189,3 +196,24 @@ _To-Do_
 Simple explanation: 
 * Upload your cloned repo to GitHub, steal my automated build/deploy [workflow file](https://github.com/ChromeUniverse/Personal-website/blob/main/.github/workflows/compile-deploy.yaml) and adjust it your needs
 *  Don't forget to add your SSH Private Key as a Base64 encoded secret in your GitHub repo!
+
+
+# my_webpage
+
+## Project setup
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).

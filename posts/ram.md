@@ -13,7 +13,7 @@ date: 2021-05-27 12:00:00
 I know your life is speeding and it isn't stopping  
 Here, take my shirt and just go ahead and wipe off all the  
 Sweat, sweat, sweat,  
-~ Lose yourself to dance! ~_<p style="opacity: 0.5">- Pharrell Williams on _Lose Yourself to Dance_</p>
+Lose yourself to dance!_<p style="opacity: 0.5">- Pharrell Williams, _Lose Yourself to Dance_</p>
 
 Everything about this album screams _\~disco\~_. Daft Punk's flashy suits in the promotional material, the music videos for _Get Lucky_ and _Lose Yourself to Dance_, Nile Rodgers' iconic funky rhythm guitar lines, the funky bass lines, the musical production and featured collaborators...
 

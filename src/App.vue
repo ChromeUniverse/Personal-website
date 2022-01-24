@@ -1,9 +1,61 @@
+<template>
+  <Nav 
+    :show="showNavMenu"
+    @toggle-nav-menu="toggleNavMenu"
+    @nav-menu-click="closeNavMenu"
+  />
+  <!-- <router-view :routes="routes"/> -->
+  <router-view/>
+  <Footer />
+</template>
+
+<script>
+
+// using @ as alias for /src
+import Footer from '@/components/Footer.vue'
+import Nav from '@/components/Nav.vue'
+
+export default {
+  name: 'App',
+  data(){
+    return {
+      showNavMenu: false,
+      routes: {}
+    }
+  },
+  components: {
+    Nav, Footer
+  },
+  methods: {
+    toggleNavMenu(){
+      this.showNavMenu = !this.showNavMenu;
+    },
+    closeNavMenu(){
+      this.showNavMenu = false;
+    }
+  },
+  async created(){
+    // fetch list of routes
+    // const res1 = await fetch('/routes.json');
+    // const routes = await res1.json();
+    // this.routes = routes;
+
+    // console.log('Main App component fetched routes, here:', routes);
+
+  }
+}
+</script>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Bakbak+One&family=Noto+Sans+Display:ital@0;1&family=Recursive:wght@700&display=swap');
+
 :root {
   --bg-color: #3D405B;
   --popup-color: rgb(0, 0, 0, 0.1);
   --dark-popup-color: rgb(0, 0, 0, 0.15);
 
-  --main-font: 'Lato';
+  --main-font: 'Noto Sans Display';
   --h-tag-font: 'Recursive';
   --font-color:#F4F1DE;
   --italics-color: #a5a28b;
@@ -25,6 +77,11 @@ body {
   
   color: var(--font-color);  
   font-size: 17px;
+
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+
   /* max-width: 800px; */
   /* padding: 10px; */
   /* margin-left: auto; */
@@ -44,31 +101,73 @@ div {
   width: 800px;
 }
 
+#app{
+  padding: 0px;
+  width: 100%;
+  /* text */
+  font-family: var(--main-font), sans-serif;
+  font-size: 1.1em;
+  line-height: 1.6;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .sidebar .header {
   font-family: var(--h-tag-font), sans-serif;
   font-size: 25px;
   text-align: left;
 }
 
-
 .topbar {
   border-radius: 10px;
+  margin-top: 10px;
 }
 
 .topbar, .topbar-menu {
   /* padding-top: 10px; */
-  display: none;
+  display: flex;
 }
 
-.main {
-  font-family: var(--main-font), sans-serif;
+#main {
 
-  line-height: 1.6;
-  width: 90%;  
+  /* size */
+  width: 92%;
+  max-width: 800px;  
+
+  /* overflow */
   overflow-wrap: break-word;
-  text-align: left;
   overflow-y: overlay;
   overflow-x: overlay;
+
+  /* flexbox */
+  display: flex;
+  flex-direction: column;
+}
+
+/* #main span {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+#main Footer {
+  width: 100%;
+}
+
+span .content {
+  padding: 0px;
+} */
+
+.content h1{
+  font-size: 2em;
+}
+
+hr {
+  border: 2px solid var(--font-color);
+  border-radius: 0px;
+  background-color: var(--font-color);
+  width: 100%
 }
 
 h1, h2, h3, h4, h5 {
@@ -76,7 +175,10 @@ h1, h2, h3, h4, h5 {
 }
 
 h1 {
+  display: block;
+  font-size: 1.4em;
   text-align: center;
+  margin-top: 10px;
   margin-bottom: 10px;
   width: 90%;
   margin-right: auto;
@@ -92,6 +194,11 @@ blockquote {
 
 footer {
   text-align: center;
+  margin-bottom: 20px;
+}
+
+footer p{
+  margin: 0px;
 }
 
 
@@ -157,6 +264,7 @@ ul {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  margin-bottom: 20px;
 }
 
 .group-link {
@@ -184,6 +292,7 @@ ul {
 
 .topbar {
   width: 90%;
+  max-width: 800px;
   
   display: flex;
   flex-direction: row;
@@ -242,12 +351,12 @@ ul {
 
 .topbar-menu { 
   font-family: var(--main-font), sans-serif;   
-  /* display: flex; */
-  display: none;
   flex-direction: column;
   justify-content: space-between;
 
   width: 90%;
+  max-width: 800px;
+
   background-color: var(--dark-popup-color);
   border-radius: 5px;
   overflow-x: auto;
@@ -306,3 +415,5 @@ ul {
     display: none;
   }
 }
+
+</style>
