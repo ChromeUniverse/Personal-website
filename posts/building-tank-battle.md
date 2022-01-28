@@ -153,7 +153,7 @@ I've been using the Node.js + Express combo for literally 100% of my web project
 
 The Router also proved to be very useful for making a simple API. It only has a couple of endpoints, notably, `/lb`, which returns a JSON with the leaderboard data, and `/user`, which returns a JSON with player stats.
 
-I also got to try out some very useful npm packages, like [`bcrypt`]([bcrypt](https://www.npmjs.com/package/bcrypt)) for secure password storage, [`mysql2`](https://www.npmjs.com/package/mysql2) for querying data from a MySQL database, [`jsonwebtoken`](https://www.npmjs.com/package/jsonwebtoken) for user authentication, [`validator`](https://www.npmjs.com/package/validator) for validating user emails, [`dotenv`](https://www.npmjs.com/package/dotenv) for environment variables, and more.
+I also got to try out some very useful npm packages, like [`bcrypt`](https://www.npmjs.com/package/bcrypt) for secure password storage, [`mysql2`](https://www.npmjs.com/package/mysql2) for querying data from a MySQL database, [`jsonwebtoken`](https://www.npmjs.com/package/jsonwebtoken) for user authentication, [`validator`](https://www.npmjs.com/package/validator) for validating user emails, [`dotenv`](https://www.npmjs.com/package/dotenv) for environment variables, and more.
 
 ### User authentication
 
