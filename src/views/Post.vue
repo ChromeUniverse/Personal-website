@@ -18,7 +18,8 @@
     </div>
 
     <!-- post content -->
-    <span v-html="html" class="content"></span>    
+    <!-- <span v-html="html" class="content"></span>  -->
+    <Content :htmlContent="html"/>
     
   </div>
 
@@ -26,11 +27,16 @@
 
 <script>
 
-const marked = require('marked');
-import routes_json from '@/assets/routes.json';
+const marked = require('marked')
+import routes_json from '@/assets/routes.json'
+import Content from '@/components/Content.vue'
 
 export default {
   name: 'Post',
+
+  components: {
+    Content
+  }, 
 
   data() {
     return {
