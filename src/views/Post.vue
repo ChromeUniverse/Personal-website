@@ -95,7 +95,7 @@ export default {
 </script>
 
 <style scoped>
-  #content {
-    width: 80%;
-  }
+#content {
+  width: 80%;
+}
 </style>
