@@ -428,6 +428,40 @@ ul {
   margin: auto;
 }
 
+.artist-list {
+  /* background-color: aqua; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;  
+  font-size: 18px;
+}
+
+.artist {
+  margin: 5px;
+  min-width: 100px;
+  border-radius: 10px;
+  background-color: #353850;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.artist img {
+  /* width: 90%; */
+  border-radius: 10px;
+  /* margin-left: 0; */
+  /* margin-right: 0; */
+  width: 140px;
+  background: transparent;
+  /* height: 200px; */
+}
+
+.artist h4 {
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+
 ::-webkit-scrollbar {
   height: 5px;
   width: 5px;
