@@ -1,12 +1,11 @@
 <template>
-  <Nav 
+  <Nav
     :show="showNavMenu"
     @toggle-nav-menu="toggleNavMenu"
     @nav-menu-click="closeNavMenu"
   />
-  <!-- <router-view :routes="routes"/> -->
   <router-view/>
-  <Footer />
+  <Footer/>
 </template>
 
 <script>
@@ -33,49 +32,99 @@ export default {
     closeNavMenu(){
       this.showNavMenu = false;
     }
-  },
-  async created(){
-    // fetch list of routes
-    // const res1 = await fetch('/routes.json');
-    // const routes = await res1.json();
-    // this.routes = routes;
+  },  
+  mounted () {
 
-    // console.log('Main App component fetched routes, here:', routes);
+    // special thanks to Dennis Reimann for the code below
+    // https://dennisreimann.de/articles/delegating-html-links-to-vue-router.html
 
+    window.addEventListener('click', event => {
+
+      // ensure we use the link, in case the click has been received by a subelement
+      let { target } = event      
+
+      while (target && target.tagName !== 'A') target = target.parentNode
+      
+      // handle only links that do not reference external resources
+      if (target && target.matches("a:not([href*='://'])") && target.href && !target.href.includes('mailto')) {
+
+        // some sanity checks taken from vue-router:
+        // https://github.com/vuejs/vue-router/blob/dev/src/components/link.js#L106
+        const { altKey, ctrlKey, metaKey, shiftKey, button, defaultPrevented } = event
+        
+        // don't handle with control keys
+        if (metaKey || altKey || ctrlKey || shiftKey) return
+        
+        // don't handle when preventDefault called
+        if (defaultPrevented) return
+        
+        // don't handle right clicks
+        if (button !== undefined && button !== 0) return
+        
+        // don't handle if `target="_blank"`
+        if (target && target.getAttribute) {
+          const linkTarget = target.getAttribute('target')
+          if (/\b_blank\b/i.test(linkTarget)) return
+        }
+        
+        // don't handle same page links/anchors
+        const url = new URL(target.href);
+        let to = url.pathname;
+
+        // handling header anchors
+        if (target.href.includes('#')){
+
+          const slash_index = target.href.indexOf('/', 7);
+          const path = target.href.substring(slash_index);
+
+          const [ postpath, headeranchor ] = path.split('#');
+
+          if (postpath == '/') to = `${window.location.pathname}#${headeranchor}`;            
+          else to = `${postpath}#${headeranchor}`;
+         
+        }
+
+        // router navigation
+        if (window.location.pathname !== to && event.preventDefault) {
+          event.preventDefault()
+          this.$router.push(to)
+        }
+      }
+    })
   }
+
 }
 </script>
 
 <style>
-
-@import url('https://fonts.googleapis.com/css2?family=Bakbak+One&family=Noto+Sans+Display:ital@0;1&family=Recursive:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bakbak+One&family=Noto+Sans+Display:ital@0;1&family=Recursive:wght@700&display=swap");
 
 :root {
-  --bg-color: #3D405B;
+  --bg-color: #3d405b;
   --popup-color: rgb(0, 0, 0, 0.1);
   --dark-popup-color: rgb(0, 0, 0, 0.15);
 
-  --main-font: 'Noto Sans Display';
-  --h-tag-font: 'Recursive';
-  --font-color:#F4F1DE;
+  --main-font: "Noto Sans Display";
+  --h-tag-font: "Recursive";
+  --font-color: #f4f1de;
   --italics-color: #a5a28b;
 
-  --link-color: #F2CC8F;
-  --link-active-color: #E07A5F;
+  --link-color: #f2cc8f;
+  --link-active-color: #e07a5f;
 
   --img-border-color: #1f2138;
 }
 
 body {
   /* background-color: #3D405B; */
-  background-color: var(--bg-color); 
+  background-color: var(--bg-color);
   /* background-color: #282c34; */
   /* background-color: #21252b; */
-	display: flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
-  
-  color: var(--font-color);  
+
+  color: var(--font-color);
   font-size: 17px;
 
   width: 100%;
@@ -101,7 +150,7 @@ div {
   width: 800px;
 }
 
-#app{
+#app {
   padding: 0px;
   width: 100%;
   /* text */
@@ -125,16 +174,16 @@ div {
   margin-top: 10px;
 }
 
-.topbar, .topbar-menu {
+.topbar,
+.topbar-menu {
   /* padding-top: 10px; */
   display: flex;
 }
 
 #main {
-
   /* size */
   width: 92%;
-  max-width: 800px;  
+  max-width: 800px;
 
   /* overflow */
   overflow-wrap: break-word;
@@ -159,7 +208,7 @@ span .content {
   padding: 0px;
 } */
 
-.content h1{
+.content h1 {
   font-size: 2em;
 }
 
@@ -167,10 +216,14 @@ hr {
   border: 2px solid var(--font-color);
   border-radius: 0px;
   background-color: var(--font-color);
-  width: 100%
+  width: 100%;
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   font-family: var(--h-tag-font), sans-serif;
 }
 
@@ -197,17 +250,17 @@ footer {
   margin-bottom: 20px;
 }
 
-footer p{
+footer p {
   margin: 0px;
 }
-
 
 a {
   text-decoration: none;
 }
 
 /* unvisited link */
-a:link, a:visited {
+a:link,
+a:visited {
   color: var(--link-color);
 }
 
@@ -248,7 +301,8 @@ ul {
   padding-left: 10px;
 }
 
-.date, .groups {
+.date,
+.groups {
   /* font-style: italic; */
   color: var(--italics-color);
   padding: 0px;
@@ -259,7 +313,7 @@ ul {
   margin-bottom: 15px;
 }
 
-.groups{
+.groups {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -276,24 +330,25 @@ ul {
   border-radius: 6px;
 }
 
-.date a:link, .date a:visited {
-  color: var(--font-color);  
+.date a:link,
+.date a:visited {
+  color: var(--font-color);
   border-bottom: 2px solid var(--link-color);
 }
 
 .date a:hover {
-  color: var(--link-active-color);  
+  color: var(--link-active-color);
   border-bottom: 2px solid var(--link-active-color);
 }
 
 .main .header {
- flex-direction: column; 
+  flex-direction: column;
 }
 
 .topbar {
   width: 90%;
   max-width: 800px;
-  
+
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -312,7 +367,8 @@ ul {
 }
 
 /* unvisited link */
-.topbar .title a:link, .topbar .title a:visited {
+.topbar .title a:link,
+.topbar .title a:visited {
   color: var(--font-color);
 }
 
@@ -331,7 +387,7 @@ ul {
   padding: 0px;
 }
 
-.topbar button {    
+.topbar button {
   height: 100%;
   width: 100%;
   border-radius: 4px;
@@ -341,7 +397,7 @@ ul {
 
 /* mouse over link */
 .button:active button {
-  background-color: var(--link-active-color);   
+  background-color: var(--link-active-color);
 }
 
 .button:active .topbar-menu {
@@ -349,8 +405,8 @@ ul {
   display: flex;
 }
 
-.topbar-menu { 
-  font-family: var(--main-font), sans-serif;   
+.topbar-menu {
+  font-family: var(--main-font), sans-serif;
   flex-direction: column;
   justify-content: space-between;
 
@@ -369,22 +425,22 @@ ul {
 }
 
 .spotify {
-  margin:auto;
+  margin: auto;
 }
 
 ::-webkit-scrollbar {
   height: 5px;
-  width: 5px;  
+  width: 5px;
 }
 ::-webkit-scrollbar-track {
-  background: transparent; 
+  background: transparent;
 }
 ::-webkit-scrollbar-thumb {
   border-radius: 5px;
-  background: var(--font-color); 
+  background: var(--font-color);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--italics-color); 
+  background: var(--italics-color);
 }
 
 ::-webkit-scrollbar-corner {
@@ -392,8 +448,7 @@ ul {
 }
 
 @media screen and (max-width: 790px) {
-
-  .master-div{
+  .master-div {
     width: 103%;
   }
 
@@ -408,12 +463,11 @@ ul {
   }
 
   .main .header {
-   flex-direction: column; 
+    flex-direction: column;
   }
 
   .sidebar {
     display: none;
   }
 }
-
 </style>
