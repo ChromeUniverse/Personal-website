@@ -1,7 +1,6 @@
 {
   "watch": [
-    "./public/posts/", 
-    "./public/templates/",
+    "./posts/", 
     "./compiler.js"
   ],
   "ext": "md, css, js, html"
