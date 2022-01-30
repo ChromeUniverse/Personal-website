@@ -1,6 +1,5 @@
 #
-# This is a GitHub Actions workflow for building and deploying my personal website.
-# A generous supply of comments is included with this workflow.
+# GitHub Actions workflow for building and deploying my blog to AWS Lightsail.
 #
 # Author: Lucca Rodrigues
 #
@@ -24,26 +23,22 @@ jobs:
 
     steps:
 
-    # Check out code
     - uses: actions/checkout@v2
 
-    # Node.js setup
-    - name: Setting up Node.js!
+    - name: Set up Node.js
       uses: actions/setup-node@v1    
       with:
         node-version: 14.x
 
-    # Install packages with NPM
     - name: Install dependencies
       run: npm ci
 
-    # Compile webpages
-    - name: Compile all webpages
-    
-      # NOTE: specify server address - in this case, it's 34.200.98.64:3000
-      run: node compiler.js 34.200.98.64
+    - name: Compile Markdown files
+      run: npm run content
 
-    # Creating SSH private key
+    - name: Build Vue app
+      run: npm run build
+
     - name: Create SSH identity file
 
       # Get BASE64-encoded private key stored in repo secret
@@ -56,12 +51,9 @@ jobs:
         chmod 400 deployment.key
 
     # Rsync over SSH
-    - name: Sync files with AWS Lightsail      
+    - name: Deploy to AWS
 
-      # transfer files ith SSH key, restart static file server
+      # transfer files with SSH key
       run: |
-        rsync -zaPv -e "ssh -v -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i deployment.key" --delete ./ ubuntu@34.200.98.64:/home/ubuntu/Personal-website      
-        ssh -v -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i deployment.key ubuntu@34.200.98.64 'pm2 restart app'
-     
-
-       
+        rsync -zaPv -e "ssh -v -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i deployment.key" --delete ./dist/* ubuntu@34.200.98.64:/home/ubuntu/dist/      
+        ssh -v -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i deployment.key ubuntu@34.200.98.64 './sync2.sh'  
