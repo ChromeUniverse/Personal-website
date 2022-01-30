@@ -31,7 +31,7 @@ As of writing this, _Tank Battle_ is online and you can check it out [here](http
 > - [New technologies that I learned](#new-technologies-that-i-learned)  
 >   - [Node.js/Express backend](#nodejsexpress-backend)  
 >   - [User authentication](#user-authentication)  
->   - [Relational Databases with SQL](#relational-databases-with-sql)  
+>   - [Relational Databases and SQL](#relational-databases-and-sql)  
 >   - [Async programming](#async-programming)  
 >   - [Client-Server game model](#client-server-game-model)  
 >   - [Elo Rating System (Simple Multiplayer Elo)](#elo-rating-system-simple-multiplayer-elo)  
@@ -164,7 +164,7 @@ When a user fills out the login form, the browser makes a `POST` request to `/lo
 While this approach _might_ be prone to a [CSRF](https://en.wikipedia.org/wiki/Cross-site_request_forgery) attack, it's simple and quite effective, and any vulnerabilities should be mitigated by using the `HttpOnly`, `SameSite` and `Secure` cookie attributes. 
 
 
-### Relational Databases with SQL
+### Relational Databases and SQL
 
 I took this opportunity to try out the [SQL](https://www.youtube.com/watch?v=zsjvFFKOm3c&t=56s) language and a [relational database](https://en.wikipedia.org/wiki/Relational_database#RDBMS) system for the first time. If you're looking for a quick and easy way to get started with SQL too, I highly suggest following Khan Academy's awesome [Intro to SQL](https://www.khanacademy.org/computing/computer-programming/sql) course. Trust me, you won't regret it.
 
