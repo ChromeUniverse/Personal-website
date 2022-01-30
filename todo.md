@@ -12,10 +12,6 @@
 - [X] ~~Switching between group pages just adds extra post previews to webpage instead of clearing old ones~~
 - [X] ~~Prism code snippets are broken~~
 
-## Editing posts
-
-- [X] ~~Add live reload with post compiler~~
-
 ## SEO
 
 - [ ] Add dynamic `<meta>` tags with Open Graph support
@@ -25,9 +21,13 @@
 
 - [ ] Improve styles (yeah it's vague I know)
 
+## Editing posts
+
+- [X] ~~Add live reload with post compiler~~
+
 ## Deployment
 
-- [ ] Set up new deployment workflow for GH Actions
+- [X] ~~Set up new deployment workflow for GH Actions~~
 
 ## Views
 
