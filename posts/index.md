@@ -24,7 +24,7 @@ Here you'll find essays on science, technology, coding, electronics, music and l
 * 🤓 If you would like to know more about myself, feel free to check out [my personal page](/me).
 
 > **Latest post**  
-> - [*Building Tank Battle, an online multiplayer combat game*](http://localhost:8080/building-tank-battle) - October 13, 2021
+> - [*Building Tank Battle, an online multiplayer combat game*](/building-tank-battle) - October 13, 2021
 
 ## Get in touch!
 
