@@ -2,9 +2,8 @@
 
 ## Known issues that need some debugging done
 
-
-- [ ] Fix broken ToC hash links
-- [ ] Change `href`s that point to the website itself to Vue `<router-link>`s ([this](https://levelup.gitconnected.com/vue-js-replace-a-with-router-link-in-dynamic-html-c423beea0d17) might be useful)
+- [X] ~~Fix broken ToC hash links~~
+- [X] ~~Change `href`s that point to the website itself to Vue `<router-link>`s~~
 - [X] ~~Close nav bar on page title click~~
 - [X] ~~Fix weird error when parsing dates from YAML frontmatter~~
 - [X] ~~Sort post previews by descending date~~
@@ -15,7 +14,7 @@
 
 ## Editing posts
 
-- [ ] Add live reload with post compiler
+- [X] ~~Add live reload with post compiler~~
 
 ## SEO
 
