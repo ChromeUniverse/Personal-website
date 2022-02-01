@@ -48,3 +48,4 @@
 ## Compiler
 
 - [X] ~~Create new website compiler~~
+- [ ] Add recursive directory traversal
