@@ -3,7 +3,7 @@ title: How I built my personal website
 templates: []
 description: |
   An in-depth project write-up on my vision, goals, and plans for my personal blog, and a detailed look at how I built the tech that powers it from scratch.
-groups: [all, programming, projects, webdesign]
+groups: [all, programming, meta, webdesign]
 date: 2021-06-16 11:27:00
 ---
 
@@ -15,13 +15,13 @@ Now buckle up, dear reader, because this post is quite a lengthy one. I've inclu
 
 >**Table of contents**
 >1. [A brief introduction](#a-brief-introduction)    
-2. [My vision](#my-vision)      
-3. [The solution](#the-solution)  
-4. [Creating posts](#creating-posts)   
-5. [Templates](#templates)    
-6. [Groups](#groups)   
-7. [The static webpage generator](#the-static-webpage-generator)    
-8. [Conclusion](#conclusion)
+1. [My vision](#my-vision)      
+2. [The solution](#the-solution)  
+3. [Creating posts](#creating-posts)   
+4. [Templates](#templates)    
+5. [Groups](#groups)   
+6. [The static webpage generator](#the-static-webpage-generator)    
+7. [Conclusion](#conclusion)
 
 ## A brief introduction
 

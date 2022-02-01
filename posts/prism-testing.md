@@ -3,7 +3,7 @@ title: Trying out Prism.js
 templates: []
 description: | 
   Testing **Prism.js**, a frontend library for awesome code snippets with syntax highlighting and other neat things
-groups: [all, programming, webdesign]
+groups: [all, webdesign, meta]
 date: 2021-05-30 17:38:00
 --- 
 
@@ -121,7 +121,7 @@ async def ping(ctx):
 
 For the second example, I'll try a code snippet in C++. This is a [Reverse Polish Notation](https://en.wikipedia.org/wiki/Reverse_Polish_notation) parser and evaluator that I wrote a couple of months ago with the help of my friend [Eduardo Quirino](https://github.com/qrno).
 
-```c++
+```cpp
 /*
     -- RPN Parser --
 
