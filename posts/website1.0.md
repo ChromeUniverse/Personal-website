@@ -7,6 +7,8 @@ groups: [all, programming, meta, webdesign]
 date: 2021-06-16 11:27:00
 ---
 
+***Note**: this guide is outdated. You can find more up-to-date meta-articles [here](/groups/meta).*
+
 This is a little guide for those who might be interested in knowing how _The Lucca Logs_ was made and my reasoning behind some of the design choices that I made while building this website.
 
 All files and source code for my website are available [on GitHub](https://github.com/ChromeUniverse/Personal-website). If you're looking to use any part of this website's code in a project of your own, you can find a more straightforward and easier to follow guide [here](https://github.com/ChromeUniverse/Personal-website/blob/main/README.md).
