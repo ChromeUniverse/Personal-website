@@ -9,7 +9,9 @@ img-preview: |
 date: 2022-02-01 19:07:00
 ---
 
-As the 2021 holiday season came and went, I finally mustered up some courage and started learning my first frontend framework, [Vue.js](https://www.youtube.com/watch?v=nhBVL41-_Cw), nearly a year after I built my first HTML webpage. To put my new frontend skills to practice, I decided to completely redesign my blog over the last two weeks using Vue. 
+As the 2021 holiday season came and went, I finally mustered up some courage and started learning my first frontend framework, [Vue.js](https://www.youtube.com/watch?v=nhBVL41-_Cw), nearly a year after I built my first HTML webpage. 
+
+So, to put my new frontend skills to practice, I decided to completely redesign my blog over the last two weeks using Vue. Yes, the same blog you're reading this article on right now.
 
 ![img](/images/vue-redesign.png)
 
