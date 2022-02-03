@@ -156,7 +156,7 @@ div {
   width: 100%;
   /* text */
   font-family: var(--main-font), sans-serif;
-  font-size: 1.1em;
+  font-size: 1em;
   line-height: 1.6;
   text-align: left;
   display: flex;
@@ -184,7 +184,7 @@ div {
 #main {
   /* size */
   width: 92%;
-  max-width: 800px;
+  max-width: 700px;
 
   /* overflow */
   overflow-wrap: break-word;
@@ -280,10 +280,10 @@ p {
 img {
   display: block;
   margin: auto;
-  max-width: 80%;
+  max-width: 70%;
   background: var(--img-border-color);
   padding: 3px;
-  max-height: 300px;
+  max-height: 350px;
   border-radius: 10px;
   /* height: 200px; */
 }
@@ -348,7 +348,7 @@ ul {
 
 .topbar {
   width: 90%;
-  max-width: 800px;
+  max-width: 700px;
 
   display: flex;
   flex-direction: row;
@@ -412,10 +412,10 @@ ul {
   justify-content: space-between;
 
   width: 90%;
-  max-width: 800px;
+  max-width: 700px;
 
   background-color: var(--dark-popup-color);
-  border-radius: 5px;
+  border-radius: 8px;
   overflow-x: auto;
 }
 
@@ -483,6 +483,11 @@ ul {
 }
 
 @media screen and (max-width: 790px) {
+
+  #app {
+    font-size: 1.1em;
+  }
+
   .master-div {
     width: 103%;
   }
