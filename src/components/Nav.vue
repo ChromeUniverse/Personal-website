@@ -43,7 +43,7 @@
 
     <div class="topbar-menu-item">
       <router-link to="/groups/webdesign" @click="$emit('nav-menu-click')">
-        <b>🖥 Webdesign!</b>
+        <b>🖥 Webdesign</b>
       </router-link>
     </div>
 
@@ -72,3 +72,13 @@ export default {
   emits: ['toggle-nav-menu', 'nav-menu-click']
 }
 </script>
+
+
+<style>
+
+.topbar-menu-item b {
+  font-family: 'Noto Sans Display';
+  font-weight: normal;
+}
+
+</style>

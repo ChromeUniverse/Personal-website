@@ -97,7 +97,8 @@ export default {
 </script>
 
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Bakbak+One&family=Noto+Sans+Display:ital@0;1&family=Recursive:wght@700&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Recursive:wght@400;700&family=Roboto:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
 
 :root {
   --bg-color: #3d405b;
