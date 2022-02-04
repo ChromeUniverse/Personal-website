@@ -17,7 +17,9 @@ Around the same time, I happened to find a pretty neat .io game, [TankRoyale.io]
 
 Over the next couple of months, I would work on the project sporadically, implementing cool features, learning tons of new things, and of course, breaking my code hundreds of times, doing complete project rewrites, and debugging all sorts of unforeseen issues. Nevertheless, I managed to power through it all and finally completed the game in early October of 2021. 
 
-As of writing this, _Tank Battle_ is online and you can check it out [here](http://18.229.196.24:4000/).
+~~As of writing this, _Tank Battle_ is online and you can check it out [here](http://18.229.196.24:4000/).~~
+
+**Update**: As of Feb. 4th, 2022, *Tank Battle* has been taken down due to unforeseen costs with running AWS EC2 cloud servers. I'm working on getting the game back online ASAP. Sorry for the inconvenience. 😓
 
 ![](https://media.discordapp.net/attachments/760252264723644426/895442475278274580/unknown.png?width=1343&height=665)
 
