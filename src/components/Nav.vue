@@ -76,6 +76,10 @@ export default {
 
 <style>
 
+.title {
+  letter-spacing: -0.05em;
+}
+
 .topbar-menu-item b {
   font-family: 'Noto Sans Display';
   font-weight: normal;

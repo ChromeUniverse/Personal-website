@@ -226,6 +226,7 @@ h3,
 h4,
 h5 {
   font-family: var(--h-tag-font), sans-serif;
+  letter-spacing: -0.05em;
 }
 
 h1 {
@@ -236,7 +237,7 @@ h1 {
   margin-bottom: 10px;
   width: 90%;
   margin-right: auto;
-  margin-left: auto;
+  margin-left: auto; 
 }
 
 blockquote {
