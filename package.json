@@ -7,7 +7,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "content": "node compiler.js"
+    "content": "nodemon compiler.js"
   },
   "main": "",
   "dependencies": {
