@@ -9,13 +9,12 @@ date: 2022-08-17 23:41:00
 
 This is a very different article from the ones I've published on this blog up to now. This isn't an article about tech *per se* - rather, it's about transforming tech expertise into a marketable (and profitable!) skill through freelance development work.
 
-For those of you who haven't heard yet, back in February I started working as a part-time Discord bot developer (more on that later). I worked and built tons of bots for about 4 months before having to call it quits and focus on other life priorities. This article pretty much sums up my experience so far working a freelance developer.
+For those of you who haven't heard yet, back in February I started working as a part-time Discord bot developer. I was able to build and ship quite a few different bots before having to call it quits after about 4 months and focus on other life priorities. This article pretty much sums up my experience so far working as a freelance developer.
 
-> **Table of Contents**
 > - [Who's this article for?](#whos-this-article-for)
-> - [Becoming a *real* software developer](#becoming-a-real-software-developer)
+> - [Beomcing a *real* software developer](#beomcing-a-real-software-developer)
 >   - ["Right, what exactly are you building?"](#right-what-exactly-are-you-building)
->   - ["How much did you make?"](#how-much-did-you-make)
+>   - ["How much do you make as a dev?"](#how-much-do-you-make-as-a-dev)
 > - [Why freelance?](#why-freelance)
 > - [Clientele](#clientele)
 >   - [MiniMetamon](#minimetamon)
@@ -31,7 +30,7 @@ For those of you who haven't heard yet, back in February I started working as a 
 > - [Some life lessons I've learned](#some-life-lessons-ive-learned)
 >   - ["Do I have what it takes to be successful?"](#do-i-have-what-it-takes-to-be-successful)
 >   - [What the heck does "being successful" mean anyway?](#what-the-heck-does-being-successful-mean-anyway)
->   - [Admin work advice (or lack there of)](#admin-work-advice-or-lack-there-of)
+>   - [Advice for admin work (or lack there of)](#advice-for-admin-work-or-lack-there-of)
 > - [Conclusion](#conclusion)
 
 ---
@@ -47,7 +46,7 @@ As with nearly all other articles in this blog, the content here is mostly about
 - People who might occasionally stalk me on the internet and want to know what I've been up to (you're welcome, creeps)
 
 
-## Becoming a *real* software developer
+## Beomcing a *real* software developer
 
 I can now proudly call myself an actual **software developer**: someone who's capable of building (and mot importantly, shipping!) software products that meets the needs of clients and users.
 
@@ -65,18 +64,18 @@ Discord bots aren't revolutionary, cutting-edge, *blazingly fast™* tech of the
 
 Rant aside, I'll get into more detail about the actual bot I've built in a future article, so stay tuned. 😉
 
-### "How much did you make?"
+### "How much do you make as a dev?"
 
-Honestly, I don't feel comfortable sharing that sort of information at the time being, but I might publish a video about that on [my YouTube channel](https://www.youtube.com/c/LuccasLab) soon! So keep an eye out for that.
+Honestly, I don't feel comfortable sharing that sort of information at the time being. But I might publish a video about freelance finances on [my YouTube channel](https://www.youtube.com/c/LuccasLab) soon! So keep an eye out for that.
 
 
 ---
 ## Why freelance?
 
-Personally, I decided to set up my own freelance business specifically in the Discord bot space for a couple of reasons:
-- I wanted take the JavaScript expertise I've garnered over the began 18-ish months before I started working and really put them to the test in a relatively low-pressure environment while also improving my skills
+I decided to set up my own freelance business specifically in the Discord bot space for a couple of reasons:
+- I wanted take the JavaScript expertise I've garnered over the 18-ish months previous to setting up shop and put them to the test in a relatively low-stress environment while also improving my skills
 - I already had some reasonable experience building Discord bots - after all, I'm the creator of [RedstoneBot](/redstone), a fairly complex and modestly popular bot written in Python
-- I wanted to start building a strong portfolio as a developer by including projects that came from real, honest-to-goodness paying customers
+- I wanted to start building a strong portfolio as a developer by including projects that came from real paying customers
 - I was looking for a new source of disposable income to invest in my hobbies: audio and/or video production equipment, my tech desk setup, new music gear, hardware to learn/practice electrical engineering, maybe go on a trip to Europe or the United States, or literally anything else.
 
 ---
@@ -143,27 +142,26 @@ The following is a list of smaller organizations I've worked with.
 
 ### Discord API
 
-Naturally, you need to learn the ins and outs of Discord's API if you want to build bots that can actually do cool stuff. This includes learning what the API can and can't do too, and personally I've run into some situations where you have to design your own workarounds to overcome Discord's limitations to complete a task. 
-
-<!-- Here's an example: if your bot is in a guild with, say, some 5k+ members, and you need to fetch all users with a specific role, don't fetch  -->
+You need to know the ins and outs of Discord's API if you want to build practical bots (duh). Most importantly, this includes learning what the API does and doesn't allow bots to do. When you're building bots, you might run into some situations where you have to design your own workarounds to overcome the Discord API's limitations.
 
 ### Quickly and reliably deploying Node.js apps
 
 Since I almost entirely using Node.js to develop my bots, this was also a nice opportunity to practice deploying Node.js aps quickly. In practice, this means:
-- Installing Node.js and NPM with [nvm](https://github.com/nvm-sh/nvm) instead of using packages managers like apt
+- Installing Node.js and NPM with [nvm](https://github.com/nvm-sh/nvm) instead of using packages managers like Ubuntu's `apt`
 - Using `.gitignore` to exclude local environment variables (`.env`) and configuration files (`config.json`) from version control
-- Using JSON files as databases (yeah, I'm not joking, say what you want, I don't give a damn) and fixing any issues with data persistence in production should they arise
-- Using [PM2](https://pm2.keymetrics.io/) to run Node-based Discord bots and using it to monitor/log the bot's activity (this helped a lot with debugging issues in production)
+- Using said configurating files or environament variables to store sensitive information (like API secrets and auth tokens) and basic runtime/initialization parameters.
+- Using JSON files as databases (yes, I'm not joking - say what you want, I don't give a damn) and fixing any issues with data persistence in production should they arise
+- Using [PM2](https://pm2.keymetrics.io/) to run the bots and using it to monitor/log the bot's activity (this helped **a lot** with debugging issues in production!)
 
 ### SSL certificates and HTTPS
 
-When building MiniMetamon's multi-purpose Ethereum + Discord integration bot, one of our biggest challenges we faced was finding a way to allow users to link their MetaMask wallets to the bot. This required our frontend team to build a website with [Next.js](https://nextjs.org/) and use [Ethers.js](https://www.npmjs.com/package/ethers) so that users could sign a faux transaction and verify their identity, as well as read their public wallet address and send it to the bot, and this meant that I had to integrate a basic API backend into the bot as well. 
+When building MiniMetamon's multi-purpose Ethereum + Discord integration bot, one of our biggest challenges we faced was finding a way to allow users to link their MetaMask wallets to the bot. This required our frontend team to build a website with [Next.js](https://nextjs.org/) and use [Ethers.js](https://www.npmjs.com/package/ethers) so that users could sign a faux message transaction to verify their identity, as well as read their public wallet address and `POST` it to the bot's backend, and this meant that I had to integrate a basic API backend into the bot as well. 
 
 Now, up to that point, I hadn't yet had the chance to properly practice deploying an [Express](https://www.npmjs.com/package/express) + [NGINX](https://www.nginx.com/) webserver to a production environment, but that was the mission nonetheless, and I managed to pull it off! Kudos to Brad from [Traversy Media](https://www.youtube.com/channel/UC29ju8bIPH5as8OGnQzwJyA) for [his awesome tutorial on how to deploy Node.js apps](https://www.youtube.com/watch?v=oykl1Ih9pMg) along with setting up SSL with [Let's Encrypt](https://letsencrypt.org/) and [Certbot](https://certbot.eff.org/), I couldn't have done it without him.
 
 ### JavaScript skills!
 
-Of course, I also managed to get lots of practice writing JavaScript as well. This was a great oportunity to practice writing code with modern ES6 features, such as using arrow functions, destructuring, template literals (personally I like to call these "string interpolation"), and the new Array and String methods.
+Of course, I also managed to practice writing a lot JavaScript as well. This was a great oportunity to learn [modern ES6 features](http://es6-features.org/#Constants) too: arrow functions, destructuring assignments, template literals (I personally like to call these "string interpolation"), the spread operator, asynchronous programming (a.k.a Promises), importing/exporting modules, and the new Array and String methods.
 
 ---
 ## Some life lessons I've learned
@@ -174,23 +172,23 @@ Working and running your own business is
 
 The age-old question of "am I actually good enough to do X" usually stems from self-doubt rather than someone else actually questioning your abilities, especially when you're starting out - unless, of course, you're  actually convincing clients you've got what it takes to get the job done, but you're not even going to get to that point if you don't believe in yourself to begin with.
 
-Now, being confident in your skills is important. But there's no point in dreaming of working as a freelance full-stack web developer extraordinaire when you can't even build a basic portfolio page. Keeping your expectations in check with your real-world skills is not only a good way to avoid frustrations down the line but can also help you define which services you're better fit to sell.
+Now, being confident in your skills is important. But there's no point in dreaming of working as a freelance full-stack web developer extraordinaire when you can't even build a basic portfolio page. Keeping your expectations in check with your real-world skills will help you avoid frustrations down the line, define which services you're better fit to sell, and most important of all, reveal your technical and/or professional weaknesses so you can addresss them.
 
 ### What the heck does "being successful" mean anyway?
 
 Starting your own indie business is **not** like taking tests at school or winning a medal in a Math Olympiad. In fact, it's anything but:
-- There's no "A+ grade" - there are no straightforward metrics to compare your current performance to an "ideal" level (not even revenue statistics!)
+- There's no "A+ grade" - there are no straightforward metrics to compare your current performance to an "ideal" level (not even your revenue stats) 
 - Most of the time you also won't be able to directly compare yourself to your competition
 - Heck, you might not even be sure who your competition is in the first place! 
-- Most importantly, **you literaly cannot cheat**!
+- Most importantly, there are no shortcuts, and **you literaly cannot cheat**! You're either making money or you're not.
 
-The point is, when it comes to running your own business, success is a very vague idea by itself. It could mean earning 7 figure yearly profits, but it could also just mean having more time to spend with family or to enjoy your hobbies. In any case, unless you really depend on freelance work as your main source of income, here's my advice: 
+The point is, when it comes to running your own business, success is a very vague idea by itself. It could mean earning 7 figure yearly profits, but it could also just mean having a better work-life balance than a regular job - **it's up to you**. In any case, if freelancing is a "side hustle" and not your main source of income, here's my advice: 
 - **Don't strees out too much** about things not working out.
 - Make peace with the fact that **not everything is under your control**, but things that are might be an opportunity for improvement and growth.
-- **Be patient** and opportunities will come your way.
-- Focus your energy on **growing your business**: build a nice portfolio, invest in some marketing, provide top-notch customer support, and most importantly, *build awesome products*.
+- **Be patient** - opportunities will come your way.
+- Focus your energy on actions that **grow your business**: build a nice portfolio, invest in marketing (if you can), provide top-notch customer support, and most importantly, *build awesome products*.
 
-### Admin work advice (or lack there of)
+### Advice for admin work (or lack there of)
 
 Unfortunately, I don't have much advice in terms of how to do administrative tasks (scheduling meeetings, contracts, finances, bookkeeping, taxes, etc.) as I just wasn't earning enough to justify worrying about that sort of stuff. Sorry! 
 
