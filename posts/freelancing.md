@@ -12,7 +12,7 @@ This is a very different article from the ones I've published on this blog up to
 For those of you who haven't heard yet, back in February I started working as a part-time Discord bot developer. I was able to build and ship quite a few different bots before having to call it quits after about 4 months and focus on other life priorities. This article pretty much sums up my experience so far working as a freelance developer.
 
 > - [Who's this article for?](#whos-this-article-for)
-> - [Beomcing a *real* software developer](#beomcing-a-real-software-developer)
+> - [Becoming a *real* software developer](#beomcing-a-real-software-developer)
 >   - ["Right, what exactly are you building?"](#right-what-exactly-are-you-building)
 >   - ["How much do you make as a dev?"](#how-much-do-you-make-as-a-dev)
 > - [Why freelance?](#why-freelance)
@@ -46,7 +46,7 @@ As with nearly all other articles in this blog, the content here is mostly about
 - People who might occasionally stalk me on the internet and want to know what I've been up to (you're welcome, creeps)
 
 
-## Beomcing a *real* software developer
+## Becoming a *real* software developer
 
 I can now proudly call myself an actual **software developer**: someone who's capable of building (and mot importantly, shipping!) software products that meets the needs of clients and users.
 
