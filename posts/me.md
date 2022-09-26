@@ -129,7 +129,7 @@ Colégio Militar de Brasília - Class of 2020
 
   <a href="https://www.youtube.com/c/everydaylouie">
     <div class="artist">
-      <img src=" https://yt3.ggpht.com/X5NHg97NZmTS4p3a4yJn4MKwOCpdwx8j0_6Aku3wpTQRmawphsoKJJ0eq3P9YdmgJhgLI-s_E9w=s900-c-k-c0x00ffffff-no-rj">
+      <img src="https://yt3.ggpht.com/X5NHg97NZmTS4p3a4yJn4MKwOCpdwx8j0_6Aku3wpTQRmawphsoKJJ0eq3P9YdmgJhgLI-s_E9w=s176-c-k-c0x00ffffff-no-rj-mo">
       <h4>Louie Zong</h4>
     </div>
   </a>
