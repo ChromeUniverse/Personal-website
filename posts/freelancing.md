@@ -1,10 +1,10 @@
 ---
-title: "Working as a freelance developer" 
+title: "Becoming a freelance developer" 
 templates: []
 description: |
-  description
+  A collection of thoughts about how and why I started my own freelance software development gig - building Discord bots, of all things
 groups: [drafts]
-date: 2022-08-17 23:41:00
+date: 2022-09-26 17:26:00
 --- 
 
 This is a very different article from the ones I've published on this blog up to now. This isn't an article about tech *per se* - rather, it's about transforming tech chops into a profitable venture through freelance development work.
