@@ -7,12 +7,12 @@ groups: [drafts]
 date: 2022-08-17 23:41:00
 --- 
 
-This is a very different article from the ones I've published on this blog up to now. This isn't an article about tech *per se* - rather, it's about transforming tech expertise into a marketable (and profitable!) skill through freelance development work.
+This is a very different article from the ones I've published on this blog up to now. This isn't an article about tech *per se* - rather, it's about transforming tech chops into a profitable venture through freelance development work.
 
-For those of you who haven't heard yet, back in February I started working as a part-time Discord bot developer. I was able to build and ship quite a few different bots before having to call it quits after about 4 months and focus on other life priorities. This article pretty much sums up my experience so far working as a freelance developer.
+For those of you who haven't heard yet, I started working as a part-time Discord bot developer back in February. I was able to build and ship a fair number of bots before calling it quits some 4 months later to focus on other life priorities. This article pretty much sums up my experience so far working as a freelance developer.
 
 > - [Who's this article for?](#whos-this-article-for)
-> - [Becoming a *real* software developer](#beomcing-a-real-software-developer)
+> - [Becoming a *real* software developer](#becoming-a-real-software-developer)
 >   - ["Right, what exactly are you building?"](#right-what-exactly-are-you-building)
 >   - ["How much do you make as a dev?"](#how-much-do-you-make-as-a-dev)
 > - [Why freelance?](#why-freelance)
@@ -26,11 +26,13 @@ For those of you who haven't heard yet, back in February I started working as a 
 >   - [Discord API](#discord-api)
 >   - [Quickly and reliably deploying Node.js apps](#quickly-and-reliably-deploying-nodejs-apps)
 >   - [SSL certificates and HTTPS](#ssl-certificates-and-https)
->   - [JavaScript skills!](#javascript-skills)
+>   - [JavaScript chops!](#javascript-chops)
 > - [Some life lessons I've learned](#some-life-lessons-ive-learned)
 >   - ["Do I have what it takes to be successful?"](#do-i-have-what-it-takes-to-be-successful)
 >   - [What the heck does "being successful" mean anyway?](#what-the-heck-does-being-successful-mean-anyway)
->   - [Advice for admin work (or lack there of)](#advice-for-admin-work-or-lack-there-of)
+>   - [Some advice for admin work (or lack there of)](#some-advice-for-admin-work-or-lack-there-of)
+> - [Moving forward](#moving-forward)
+>   - [Pivoting to full-stack web development](#pivoting-to-full-stack-web-development)
 > - [Conclusion](#conclusion)
 
 ---
@@ -38,17 +40,17 @@ For those of you who haven't heard yet, back in February I started working as a 
 
 My main goal with this article is to document and showcase my (somewhat limited, but still relevant) experience as an entry-level freelance software developer to whoever might be interested.
 
-As with nearly all other articles in this blog, the content here is mostly about my personal life experiences, but I hope that someone out there might learn a thing or two from my story. Here are the groups of people who I think would benefit the most by reading this article, in descending order of perceived relevance:
+As with all other articles in this blog, this content here is mostly just a personal journal of sorts - I don't expect anyone to seriouly read this other than my future self - but I hope that someone out there might learn a thing or two from my story. So here are the groups of people who I think would benefit the most from this article, in descending order of perceived relevance:
 
 - **Aspiring developers** (think high school and college students, so mostly teens and young adults) looking to earn some not-so-quick cash doing basic software development
 - **Entry-level software engineers** looking to get some real-world experience before entering the industry
-- People who are considering going the freelance route or are just starting out with freelance work
-- People who might occasionally stalk me on the internet and want to know what I've been up to (you're welcome, creeps)
+- People who are **considering going the freelance route** or are just starting out with freelance work
+- People who might occasionally **stalk me on the internet** and want to know what I've been up to (you're welcome, creeps)
 
 
 ## Becoming a *real* software developer
 
-I can now proudly call myself an actual **software developer**: someone who's capable of building (and mot importantly, shipping!) software products that meets the needs of clients and users.
+Well - I can now proudly call myself an actual **software developer**: someone who's capable of building (and mot importantly, shipping!) software products that meets the needs of clients and users.
 
 This is quite honestly a *huge* accomplishment for me - just over 18 months ago I was starting out with JavaScript and here I am today, building tools that actual people are using right now, and I'm getting *paid* for it - **It feels awesome!** 😆
 
@@ -60,7 +62,7 @@ Now, there's an argument to be made that Discord bot developers aren't *real* de
 
 Just because there's people who spend an ungodly amount of time messing around with Mudae (looking at you, Wilson), that doesn't mean that all Discord bots are useless or aren't technologically advanced. Take a look at [MEE6](https://mee6.xyz/), for instance: it handles over 19 million servers (!) and has customizable commands, moderation features, livestream alerts (i.e. serious third-party API integrations!), leveling systems, music playback and much more. MEE6's developers clearly know what they're doing.
 
-Discord bots aren't revolutionary, cutting-edge, *blazingly fast™* tech of the future. They're server-side programs written with the sole purpose of enhancing Discord guilds (i.e. "servers"), and that's it. But they still very much behave like real-world backend infrastucture and are perfectly capable of persisting arbitrary user info, querying databases, fetching data from APIs on the internet... and doing basically anything that a web server does! And when done right, Discord bots most certainly have the potential to become exceptional software.
+Discord bots aren't revolutionary, cutting-edge, *blazingly fast™* tech of the future. They're server-side programs written with the sole purpose of enhancing Discord guilds (i.e. "servers"), and that's it. But they still very much behave like real-world backend infrastructure and are perfectly capable of persisting arbitrary user info, querying databases, fetching data from APIs on the internet... and doing basically anything that a web server does! And when done right, Discord bots most certainly have the potential to become exceptional software.
 
 Rant aside, I'll get into more detail about the actual bot I've built in a future article, so stay tuned. 😉
 
@@ -149,7 +151,7 @@ You need to know the ins and outs of Discord's API if you want to build practica
 Since I almost entirely using Node.js to develop my bots, this was also a nice opportunity to practice deploying Node.js aps quickly. In practice, this means:
 - Installing Node.js and NPM with [nvm](https://github.com/nvm-sh/nvm) instead of using packages managers like Ubuntu's `apt`
 - Using `.gitignore` to exclude local environment variables (`.env`) and configuration files (`config.json`) from version control
-- Using said configurating files or environament variables to store sensitive information (like API secrets and auth tokens) and basic runtime/initialization parameters.
+- Using said configuration files or environment variables to store sensitive information (like API secrets and auth tokens) and basic runtime/initialization parameters.
 - Using JSON files as databases (yes, I'm not joking - say what you want, I don't give a damn) and fixing any issues with data persistence in production should they arise
 - Using [PM2](https://pm2.keymetrics.io/) to run the bots and using it to monitor/log the bot's activity (this helped **a lot** with debugging issues in production!)
 
@@ -159,7 +161,7 @@ When building MiniMetamon's multi-purpose Ethereum + Discord integration bot, on
 
 Now, up to that point, I hadn't yet had the chance to properly practice deploying an [Express](https://www.npmjs.com/package/express) + [NGINX](https://www.nginx.com/) webserver to a production environment, but that was the mission nonetheless, and I managed to pull it off! Kudos to Brad from [Traversy Media](https://www.youtube.com/channel/UC29ju8bIPH5as8OGnQzwJyA) for [his awesome tutorial on how to deploy Node.js apps](https://www.youtube.com/watch?v=oykl1Ih9pMg) along with setting up SSL with [Let's Encrypt](https://letsencrypt.org/) and [Certbot](https://certbot.eff.org/), I couldn't have done it without him.
 
-### JavaScript skills!
+### JavaScript chops!
 
 Of course, I also managed to practice writing a lot JavaScript as well. This was a great oportunity to learn [modern ES6 features](http://es6-features.org/#Constants) too: arrow functions, destructuring assignments, template literals (I personally like to call these "string interpolation"), the spread operator, asynchronous programming (a.k.a Promises), importing/exporting modules, and the new Array and String methods.
 
@@ -172,7 +174,7 @@ Working and running your own business is
 
 The age-old question of "am I actually good enough to do X" usually stems from self-doubt rather than someone else actually questioning your abilities, especially when you're starting out - unless, of course, you're  actually convincing clients you've got what it takes to get the job done, but you're not even going to get to that point if you don't believe in yourself to begin with.
 
-Now, being confident in your skills is important. But there's no point in dreaming of working as a freelance full-stack web developer extraordinaire when you can't even build a basic portfolio page. Keeping your expectations in check with your real-world skills will help you avoid frustrations down the line, define which services you're better fit to sell, and most important of all, reveal your technical and/or professional weaknesses so you can addresss them.
+Now, being confident in your skills is important. But there's no point in dreaming of working as a freelance full-stack web developer extraordinaire when you can't even build a basic portfolio page. Keeping your expectations in check with your real-world skills will help you avoid frustrations down the line, define which services you're better fit to sell, and most important of all, reveal your technical and/or professional weaknesses so you can address them.
 
 ### What the heck does "being successful" mean anyway?
 
@@ -180,19 +182,49 @@ Starting your own indie business is **not** like taking tests at school or winni
 - There's no "A+ grade" - there are no straightforward metrics to compare your current performance to an "ideal" level (not even your revenue stats) 
 - Most of the time you also won't be able to directly compare yourself to your competition
 - Heck, you might not even be sure who your competition is in the first place! 
-- Most importantly, there are no shortcuts, and **you literaly cannot cheat**! You're either making money or you're not.
+- Most importantly, there are no shortcuts, and **you literally cannot cheat**! You're either making money or you're not.
 
 The point is, when it comes to running your own business, success is a very vague idea by itself. It could mean earning 7 figure yearly profits, but it could also just mean having a better work-life balance than a regular job - **it's up to you**. In any case, if freelancing is a "side hustle" and not your main source of income, here's my advice: 
-- **Don't strees out too much** about things not working out.
+- **Don't stress out too much** about things not working out.
 - Make peace with the fact that **not everything is under your control**, but things that are might be an opportunity for improvement and growth.
 - **Be patient** - opportunities will come your way.
 - Focus your energy on actions that **grow your business**: build a nice portfolio, invest in marketing (if you can), provide top-notch customer support, and most importantly, *build awesome products*.
 
-### Advice for admin work (or lack there of)
+### Some advice for admin work (or lack there of)
 
-Unfortunately, I don't have much advice in terms of how to do administrative tasks (scheduling meeetings, contracts, finances, bookkeeping, taxes, etc.) as I just wasn't earning enough to justify worrying about that sort of stuff. Sorry! 
+Unfortunately, I don't have much advice in terms of how to do administrative tasks (scheduling meetings, contracts, finances, bookkeeping, taxes, etc.) as I just wasn't earning enough to justify worrying about that sort of stuff. Sorry! 
 
 In any case, at the bare minimum you **must** create and regularly update a Google Sheet with all your business finances. For revenue, add a new line for every project your completed with a short description of what you delivered, who paid you, how much your earned, how long that project took and when you started/finished it. Do the same for expenses, and make sure to specify what exactly it is you paid for as well as a qualitative measurement of how essential that expense is to your business.
 
 ---
+
+## Moving forward
+
+As I've said before, I had to call off my gig to focus on more important life stuff. I'm not particularly keen on sharing all the details of why and how this happened as there's a lot of very messy personal issues behind this decision. Maybe I'll talk about it some day.
+
+But nearing the end of my freelancing stint, I started noticing that Discord bot development just isn't where it's at:
+- Your user base is limited to people who 1) enjoy using Discord, 2) are members of your client's server and 3) believe that the product, business and/or community that your client has built is actually valuable
+- Unfortunately, Discord bots often times aren't viewed as *real* software to most people (mostly due to their limited feature set) and are therefore less valued
+- Opportunities for genuine growth and high profits (like the amazing ones I've had at MiniMetamon) are few and far between
+- Why the hell do literally all of my high-profit projects come from Web3 and NFT groups???? Where's my small businesses, startups and SaaS people at?
+
+Oh shoot, I forgot - there are almost no serious SaaS customers, startup founders or small business leaders on Discord. 
+
+The reality is that Discord bots will really only take you so far as a dev - they're still a very niche type of product and while there's certainly a market for them, you'll have a hard time making any serious amount of money from building bots.
+
+### Pivoting to full-stack web development
+
+And that's exactly why I'm taking a step back from Discord bots and re-learning my web dev fundamentals - I plan to transitioning to a freelance frontend (or possibly even full-stack!) software development gig by the end of the year.
+
+I'm still quite busy studying for university entrance tests, but I've finally managed around to learn some [React](https://reactjs.org/) on the sidelines. I've already completed [Scrimba](https://scrimba.com/)'s excellent [Learn React for free](https://scrimba.com/learn/learnreact) course! 🎉 
+
+I've also started doing [Frontend Mentor](frontendmentor.io)'s coding challenges to re-learn my HTML and CSS and put my new React chops to the test.  I'm betting big on building a solid portfolio so I can showcase all of my 1337 frontend/backend web dev and programming chops and hopefully land some really nice freelance projects come 2023. 😉
+
+---
 ## Conclusion
+
+I think that's really all that I have to say about my brief freelancing stint for now. Here's hoping there's a lot cool stuff coming soon!
+
+I'll try to start writing more articles on web development - I've been having a blast using React and I'd love to write about what I've learned so far and I've how I've been building some really neat web apps for FEM's challenges with React, [Vite](https://vitejs.dev/) and [Vercel](https://vercel.com/). Heck, it might be time to do [yet another rewrite](/website2.0-redesign#conclusion) for this blog - *The Lucca Logs 3.0* coming soon?
+
+Thank you so much for reading! Catch you later. 👋
