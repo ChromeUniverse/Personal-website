@@ -483,6 +483,20 @@ ul {
   background: transparent;
 }
 
+code {
+  background-color: #323442;
+  padding: 3px 9px;
+  border-radius: 1000px;
+}
+
+code[class*="language"] {
+  padding: 0;
+}
+
+pre {
+  border-radius: 10px;
+}
+
 @media screen and (max-width: 790px) {
 
   #app {
