@@ -9,7 +9,7 @@ img-preview: |
 date: 2022-09-30 10:25:00
 --- 
 
-Ever since I got back into web development some 6-ish weeks ago by enrolling in Scrimba's [Learn React for free](https://scrimba.com/learn/learnreact) course, I started looking for ways to brush up on my HTML and CSS before diving deeper into React, as I feeling a bit rusty. 😅
+Ever since I got back into web development some 6-ish weeks ago I started looking for ways to brush up on my HTML and CSS. I enrolled in Scrimba's [Learn React for free](https://scrimba.com/learn/learnreact) course but I feeling a bit rusty and wanted to get some practice before diving deeper into React. 
 
 As luck would have it, I stumbled into [Alana](https://alanacapcreates.com/), a fellow Scrimba coder who was solving a web dev coding challenge from [Frontend Mentor](frontendmentor.io) live on Twitch. One look at their collection of project challenges, and I was hooked. I've now been building FEM's projects for a little over a month and my frontend skills have improved drastically. 🙂
 
@@ -17,7 +17,7 @@ This week I finished this cool [multi-theme Calculator app challenge](https://ww
 
 Warning - there will be a fair amount of React lingo in the coming sections, but I'm sure you already saw that coming. 😜
 
-You can also [try out the calculator for yourself](https://calculator-app-weld-xi.vercel.app/) or [view the full source code on Github](https://github.com/ChromeUniverse/calculator-app).
+You can also [try out the calculator for yourself](https://calculator-app-weld-xi.vercel.app/) or [view the full source code on GitHub](https://github.com/ChromeUniverse/calculator-app).
 
 ![img](/images/calc-themes-mobile-preview.jpg) 
 
@@ -423,7 +423,7 @@ As you've probably guessed, the three CSS files above contain the theme-specific
 
 The most naive way to make the calculator work would be to append all the key inputs to a single input buffer, then run `eval()` on it and display the result on the calculator's screen. But using `eval()` nowadays is an [anti-pattern **and** a big security no-no](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval#never_use_eval!)!
 
-We also want this app to feel as close as possible to a native phone app for the best possible UX, so let's try to come with something that mimics the classic iPhone calculator (in portrait mode, of course). Some important features would include:
+For the best possible UX, I also wanted this app to feel as close as possible to the classic iPhone calculator, so I tried coming up with something that could (mostly) imitate it. Hence, there were a couple of important features I wanted to include:
 - Pressing `=` repeatedly should keep executing the last operation (e.g. doubling) until another key is pressed
 - If two operands and a operator have already been inputted, pressing an operator key should execute the operation both said operands and show the correct result on the calculator's display before accepting any additional input
 - Pressing operator keys repeatedly should only reset the operator state variable and not run any calculations (this is a special edge case for the bullet point above)
