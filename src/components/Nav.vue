@@ -10,7 +10,7 @@
     <br>
 
     <div class="button" @click="$emit('toggle-nav-menu')">
-      <button>📄</button>
+      <button>📝</button>
     </div>
 
   </div>
@@ -19,7 +19,7 @@
 
     <div class="topbar-menu-item">
       <router-link to="/groups/all" @click="$emit('nav-menu-click')">
-        <b>📝 All posts</b>
+        <b>📝 All Posts</b>
       </router-link>
     </div>
 
@@ -42,8 +42,8 @@
     </div>
 
     <div class="topbar-menu-item">
-      <router-link to="/groups/webdesign" @click="$emit('nav-menu-click')">
-        <b>🖥 Webdesign</b>
+      <router-link to="/groups/web%20design" @click="$emit('nav-menu-click')">
+        <b>🖥 Web Design</b>
       </router-link>
     </div>
 

@@ -3,7 +3,7 @@ title: How I built my personal website
 templates: []
 description: |
   An in-depth project write-up on my vision, goals, and plans for my personal blog, and a detailed look at how I built the tech that powers it from scratch.
-groups: [all, programming, meta, webdesign]
+groups: [all, programming, meta, web design]
 date: 2021-06-16 11:27:00
 ---
 
@@ -186,7 +186,7 @@ Writing these posts and building the infrastructure for this website have both b
 
 I truly believe my current setup for maintaining this website is a viable solution for a personal blog-style website such as my own. And no, I don't mean it's complete by any stretch of the imagination - there's still a lot of work to do and loads of features to add. But I'm certain it has the potential to create websites which are aesthetically pleasing and minimalist in nature, yet still very functional and expandable.
 
-Hopefully people can see what this system is capable of and will adapt it to their own use cases, or at least learn a thing or two from my ongoing [webdesign adventures](/webdesign).
+Hopefully people can see what this system is capable of and will adapt it to their own use cases, or at least learn a thing or two from my ongoing [web design adventures](/groups/web%20design).
 
 And it turns out that this project also helped me realize that I actually really enjoy writing! This project was a surprisingly enjoyable way to combine my programming skills with writing, and I never thought creating a personal blog could be this fun. I can totally see myself writing posts for the remainder of this year, at least.
 

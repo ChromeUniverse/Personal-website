@@ -3,7 +3,7 @@ title: _The Lucca Logs_ 2.0 - Vue and Improved!
 templates: []
 description: |
   The full project write-up and development log of my personal blog's second major release, powered by Vue.js
-groups: [all, programming, webdesign, meta]
+groups: [all, programming, frontend, vue, web design, meta]
 img-preview: |  
   /images/vue-redesign.png
 date: 2022-02-01 19:07:00
@@ -251,6 +251,6 @@ Learning Vue over the last month or so has been one hell of a ride, and I'm pret
 
 I'm also working on migrating [_Tank Battle_](/building-tank-battle)'s frontend to Vue.js, and so far it's going surprisingly well. At first I had some trouble dealing with [CORS errors](https://www.youtube.com/watch?v=4KHiSt0oLJ0&ab_channel=Fireship) and figuring out how to implement [JWT auth](https://www.youtube.com/watch?v=7Q17ubqLfaM), but those issues were quickly sorted out. Most of the UI components are already done as well! All that's left to do is add some ✨ fancy styles. ✨ I also plan on doing a complete revamp of the game's art, graphics, and animations, along with bringing some performance improvements, doing some backend refactoring, and adding new gameplay features. Expect a post on _Tank Battle_ 2.0 soon!
 
-That's all for now. I hope you enjoyed reading this article and learned a thing or two as well. Stay tuned for more webdesign and frontend posts soon as I keep working on my Vue and CSS skills.
+That's all for now. I hope you enjoyed reading this article and learned a thing or two as well. Stay tuned for more web design and frontend posts soon as I keep working on my Vue and CSS skills.
 
 Cheers! ✌

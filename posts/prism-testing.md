@@ -3,7 +3,7 @@ title: Trying out Prism.js
 templates: []
 description: | 
   Testing **Prism.js**, a frontend library for awesome code snippets with syntax highlighting and other neat things
-groups: [all, webdesign, meta]
+groups: [all, web design, meta]
 date: 2021-05-30 17:38:00
 --- 
 

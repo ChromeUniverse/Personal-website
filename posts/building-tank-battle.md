@@ -3,7 +3,7 @@ title: "Building _Tank Battle_, an online multiplayer combat game"
 templates: []
 description: |
   The full project write-up and development log for _Tank Battle_.
-groups: [all, programming, projects, games, webdesign]
+groups: [all, programming, projects, games, frontend, backend, web design]
 img-preview: |  
   https://media.discordapp.net/attachments/760252264723644426/895442475278274580/unknown.png?width=1343&height=665
 date: 2021-10-13 23:43:00
