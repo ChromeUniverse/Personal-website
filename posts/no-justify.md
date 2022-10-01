@@ -3,7 +3,7 @@ title: Begone, justified text!
 templates: []
 description: |
   A short essay on why using justified text on your website is a bad idea, why I chose to remove it from my own website, and why you should too. 
-groups: [all, webdesign, typography, meta]
+groups: [all, web design, typography, meta]
 date: 2021-06-06 15:57:00
 --- 
 
