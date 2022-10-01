@@ -497,6 +497,10 @@ pre {
   border-radius: 10px;
 }
 
+.title h1 {
+  font-size: 2em;
+}
+
 @media screen and (max-width: 790px) {
 
   #app {
@@ -524,5 +528,10 @@ pre {
   .sidebar {
     display: none;
   }
+
+  .title h1 {
+    font-size: 1.5em;
+  }
+
 }
 </style>

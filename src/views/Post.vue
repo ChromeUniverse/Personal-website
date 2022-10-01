@@ -3,7 +3,7 @@
   <div id="main">
 
     <!-- post title -->
-    <h1 v-html="title" class="title" v-if="!templates.includes('ignore')"></h1>
+    <div v-html="title" class="title" v-if="!templates.includes('ignore')"></div>
 
     <!-- post author and date -->
     <div class="date" v-if="!templates.includes('ignore')">
