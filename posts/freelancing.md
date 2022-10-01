@@ -2,7 +2,7 @@
 title: "Becoming a freelance developer" 
 templates: []
 description: |
-  A collection of thoughts about how and why I started my own freelance software development gig - building Discord bots, of all things
+  A collection of thoughts in an essay format about how and why I started my own freelance software development gig - building Discord bots, of all things.
 groups: [drafts]
 date: 2022-09-26 17:26:00
 --- 
@@ -226,5 +226,7 @@ I've also started doing [Frontend Mentor](frontendmentor.io)'s coding challenges
 I think that's really all that I have to say about my brief freelancing stint for now. Here's hoping there's a lot cool stuff coming soon!
 
 I'll try to start writing more articles on web development - I've been having a blast using React and I'd love to write about what I've learned so far and I've how I've been building some really neat web apps for FEM's challenges with React, [Vite](https://vitejs.dev/) and [Vercel](https://vercel.com/). Heck, it might be time to do [yet another rewrite](/website2.0-redesign#conclusion) for this blog - *The Lucca Logs 3.0* coming soon?
+
+**Special thanks** to [Eduardo Quirino](https://github.com/qrno) and [Alana Caporale](https://github.com/alanacapcreates) for reading a previous draft of this essay and sharing their thoughts prior to its publishing. You guys are the best!
 
 Thank you so much for reading! Catch you later. 👋
