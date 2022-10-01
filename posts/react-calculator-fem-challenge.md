@@ -33,13 +33,18 @@ You can also [try out the calculator for yourself](https://calculator-app-weld-x
 >   - [Display](#display)
 >   - [Keypad](#keypad)
 >   - [Key](#key)
-> - [Adding multiple themes](#adding-multiple-themes)
+> - [Adding multiple themes, the easy-ish way](#adding-multiple-themes-the-easy-ish-way)
 >   - [Conditional rendering in React](#conditional-rendering-in-react)
 >   - [Theme-specific stylesheets](#theme-specific-stylesheets)
 > - [Implementing the calculator algorithm](#implementing-the-calculator-algorithm)
+>   - [State](#state)
+>   - [Main calculation function](#main-calculation-function)
+>   - [Adding a character](#adding-a-character)
+>   - [Operator](#operator)
+>   - [Equals](#equals)
+>   - [Reset](#reset)
+> - [Deploying to Vercel](#deploying-to-vercel)
 > - [Wrapping up](#wrapping-up)
->   - [Deploying to Vercel](#deploying-to-vercel)
-> - [Conclusion](#conclusion)
 
 
 ---
