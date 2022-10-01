@@ -24,7 +24,7 @@ Here you'll find essays on science, technology, coding, electronics, music and l
 * 🙋‍♂️ If you would like to know more about myself, feel free to check out [my personal page](/me).
 
 > **Latest post**  
-> - **NEW!** [*The Lucca Logs 2.0 - Vue and Improved!*](/website2.0-redesign) - February 1, 2022
+> - **NEW!** [*Building a Calculator App with React*](/react-calculator-fem-challenge) - October 1, 2022
 
 ## Get in touch!
 
