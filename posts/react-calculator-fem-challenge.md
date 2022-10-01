@@ -9,7 +9,7 @@ img-preview: |
 date: 2022-10-01 13:00:00
 --- 
 
-Ever since I got back into web development some 6-ish weeks ago I started looking for ways to brush up on my HTML and CSS. I enrolled in Scrimba's [Learn React for free](https://scrimba.com/learn/learnreact) course but I feeling a bit rusty and wanted to get some practice before diving deeper into React. 
+Ever since I got back into web development some 6-ish weeks ago I started looking for ways to brush up on my HTML and CSS. I enrolled in Scrimba's [Learn React for free](https://scrimba.com/learn/learnreact) course but I was still feeling a bit rusty and I wanted to get some practice before diving deeper into React. 
 
 As luck would have it, I stumbled into [Alana](https://alanacapcreates.com/), a fellow Scrimba coder who was solving a web dev coding challenge from [Frontend Mentor](frontendmentor.io) live on Twitch. One look at their collection of project challenges, and I was hooked. I've now been building FEM's projects for a little over a month and my frontend skills have improved drastically. 🙂
 
