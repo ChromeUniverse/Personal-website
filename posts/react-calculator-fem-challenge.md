@@ -2,7 +2,7 @@
 title: "Building a Calculator App with React"
 templates: []
 description: |
-  A project write-up on how I built a multi-theme 4-function calculator with React and Vite as part of a [Frontend Mentor coding challenge](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29)
+  A project write-up on how I built a multi-theme 4-function calculator with React and Vite as part of a [Frontend Mentor coding challenge](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29).
 groups: [drafts]
 img-preview: |  
   /images/calc-themes-mobile-preview.jpg
@@ -129,7 +129,6 @@ function App() {
   const [primary, setPrimary] = useState('');
   const [secondary, setSecondary] = useState('');
   const [operator, setOperator] = useState(false);
-  const [hold, setHold] = useState();
   const [previous, setPrevious] = useState('');
 
   // ------------------------------------------------
@@ -327,8 +326,8 @@ function Key({ text, type = 0, area = "", onClick }) {
 export default Key;
 
 ```
-
-## Adding multiple themes
+---
+## Adding multiple themes, the easy-ish way
 
 As you might have noticed in the code snippets above, all of the components are importing a Context provider called `ThemeContext` from `App.jsx` and extracting the currently selected theme with the `useContext()` hook. I managed to implement the multiple themes by combining the theme context provider with React's **conditional rendering** and **separate stylesheets** for each theme.
 
@@ -372,7 +371,7 @@ import './css/theme-3.css'
 
 ```
 
-As you've probably guessed, the three CSS files above contain the theme-specific styling rules. The colors were simply copied over from the style guide and pasted into variables in the `:root` pseudo-class. Then all that's left is to specify the theme-specific class names and apply the appropriate rules according to the style guide:
+As you've probably guessed, the three CSS files above contain the theme-specific styling rules. I simply copied over the colors from the style guide and pasted them into variables in the `:root` pseudo-class. All that's left is to specify the theme-specific class names and apply the appropriate rules according to the style guide:
 
 ```css
 :root {
@@ -410,10 +409,151 @@ As you've probably guessed, the three CSS files above contain the theme-specific
 /* more styling... */
 ```
 
+*Et voilà!* ✨ That's how we implement multiple themes in React.
+
+![img](https://media.discordapp.net/attachments/1009191527928582246/1025752242436964392/unknown.png?width=1182&height=665)
+
+---
 ## Implementing the calculator algorithm
 
+The most naive way to make the calculator work would be to append all the key inputs to a single input buffer, then run `eval()` on it and display the result on the calculator's screen. But using `eval()` nowadays is an [anti-pattern **and** a big security no-no](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval#never_use_eval!)!
+
+We also want this app to feel as close as possible to a native phone app for the best possible UX, so let's try to come with something that mimics the classic iPhone calculator (in portrait mode, of course). Some important features would include:
+- Pressing `=` repeatedly should keep executing the last operation (e.g. doubling) until another key is pressed
+- If two operands and a operator have already been inputted, pressing an operator key should execute the operation both said operands and show the correct result on the calculator's display before accepting any additional input
+- Pressing operator keys repeatedly should only reset the operator state variable and not run any calculations (this is a special edge case for the bullet point above)
+
+### State
+
+After much consideration, I've manage to boil down the app's state to just four variables, which I strongly believe is the bare minimum amount of state required to make this algorithm work:
+- `primary` (string) - the first operand, which is also tied to the calculator's display.
+- `secondary` (string) - the second operand.
+- `operator` (number) - the currently selected operator, where a `0` means addition, `1` is subtraction, `2` is multiplication and `3` is division.
+- `previous` (string) - the previously pressed key: `char-x` for characters, `op-x` for operators, and `=` for the "**=**" key.
+
+```js 
+const [primary, setPrimary] = useState('');
+const [secondary, setSecondary] = useState('');
+const [operator, setOperator] = useState(false);
+const [previous, setPrevious] = useState('');
+```
+
+### Main calculation function
+
+The function below get called whenever the calculator is ready to perform a operation. You'll notice that I've added two boolean parameters:
+- `shift` controls whether the original primary operand should get shifted to the secondary operand's slot once the operation is finished
+- `swap` is only used then the "**=**" key is pressed repeatedly - in this case, the order of the operands needs to be swapped so that the last inputted operand can be preserved in the secondary slot while the primary one keeps getting operated on as many times as we'd like. 
+
+```js
+// run calculation
+function calc(shift = true, swap) {
+  let result;
+  let originalPrimary = primary;
+  const primaryNumber = Number(primary);
+  const secondaryNumber = Number(secondary);
+
+  if (swap) {
+    if (operator === 0) result =  primaryNumber + secondaryNumber;
+    if (operator === 1) result =  primaryNumber - secondaryNumber;
+    if (operator === 2) result =  primaryNumber * secondaryNumber;
+    if (operator === 3) result =  primaryNumber / secondaryNumber;
+  } else {
+    if (operator === 0) result =  secondaryNumber + primaryNumber;
+    if (operator === 1) result =  secondaryNumber - primaryNumber;
+    if (operator === 2) result =  secondaryNumber * primaryNumber;
+    if (operator === 3) result =  secondaryNumber / primaryNumber;
+  }
+
+  // update inputs based on calculation result
+  setPrimary(result.toString());
+
+  // shift operands only if `shift` is truthy
+  if (shift) setSecondary(originalPrimary);
+}
+```
+
+### Adding a character
+
+Pressing a character key should always append the current pressed digit to the right of the primary operator. But there are still two special cases to consider:
+- If the previously pressed key was "**=**", we should clear the secondary input.
+- If the previously pressed key was an operator, that means the calculator is expecting another operand to be entered - so we shift the primary input down to the secondary input slot (i.e. store it in memory) and clear the primary input so that the user can input another operand.
+
+```js
+// add new character to primary input
+function addChar(char) {   
+  if (previous === '=') {
+    setSecondary('');
+  }
+
+  if (previous.includes('op')) {
+    setSecondary(primary);
+    setPrimary('');
+    setHold(false);
+  } 
+
+  setPrimary(oldPrimary => oldPrimary + char.toString());
+  setPrevious(`char-${char}`);
+}
+```
+
+### Operator
+
+Pressing an operator should always set the `operator` state variable to the currently selected operator. There are two important edge cases to consider here:
+- If the previously pressed key was "**=**", we should clear the secondary input, since this means the user will enter another operand.
+- After the check above, if the secondary input isn't empty **and** the previous key press wasn't an operator, then it means the calculator already has two stored operands and a stored operator, so call `calc()` with the primary to secondary input shift, but without swapping the order of operands in the calculation.
+
+```js
+// operator click handler
+function handleOperator(op) {
+  const newSecondary = (previous === '=') ? '' : secondary;
+  setSecondary(newSecondary);
+
+  if (newSecondary !== '' && !previous.includes('op')) calc(true, false);
+
+  setOperator(op);
+  setPrevious(`op-${op}`)
+}
+```
+
+### Equals
+
+Pressing "**=**" should, first and foremost, execute the correct operation between the two stored operands - for that, we call `calc()` - but if "**=**" is pressed repeatedly, but with a couple of twists:
+- First, don't shift the primary input into the secondary input slot
+- And second, *swap* the order of operands so we can preserve the last inputted operand in the secondary input and keep executing the previous operation as many times as we want
+
+```js
+// "equals" click handler
+function handleEquals() {
+  const shift = (previous === '=');
+  calc(!shift, shift)
+  setPrevious('=');
+}
+```
+
+### Reset
+
+Pressing "**RESET**" is only a matter of setting the app's state back to its default value.
+
+```js
+// reset app state
+function reset() {
+  setPrimary('');
+  setSecondary('');
+  setOperator(false);
+  setPrevious('');
+} 
+```
+
+---
+## Deploying to Vercel
+
+I chose to deploy my app to [Vercel](https://vercel.com/), which has official support for Vite-based apps, but you could also use any of the options listed on [Vite's guide for deploying static pages](https://vitejs.dev/guide/static-deploy.html), such as [Netlify](https://www.netlify.com/), [GH pages](https://pages.github.com/), [Firebase](http://firebase.google.com/), or even a dedicated static file web server such as [NGINX](https://www.nginx.com/). 
+
+For Vercel, specifically, you can install the [Vercel CLI](https://vercel.com/cli) and [follow this guide](https://vitejs.dev/guide/static-deploy.html#vercel-cli) or just visit their [online dashboard](https://vercel.com/dashboard), create a new project and import your app's Git repository - it will automatically detect Vite as a dependency and correctly configure your deployment in just a couple of seconds. 😉
+
+---
 ## Wrapping up
 
-### Deploying to Vercel
+Phew! 😅 That was a long post. If you've somehow made it this far, kudos to you! I really hope you enjoyed this detailed write-up as much as I enjoyed building this project and tackling all the different coding and UI design challenges. I certainly learned a lot of new stuff by completing this project, and I also hope you learned a thing or two from this post.
 
-## Conclusion
+**Thank you so much for reading!** I'll catch you later. 👋
