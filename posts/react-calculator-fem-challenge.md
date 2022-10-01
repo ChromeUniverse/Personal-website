@@ -3,10 +3,10 @@ title: "Building a Calculator App with React"
 templates: []
 description: |
   A project write-up on how I built a multi-theme 4-function calculator with React and Vite as part of a [Frontend Mentor coding challenge](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29).
-groups: [drafts]
+groups: [all, programming, projects, frontend, react, web design]
 img-preview: |  
   /images/calc-themes-mobile-preview.jpg
-date: 2022-09-30 10:25:00
+date: 2022-10-01 13:00:00
 --- 
 
 Ever since I got back into web development some 6-ish weeks ago I started looking for ways to brush up on my HTML and CSS. I enrolled in Scrimba's [Learn React for free](https://scrimba.com/learn/learnreact) course but I feeling a bit rusty and wanted to get some practice before diving deeper into React. 
