@@ -24,7 +24,7 @@ Here you'll find essays on science, technology, coding, electronics, music and l
 * 🙋‍♂️ If you would like to know more about myself, feel free to check out [my personal page](/me).
 
 > **Latest post**  
-> - **NEW!** [*Building a Calculator App with React*](/react-calculator-fem-challenge) - October 1, 2022
+> - [*Building a Calculator App with React*](/react-calculator-fem-challenge) - October 1, 2022
 
 ## Get in touch!
 
