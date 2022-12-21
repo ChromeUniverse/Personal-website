@@ -1,1 +1,0 @@
-rsync -avz -e "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i ~/.ssh/lightsail" --delete ~/Coding/Projects/personal-website/dist/* ubuntu@34.200.98.64:/home/ubuntu/dist/

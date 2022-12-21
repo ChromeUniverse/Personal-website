@@ -1,7 +1,0 @@
-{
-  "watch": [
-    "./posts/", 
-    "./compiler.js"
-  ],
-  "ext": "md, css, js, html"
-}
