@@ -1,0 +1,20 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const posts = await Astro.glob("../../articles/*.md");
+---
+
+<Layout>
+  <h1 class="text-5xl font-heading font-bold mb-6">Blog</h1>
+  <ul class="list-disc">
+    {
+      posts.map((post) => (
+        <li class="">
+          <a href={`/blog/${post.frontmatter.slug}`}>
+            {post.frontmatter.title}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</Layout>
