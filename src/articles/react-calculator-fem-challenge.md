@@ -2,7 +2,7 @@
 title: "Building a Calculator App with React"
 slug: react-calculator-fem-challenge
 description: |
-  A project write-up on how I built a multi-theme 4-function calculator with React and Vite as part of a [Frontend Mentor coding challenge](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29).
+  A project write-up on how I built a multi-theme 4-function calculator with React and Vite as part of a Frontend Mentor coding challenge
 tags: [all, programming, projects, frontend, react, web design]
 img-preview: |  
   /images/calc-themes-mobile-preview.jpg
