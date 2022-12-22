@@ -1,35 +1,60 @@
 ---
+import "../styles/globals.css";
+
 export interface Props {
-	title: string;
+  title?: string;
 }
 
-const { title } = Astro.props;
+const { title = "Lucca Rodrigues" } = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700;900&family=Noto+Sans:ital,wght@0,200;0,400;0,700;0,900;1,200;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      src="https://kit.fontawesome.com/34fb59c22e.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>{title}</title>
+  </head>
+  <body class="bg-gradient-to-r from-zinc-900 to-zinc-900">
+    <!-- Container view -->
+    <div class="mx-auto rounded-xl w-[80%] max-w-[800px] text-white">
+      <!-- Navbar -->
+      <nav class="flex items-center gap-6 py-5 mt-6 mb-6 text-lg font-heading">
+        <!-- Logo/Icon -->
+        <a class="mr-auto text-4xl flex gap-4 items-center" href="/">
+          <span
+            class="flex items-center justify-center w-16 h-16 pt-1 pr-0.5 text-blue-500 bg-white rounded-full"
+          >
+            <i class="fa-solid fa-rocket"></i>
+          </span>
+          <!-- <h1 class="font-bold text-white">Lucca</h1> -->
+        </a>
+
+        <!-- Links -->
+        <a class="nav-link" href="/me">About</a>
+        <a class="nav-link" href="/portfolio">Projects</a>
+        <a class="nav-link" href="/blog">Writings</a>
+        <a class="nav-link" href="/blog">Let's Connect!</a>
+      </nav>
+
+      <!-- Content -->
+      <slot />
+    </div>
+  </body>
 </html>
-<style is:global>
-	:root {
-		--accent: 124, 58, 237;
-		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background-color: #F6F6F6;
-	}
-	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
-	}
-</style>
