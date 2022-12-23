@@ -47,10 +47,10 @@ const { title = "Lucca Rodrigues" } = Astro.props;
         </a>
 
         <!-- Links -->
-        <a class="nav-link" href="/me">About</a>
+        <a class="nav-link" href="/me">About Me</a>
         <a class="nav-link" href="/portfolio">Projects</a>
-        <a class="nav-link" href="/blog">Writings</a>
-        <a class="nav-link" href="/blog">Let's Connect!</a>
+        <a class="nav-link" href="/blog">Blog</a>
+        <a class="nav-link" href="/contact">Contact</a>
       </nav>
 
       <!-- Content -->
@@ -58,3 +58,15 @@ const { title = "Lucca Rodrigues" } = Astro.props;
     </div>
   </body>
 </html>
+
+<style>
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
+  @layer components {
+    .nav-link {
+      @apply hover:underline hover:decoration-2 text-zinc-300 hover:text-blue-500;
+    }
+  }
+</style>
