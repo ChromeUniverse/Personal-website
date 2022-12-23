@@ -1,6 +1,6 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
-import ArticlePreview from "../../../components/ArticlePreview.astro";
+import PreviewList from "../../../components/PreviewList.astro";
 
 export async function getStaticPaths() {
   // Fetch all posts
@@ -75,16 +75,5 @@ const formatDate = (dateString: string) => {
   </h1>
 
   <!-- Cards -->
-  <main class="grid grid-cols-2 gap-5 pb-10">
-    {
-      frontmatterList.map((frontmatter) => (
-        <ArticlePreview
-          title={frontmatter.title}
-          body={frontmatter.description}
-          slug={frontmatter.slug}
-          imgSrc={frontmatter["img-preview"]}
-        />
-      ))
-    }
-  </main>
+  <PreviewList frontmatterList={frontmatterList} />
 </Layout>

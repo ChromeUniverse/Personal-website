@@ -28,7 +28,7 @@ const formattedDate = date.toLocaleDateString("en-US", {
 console.log(frontmatter.tags);
 ---
 
-<Layout>
+<Layout title={frontmatter.title}>
   <!-- Title -->
   <h1 class="text-5xl font-heading font-bold text-center mt-10">
     {frontmatter.title}
@@ -48,7 +48,7 @@ console.log(frontmatter.tags);
       frontmatter.tags.map((tag: string) => (
         <a
           href={`/blog/tag/${tag}`}
-          class="font-bold font-heading text-normal px-3 py-1 border-blue-500 border-2 rounded-lg hover:bg-blue-500 hover:text-zinc-900"
+          class="font-bold font-heading text-normal px-3 py-1 border-blue-500 border-2 rounded-lg hover:bg-blue-500 hover:text-zinc-900 transition-all"
         >
           {tag}
         </a>
