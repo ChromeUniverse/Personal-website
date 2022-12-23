@@ -3,12 +3,15 @@
 @tailwind utilities;
 
 @layer components {
-  .nav-link {
-    @apply hover:underline hover:decoration-2 hover:text-blue-500;
-  }
-
   .content > * {
     @apply font-heading text-xl;
+  }
+
+  .content h2,
+  .content h3,
+  .content h4,
+  .content h5 {
+    @apply mt-8;
   }
 
   .content h2 {
@@ -38,5 +41,29 @@
 
   .content hr {
     @apply border-none bg-blue-500 h-1 my-8 rounded-full;
+  }
+
+  .content pre {
+    @apply px-6 py-6 rounded-xl text-base;
+  }
+
+  .content pre code {
+    @apply bg-transparent px-0 py-0 rounded-none;
+  }
+
+  .content code {
+    @apply bg-zinc-800 px-2 py-0.5 rounded-lg;
+  }
+
+  .content img {
+    @apply rounded-xl max-h-[500px] max-w-[80%] mx-auto mt-4;
+  }
+
+  .content blockquote {
+    @apply bg-zinc-800 bg-opacity-60 px-8 py-4 rounded-xl border-l-4 border-blue-500;
+  }
+
+  .content p.img-caption {
+    @apply text-center mt-0;
   }
 }
