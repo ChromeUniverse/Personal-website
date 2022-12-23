@@ -1,0 +1,30 @@
+---
+import PreviewCard from "./PreviewCard.astro";
+
+interface Props {
+  frontmatterList: Record<string, any>[];
+}
+
+const { frontmatterList } = Astro.props as Props;
+
+// sort posts by descending date
+const sortedFrontmatterList = frontmatterList.sort((f1, f2) => {
+  const date1 = new Date(f1.date);
+  const date2 = new Date(f2.date);
+  return date2.getTime() - date1.getTime();
+});
+---
+
+<main class="grid grid-cols-1 gap-5 pb-10">
+  {
+    sortedFrontmatterList.map((frontmatter, index) => (
+      <PreviewCard
+        title={frontmatter.title}
+        body={frontmatter.description}
+        slug={frontmatter.slug}
+        imgSrc={frontmatter["img-preview"]}
+        reverse={index % 2 === 0}
+      />
+    ))
+  }
+</main>
