@@ -1,0 +1,40 @@
+---
+export interface Props {
+  link: string;
+  type: "source" | "demo" | "article";
+}
+
+const { link, type } = Astro.props as Props;
+
+const labels = {
+  source: "Source",
+  demo: "Live Demo",
+  article: "Project Write-Up",
+};
+---
+
+<a
+  class={`
+    font-heading font-normal px-4 py-2 rounded-md space-x-1 text-lg hover:brightness-125 transition-all
+    ${type === "source" && "bg-black"}
+    ${type === "demo" && "bg-blue-500"}
+    ${type === "article" && "bg-zinc-700"}
+  `}
+  href={link}
+>
+  {type === "source" && <i class="fa-brands fa-github" />}
+  <p class="inline">{labels[type]}</p>
+  {type === "demo" && <i class="fa-solid fa-arrow-up-right-from-square" />}
+</a>
+
+<style>
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
+  @layer components {
+    .project-link {
+      @apply font-heading text-lg bg-black px-4 py-2 rounded-lg;
+    }
+  }
+</style>
