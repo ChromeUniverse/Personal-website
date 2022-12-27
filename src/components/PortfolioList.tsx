@@ -48,7 +48,7 @@ function PortfolioList({ projects }: Props) {
             onClick={() => setOpen((prevOpen) => !prevOpen)}
           >
             {/* Text */}
-            <p className="text-lg">Filter</p>
+            <p className="text-lg font-bold">Filter</p>
             {/* Rotating arrow Icon */}
             <i
               className={`ml-auto fa-solid fa-angle-down transition-all ${
@@ -87,7 +87,13 @@ function PortfolioList({ projects }: Props) {
                     alt={`Logo for ${label}`}
                   />
                   {/* Label/Name */}
-                  <p>{label}</p>
+                  <p
+                    className={`${
+                      selected.includes(tech) ? "font-bold" : "font-normal"
+                    }`}
+                  >
+                    {label}
+                  </p>
                   {/* Remove button */}
                 </div>
               );
