@@ -2,7 +2,7 @@
 import PreviewList from "../../components/PreviewList.astro";
 import Layout from "../../layouts/Layout.astro";
 
-const posts = await Astro.glob("../../articles/*.md");
+const posts = await Astro.glob("../../content/articles/*.md");
 const frontmatterList = posts.map((post) => post.frontmatter);
 const tags = ["all", "programming", "games"];
 
@@ -28,9 +28,9 @@ const categories = [
 ];
 ---
 
-<Layout>
+<Layout title="Blog">
   <!-- Title -->
-  <h1 class="font-heading text-4xl text-center mt-10 mb-4 font-bold">Blog</h1>
+  <h1 class="font-heading text-5xl text-center mt-10 mb-4 font-bold">Blog</h1>
 
   <!-- Description -->
   <p class="font-heading text-center text-xl pb-4 text-zinc-400">

@@ -5,7 +5,7 @@ export interface Props {
   title?: string;
 }
 
-const { title = "Lucca Rodrigues" } = Astro.props;
+const { title } = Astro.props as Props;
 ---
 
 <!DOCTYPE html>
@@ -29,7 +29,7 @@ const { title = "Lucca Rodrigues" } = Astro.props;
       crossorigin="anonymous"
     ></script>
 
-    <title>{title}</title>
+    <title>{title ? `${title} • Lucca Rodrigues` : "Lucca Rodrigues"}</title>
   </head>
   <body class="bg-gradient-to-r from-zinc-900 to-zinc-900">
     <!-- Container view -->

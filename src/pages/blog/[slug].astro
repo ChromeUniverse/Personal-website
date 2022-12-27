@@ -3,7 +3,7 @@ import type { MarkdownInstance } from "astro";
 import Layout from "../../layouts/Layout.astro";
 
 export async function getStaticPaths() {
-  const posts = await Astro.glob("../../articles/*.md");
+  const posts = await Astro.glob("../../content/articles/*.md");
   // console.log(posts);
 
   return posts.map((post) => {

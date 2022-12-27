@@ -1,0 +1,19 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import PortfolioList from "../../components/PortfolioList";
+
+const projects = await Astro.glob("../../content/portfolio/*.md");
+---
+
+<Layout title="Portfolio">
+  <!-- Title -->
+  <h1 class="font-bold font-heading text-5xl text-center pt-6 pb-4">
+    My Portfolio
+  </h1>
+
+  <!-- Subtitle -->
+  <h2 class="font-heading text-2xl text-center text-zinc-400 leading-relaxed">
+    Personal and freelance projects I'm most proud of
+  </h2>
+  <PortfolioList projects={projects} client:load />
+</Layout>
