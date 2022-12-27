@@ -11,9 +11,9 @@ tech: [react, vite, css, js]
 images: [/images/portfolio/calculator/theme-1.png, /images/portfolio/calculator/theme-2.png, /images/portfolio/calculator/theme-3.png]
 ---
 
-This project is my solution to a free coding challenge from [Frontend Mentor](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29). The main goal was to build a four-function calculator app and get it looking as close as possible to the design previews that were provided. 
+This project is my solution to a free coding challenge from [Frontend Mentor](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29). The main goal was to build a four-function calculator app and get it looking as close as possible to the provided design previews. 
 
-I chose to use [React](https://reactjs.org/), JavaScript and vanilla CSS for this project, and also made the UI fully responsive, making it a joy to use on mobile devices.
+I chose to use [React](https://reactjs.org/), JavaScript and vanilla CSS for this project, and also made the UI fully responsive, making it very enjoyable to use on mobile.
 
 This calculator can perform the four basic arithmetic operations and also allows the user to switch between 3 different themes: dark mode, light mode, and high contrast.
 
