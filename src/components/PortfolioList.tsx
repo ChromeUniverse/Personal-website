@@ -12,8 +12,6 @@ function PortfolioList({ projects }: Props) {
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState<TechType[]>([]);
 
-  console.log(selected);
-
   const toggleTech = (tech: TechType) => {
     setSelected((prevSelected) =>
       prevSelected.includes(tech)
@@ -43,12 +41,14 @@ function PortfolioList({ projects }: Props) {
           {/* Dropdown toggle */}
           <div
             className={`cursor-pointer px-5 flex items-center transition-all
-              ${open ? "w-48" : "w-32"}
+              ${open ? "w-48" : selected.length === 0 ? "w-32" : "w-36"}
             `}
             onClick={() => setOpen((prevOpen) => !prevOpen)}
           >
             {/* Text */}
-            <p className="text-lg font-bold">Filter</p>
+            <p className="text-lg font-bold">
+              Filter {selected.length > 0 ? `(${selected.length})` : ""}
+            </p>
             {/* Rotating arrow Icon */}
             <i
               className={`ml-auto fa-solid fa-angle-down transition-all ${

@@ -71,7 +71,10 @@ const formatDate = (dateString: string) => {
 <Layout title={`Article tag: "${tag}"`}>
   <!-- Title -->
   <h1 class="font-heading text-4xl text-center mt-10 mb-10">
-    Article tag: <span class="font-bold border-b-4 border-blue-500">{tag}</span>
+    Article tag: <span
+      class="font-bold underline decoration-[3px] decoration-blue-500"
+      >{(tag as string).charAt(0).toUpperCase() + tag?.slice(1)}</span
+    >
   </h1>
 
   <!-- Cards -->
