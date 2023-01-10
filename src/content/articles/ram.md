@@ -7,6 +7,7 @@ album-embed: |
     <iframe src="https://open.spotify.com/embed/album/4m2880jivSbbyEGAKfITCa" width="100%" height="200" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 tags: []
 date: 2021-05-27 12:00:00
+public: false
 --- 
 
 > _I know you don't get a chance to take a break this often  

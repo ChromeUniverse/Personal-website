@@ -5,6 +5,7 @@ description: |
     The official page of RedstoneBot, a Discord bot for managing Minecraft servers hosted by PloudOS.
 tags: [redstone-posts, projects]
 date: 2021-07-17 20:15:00
+public: true
 --- 
 
 ## DEPRECATION NOTICE

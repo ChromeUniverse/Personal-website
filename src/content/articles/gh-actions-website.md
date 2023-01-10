@@ -3,8 +3,9 @@ title: GitHub Actions - automation galore!
 slug: gh-actions-website
 description: |
   A brief look at the basics of GitHub Actions and a step-by-step walkthrough of my automated workflow for building and deploying this website.
-tags: [all, programming, devops]
+tags: [programming, devops]
 date: 2021-07-07 10:44:10
+public: true
 ---
 
 I've finally gotten around to using GitHub actions for the first time, and boy, can it automate the living crap out of building, testing and deployment. In fact, I've updated this website's [GitHub repo](https://github.com/ChromeUniverse/Personal-website) with a custom workflow built around GitHub Actions to automate static file generation and deployment of my website. It's a really useful tool that you might be interested in using for web app development.

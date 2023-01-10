@@ -3,10 +3,11 @@ title: The Lucca Logs 2.0 - Vue and Improved!
 slug: website2.0
 description: |
   The full project write-up and development log of my personal blog's second major release, powered by Vue.js
-tags: [all, programming, frontend, vue, web design, meta]
+tags: [programming, frontend, vue, web design, meta]
 img-preview: |  
   /images/vue-redesign.png
 date: 2022-02-01 19:07:00
+public: true
 ---
 
 As the 2021 holiday season came and went, I finally mustered up some courage and started learning my first frontend framework, [Vue.js](https://www.youtube.com/watch?v=nhBVL41-_Cw), nearly a year after I built my first HTML webpage. 

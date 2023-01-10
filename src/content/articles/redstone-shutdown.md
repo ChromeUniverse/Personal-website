@@ -5,6 +5,7 @@ description: |
     Shutdown notice for RedstoneBot.
 tags: [redstone-posts]
 date: 2021-08-07 00:09:00
+public: true
 --- 
 
 Hi internet. Lucca here.

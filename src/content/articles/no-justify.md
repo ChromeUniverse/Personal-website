@@ -3,8 +3,9 @@ title: Begone, justified text!
 slug: no-justify
 description: |
   A short essay on why using justified text on your website is a bad idea, why I chose to remove it from my own website, and why you should too. 
-tags: [all, web design, typography, meta]
+tags: [web design, typography, meta]
 date: 2021-06-06 15:57:00
+public: true
 --- 
 
 _Disclaimer: I don't know anything about typography. This is just a quick post about why I'm removing all text justification from my website. I've included links to additional resources and reading materials from folks that are much more qualified to write about this sort of stuff than I am._

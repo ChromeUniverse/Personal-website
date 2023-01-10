@@ -3,10 +3,11 @@ title: Building Tank Battle, an online multiplayer combat game
 slug: building-tank-battle
 description: |
   The full project write-up and development log for Tank Battle.
-tags: [all, programming, projects, games, frontend, backend, web design]
+tags: [programming, projects, games, frontend, backend, web design]
 img-preview: |  
   https://media.discordapp.net/attachments/760252264723644426/895442475278274580/unknown.png?width=1343&height=665
 date: 2021-10-13 23:43:00
+public: true
 --- 
 
 Back in April 2021, I decided to tinker around with [p5.js](https://p5js.org/) for the first time while coding along with Daniel Shiffman's (a.k.a The Coding Train) great [p5.js tutorials](https://www.youtube.com/watch?v=HerCR8bw_GE&list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA) on YouTube.

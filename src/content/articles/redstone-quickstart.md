@@ -5,6 +5,7 @@ description: |
     A short user manual for setting up RedstoneBot.
 tags: [redstone-posts]
 date: 2021-07-17 20:15:00
+public: true
 --- 
 
 [*Main page*](/redstone)

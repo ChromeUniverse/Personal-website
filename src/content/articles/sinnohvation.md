@@ -7,6 +7,7 @@ album-embed: |
     <iframe src="https://open.spotify.com/embed/album/0vbD4L4GvVkxrfwdN6iL5e" width=100% height="200" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> 
 tags: []
 date: 2021-05-27 17:30:00
+public: false
 ---   
 
 

@@ -7,6 +7,7 @@ description: |
 album-embed: | 
     <iframe src="https://open.spotify.com/embed/album/2noRn2Aes5aoNVsU6iWThc" width=100% height="200" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 date: 2021-05-27 11:30:00
+public: false
 --- 
 > _Music's got me feeling so free   
 We're gonna celebrate  

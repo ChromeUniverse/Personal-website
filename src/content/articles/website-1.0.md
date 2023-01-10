@@ -3,8 +3,9 @@ title: How I built my personal website
 slug: website-1.0
 description: |
   An in-depth project write-up on my vision, goals, and plans for my personal blog, and a detailed look at how I built the tech that powers it from scratch.
-tags: [all, programming, meta, web design]
+tags: [programming, meta, web design]
 date: 2021-06-16 11:27:00
+public: true
 ---
 
 ***Note**: this guide is outdated. You can find more up-to-date meta-articles [here](/groups/meta).*

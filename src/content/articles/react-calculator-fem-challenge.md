@@ -3,10 +3,11 @@ title: "Building a Calculator App with React"
 slug: react-calculator-fem-challenge
 description: |
   A project write-up on how I built a multi-theme 4-function calculator with React and Vite as part of a Frontend Mentor coding challenge
-tags: [all, programming, projects, frontend, react, web design]
+tags: [programming, projects, frontend, react, web design]
 img-preview: |  
   /images/calc-themes-mobile-preview.jpg
 date: 2022-10-01 13:00:00
+public: true
 --- 
 
 Ever since I got back into web development some 6-ish weeks ago I started looking for ways to brush up on my HTML and CSS. I enrolled in Scrimba's [Learn React for free](https://scrimba.com/learn/learnreact) course but I was still feeling a bit rusty and I wanted to get some practice before diving deeper into React. 

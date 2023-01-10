@@ -5,6 +5,7 @@ description: |
   A collection of thoughts in an essay format about how and why I started my own freelance software development gig - building Discord bots, of all things.
 tags: [drafts]
 date: 2022-09-26 17:26:00
+public: false
 --- 
 
 This is a very different article from the ones I've published on this blog up to now. This isn't an article about tech *per se* - rather, it's about transforming tech chops into a profitable venture through freelance development work.

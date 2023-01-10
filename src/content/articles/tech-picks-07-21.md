@@ -1,12 +1,13 @@
 ---
 title: "Monthly Tech Picks - July/21"
 slug: tech-picks-07-21
-tags: [all, monthly-tech-picks]
+tags: [monthly-tech-picks]
 description: | 
     Taking an in-depth look at the best hardware and technology projects and products that I've come across in July of 2021.
 img-preview: |  
     https://media.discordapp.net/attachments/760252264723644426/871863472042967120/unknown.png?width=1165&height=655
 date: 2021-08-19 16:43:00
+public: true
 --- 
 
 Hello world, and welcome to Monthly Tech Picks! This is a new series of blog posts where I take a look at some of the coolest, freshest, and most interesting DIY and consumer electronics that I just so happened to come across in the past month.
