@@ -1,24 +1,99 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+const posts = await Astro.glob("../content/articles/*.md");
+
+// fetch and sort posts by descending date
+const frontmatterList = posts.map((post) => post.frontmatter);
+const sortedFrontmatterList = frontmatterList
+  .filter((fm) => fm.public)
+  .sort((f1, f2) => {
+    const date1 = new Date(f1.date);
+    const date2 = new Date(f2.date);
+    return date2.getTime() - date1.getTime();
+  })
+  .slice(0, 4);
 ---
 
 <Layout>
-  <!-- Hero -->
-  <div class="flex w-full justify-between">
-    <!-- Content -->
-    <div class="text-xl flex flex-col gap-3 justify-center">
-      <!-- Title -->
-      <h1 class="text-5xl font-heading font-bold text-white">
-        Lucca Rodrigues
-      </h1>
-      <!-- Subtitle -->
-      <p class="font-body text-zinc-400">Web Developer • Musician • Student</p>
+  <main class="flex flex-col gap-20">
+    <!-- Hero -->
+    <div class="flex w-full justify-between font-heading gap-10">
+      <!-- Text  -->
+      <div class="flex flex-col justify-center">
+        <!-- Title -->
+        <h1
+          class="text-5xl font-bold pb-2 bg-gradient-to-r from-sky-400 to-violet-500 text-transparent bg-clip-text"
+        >
+          Lucca Rodrigues
+        </h1>
+        <!-- Subtitle -->
+        <h2 class="text-xl text-white">
+          Software Developer • Musician • Student
+        </h2>
+        <!-- Description -->
+        <p class="mt-4 text-xl text-zinc-400">
+          <!-- <br /> -->
+          Building full-stack web apps and Discord bots professionally and for fun.
+          <a
+            href="/"
+            class="text-blue-400 hover:underline hover:decoration-2 hover:decoration-blue-500"
+            >Open to business inquiries.</a
+          >
+        </p>
+      </div>
+      <!-- Image -->
+      <img
+        class="w-48 grayscale rounded-full"
+        src="/bass.jpg"
+        alt="Picture of Lucca playing bass guitar"
+      />
     </div>
-    <!-- Image -->
+
+    <!-- Latest blog articles -->
+    <div class="font-heading text-lg text-zinc-300">
+      <div class="flex justify-between">
+        <h3 class="text-3xl text-white font-bold">Latest Articles</h3>
+        <a
+          href="/blog"
+          class="bg-zinc-800 text-white text-sm px-4 py-1 rounded-full hover:bg-zinc-700 transition-all flex items-center justify-center"
+          >View all</a
+        >
+      </div>
+      <div class="mt-5 flex flex-col gap-2">
+        {
+          sortedFrontmatterList.map((fm, index) => {
+            const date = new Date(fm.date);
+            const formattedDate = date.toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            });
+
+            return (
+              <a href={`/blog/${fm.slug}`} class="group">
+                <div class="flex justify-between">
+                  <h4 class="text-lg text-zinc-300 group-hover:text-white group-hover:underline group-hover:decoration-2 group-hover:decoration-blue-500">
+                    {fm.title}
+                  </h4>
+                  <p class="text-blue-500">{formattedDate}</p>
+                </div>
+                {index !== sortedFrontmatterList.length - 1 && (
+                  <hr class="h-px my-1 bg-zinc-800 border-0" />
+                )}
+              </a>
+            );
+          })
+        }
+      </div>
+    </div>
+
+    <!-- Bass :-) -->
     <img
-      class="w-56 grayscale rounded-full"
-      src="/bass.jpg"
-      alt="Picture of me playing bass"
+      class="w-[40%] mx-auto"
+      src="/images/bass-guitar.png"
+      alt="Royalty-free drawing of a vintage bass guitar."
     />
-  </div>
+    <!-- <img class="w-[60%] mx-auto" src="/images/joe-dart-no-bg.gif" alt="" /> -->
+  </main>
 </Layout>
