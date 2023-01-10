@@ -15,15 +15,15 @@
   }
 
   .content h2 {
-    @apply text-4xl font-bold text-white;
-  }
-
-  .content h3 {
     @apply text-3xl font-bold text-white;
   }
 
+  .content h3 {
+    @apply text-2xl font-bold text-white;
+  }
+
   .content p {
-    @apply leading-relaxed my-8 text-zinc-300;
+    @apply text-lg leading-relaxed my-6 text-zinc-300;
   }
 
   .content a {
@@ -31,12 +31,13 @@
     @apply text-white font-bold hover:underline hover:decoration-2 hover:text-blue-400;
   }
 
-  .content ul {
+  .content ul,
+  .content ol {
     @apply list-disc pl-6 marker:text-blue-500;
   }
 
   .content li {
-    @apply leading-relaxed text-zinc-200;
+    @apply text-lg leading-relaxed text-zinc-200;
   }
 
   .content hr {
@@ -44,7 +45,7 @@
   }
 
   .content pre {
-    @apply px-6 py-6 rounded-xl text-base;
+    @apply px-6 py-6 my-6 rounded-xl text-base;
   }
 
   .content pre code {
@@ -60,7 +61,15 @@
   }
 
   .content blockquote {
-    @apply bg-zinc-800 bg-opacity-60 px-8 py-4 rounded-xl border-l-4 border-blue-500;
+    @apply bg-zinc-800 bg-opacity-60 px-8 py-2 mt-4 rounded-xl border-l-4 border-blue-500;
+  }
+
+  .content blockquote > p {
+    @apply my-4;
+  }
+
+  .content blockquote > * {
+    @apply text-lg;
   }
 
   .content p.img-caption {
