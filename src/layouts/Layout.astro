@@ -31,7 +31,7 @@ const { title } = Astro.props as Props;
 
     <title>{title ? `${title} • Lucca Rodrigues` : "Lucca Rodrigues"}</title>
   </head>
-  <body class="bg-gradient-to-r from-zinc-900 to-zinc-900">
+  <body class="bg-gradient-to-r from-zinc-900 to-zinc-900 font-heading">
     <!-- Container view -->
     <div class="mx-auto rounded-xl w-[80%] max-w-[800px] text-white">
       <!-- Navbar -->
@@ -48,13 +48,38 @@ const { title } = Astro.props as Props;
 
         <!-- Links -->
         <a class="nav-link" href="/me">About Me</a>
-        <a class="nav-link" href="/portfolio">Projects</a>
+        <a class="nav-link" href="/portfolio">Portfolio</a>
         <a class="nav-link" href="/blog">Blog</a>
         <a class="nav-link" href="/contact">Contact</a>
       </nav>
 
       <!-- Content -->
       <slot />
+
+      <!-- Footer -->
+      <footer class="text-zinc-400 mt-24 mb-6 flex flex-col gap-2">
+        <!-- Attribuition -->
+        <p class="text-center">
+          Built with 💙 by <span class="text-white font-bold"
+            >Lucca Rodrigues</span
+          >
+        </p>
+        <!-- Links -->
+        <div class="flex justify-center gap-3">
+          <a class="nav-link" href="https://github.com/ChromeUniverse/"
+            >GitHub</a
+          >
+          <a class="nav-link" href="https://m.youtube.com/c/LuccasLab"
+            >YouTube</a
+          >
+          <a class="nav-link" href="https://twitter.com/OmniChrome2">Twitter</a>
+          <a
+            class="nav-link"
+            href="https://www.linkedin.com/in/lucca-rodrigues-61b8271b3/"
+            >LinkedIn</a
+          >
+        </div>
+      </footer>
     </div>
   </body>
 </html>
