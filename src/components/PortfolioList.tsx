@@ -59,7 +59,7 @@ function PortfolioList({ projects }: Props) {
           {/* Dropdown menu */}
           <div
             className={`
-              absolute top-14 right-0 rounded-lg py-4 px-3 bg-zinc-800 w-48 flex-shrink-0 flex flex-col gap-1 transition-all drop-shadow-2xl
+              absolute top-14 h-72 overflow-y-scroll right-0 rounded-lg py-4 px-3 bg-zinc-800 w-48 flex-shrink-0 flex flex-col gap-1 transition-all drop-shadow-2xl
               ${open ? "z-10" : "-z-10 opacity-0"}
             `}
           >
