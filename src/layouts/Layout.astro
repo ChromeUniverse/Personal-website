@@ -33,9 +33,11 @@ const { title } = Astro.props as Props;
   </head>
   <body class="bg-gradient-to-r from-zinc-900 to-zinc-900 font-heading">
     <!-- Container view -->
-    <div class="mx-auto rounded-xl w-[80%] max-w-[800px] text-white">
+    <div
+      class="mx-auto rounded-xl h-screen w-[80%] max-w-[800px] text-white flex flex-col"
+    >
       <!-- Navbar -->
-      <nav class="flex items-center gap-6 py-5 mt-6 mb-6 text-lg font-heading">
+      <nav class="flex items-center gap-6 pt-8 pb-5 mb-6 text-lg font-heading">
         <!-- Logo/Icon -->
         <a class="mr-auto text-4xl flex gap-4 items-center" href="/">
           <span
@@ -57,7 +59,7 @@ const { title } = Astro.props as Props;
       <slot />
 
       <!-- Footer -->
-      <footer class="text-zinc-400 mt-24 mb-6 flex flex-col gap-2">
+      <footer class="text-zinc-400 mt-auto pt-10 pb-6 flex flex-col gap-2">
         <!-- Attribuition -->
         <p class="text-center">
           Built with 💙 by <span class="text-white font-bold"
