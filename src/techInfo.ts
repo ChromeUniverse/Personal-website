@@ -9,6 +9,7 @@ type techInfoType = {
 };
 
 export const techInfo: techInfoType = {
+  // programming languages
   html: {
     src: "/images/html5.png",
     label: "HTML",
@@ -29,10 +30,36 @@ export const techInfo: techInfoType = {
     label: "TypeScript",
     color: "border-[#2D79C7]",
   },
+  python: {
+    src: "/images/python.png",
+    label: "Python",
+    color: "border-[#ffd73a]",
+  },
+  cpp: {
+    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1822px-ISO_C%2B%2B_Logo.svg.png",
+    label: "C++",
+    color: "border-[#659ad2]",
+  },
+  c: {
+    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/C_Programming_Language.svg/1853px-C_Programming_Language.svg.png",
+    label: "C",
+    color: "border-[#659ad2]",
+  },
+  // frontend frameworks & libraries
   react: {
     src: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/768px-React-icon.svg.png?20220125121207",
     label: "React",
     color: "border-[#61DBFB]",
+  },
+  nextjs: {
+    src: "/images/nextjs-dark.svg",
+    label: "Next.js",
+    color: "border-white",
+  },
+  vue: {
+    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/640px-Vue.js_Logo_2.svg.png",
+    label: "Vue",
+    color: "border-[#41b883]",
   },
   astro: {
     src: "https://astro.build/assets/press/logomark-dark.png",
@@ -49,9 +76,10 @@ export const techInfo: techInfoType = {
     label: "Vite",
     color: "border-[#8180fe]",
   },
+  // server-side stuff
   node: {
     src: "https://cdn-icons-png.flaticon.com/512/5968/5968322.png",
-    label: "Node",
+    label: "Node.js",
     color: "border-[#67BB4A]",
   },
   express: {
@@ -65,6 +93,12 @@ export const techInfo: techInfoType = {
     label: "ws",
     color: "border-white",
   },
+  discordjs: {
+    src: "/images/discord-icon.svg",
+    label: "Discord.js",
+    color: "border-[#5865f2]",
+  },
+  // databases
   sqlite: {
     src: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Sqlite-square-icon.svg/2048px-Sqlite-square-icon.svg.png",
     label: "SQLite",

@@ -4,9 +4,13 @@ export type TechType =
   | "css"
   | "js"
   | "ts"
+  | "python"
+  | "cpp"
+  | "c"
   // UI component frameworks
   | "react"
-  // | "vue"
+  | "nextjs"
+  | "vue"
   | "astro"
   | "tailwind"
   | "vite"
@@ -14,6 +18,7 @@ export type TechType =
   | "node"
   | "express"
   | "ws"
+  | "discordjs"
   // DBs and DB tools
   | "sqlite"
   | "postgres"
