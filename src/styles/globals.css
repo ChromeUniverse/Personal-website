@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer components {
+  .nav-link {
+    @apply hover:underline hover:decoration-2 text-zinc-300 hover:text-blue-500;
+  }
+
   .content > * {
     @apply font-heading text-xl;
   }
