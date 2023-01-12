@@ -8,5 +8,5 @@ module.exports = {
       body: ['"Noto Sans"'],
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/forms")],
 };
