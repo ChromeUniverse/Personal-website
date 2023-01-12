@@ -1,5 +1,7 @@
 ---
 import "../styles/globals.css";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
 
 export interface Props {
   title?: string;
@@ -37,63 +39,13 @@ const { title } = Astro.props as Props;
       class="mx-auto rounded-xl h-screen w-[80%] max-w-[800px] text-white flex flex-col"
     >
       <!-- Navbar -->
-      <nav class="flex items-center gap-6 pt-8 pb-5 mb-6 text-lg font-heading">
-        <!-- Logo/Icon -->
-        <a class="mr-auto text-4xl flex gap-4 items-center" href="/">
-          <span
-            class="flex items-center justify-center w-16 h-16 pt-1 pr-0.5 text-blue-500 bg-white rounded-full"
-          >
-            <i class="fa-solid fa-rocket"></i>
-          </span>
-          <!-- <h1 class="font-bold text-white">Lucca</h1> -->
-        </a>
-
-        <!-- Links -->
-        <a class="nav-link" href="/me">About Me</a>
-        <a class="nav-link" href="/portfolio">Portfolio</a>
-        <a class="nav-link" href="/blog">Blog</a>
-        <a class="nav-link" href="/contact">Contact</a>
-      </nav>
+      <Navbar />
 
       <!-- Content -->
       <slot />
 
       <!-- Footer -->
-      <footer class="text-zinc-400 mt-auto pt-10 pb-6 flex flex-col gap-2">
-        <!-- Attribuition -->
-        <p class="text-center">
-          Built with 💙 by <span class="text-white font-bold"
-            >Lucca Rodrigues</span
-          >
-        </p>
-        <!-- Links -->
-        <div class="flex justify-center gap-3">
-          <a class="nav-link" href="https://github.com/ChromeUniverse/"
-            >GitHub</a
-          >
-          <a class="nav-link" href="https://m.youtube.com/c/LuccasLab"
-            >YouTube</a
-          >
-          <a class="nav-link" href="https://twitter.com/OmniChrome2">Twitter</a>
-          <a
-            class="nav-link"
-            href="https://www.linkedin.com/in/lucca-rodrigues-61b8271b3/"
-            >LinkedIn</a
-          >
-        </div>
-      </footer>
+      <Footer />
     </div>
   </body>
 </html>
-
-<style>
-  @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
-
-  @layer components {
-    .nav-link {
-      @apply hover:underline hover:decoration-2 text-zinc-300 hover:text-blue-500;
-    }
-  }
-</style>
