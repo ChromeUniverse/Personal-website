@@ -12,7 +12,7 @@ function TechCard({ tech }: CardProps) {
   const roundedTechs: TechType[] = ["express", "ws", "js"];
   const rounded = roundedTechs.includes(tech);
 
-  const smallTextTechs: TechType[] = ["ts", "js", "discordjs", "postgres"];
+  const smallTextTechs: TechType[] = ["ts", "js", "discord", "postgres"];
   const smallText = smallTextTechs.includes(tech);
 
   return (
