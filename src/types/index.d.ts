@@ -18,7 +18,7 @@ export type TechType =
   | "node"
   | "express"
   | "ws"
-  | "discordjs"
+  | "discord"
   // DBs and DB tools
   | "sqlite"
   | "postgres"

@@ -93,9 +93,9 @@ export const techInfo: techInfoType = {
     label: "ws",
     color: "border-white",
   },
-  discordjs: {
+  discord: {
     src: "/images/discord-icon.svg",
-    label: "Discord.js",
+    label: "Discord Bot",
     color: "border-[#5865f2]",
   },
   // databases
