@@ -5,7 +5,7 @@ slug: mmm-tickets
 index: 6
 main-image: /images/portfolio/mmm-tickets/prompt.png
 demo: https://discord.gg/minimetamonnft
-tech: [node, discordjs, js]
+tech: [node, discord, js]
 images: [
   /images/portfolio/mmm-tickets/prompt.png, 
   /images/portfolio/mmm-tickets/modal.png,

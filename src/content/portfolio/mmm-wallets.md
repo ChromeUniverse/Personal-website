@@ -5,7 +5,7 @@ slug: mmm-wallets
 index: 6
 main-image: /images/portfolio/mmm-wallets/start.png
 demo: https://discord.gg/minimetamonnft
-tech: [node, discordjs, js]
+tech: [node, discord, js]
 images: [
   /images/portfolio/mmm-wallets/start.png, 
   /images/portfolio/mmm-wallets/view.png,
@@ -13,6 +13,7 @@ images: [
   /images/portfolio/mmm-wallets/website-linked.png,
   /images/portfolio/mmm-wallets/discord-linked.png,
   /images/portfolio/mmm-wallets/edit-2.png,
-  /images/portfolio/mmm-wallets/unlink.png
+  /images/portfolio/mmm-wallets/unlink.png,
+  /images/portfolio/mmm-wallets/logs.png
 ]
 ---
