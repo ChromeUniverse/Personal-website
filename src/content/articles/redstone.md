@@ -16,7 +16,7 @@ All RedstoneBot-related development activities have been ceased and this repo wi
 
 Documentation for RedstoneBot (including technical docs, guides, etc.) will still be available for the foresseable future.
 
-**For more information, please read [this post](http://34.200.98.64/redstone-shutdown).**
+**For more information, please read [this post](/blog/redstone-shutdown).**
 
 Thank you for using RedstoneBot!
 
