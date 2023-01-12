@@ -12,6 +12,7 @@ export async function getStaticPaths() {
 
   // Iterating over all posts, building Map
   posts.forEach((post) => {
+    if (!post.frontmatter.public) return;
     const tagsForThisPost = post.frontmatter.tags as string[];
     tagsForThisPost.forEach((tag) => {
       // tag not found
