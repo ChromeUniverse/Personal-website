@@ -12,6 +12,6 @@ const { tech } = Astro.props as Props;
 <div
   class={`${info[tech].color} border-2 rounded-full px-4 py-1.5 flex items-center gap-1.5`}
 >
-  <img class="h-5" src={info[tech].src} alt={`Logo for ${info[tech].label}`} />
-  <p class="font-heading">{info[tech].label}</p>
+  <img class="h-4" src={info[tech].src} alt={`Logo for ${info[tech].label}`} />
+  <p class="font-heading text-sm">{info[tech].label}</p>
 </div>

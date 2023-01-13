@@ -28,19 +28,21 @@ const {
 } = Astro.props as Props;
 ---
 
+<!-- Backlink -->
 <a
-  class="font-heading text-xl font-bold hover:text-blue-500 hover:underline hover:decoration-2 hover:decoration-blue-500"
+  class="font-heading text-base font-bold hover:text-blue-500 hover:underline hover:decoration-2 hover:decoration-blue-500"
   href="/portfolio"
 >
-  <i class="fa-solid fa-arrow-left text-lg"></i>
+  <i class="fa-solid fa-arrow-left text-base"></i>
   Back to Portfolio
 </a>
 
+<!-- Main content -->
 <section class="bg-zinc-800 bg-opacity-50 rounded-xl px-10 py-8 mt-4 mb-10">
   <!-- Title/Subtitle -->
   <div class="flex flex-col gap-2 mb-4 mt-2">
-    <h3 class="text-4xl font-heading font-bold">{title}</h3>
-    <h4 class="text-xl font-heading text-zinc-400">
+    <h3 class="text-3xl font-heading font-bold">{title}</h3>
+    <h4 class="text-lg font-heading text-zinc-400">
       {subtitle}
     </h4>
   </div>
