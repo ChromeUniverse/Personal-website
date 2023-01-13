@@ -106,7 +106,7 @@ function PortfolioList({ projects }: Props) {
       {/* Content */}
       <main>
         {/* Container */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 px-2 mt-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 px-2 mt-8 mb-8">
           {/* Portfolio cards */}
           {filteredAndSortedProjects.map((project) => (
             <PortfolioCard

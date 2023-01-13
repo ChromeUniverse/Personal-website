@@ -7,11 +7,13 @@ export interface Props {
 }
 
 const { tech } = Astro.props as Props;
+const { link, src, label, color } = info[tech];
 ---
 
-<div
-  class={`${info[tech].color} border-2 rounded-full px-4 py-1.5 flex items-center gap-1.5`}
+<a
+  href={link}
+  class={`${color} border-2 rounded-full px-4 py-1.5 flex items-center gap-1.5 bg-transparent hover:scale-105 hover:brightness-125 hover:bg-black transition-all`}
 >
-  <img class="h-4" src={info[tech].src} alt={`Logo for ${info[tech].label}`} />
-  <p class="hidden md:block font-heading text-sm">{info[tech].label}</p>
-</div>
+  <img class="h-4" src={src} alt={`Logo for ${label}`} />
+  <p class="hidden md:block font-heading text-sm">{label}</p>
+</a>
