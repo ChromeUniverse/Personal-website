@@ -25,10 +25,10 @@ const formattedDate = date.toLocaleDateString("en-US", {
   day: "numeric",
 });
 
-console.log(frontmatter.tags);
+console.log(frontmatter["img-preview"]);
 ---
 
-<Layout title={frontmatter.title}>
+<Layout title={frontmatter.title} imageURL={frontmatter["img-preview"]}>
   <!-- Title -->
   <h1 class="text-4xl font-heading font-bold text-center mt-10">
     {frontmatter.title}

@@ -15,20 +15,20 @@ export async function getStaticPaths() {
   });
 }
 
-const { frontmatter, Content } = Astro.props.project as MarkdownInstance<
+const { frontmatter: fm, Content } = Astro.props.project as MarkdownInstance<
   Record<string, any>
 >;
 ---
 
-<Layout title={frontmatter.title}>
+<Layout title={fm.title} description={fm.subtitle} imageURL={fm["main-image"]}>
   <PortfolioPage
-    title={frontmatter.title}
-    subtitle={frontmatter.subtitle}
-    images={frontmatter.images}
+    title={fm.title}
+    subtitle={fm.subtitle}
+    images={fm.images}
     Content={Content}
-    sourceLink={frontmatter.source}
-    demoLink={frontmatter.demo}
-    articleSlug={frontmatter.article}
-    techList={frontmatter.tech}
+    sourceLink={fm.source}
+    demoLink={fm.demo}
+    articleSlug={fm.article}
+    techList={fm.tech}
   />
 </Layout>

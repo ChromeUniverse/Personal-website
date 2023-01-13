@@ -5,7 +5,10 @@ import PortfolioList from "../../components/PortfolioList";
 const projects = await Astro.glob("../../content/portfolio/*.md");
 ---
 
-<Layout title="Portfolio">
+<Layout
+  title="Portfolio"
+  description="Personal and freelance projects I'm most proud of"
+>
   <!-- Title -->
   <h1 class="font-bold font-heading text-4xl text-center pb-2">My Portfolio</h1>
 
