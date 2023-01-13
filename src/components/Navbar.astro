@@ -1,7 +1,9 @@
 <!-- Navbar -->
-<nav class="flex items-center gap-6 pt-8 pb-5 mb-8 text-lg font-heading">
+<nav
+  class="flex items-center gap-6 pt-8 pb-5 mb-8 text-lg font-heading relative"
+>
   <!-- Logo/Icon -->
-  <a class="mr-auto flex gap-4 items-center group" href="/">
+  <a class="mr-auto flex gap-4 items-center" href="/">
     <span
       class="flex items-center justify-center w-12 h-12 pt-1 pr-0.5 rounded-full bg-white group-hover:bg-blue-500 transition-all"
     >
@@ -12,9 +14,48 @@
     <!-- <h1 class="font-bold text-white">Lucca</h1> -->
   </a>
 
+  <!-- Hamdburger menu icon -->
+  <i
+    id="icon"
+    class="fa-solid fa-bars text-2xl text-zinc-400 md:hidden transition-all"
+  ></i>
+
   <!-- Links -->
-  <a class="nav-link" href="/me">About Me</a>
-  <a class="nav-link" href="/portfolio">Portfolio</a>
-  <a class="nav-link" href="/blog">Blog</a>
-  <a class="nav-link" href="/contact">Contact</a>
+  <div
+    id="links"
+    class="z-20 absolute md:static flex flex-col md:flex-row gap-4 items-center group bg-zinc-800 top-[90%] right-0 px-10 py-4 rounded-lg opacity-0 transition-all drop-shadow-2xl md:bg-transparent md:top-0 md:right-0 md:px-0 my:py-0 md:opacity-100 md:drop-shadow-none"
+  >
+    <a class="nav-link" href="/me">About Me</a>
+    <a class="nav-link" href="/portfolio">Portfolio</a>
+    <a class="nav-link" href="/blog">Blog</a>
+    <a class="nav-link" href="/contact">Contact</a>
+  </div>
 </nav>
+
+<script>
+  let open = false;
+
+  const icon = document.getElementById("icon") as HTMLElement;
+  const links = document.getElementById("links") as HTMLElement;
+
+  icon.addEventListener("click", toggleOpen);
+
+  function toggleOpen() {
+    open = !open;
+    if (open) {
+      // change icon color
+      icon.classList.remove("text-zinc-400");
+      icon.classList.add("text-white");
+      // show/hide links
+      links.classList.remove("opacity-0");
+      links.classList.add("opacity-100");
+    } else {
+      // change icon color
+      icon.classList.add("text-zinc-400");
+      icon.classList.remove("text-white");
+      // show/hide links
+      links.classList.add("opacity-0");
+      links.classList.remove("opacity-100");
+    }
+  }
+</script>

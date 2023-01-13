@@ -17,7 +17,7 @@ function TechCard({ tech }: CardProps) {
 
   return (
     <div
-      className={`bg-zinc-800 p-2 rounded-2xl w-[90px] h-[90px] flex items-center justify-center relative tech-card group hover:border-2 ${color}`}
+      className={`bg-zinc-800 p-2 rounded-xl md:rounded-2xl w-[65px] h-[65px] md:w-[90px] md:h-[90px] flex items-center justify-center relative tech-card group hover:border-2 ${color}`}
     >
       {/* Image */}
       <img
