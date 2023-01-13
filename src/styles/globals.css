@@ -103,4 +103,18 @@
   .content p.img-caption {
     @apply text-center mt-0;
   }
+
+  @media (max-width: 768px) {
+    .content .tech-card p {
+      @apply text-sm;
+    }
+
+    .content .tech-card p.small-text {
+      @apply text-xs;
+    }
+
+    .content .tech-group-full-line {
+      grid-column: 1/2;
+    }
+  }
 }
