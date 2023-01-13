@@ -47,8 +47,10 @@ interface Props {
   frontmatterList: Record<string, any>[];
 }
 
-const { tag } = Astro.params;
+const { tag: tagParam } = Astro.params;
 const { frontmatterList }: Props = Astro.props;
+
+const tag = (tagParam as string).charAt(0).toUpperCase() + tagParam?.slice(1);
 
 // sort posts by descending date
 const sortedFrontmatterList = frontmatterList.sort((f1, f2) => {
@@ -69,12 +71,15 @@ const formatDate = (dateString: string) => {
 };
 ---
 
-<Layout title={`Article tag: "${tag}"`}>
+<Layout
+  title={`Article tag: ${tag}`}
+  description={`Lucca's articles tagged with "${tag}"`}
+>
   <!-- Title -->
-  <h1 class="font-heading text-4xl text-center mt-10 mb-10">
+  <h1 class="font-heading text-4xl text-center mb-10">
     Article tag: <span
       class="font-bold underline decoration-[3px] decoration-blue-500"
-      >{(tag as string).charAt(0).toUpperCase() + tag?.slice(1)}</span
+      >{tag}</span
     >
   </h1>
 

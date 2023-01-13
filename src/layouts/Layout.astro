@@ -12,12 +12,17 @@ export interface Props {
 const {
   title: TitleProp,
   description = "Lucca Rodrigues' website",
-  imageURL = "",
+  imageURL: ImageURlProp = "/bass-cropped.png",
 } = Astro.props as Props;
 
 const title = TitleProp ? `${TitleProp} • Lucca Rodrigues` : "Lucca Rodrigues";
 
-const url = import.meta.env.SITE + Astro.url.pathname.slice(1);
+const url = import.meta.env.DEV
+  ? Astro.url.pathname
+  : import.meta.env.SITE + Astro.url.pathname.slice(1);
+const imageURL = import.meta.env.DEV
+  ? ImageURlProp
+  : import.meta.env.SITE + ImageURlProp.slice(1);
 ---
 
 <!DOCTYPE html>
@@ -64,7 +69,7 @@ const url = import.meta.env.SITE + Astro.url.pathname.slice(1);
   <body class="bg-gradient-to-r from-zinc-900 to-zinc-900 font-heading">
     <!-- Container view -->
     <div
-      class="mx-auto rounded-xl h-screen w-[80%] max-w-[800px] text-white flex flex-col"
+      class="mx-auto rounded-xl h-screen w-[90%] md:w-[80%] md:max-w-[800px] text-white flex flex-col"
     >
       <!-- Navbar -->
       <Navbar />

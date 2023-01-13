@@ -28,7 +28,11 @@ const formattedDate = date.toLocaleDateString("en-US", {
 console.log(frontmatter["img-preview"]);
 ---
 
-<Layout title={frontmatter.title} imageURL={frontmatter["img-preview"]}>
+<Layout
+  title={frontmatter.title}
+  imageURL={frontmatter["img-preview"]}
+  description={frontmatter.description}
+>
   <!-- Title -->
   <h1 class="text-4xl font-heading font-bold text-center mt-10">
     {frontmatter.title}
