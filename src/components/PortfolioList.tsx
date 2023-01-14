@@ -20,11 +20,10 @@ function PortfolioList({ projects }: Props) {
     );
   };
 
-  // todo: finish filtering implementation
   const filteredAndSortedProjects = useMemo(
     () =>
       projects
-        .sort((p1, p2) => p1.frontmatter.index - p2.frontmatter.index)
+        // .sort((p1, p2) => p1.frontmatter.index - p2.frontmatter.index)
         .filter((project) => {
           const techList = project.frontmatter.tech as TechType[];
           return selected.every((t) => techList.includes(t));
