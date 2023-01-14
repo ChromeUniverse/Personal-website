@@ -2,7 +2,6 @@
 title: Support Ticket Bot
 subtitle: A full-fledged support ticket system for Discord servers
 slug: mmm-tickets
-index: 6
 main-image: /images/portfolio/mmm-tickets/prompt.png
 demo: https://discord.gg/minimetamonnft
 tech: [node, discord, js]

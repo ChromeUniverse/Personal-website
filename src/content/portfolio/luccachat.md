@@ -2,7 +2,6 @@
 title: LuccaChat
 subtitle: A full-stack TypeScript real-time chat app
 slug: luccachat
-index: 1
 main-image: /images/portfolio/luccachat/home.jpeg
 source: https://github.com/ChromeUniverse/LuccaChat
 demo: http://luccachat.blaring.net/

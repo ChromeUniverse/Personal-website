@@ -2,7 +2,6 @@
 title: Calculator App
 subtitle: A multi-theme calculator, inspired by the classic iPhone mobile app
 slug: calculator
-index: 6
 main-image: /images/portfolio/calculator/theme-1.png
 source: https://github.com/ChromeUniverse/calculator-app
 demo: https://calculator-app-weld-xi.vercel.app/

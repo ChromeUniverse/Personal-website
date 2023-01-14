@@ -1,7 +1,7 @@
 ---
 title: Social Media Dashboard
 subtitle: A social media statistics dashboard mockup, with light/dark mode toggle
-slug: social-media-dashboard
+slug: social-dashboard
 index: 7
 main-image: /images/portfolio/social-dashboard/light.png
 source: https://github.com/ChromeUniverse/social-media-dashboard

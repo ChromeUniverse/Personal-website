@@ -2,7 +2,6 @@
 title: Tank Battle
 subtitle: A tank combat game with real-time online multiplayer
 slug: tank-battle
-index: 2
 main-image: /images/portfolio/tank-battle/game-room.png
 source: https://github.com/ChromeUniverse/Tank-Battle
 article: building-tank-battle

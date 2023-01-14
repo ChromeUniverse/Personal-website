@@ -2,7 +2,6 @@
 title: ETH Wallet Verifier
 subtitle: A Discord bot for connecting Ethereum wallets and verifying NFT ownership
 slug: mmm-wallets
-index: 6
 main-image: /images/portfolio/mmm-wallets/start.png
 demo: https://discord.gg/minimetamonnft
 tech: [node, discord, js]

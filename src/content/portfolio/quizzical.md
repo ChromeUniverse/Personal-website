@@ -2,7 +2,6 @@
 title: Quizzical
 subtitle: A trivia quiz game built with React
 slug: quizzical
-index: 6
 main-image: /images/portfolio/quizzical/home.png
 source: https://github.com/ChromeUniverse/quizzical/tree/main
 demo: https://quizzical-sigma.vercel.app/

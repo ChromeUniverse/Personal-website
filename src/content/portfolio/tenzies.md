@@ -2,7 +2,6 @@
 title: Tenzies
 subtitle: A simple dice game built with React
 slug: tenzies
-index: 6
 main-image: /images/portfolio/tenzies/home.png
 source: https://github.com/ChromeUniverse/tenzies/tree/main
 demo: https://tenzies-nu.vercel.app/

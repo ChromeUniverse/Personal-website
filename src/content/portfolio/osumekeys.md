@@ -2,7 +2,6 @@
 title: OsumeKeys Bot
 subtitle: A bot with several games, built for OsumeKeys' Discord
 slug: osumekeys
-index: 6
 main-image: /images/portfolio/osumekeys/osume.png
 demo: https://discord.gg/osumekeys
 tech: [node, discord, js]

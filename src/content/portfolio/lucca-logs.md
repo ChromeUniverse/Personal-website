@@ -2,7 +2,6 @@
 title: The Lucca Logs
 subtitle: My first personal blogging website, now superseded by blaring.net
 slug: lucca-logs
-index: 6
 main-image: /images/portfolio/lucca-logs/home.png
 source: https://github.com/ChromeUniverse/Personal-website
 article: website2.0

@@ -2,7 +2,6 @@
 title: blaring.net
 subtitle: My personal website, blog and portfolio. You're viewing it right now!
 slug: blaring-net
-index: 6
 main-image: /images/portfolio/blaring-net/home.png
 source: https://github.com/ChromeUniverse/Personal-website
 demo: https://blaring.net

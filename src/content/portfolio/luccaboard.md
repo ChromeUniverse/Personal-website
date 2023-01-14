@@ -7,7 +7,12 @@ main-image: /images/portfolio/luccaboard/home.png
 source: https://github.com/ChromeUniverse/interactive-comments-section
 demo: https://interactive-comments-section.blaring.net/
 tech: [react, vite, tailwind, js, ts, node, express, sqlite, prisma]
-images: [/images/portfolio/luccaboard/home.png]
+images: [
+  /images/portfolio/luccaboard/home.png,
+  /images/portfolio/luccaboard/edit.png,
+  /images/portfolio/luccaboard/reply.png,
+  /images/portfolio/luccaboard/comment.png,
+]
 ---
 
 This project is my solution to a free coding challenge from [Frontend Mentor](https://www.frontendmentor.io/challenges/interactive-comments-section-iG1RugEG9). The main goal was to build out an interactive comments section and get it looking as close as possible to the provided design previews. 
