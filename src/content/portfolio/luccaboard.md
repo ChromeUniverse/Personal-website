@@ -2,7 +2,6 @@
 title: LuccaBoard
 subtitle: A full-stack interactive comments section inspired by Reddit
 slug: luccaboard
-index: 3
 main-image: /images/portfolio/luccaboard/home.png
 source: https://github.com/ChromeUniverse/interactive-comments-section
 demo: https://interactive-comments-section.blaring.net/
