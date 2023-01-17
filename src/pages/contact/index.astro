@@ -1,0 +1,95 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Contact" description="Get in touch!">
+  <!-- Title -->
+  <h1 class="font-bold text-4xl text-center pb-2">Contact</h1>
+  <!-- Subtitle -->
+  <h2 class="text-lg text-zinc-400 text-center">
+    Got a <a class="nav-link font-bold" href="/me#freelancing"
+      >business inquiry</a
+    >? Want to ask me about my work? <br />
+    Just wanna say hi? Fill out the form below!
+  </h2>
+
+  <!-- Contact form -->
+  <div class="mx-auto w-[90%] md:w-[400px] mt-4">
+    <form
+      action="/contact/success"
+      name="contact"
+      method="POST"
+      data-netlify="true"
+    >
+      <!-- Hidden Subject Input (Netlify) -->
+      <!-- <input
+        type="hidden"
+        name="subject"
+        value="Message from mysitename.netlify.app"
+      /> -->
+
+      <!-- Name -->
+      <p class="form-input-line">
+        <label for="name">Name</label>
+        <input
+          required
+          id="name"
+          type="text"
+          name="name"
+          placeholder="Gavin Belson"
+        />
+      </p>
+      <!-- Email -->
+      <p class="form-input-line">
+        <label for="email">Email</label>
+        <input
+          required
+          id="email"
+          type="email"
+          name="email"
+          placeholder="gavin@hooli.com"
+        />
+      </p>
+      <!-- Message -->
+      <p class="form-input-line">
+        <label for="message">Message</label>
+        <textarea
+          required
+          minlength="20"
+          id="message"
+          name="message"
+          rows="5"
+          placeholder="Greetings. Gavin Belson here, senior executive and Chief Innovation Officer at Hooli, Inc. Nice to meet you!"
+        ></textarea>
+      </p>
+      <!-- Submit button -->
+      <p class="flex justify-center">
+        <button
+          class="text-white text-lg font-bold bg-blue-500 px-4 py-2 rounded-lg hover:bg-white hover:text-blue-500 transition-all"
+          type="submit">Send</button
+        >
+      </p>
+    </form>
+  </div>
+</Layout>
+
+<style>
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
+  @layer components {
+    .form-input-line {
+      @apply py-2;
+    }
+
+    .form-input-line label {
+      @apply block font-bold mb-1;
+    }
+
+    .form-input-line input,
+    .form-input-line textarea {
+      @apply w-full bg-zinc-800 text-lg text-zinc-200 rounded-lg border-transparent focus:border-blue-500 placeholder:text-zinc-500;
+    }
+  }
+</style>

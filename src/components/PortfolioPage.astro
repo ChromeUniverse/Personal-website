@@ -1,0 +1,71 @@
+---
+import type { AstroComponentFactory } from "astro/dist/runtime/server";
+import type { TechType } from "../types";
+import LinkButton from "./LinkButton.astro";
+import ReactImageCarousel from "./ReactImageCarousel";
+import TechIndicator from "./TechIndicator.astro";
+
+export interface Props {
+  title: string;
+  subtitle: string;
+  sourceLink?: string;
+  demoLink?: string;
+  articleSlug?: string;
+  images: string[];
+  techList: TechType[];
+  Content: AstroComponentFactory;
+}
+
+const {
+  title,
+  subtitle,
+  sourceLink,
+  demoLink,
+  articleSlug,
+  images,
+  techList,
+  Content,
+} = Astro.props as Props;
+---
+
+<!-- Backlink -->
+<a
+  class="font-heading text-base font-bold hover:text-blue-500 hover:underline hover:decoration-2 hover:decoration-blue-500"
+  href="/portfolio"
+>
+  <i class="fa-solid fa-arrow-left text-base"></i>
+  Back to Portfolio
+</a>
+
+<!-- Main content -->
+<section
+  class="bg-zinc-800 bg-opacity-50 rounded-xl px-4 md:px-10 py-8 mt-4 mb-10"
+>
+  <!-- Title/Subtitle -->
+  <div class="flex flex-col gap-2 mb-4 mt-2">
+    <h3 class="text-3xl font-heading font-bold">{title}</h3>
+    <h4 class="text-lg font-heading text-zinc-400">
+      {subtitle}
+    </h4>
+  </div>
+
+  <!-- Technologies -->
+  <div class="flex flex-wrap mb-6 gap-2">
+    {techList.map((tech) => <TechIndicator tech={tech} />)}
+  </div>
+
+  <!-- Links -->
+  <div class="mb-4 flex gap-2">
+    {sourceLink && <LinkButton link={sourceLink} type="source" />}
+    {demoLink && <LinkButton link={demoLink} type="demo" />}
+    {articleSlug && <LinkButton link={`/blog/${articleSlug}`} type="article" />}
+  </div>
+
+  <!-- Main content -->
+  <main class="content">
+    <Content />
+  </main>
+
+  <!-- Image Carousel -->
+  <ReactImageCarousel images={images} client:load />
+</section>

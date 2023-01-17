@@ -1,0 +1,67 @@
+---
+import type { MarkdownInstance } from "astro";
+import Layout from "../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const posts = await Astro.glob("../../content/articles/*.md");
+  // console.log(posts);
+
+  return posts.map((post) => {
+    const slug = post.frontmatter.slug;
+    return {
+      params: { slug },
+      props: { post },
+    };
+  });
+}
+
+const { frontmatter, rawContent, Content } = Astro.props
+  .post as MarkdownInstance<Record<string, any>>;
+
+const date = new Date(frontmatter.date);
+const formattedDate = date.toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+
+console.log(frontmatter["img-preview"]);
+---
+
+<Layout
+  title={frontmatter.title}
+  imageURL={frontmatter["img-preview"]}
+  description={frontmatter.description}
+>
+  <!-- Title -->
+  <h1 class="text-4xl font-heading font-bold text-center">
+    {frontmatter.title}
+  </h1>
+
+  <!-- Author -->
+  <p class="text-center text-zinc-400 font-heading text-lg mt-4 mb-6">
+    Written by <a
+      class="text-white font-bold border-b-[2px] border-blue-500 hover:text-blue-500"
+      href="/blog/me">Lucca Rodrigues</a
+    > on <span>{formattedDate}</span>
+  </p>
+
+  <!-- Tags -->
+  <div class="flex justify-center gap-y-3 gap-x-3 flex-wrap w-[100%] mx-auto">
+    {
+      frontmatter.tags.map((tag: string) => (
+        <a
+          href={`/blog/tag/${tag}`}
+          class="font-bold font-heading text-normal px-3 py-1 border-blue-500 border-2 rounded-lg hover:bg-blue-500 hover:text-zinc-900 transition-all"
+        >
+          {tag}
+        </a>
+      ))
+    }
+  </div>
+
+  <!-- Content -->
+  <main class="content">
+    <Content />
+  </main>
+</Layout>

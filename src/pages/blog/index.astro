@@ -1,0 +1,64 @@
+---
+import PreviewList from "../../components/PreviewList.astro";
+import Layout from "../../layouts/Layout.astro";
+
+const posts = await Astro.glob("../../content/articles/*.md");
+const frontmatterList = posts
+  .map((post) => post.frontmatter)
+  .filter((fm) => fm.public);
+const tags = ["all", "programming", "games"];
+
+// 🎮 Games
+// 🖥 Web Design
+const categories = [
+  {
+    name: "👨‍💻 Programming",
+    tag: "programming",
+  },
+  {
+    name: "🏗 Projects",
+    tag: "projects",
+  },
+  {
+    name: "🎮 Games",
+    tag: "games",
+  },
+  {
+    name: "🖥 Web Design",
+    tag: "web design",
+  },
+];
+---
+
+<Layout
+  title="Blog"
+  description="Articles on coding, tech, music, life, and more."
+>
+  <!-- Title -->
+  <h1 class="font-heading text-4xl text-center mb-4 font-bold">Blog</h1>
+
+  <!-- Description -->
+  <h2 class="font-heading text-center text-lg pb-4 text-zinc-400">
+    Coding, engineering, electronics, music, life, and everything in between.
+  </h2>
+
+  <!-- Categories -->
+  <!-- <p class="text-heading text-center text-xl text-zinc-200">Categories</p> -->
+  <div
+    class="flex justify-center gap-y-3 gap-x-3 flex-wrap w-[100%] mx-auto pb-12"
+  >
+    {
+      categories.map((c) => (
+        <a
+          href={`/blog/tag/${c.tag}`}
+          class="font-bold font-heading text-normal px-3 py-1 border-blue-500 border-2 rounded-lg hover:bg-blue-500 hover:text-zinc-900 transition-all"
+        >
+          {c.name}
+        </a>
+      ))
+    }
+  </div>
+
+  <!-- Article previews -->
+  <PreviewList frontmatterList={frontmatterList} />
+</Layout>

@@ -1,0 +1,88 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import PreviewList from "../../../components/PreviewList.astro";
+
+export async function getStaticPaths() {
+  // Fetch all posts
+  const posts = await Astro.glob("../../../content/articles/*.md");
+
+  // Setting up Map between Tag and list of Frontmatter objects
+  type FrontmatterType = Record<string, any>;
+  const tagsMetaMap = new Map<string, FrontmatterType[]>();
+
+  // Iterating over all posts, building Map
+  posts.forEach((post) => {
+    if (!post.frontmatter.public) return;
+    const tagsForThisPost = post.frontmatter.tags as string[];
+    tagsForThisPost.forEach((tag) => {
+      // tag not found
+      if (tagsMetaMap.has(tag)) {
+        const frontmatterList = tagsMetaMap.get(tag) as Record<string, any>[];
+        tagsMetaMap.set(tag, [...frontmatterList, post.frontmatter]);
+      } else {
+        tagsMetaMap.set(tag, [post.frontmatter]);
+      }
+    });
+  });
+
+  // Setting up array of static paths
+  const staticPaths: {
+    params: { tag: string };
+    props: { frontmatterList: Record<string, any>[] };
+  }[] = [];
+
+  // Iterating over the Map, building static paths
+  tagsMetaMap.forEach((frontmatterList, tag) => {
+    staticPaths.push({
+      params: { tag },
+      props: { frontmatterList },
+    });
+  });
+
+  return staticPaths;
+}
+
+// Get params and props
+interface Props {
+  frontmatterList: Record<string, any>[];
+}
+
+const { tag: tagParam } = Astro.params;
+const { frontmatterList }: Props = Astro.props;
+
+const tag = (tagParam as string).charAt(0).toUpperCase() + tagParam?.slice(1);
+
+// sort posts by descending date
+const sortedFrontmatterList = frontmatterList.sort((f1, f2) => {
+  const date1 = new Date(f1.date);
+  const date2 = new Date(f2.date);
+  return date2.getTime() - date1.getTime();
+});
+
+// Date formatter helper function
+const formatDate = (dateString: string) => {
+  const date = new Date(dateString);
+  const formattedDate = date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+  return formattedDate;
+};
+---
+
+<Layout
+  title={`Article tag: ${tag}`}
+  description={`Lucca's articles tagged with "${tag}"`}
+>
+  <!-- Title -->
+  <h1 class="font-heading text-4xl text-center mb-10">
+    Article tag: <span
+      class="font-bold underline decoration-[3px] decoration-blue-500"
+      >{tag}</span
+    >
+  </h1>
+
+  <!-- Cards -->
+  <PreviewList frontmatterList={frontmatterList} />
+</Layout>

@@ -1,0 +1,34 @@
+---
+import type { MarkdownInstance } from "astro";
+import Layout from "../../layouts/Layout.astro";
+import PortfolioPage from "../../components/PortfolioPage.astro";
+
+export async function getStaticPaths() {
+  const projects = await Astro.glob("../../content/portfolio/*.md");
+
+  return projects.map((project) => {
+    const slug = project.frontmatter.slug;
+    return {
+      params: { slug },
+      props: { project },
+    };
+  });
+}
+
+const { frontmatter: fm, Content } = Astro.props.project as MarkdownInstance<
+  Record<string, any>
+>;
+---
+
+<Layout title={fm.title} description={fm.subtitle} imageURL={fm["main-image"]}>
+  <PortfolioPage
+    title={fm.title}
+    subtitle={fm.subtitle}
+    images={fm.images}
+    Content={Content}
+    sourceLink={fm.source}
+    demoLink={fm.demo}
+    articleSlug={fm.article}
+    techList={fm.tech}
+  />
+</Layout>

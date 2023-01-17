@@ -1,0 +1,30 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import PortfolioList from "../../components/PortfolioList";
+import type { MarkdownInstance } from "astro";
+import { projectsList } from "../../content/portfolio/projects.json";
+
+const projects = await Astro.glob("../../content/portfolio/*.md");
+
+const orderedProjects = projectsList.map((targetSlug) => {
+  const project = projects.find((p) => p.frontmatter.slug === targetSlug);
+  if (!project) {
+    throw new Error(`Couldn't find project for targetSlug ${targetSlug}`);
+  }
+  return project;
+});
+---
+
+<Layout
+  title="Portfolio"
+  description="Personal and freelance projects I'm most proud of"
+>
+  <!-- Title -->
+  <h1 class="font-bold font-heading text-4xl text-center pb-2">My Portfolio</h1>
+
+  <!-- Subtitle -->
+  <h2 class="font-heading text-xl text-center text-zinc-400 leading-relaxed">
+    Personal and freelance projects I'm most proud of
+  </h2>
+  <PortfolioList projects={orderedProjects} client:load />
+</Layout>
