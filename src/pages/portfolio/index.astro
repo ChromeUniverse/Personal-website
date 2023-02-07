@@ -1,11 +1,30 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import PortfolioList from "../../components/PortfolioList";
-import type { MarkdownInstance } from "astro";
-import { projectsList } from "../../content/portfolio/projects.json";
 
+// ordered list of portfolio project slugs
+const projectsList = [
+  "luccachat",
+  "tank-battle",
+  "luccaboard",
+  "blaring-net",
+  "mmm-wallets",
+  "mmm-invites",
+  "mmm-collabs",
+  "mmm-tickets",
+  "rest-countries-api",
+  "lucca-logs",
+  "quizzical",
+  "crowdfunding",
+  "calculator",
+  "social-dashboard",
+  "osumekeys",
+  "tenzies",
+  "travel-journal",
+];
+
+// Fetch and order portfolio projects
 const projects = await Astro.glob("../../content/portfolio/*.md");
-
 const orderedProjects = projectsList.map((targetSlug) => {
   const project = projects.find((p) => p.frontmatter.slug === targetSlug);
   if (!project) {
