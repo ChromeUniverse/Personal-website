@@ -4,7 +4,7 @@ subtitle: A bot with several games, built for OsumeKeys' Discord
 slug: osumekeys
 main-image: /images/portfolio/osumekeys/osume.png
 demo: https://discord.gg/osumekeys
-tech: [node, discord, js]
+tech: [node, discord, js, digitalOcean]
 images: [
   /images/portfolio/osumekeys/work.png, 
   /images/portfolio/osumekeys/money.png,

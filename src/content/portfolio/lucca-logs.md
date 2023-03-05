@@ -5,7 +5,7 @@ slug: lucca-logs
 main-image: /images/portfolio/lucca-logs/home.png
 source: https://github.com/ChromeUniverse/Personal-website
 article: website2.0
-tech: [vue, css, js, node]
+tech: [vue, css, js, node, aws]
 images: [
   /images/portfolio/lucca-logs/home.png, 
   /images/portfolio/lucca-logs/articles-list.png, 

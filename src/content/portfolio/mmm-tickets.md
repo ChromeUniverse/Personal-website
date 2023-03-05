@@ -4,7 +4,7 @@ subtitle: A full-fledged support ticket system for Discord servers
 slug: mmm-tickets
 main-image: /images/portfolio/mmm-tickets/prompt.png
 demo: https://discord.gg/minimetamonnft
-tech: [node, discord, js]
+tech: [node, discord, js, aws]
 images: [
   /images/portfolio/mmm-tickets/prompt.png, 
   /images/portfolio/mmm-tickets/modal.png,

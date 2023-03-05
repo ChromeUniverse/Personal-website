@@ -4,7 +4,7 @@ subtitle: A Discord bot for connecting Ethereum wallets and verifying NFT owners
 slug: mmm-wallets
 main-image: /images/portfolio/mmm-wallets/start.png
 demo: https://discord.gg/minimetamonnft
-tech: [node, discord, js]
+tech: [node, discord, js, aws]
 images: [
   /images/portfolio/mmm-wallets/start.png, 
   /images/portfolio/mmm-wallets/view.png,

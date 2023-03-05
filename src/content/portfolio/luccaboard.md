@@ -5,7 +5,7 @@ slug: luccaboard
 main-image: /images/portfolio/luccaboard/home.png
 source: https://github.com/ChromeUniverse/interactive-comments-section
 demo: https://interactive-comments-section.blaring.net/
-tech: [react, vite, tailwind, js, ts, node, express, sqlite, prisma]
+tech: [react, vite, tailwind, js, ts, node, express, sqlite, prisma, aws]
 images: [
   /images/portfolio/luccaboard/home.png,
   /images/portfolio/luccaboard/edit.png,

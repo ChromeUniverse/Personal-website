@@ -5,7 +5,7 @@ slug: luccachat
 main-image: /images/portfolio/luccachat/home.jpeg
 source: https://github.com/ChromeUniverse/LuccaChat
 demo: http://luccachat.blaring.net/
-tech: [ts, react, vite, tailwind, node, express, ws, postgres, prisma]
+tech: [ts, react, vite, tailwind, node, express, ws, postgres, prisma, aws]
 images: [/images/portfolio/luccachat/home.jpeg, /images/portfolio/luccachat/preview-violet.png, /images/portfolio/luccachat/invite.png, /images/portfolio/luccachat/account-settings.png, /images/portfolio/luccachat/light-mode-group-settings.png]
 ---
 

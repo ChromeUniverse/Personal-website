@@ -5,7 +5,7 @@ slug: blaring-net
 main-image: /images/portfolio/blaring-net/home.png
 source: https://github.com/ChromeUniverse/Personal-website
 demo: https://blaring.net
-tech: [astro, react, tailwind, ts, js]
+tech: [astro, react, tailwind, ts, js, netlify]
 images: [
   /images/portfolio/blaring-net/home.png,
   # /images/portfolio/blaring-net/skills.png,

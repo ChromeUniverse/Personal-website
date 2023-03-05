@@ -5,7 +5,7 @@ slug: tank-battle
 main-image: /images/portfolio/tank-battle/game-room.png
 source: https://github.com/ChromeUniverse/Tank-Battle
 article: building-tank-battle
-tech: [html, css, js, node, express, ws, mysql]
+tech: [html, css, js, node, express, ws, mysql, aws]
 images: [/images/portfolio/tank-battle/game-room.png, /images/portfolio/tank-battle/home.png, /images/portfolio/tank-battle/lb.png]
 ---
 
