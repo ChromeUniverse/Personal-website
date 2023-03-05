@@ -1,4 +1,38 @@
-import type { TechType } from "./types";
+type TechType =
+  // the classic three + TS
+  | "html"
+  | "css"
+  | "js"
+  | "ts"
+  | "python"
+  | "cpp"
+  | "c"
+  // frontend stuff
+  | "react"
+  | "nextjs"
+  | "vue"
+  | "astro"
+  | "tailwind"
+  | "headless-ui"
+  | "vite"
+  // backend stuff
+  | "node"
+  | "express"
+  | "ws"
+  | "discord"
+  | "trpc"
+  | "nextAuth"
+  // DBs and DB tools
+  | "sqlite"
+  | "postgres"
+  | "mysql"
+  | "prisma"
+  // PaaS
+  | "aws"
+  | "digitalOcean"
+  | "vercel"
+  | "netlify"
+  | "supabase";
 
 type techInfoType = {
   [tech in TechType]: {
@@ -84,6 +118,12 @@ export const techInfo: techInfoType = {
     label: "Tailwind",
     color: "border-[#07b6d5]",
   },
+  "headless-ui": {
+    link: "https://headlessui.com/",
+    src: "https://headlessui.com/favicon.ico",
+    label: "Headless UI",
+    color: "border-[#69b5fd]",
+  },
   vite: {
     link: "https://vitejs.dev/",
     src: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vitejs-logo.svg/1039px-Vitejs-logo.svg.png",
@@ -110,11 +150,23 @@ export const techInfo: techInfoType = {
     label: "ws",
     color: "border-white",
   },
+  trpc: {
+    link: "https://trpc.io/",
+    src: "https://trpc.io/img/logo.svg",
+    label: "tRPC",
+    color: "border-[#398ccb]",
+  },
   discord: {
     link: "https://discord.com/developers/docs/intro",
     src: "/images/discord-icon.svg",
     label: "Discord Bot",
     color: "border-[#5865f2]",
+  },
+  nextAuth: {
+    link: "https://next-auth.js.org/",
+    src: "https://next-auth.js.org/img/logo/logo-xs.png",
+    label: "NextAuth.js",
+    color: "border-[#9c24da]",
   },
   // databases
   sqlite: {
@@ -141,5 +193,36 @@ export const techInfo: techInfoType = {
     src: "https://www.prisma.io/images/favicon-32x32.png",
     label: "Prisma",
     color: "border-white",
+  },
+  // PaaS
+  aws: {
+    link: "https://aws.amazon.com/",
+    src: "https://aws.amazon.com/favicon.ico",
+    label: "AWS",
+    color: "border-[#ff9900]",
+  },
+  digitalOcean: {
+    link: "https://www.digitalocean.com/",
+    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/DigitalOcean_icon.svg/2048px-DigitalOcean_icon.svg.png",
+    label: "DigitalOcean",
+    color: "border-[#0080ff]",
+  },
+  vercel: {
+    link: "https://vercel.com/",
+    src: "https://i.pinimg.com/originals/c4/35/6c/c4356cd5454d06585e0a46066b555172.png",
+    label: "Vercel",
+    color: "border-white",
+  },
+  supabase: {
+    link: "https://supabase.com",
+    src: "https://seeklogo.com/images/S/supabase-logo-DCC676FFE2-seeklogo.com.png",
+    label: "Supabase",
+    color: "border-[#3ecf8e]",
+  },
+  netlify: {
+    link: "https://www.netlify.com/",
+    src: "https://seeklogo.com/images/N/netlify-logo-BD8F8A77E2-seeklogo.com.png",
+    label: "Netlify",
+    color: "border-[#25c7b7]",
   },
 };
