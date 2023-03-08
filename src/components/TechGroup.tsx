@@ -1,36 +1,42 @@
 import React from "react";
-import { techInfo as info } from "../techInfo";
-import type { TechType } from "../types";
+import { techInfo as info, TechType } from "../techInfo";
 
 type CardProps = {
   tech: TechType;
 };
 
+const roundedTechs: TechType[] = ["express", "ws", "js", "vercel", "prisma"];
+const smallTextTechs: TechType[] = [
+  "ts",
+  "js",
+  "discord",
+  "postgres",
+  "headless-ui",
+];
+
 function TechCard({ tech }: CardProps) {
-  const { color, label, src } = info[tech];
+  const { color, label, src, srcLarge } = info[tech];
 
-  const roundedTechs: TechType[] = ["express", "ws", "js"];
   const rounded = roundedTechs.includes(tech);
-
-  const smallTextTechs: TechType[] = ["ts", "js", "discord", "postgres"];
   const smallText = smallTextTechs.includes(tech);
 
   return (
     <div
-      className={`bg-zinc-800 p-2 rounded-xl md:rounded-2xl w-[65px] h-[65px] md:w-[90px] md:h-[90px] flex items-center justify-center relative tech-card group hover:border-2 ${color}`}
+      className={`group relative flex h-[65px] w-[65px] items-center justify-center rounded-xl bg-zinc-800 p-2 hover:border-2 md:h-[90px] md:w-[90px] md:rounded-2xl ${color}`}
     >
       {/* Image */}
       <img
-        className={rounded ? "tech-card-img-rounded" : ""}
-        src={src}
+        className={`h-[50px] ${rounded ? "rounded-lg" : ""}`}
+        src={srcLarge ?? src}
         alt=""
       />
       {/* Dark translucent background */}
-      <div className="z-10 rounded-2xl absolute bg-zinc-900 bg-opacity-80 inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all">
+      <div className="absolute inset-0 z-10 flex items-center justify-center rounded-2xl bg-zinc-900 bg-opacity-80 opacity-0 transition-all group-hover:opacity-100">
         <p
-          className={`text-center font-bold ${
-            smallText ? "small-text" : "normal-text"
-          }`}
+          className={`
+            text-center font-bold text-white
+            ${smallText ? "text-sm" : "text-base"}
+          `}
         >
           {label}
         </p>
@@ -48,12 +54,12 @@ type Props = {
 
 function TechGroup({ fullWidth = false, center = false, title, techs }: Props) {
   return (
-    <div className={fullWidth ? "tech-group-full-line" : ""}>
+    <div className="">
       {/* Title */}
       <h3>{title}</h3>
       {/* Tech card container */}
       <div
-        className={`flex gap-2 mt-4 w-full flex-wrap mx-auto ${
+        className={`mx-auto mt-4 flex w-full flex-wrap gap-2 ${
           center ? "justify-center" : "justify-start"
         }`}
       >
