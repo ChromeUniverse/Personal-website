@@ -5,9 +5,9 @@ description: |
   Some thoughts on Prisma and how I've been using it on several full-stack TypeScript projects over the past few months.
 tags: [programming, databases, backend]
 img-preview: |  
-  /images/portfolio/luccanotes/landing-page.png
+  /images/prisma-thumbnail.png
 date: 2023-03-07 16:15:00
-public: false
+public: true
 --- 
 
 There's no way to sugarcoat it: **databases are hard**. 

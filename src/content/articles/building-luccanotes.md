@@ -7,5 +7,5 @@ tags: [programming, projects, frontend, backend, web design]
 img-preview: |  
   /images/portfolio/luccanotes/landing-page.png
 date: 2023-03-06 23:27:00
-public: true
+public: false
 --- 
