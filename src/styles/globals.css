@@ -3,11 +3,7 @@
 @tailwind utilities;
 
 @layer components {
-  .nav-link {
-    @apply hover:underline hover:decoration-2 text-zinc-300 hover:text-blue-500;
-  }
-
-  .content > * {
+  /* .content > * {
     @apply font-heading text-xl;
   }
 
@@ -35,7 +31,6 @@
   }
 
   .content a {
-    /* @apply text-white font-bold border-b-2 border-blue-500 hover:text-blue-500; */
     @apply text-white font-bold hover:underline hover:decoration-2 hover:text-blue-400;
   }
 
@@ -100,7 +95,7 @@
     @apply text-lg;
   }
 
-  .content p.img-caption {
+  p.img-caption {
     @apply text-center mt-0;
   }
 
@@ -116,5 +111,5 @@
     .content .tech-group-full-line {
       grid-column: 1/2;
     }
-  }
+  } */
 }
