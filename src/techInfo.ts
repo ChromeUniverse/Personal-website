@@ -1,4 +1,4 @@
-type TechType =
+export type TechType =
   // the classic three + TS
   | "html"
   | "css"
@@ -40,6 +40,7 @@ type techInfoType = {
     src: string;
     label: string;
     color: string;
+    srcLarge?: string;
   };
 };
 
@@ -120,7 +121,7 @@ export const techInfo: techInfoType = {
   },
   "headless-ui": {
     link: "https://headlessui.com/",
-    src: "https://headlessui.com/favicon.ico",
+    src: "/logos/headless-ui.svg",
     label: "Headless UI",
     color: "border-[#69b5fd]",
   },
@@ -159,13 +160,13 @@ export const techInfo: techInfoType = {
   discord: {
     link: "https://discord.com/developers/docs/intro",
     src: "/images/discord-icon.svg",
-    label: "Discord Bot",
+    label: "Discord API",
     color: "border-[#5865f2]",
   },
   nextAuth: {
     link: "https://next-auth.js.org/",
     src: "https://next-auth.js.org/img/logo/logo-xs.png",
-    label: "NextAuth.js",
+    label: "NextAuth",
     color: "border-[#9c24da]",
   },
   // databases
@@ -191,6 +192,7 @@ export const techInfo: techInfoType = {
     link: "https://www.prisma.io/",
     // src: "/images/prisma.png",
     src: "https://www.prisma.io/images/favicon-32x32.png",
+    srcLarge: "/logos/prisma.jpg",
     label: "Prisma",
     color: "border-white",
   },
@@ -198,6 +200,8 @@ export const techInfo: techInfoType = {
   aws: {
     link: "https://aws.amazon.com/",
     src: "https://aws.amazon.com/favicon.ico",
+    srcLarge:
+      "https://static-00.iconduck.com/assets.00/aws-icon-512x512-hniukvcn.png",
     label: "AWS",
     color: "border-[#ff9900]",
   },
