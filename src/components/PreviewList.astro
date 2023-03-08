@@ -15,7 +15,7 @@ const sortedFrontmatterList = frontmatterList.sort((f1, f2) => {
 });
 ---
 
-<main class="grid grid-cols-2 gap-5 pb-10">
+<main class="grid grid-cols-1 gap-5 pb-10 md:grid-cols-2">
   {
     sortedFrontmatterList.map((frontmatter, index) => (
       <PreviewCard
