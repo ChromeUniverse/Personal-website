@@ -39,11 +39,11 @@ Prisma is a pretty extensive open-source project. It's an NPM package with a Typ
 - **[Prisma Migrate](https://www.prisma.io/docs/concepts/components/prisma-migrate)**: a set of tools for applying database migrations.
 - **[Prisma Studio](https://www.prisma.io/docs/concepts/components/prisma-studio)**: a visual, web-based database browser and editor.
 
-Well, there's an extra fourth part that's common to all the items above: the [Prisma Schema](https://www.prisma.io/docs/concepts/components/prisma-schema). The schema is the single source of truth for your data — it's where you define your DB connection, how the Prisma client library is generated (more on that later) and how you want your data models to look like. It allows you to define a declarative schema for your DB (or even [generate it via introspection](https://www.prisma.io/docs/concepts/components/introspection)!) using the Prisma Schema Language (PSL). 
+Well, there's an extra fourth part that's common to all the items above: the [Prisma Schema](https://www.prisma.io/docs/concepts/components/prisma-schema). The schema is the single source of truth for your data — it's where you define your DB connection, how the Prisma client library is generated (more on that later), and how you want to represent your data models. It allows you to define a declarative schema for your DB (or even [generate it via introspection](https://www.prisma.io/docs/concepts/components/introspection)!) using the Prisma Schema Language (PSL). 
 
-The Prisma client's type safety is a bit peculiar, as it relies on code generation, just like the client library itself. Still, it's is a huge win for server-side TypeScript programs.
+The Prisma client's type safety is a bit peculiar, as it relies on code generation, just like the client library itself. Still, it's a huge win for server-side TypeScript programs.
 
-The [Prisma docs](https://www.prisma.io/docs) do a much better job than I ever could of explaining these topics so I'll just you to them - these docs are phenomenal and I highly recommend reading through the first few pages before moving on. 
+The [Prisma docs](https://www.prisma.io/docs) do a much better job than I ever could of explaining these topics so I'll just you refer to them - these docs are phenomenal and I highly recommend reading through the first few pages before moving on. 
 
 Fireship also made an awesome YouTube video explaining [Prisma in 100 seconds](https://www.youtube.com/watch?v=rLRIB6AF2Dg).
 
@@ -63,7 +63,7 @@ One thing that has really stood out to me about Prisma is how fast it feels — 
 
 Going back to the point I made at the start of this post — databases are hard, but Prisma won't magically make them trivial either. Don't get me wrong, it makes working with DBs a **lot** easier, but you'll still need to do some work to get familiar with these tools.
 
-If you're just getting started, I can't recommend Web Dev Simplified's [Learn Prisma in 60 minutes](https://www.youtube.com/watch?v=RebA5J-rlwg&pp=ugMICgJlbhABGAE%3D) video highly enough. It's an expertly-made tutorial that covers all of the topics in this article (and tons more that I've probably forgotten about) in just under an hour.
+If you're just getting started, I can't recommend Web Dev Simplified's [Learn Prisma in 60 minutes](https://www.youtube.com/watch?v=RebA5J-rlwg&pp=ugMICgJlbhABGAE%3D) video highly enough. It's an expertly-made tutorial that covers all of the topics in this post in greater detail (and tons more that I've probably forgotten about) in just under an hour.
 
 Once again, I'll refer you to the Prisma docs, specifically the [Guides section](https://www.prisma.io/docs/guides), which has several detailed articles that cover just about anything, from [seeding your database](https://www.prisma.io/docs/guides/database/seed-database) to [deploying it to production](https://www.prisma.io/docs/guides/deployment/deployment).
 
@@ -83,27 +83,27 @@ You'll be following the workflow above as you're prototyping your database and d
 
 As I've covered in a [previous post](/blog/react-calculator-fem-challenge), I've been devoting a lot of time over the past year to learning full-stack web dev, and I've been really hyped about learning TypeScript and TS-related stuff like the [T3 stack](https://create.t3.gg/). In fact, Prisma is one of the main technologies used in the T3 stack due to its robust type safety. 
 
-And as I've mentioned at the beginning of this post, I hate the traditional SQL workflow. It's slow, tedious error-prone, and just plain hard AF. I knew I needed to look for an alternative, but NoSQL DBs didn't seem like a suitable replacement either. 
+And as I've mentioned at the beginning of this post, I hate the traditional SQL workflow. It's slow, tedious, error-prone, and just plain hard AF. I knew I needed to look for an alternative, but NoSQL DBs didn't seem like a suitable replacement either. 
 
 ### LuccaBoard -- learning the API
 
 I was looking to improve my DB development workflow and I had heard about Prisma from watching YouTube videos from [Fireship](https://m.youtube.com/c/Fireship), [Ben Awad](https://www.youtube.com/channel/UC-8QAzbLcRglXeN_MY9blyw) and [Theo](https://www.youtube.com/@t3dotgg), so I felt it was worth giving it a shot. This was back in September 2022, and at the time I was building [LuccaBoard](/portfolio/luccaboard/), a Reddit-like comments section app with a React frontend, a Node.js + Express backend, and a SQLite database.  
 
-If possible, I highly recommend **incrementally learning and adopting Prisma** by integrating it into existing projects, which I did by migrating the app's backend from vanilla JS and `better-sqlite3` to TypeScript and Prisma. I started by installing it from NPM and running `npx prisma db pull` to introspect my SQLite DB and generate a schema. By generating a schema via introspection, I only really had to worry about learning the Prisma ORM syntax and could leave the schema part for a later project. This proved to be a really nice way to break down the Prisma learning curve into smaller chunks, making it easier to learn and much more manageable.
+If possible, I highly recommend **incrementally learning and adopting Prisma** by integrating it into existing projects, which I did by migrating the app's backend from vanilla JS and `better-sqlite3` to TypeScript and Prisma. I started by installing it from NPM and running `npx prisma db pull` to introspect my SQLite DB and generate a schema. By introspection an existing DB, I only had to worry about learning the Prisma ORM syntax and could leave the schema part for a later project. This proved to be a really nice way to break down the Prisma learning curve into smaller and more manageable chunks, which made the process a lot easier.
 
-Now, I'll admit, it took me a while to get familiar with the ORM's API, but it's still pretty straightforward for the most part. Methods like `.findUnique()` and `.findMany()` replace SQL's `SELECT`, `.create()` and `.createMany()` replace `INSERT`, and so. [Relation queries](https://www.prisma.io/docs/concepts/components/prisma-client/relation-queries) are a bit confusing at first: joining tables through read operations can be through something called [nested reads](https://www.prisma.io/docs/concepts/components/prisma-client/relation-queries#nested-reads). You can also use [nested writes](https://www.prisma.io/docs/concepts/components/prisma-client/relation-queries#nested-reads) for creating multiple related records in a single query, but a much more useful feature is [connecting/disconnecting existing records](https://www.prisma.io/docs/concepts/components/prisma-client/relation-queries#connect-an-existing-record) together, which essentially links two distinct models together.
+Now, I'll admit, it took me a while to get familiar with the ORM's API, but it's still pretty straightforward for the most part. Methods like `.findUnique()` and `.findMany()` replace SQL's `SELECT`, `.create()` and `.createMany()` replace `INSERT`, and so on. [Relation queries](https://www.prisma.io/docs/concepts/components/prisma-client/relation-queries) are a bit confusing at first: joining tables through read operations can be done through [nested reads](https://www.prisma.io/docs/concepts/components/prisma-client/relation-queries#nested-reads). You can also use [nested writes](https://www.prisma.io/docs/concepts/components/prisma-client/relation-queries#nested-reads) for creating multiple related records in a single query, and also link or unlink two distinct models together by [connecting/disconnecting existing records](https://www.prisma.io/docs/concepts/components/prisma-client/relation-queries#connect-an-existing-record)
 
 ### LuccaChat -- learning to build schemas
 
-The next full-stack project I tackled with Prisma was [LuccaChat](/portfolio/**luccachat**). I was starting from scratch this time around, so I had to create my own Prisma schema and models for my PostgreSQL database. This process was fairly straightforward as well, but the hardest part turned out to be representing relationships between models in the schema. 
+The next full-stack project I tackled with Prisma was [LuccaChat](/portfolio/**luccachat**). I was starting from scratch this time around, so I had to create my own Prisma schema and models for my PostgreSQL database. This process was fairly straightforward as well, but the hardest part turned out to be representing relations between models in the schema. 
 
-Prisma can model the three basic types of database model relations -- **one-to-one** (1-1), **one-to-many** (1-n) and **many-to-many** (m-n) -- which are represented in Prisma Schema Language as [relation fields](https://www.prisma.io/docs/concepts/components/prisma-schema/relations#annotated-relation-fields), as opposed to your regular scalar data fields. The syntax for representing these relations is pretty concise (check out [this example](https://www.prisma.io/docs/concepts/components/prisma-schema/relations#types-of-relations)), and does a good job of abstracting the underlying foreign keys in the actual database. 
+Prisma can model the three basic types of database model relations -- **one-to-one** (1-1), **one-to-many** (1-n) and **many-to-many** (m-n) -- which are represented in Prisma Schema Language as [relation fields](https://www.prisma.io/docs/concepts/components/prisma-schema/relations#annotated-relation-fields), as opposed to your regular scalar data fields. The syntax for representing these relations is pretty concise (check out [this example](https://www.prisma.io/docs/concepts/components/prisma-schema/relations#types-of-relations)), and it does a good job of abstracting the messy underlying foreign keys relationships in the actual database. 
 
 It's also worth noting that many-to-many relations can be either [explicit](https://www.prisma.io/docs/concepts/components/prisma-schema/relations/many-to-many-relations#explicit-many-to-many-relations) or [implicit](https://www.prisma.io/docs/concepts/components/prisma-schema/relations/many-to-many-relations#implicit-many-to-many-relations), depending on whether or not you'd like to represent the [mapping table](https://en.wikipedia.org/wiki/Associative_entity?useskin=vector) in your schema. 
 
 This is an important consideration to make when building and connecting your models. In LuccaChat, for instance, I needed a many-to-many relation between *users* and *chats* (after all, users can participate in many chats and chats can have many users) but since I didn't need a mapping table, an implicit relation was enough. But in LuccaBoard, I needed a many-to-many relation for comment ratings (users can upvote many comments, and comments can be upvoted by many users) so an explicit mapping table is necessary to keep track of who was upvoting or downvoting what and to compute the comment's score based on the ratings.
 
-But I digress -- after the schema was complete and the models are all properly connected, I could focus on more important parts of the chat app, such as building an end-to-end, type-safe, live messaging protocol over WebSockets.
+But I digress -- after the schema was complete and the models are all properly connected, I could focus on more important parts of the chat app, such as building a live messaging protocol over WebSockets with end-to-end type safety.
 
 
 ---
@@ -111,13 +111,11 @@ But I digress -- after the schema was complete and the models are all properly c
 
 Just as I was wrapping up this post, [Dax Raad](https://twitter.com/thdxr) posted a YouTube video titled [The Prisma killer is finally here](https://www.youtube.com/watch?v=3tl9XCiQErA&ab_channel=SST), which immediately grabbed my attention. 
 
-Enter [Drizzle](https://github.com/drizzle-team/drizzle-orm) -- a bleeding-edge SQL ORM which doubles down on deep integrations with TypeScript. Like Prisma, Drizzle is a fully type-safe Node.js ORM (`drizzle-orm`) and migration tool (`drizzle-kit`) for relational databases -- but that's about where the similarities end. Drizzle also has its schema, but it doesn't use a dedicated language -- it's just TypeScript. This allows Drizzle to just use TS inference for its strong typing instead of having an additional code generation step. 
+Enter [Drizzle](https://github.com/drizzle-team/drizzle-orm) -- a bleeding-edge SQL ORM which doubles down on deep TypeScript integrations. Like Prisma, Drizzle is a fully type-safe Node.js ORM (`drizzle-orm`) and migration tool (`drizzle-kit`) for relational databases -- but that's about where the similarities end. Drizzle also has its schema, but it doesn't use a dedicated language -- it's just TypeScript. This allows Drizzle to just use TS inference for its strong typing instead of having an additional code generation step. 
 
-That said, the API for the schema and ORM looks a lot more verbose than their Prisma equivalents. Going back to the ORM control vs. productivity trade-off I mentioned earlier, Drizzle appears to go in the opposite direction of Prisma by building an ORM that maps a lot more closely to SQL, giving you more control over your queries. In fact, this is what their [readme](https://github.com/drizzle-team/drizzle-orm#readme) has to say:
+That said, the API for the schema and ORM looks a lot more verbose than their Prisma equivalents. Going back to the ORM control vs. productivity trade-off I mentioned earlier, Drizzle appears to go in the opposite direction of Prisma by building an ORM that maps a lot more closely to SQL, giving you more control over your queries. Their [readme](https://github.com/drizzle-team/drizzle-orm#readme) outright states that the project's main philosophy is "If you know SQL, you know Drizzle ORM".
 
-> The ORM main philosophy is "If you know SQL, you know Drizzle ORM". We follow the SQL-like syntax whenever possible, are strongly typed ground top and fail at compile time, not in runtime.
-
-Drizzle is still very early-stage software -- but I'm super hyped to see where it's headed!
+Drizzle is still very early-stage software — but I’m super hyped to see where it’s headed!
 
 ---
 ## Conclusion
@@ -128,8 +126,8 @@ We've seen huge leaps in the past few years in the simplicity and quality of tec
 
 Prisma is the database toolkit I've always wanted in my JS/TS stack. The ORM is intuitive to use, the migration tools are great, and the schema language makes representing models and relations a breeze. And my favorite part: working with databases isn't a drag anymore. It's a fantastic piece of tech and I can totally see myself using it in 2023 and beyond.
 
-It's far from being perfect though, and like any technology, it's not without its faults and limitations. But that's what alternatives like Drizzle are for -- and it's great to see more competition in the DB tooling space
+It's far from being perfect though, and like any technology, it's not without its faults and limitations. But that's what alternatives like Drizzle are for -- and it's great to see more competition in the DB tooling space.
 
-I hope this post has helped learn a bit more about this awesome piece of database tooling, and maybe even convinced you to try it out for yourself. 😉
+I hope this post has helped you learn a bit more about this awesome piece of DB tooling, and maybe even convinced you to try it out for yourself. 😉
 
 Peace ✌
