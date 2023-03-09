@@ -12,21 +12,25 @@ const smallTextTechs: TechType[] = [
   "discord",
   "postgres",
   "headless-ui",
+  "supabase",
 ];
 
 function TechCard({ tech }: CardProps) {
-  const { color, label, src, srcLarge } = info[tech];
+  const { color, label, src, srcLarge, link } = info[tech];
 
   const rounded = roundedTechs.includes(tech);
   const smallText = smallTextTechs.includes(tech);
 
   return (
-    <div
-      className={`group relative flex h-[65px] w-[65px] items-center justify-center rounded-xl bg-zinc-800 p-2 hover:border-2 md:h-[90px] md:w-[90px] md:rounded-2xl ${color}`}
+    <a
+      className={`group relative flex h-[65px] w-[65px] items-center justify-center rounded-xl bg-zinc-800 p-2 hover:border-2 md:h-[78px] md:w-[78px] md:rounded-2xl ${color}`}
+      href={link}
+      target="_blank"
+      rel="noreferrer noopener"
     >
       {/* Image */}
       <img
-        className={`h-[50px] ${rounded ? "rounded-lg" : ""}`}
+        className={`h-[40px] md:h-[44px] ${rounded ? "rounded-lg" : ""}`}
         src={srcLarge ?? src}
         alt=""
       />
@@ -34,14 +38,14 @@ function TechCard({ tech }: CardProps) {
       <div className="absolute inset-0 z-10 flex items-center justify-center rounded-2xl bg-zinc-900 bg-opacity-80 opacity-0 transition-all group-hover:opacity-100">
         <p
           className={`
-            text-center font-bold text-white
-            ${smallText ? "text-sm" : "text-base"}
+            text-center font-extrabold tracking-tight text-white
+            ${smallText ? "text-xs" : "text-sm"}
           `}
         >
           {label}
         </p>
       </div>
-    </div>
+    </a>
   );
 }
 
