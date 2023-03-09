@@ -24,8 +24,6 @@ const formattedDate = date.toLocaleDateString("en-US", {
   month: "long",
   day: "numeric",
 });
-
-console.log(frontmatter["img-preview"]);
 ---
 
 <Layout
@@ -34,25 +32,42 @@ console.log(frontmatter["img-preview"]);
   description={frontmatter.description}
 >
   <!-- Title -->
-  <h1 class="text-4xl font-heading font-bold text-center">
+  <h1
+    class="mx-auto max-w-2xl text-center font-heading text-3xl font-extrabold tracking-tight md:text-4xl"
+  >
     {frontmatter.title}
   </h1>
 
-  <!-- Author -->
-  <p class="text-center text-zinc-400 font-heading text-lg mt-4 mb-6">
+  <!-- Author (desktop) -->
+  <p
+    class="mx-auto mt-4 mb-6 hidden text-center font-heading text-lg text-zinc-400 md:block"
+  >
     Written by <a
-      class="text-white font-bold border-b-[2px] border-blue-500 hover:text-blue-500"
-      href="/blog/me">Lucca Rodrigues</a
+      class="border-b-[2px] border-blue-500 font-bold text-white hover:text-blue-500"
+      href="/me">Lucca Rodrigues</a
     > on <span>{formattedDate}</span>
   </p>
 
+  <!-- Author (mobile) -->
+  <p
+    class="mt-4 mb-6 block text-center font-heading text-lg text-zinc-400 md:hidden"
+  >
+    <a
+      class="border-b-[2px] border-blue-500 font-bold text-white hover:text-blue-500"
+      href="/me">Lucca Rodrigues</a
+    > •
+    <span>{formattedDate}</span>
+  </p>
+
   <!-- Tags -->
-  <div class="flex justify-center gap-y-3 gap-x-3 flex-wrap w-[100%] mx-auto">
+  <div
+    class="mx-auto flex max-w-2xl flex-wrap justify-center gap-y-3 gap-x-3 px-2"
+  >
     {
       frontmatter.tags.map((tag: string) => (
         <a
           href={`/blog/tag/${tag}`}
-          class="font-bold font-heading text-normal px-3 py-1 border-blue-500 border-2 rounded-lg hover:bg-blue-500 hover:text-zinc-900 transition-all"
+          class="text-normal font-heading rounded-lg border-2 border-blue-500 px-3 py-1 font-bold transition-all hover:bg-blue-500 hover:text-zinc-900"
         >
           {tag}
         </a>
@@ -61,7 +76,10 @@ console.log(frontmatter["img-preview"]);
   </div>
 
   <!-- Content -->
-  <main class="content">
+  <!-- prose-blockquote:rounded-r-xl prose-blockquote:border-blue-500 prose-blockquote:bg-zinc-800 prose-blockquote:bg-opacity-30 prose-blockquote:py-0.5 prose-blockquote:pr-2 -->
+  <main
+    class="prose prose-lg prose-zinc mt-10 max-w-none px-2 prose-p:leading-relaxed prose-a:text-white hover:prose-a:text-blue-500 prose-blockquote:rounded-r-xl prose-blockquote:border-blue-500 prose-blockquote:bg-zinc-800 prose-blockquote:bg-opacity-30 prose-blockquote:py-0.5 prose-blockquote:pr-6 prose-blockquote:pl-6 prose-img:mx-auto prose-img:rounded-xl dark:prose-invert md:prose-img:max-w-xl"
+  >
     <Content />
   </main>
 </Layout>

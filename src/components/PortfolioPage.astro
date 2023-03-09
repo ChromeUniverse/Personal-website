@@ -1,6 +1,6 @@
 ---
 import type { AstroComponentFactory } from "astro/dist/runtime/server";
-import type { TechType } from "../types";
+import type { TechType } from "../techInfo";
 import LinkButton from "./LinkButton.astro";
 import ReactImageCarousel from "./ReactImageCarousel";
 import TechIndicator from "./TechIndicator.astro";
@@ -30,7 +30,7 @@ const {
 
 <!-- Backlink -->
 <a
-  class="font-heading text-base font-bold hover:text-blue-500 hover:underline hover:decoration-2 hover:decoration-blue-500"
+  class="font-heading text-base font-bold hover:text-blue-500 hover:underline hover:decoration-blue-500 hover:decoration-2"
   href="/portfolio"
 >
   <i class="fa-solid fa-arrow-left text-base"></i>
@@ -39,18 +39,18 @@ const {
 
 <!-- Main content -->
 <section
-  class="bg-zinc-800 bg-opacity-50 rounded-xl px-4 md:px-10 py-8 mt-4 mb-10"
+  class="mt-4 mb-10 rounded-xl bg-zinc-800 bg-opacity-50 px-4 py-8 md:px-10"
 >
   <!-- Title/Subtitle -->
-  <div class="flex flex-col gap-2 mb-4 mt-2">
-    <h3 class="text-3xl font-heading font-bold">{title}</h3>
-    <h4 class="text-lg font-heading text-zinc-400">
+  <div class="mb-4 mt-2 flex flex-col gap-2">
+    <h3 class="font-heading text-3xl font-bold">{title}</h3>
+    <h4 class="font-heading text-lg text-zinc-400">
       {subtitle}
     </h4>
   </div>
 
   <!-- Technologies -->
-  <div class="flex flex-wrap mb-6 gap-2">
+  <div class="mb-6 flex flex-wrap gap-2">
     {techList.map((tech) => <TechIndicator tech={tech} />)}
   </div>
 
@@ -62,9 +62,11 @@ const {
   </div>
 
   <!-- Main content -->
-  <main class="content">
+  <article
+    class="prose prose-zinc mt-10 max-w-none px-2 prose-p:leading-7 prose-a:text-white hover:prose-a:text-blue-500 prose-blockquote:rounded-r-xl prose-blockquote:border-blue-500 prose-blockquote:bg-zinc-800 prose-blockquote:bg-opacity-30 prose-blockquote:py-0.5 prose-blockquote:pr-6 prose-blockquote:pl-6 prose-img:mx-auto prose-img:rounded-xl dark:prose-invert md:prose-img:max-w-xl xl:prose-lg xl:prose-p:leading-relaxed"
+  >
     <Content />
-  </main>
+  </article>
 
   <!-- Image Carousel -->
   <ReactImageCarousel images={images} client:load />

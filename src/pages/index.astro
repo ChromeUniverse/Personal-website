@@ -19,36 +19,36 @@ const sortedFrontmatterList = frontmatterList
   <main class="flex flex-col gap-20">
     <!-- Hero -->
     <div
-      class="flex flex-col-reverse items-center md:flex-row justify-between font-heading gap-10"
+      class="flex flex-col-reverse items-center justify-between gap-10 font-heading md:flex-row"
     >
       <!-- Text  -->
       <div class="flex flex-col justify-center">
         <!-- Title -->
         <h1
-          class="text-4xl text-center md:text-left md:text-5xl font-bold pb-2 bg-gradient-to-r from-sky-400 to-violet-500 text-transparent bg-clip-text"
+          class="bg-gradient-to-r from-sky-400 to-violet-500 bg-clip-text pb-2 text-center text-4xl font-bold text-transparent md:text-left md:text-5xl"
         >
           Lucca Rodrigues
         </h1>
         <!-- Subtitle -->
-        <h2 class="text-base text-center md:text-left md:text-xl text-white">
+        <p class="text-center text-base text-white md:text-left md:text-xl">
           Software Developer • Musician • Student
-        </h2>
+        </p>
         <!-- Description -->
         <p
-          class="mt-4 text-lg text-center md:text-left md:text-xl text-zinc-400"
+          class="mt-4 text-center text-lg text-zinc-400 md:max-w-lg md:text-left md:text-lg"
         >
           <!-- <br /> -->
           Building full-stack web apps and Discord bots professionally and for fun.
           <a
             href="/contact"
-            class="text-blue-400 hover:underline hover:decoration-2 hover:decoration-blue-500"
+            class="text-blue-400 hover:underline hover:decoration-blue-500 hover:decoration-2"
             >Open to business inquiries.</a
           >
         </p>
       </div>
       <!-- Image -->
       <img
-        class="w-48 grayscale rounded-full"
+        class="w-48 rounded-full grayscale"
         src="/bass.jpg"
         alt="Picture of Lucca playing bass guitar"
       />
@@ -57,12 +57,12 @@ const sortedFrontmatterList = frontmatterList
     <!-- Latest blog articles -->
     <div class="font-heading text-lg text-zinc-300">
       <div class="flex justify-between">
-        <h3 class="text-2xl md:text-3xl text-white font-bold">
+        <h2 class="text-2xl font-bold text-white md:text-3xl">
           Latest Articles
-        </h3>
+        </h2>
         <a
           href="/blog"
-          class="bg-zinc-800 text-white text-sm px-4 py-1 rounded-full hover:bg-zinc-700 transition-all flex items-center justify-center"
+          class="flex items-center justify-center rounded-full bg-zinc-800 px-4 py-1 text-sm text-white transition-all hover:bg-zinc-700"
           >View all</a
         >
       </div>
@@ -79,13 +79,13 @@ const sortedFrontmatterList = frontmatterList
             return (
               <a href={`/blog/${fm.slug}`} class="group">
                 <div class="flex justify-between">
-                  <h4 class="text-base md:text-lg text-zinc-300 group-hover:text-white group-hover:underline group-hover:decoration-2 group-hover:decoration-blue-500">
+                  <h3 class="text-base text-zinc-300 group-hover:text-white group-hover:underline group-hover:decoration-blue-500 group-hover:decoration-2 md:text-lg">
                     {fm.title}
-                  </h4>
-                  <p class="text-blue-500 hidden md:block">{formattedDate}</p>
+                  </h3>
+                  <p class="hidden text-blue-500 md:block">{formattedDate}</p>
                 </div>
                 {index !== sortedFrontmatterList.length - 1 && (
-                  <hr class="h-px my-1 bg-zinc-800 border-0" />
+                  <hr class="my-1 h-px border-0 bg-zinc-800" />
                 )}
               </a>
             );
@@ -96,7 +96,7 @@ const sortedFrontmatterList = frontmatterList
 
     <!-- Bass :-) -->
     <img
-      class="w-[250px] mx-auto"
+      class="mx-auto w-[250px]"
       src="/images/bass-guitar.png"
       alt="Royalty-free drawing of a vintage bass guitar."
     />

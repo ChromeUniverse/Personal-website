@@ -26,7 +26,7 @@ const imageURL = import.meta.env.DEV
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
 
@@ -67,10 +67,10 @@ const imageURL = import.meta.env.DEV
       crossorigin="anonymous"
     ></script>
   </head>
-  <body class="bg-gradient-to-r from-zinc-900 to-zinc-900 font-heading">
+  <body class="bg-zinc-900 font-heading">
     <!-- Container view -->
     <div
-      class="mx-auto rounded-xl h-screen w-[90%] md:w-[80%] md:max-w-[800px] text-white flex flex-col"
+      class="mx-auto flex h-screen w-[90%] flex-col rounded-xl text-white md:w-[80%] md:max-w-[800px]"
     >
       <!-- Navbar -->
       <Navbar />

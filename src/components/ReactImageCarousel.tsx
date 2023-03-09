@@ -10,7 +10,7 @@ function CarouselButton({ type, setNextActive }: CarouselButtonProps) {
     <button
       onClick={() => setNextActive(type)}
       className={`
-        absolute top-1/2 -translate-y-1/2 text-2xl w-10 h-10 bg-gray-900 bg-opacity-20 rounded-full pt-0.5 hover:bg-opacity-80 transition-all 
+        absolute top-1/2 h-10 w-10 -translate-y-1/2 rounded-full bg-gray-900 bg-opacity-20 pt-0.5 text-2xl transition-all hover:bg-opacity-80 
         ${type === "left" ? "left-2" : "right-2"}
       `}
     >
@@ -47,14 +47,14 @@ function ImageCarousel({ images }: Props) {
 
   return (
     <>
-      <div className="relative w-full h-[400px] rounded-xl">
+      <div className="relative mt-10 h-[400px] w-full rounded-xl">
         {/* Images container */}
         <div id="images">
           {images.map((img, index) => (
             <img
               key={index}
               className={`
-            carousel-image absolute inset-0 w-full h-full object-contain transition-all
+            carousel-image absolute inset-0 h-full w-full object-contain transition-all
             ${index === activeIndex ? "opacity-100" : "opacity-0"} 
           `}
               src={img}
@@ -69,13 +69,15 @@ function ImageCarousel({ images }: Props) {
       </div>
 
       {/* Indicator */}
-      <div className="flex justify-center gap-2 mt-3 mb-1">
+      <div className="mt-5 mb-1 flex justify-center gap-2">
         {images.map((_, index) => (
           <div
             key={index}
             onClick={() => setActiveIndex(index)}
-            className={`w-3 h-3 rounded-full cursor-pointer transition-all ${
-              index === activeIndex ? "bg-white scale-110" : "bg-zinc-600"
+            className={`h-3 w-3 cursor-pointer rounded-full transition-all ${
+              index === activeIndex
+                ? "scale-110 bg-white"
+                : "bg-zinc-600 hover:bg-blue-500"
             }`}
           ></div>
         ))}

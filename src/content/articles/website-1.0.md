@@ -17,16 +17,15 @@ All files and source code for my website are available [on GitHub](https://githu
 Now buckle up, dear reader, because this post is quite a lengthy one. I've included a table of contents for your convenience.
 
 >**Table of contents**
->1. [A brief introduction](#a-brief-introduction)    
-- [A brief introduction](#a-brief-introduction)
-- [My vision](#my-vision)
-- [The solution](#the-solution)
-- [Creating posts](#creating-posts)
-- [Templates](#templates)
-- [Groups](#groups)
-- [Description](#description)
-- [The static webpage generator](#the-static-webpage-generator)
-- [Conclusion](#conclusion)
+>- [A brief introduction](#a-brief-introduction)
+>- [My vision](#my-vision)
+>- [The solution](#the-solution)
+>- [Creating posts](#creating-posts)
+>- [Templates](#templates)
+>- [Groups](#groups)
+>- [Description](#description)
+>- [The static webpage generator](#the-static-webpage-generator)
+>- [Conclusion](#conclusion)
 
 ## A brief introduction
 

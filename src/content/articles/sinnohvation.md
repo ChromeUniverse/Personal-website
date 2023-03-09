@@ -15,14 +15,6 @@ _**Note**: this review is a work-in-progress!_
 
 <iframe src="https://open.spotify.com/embed/album/0vbD4L4GvVkxrfwdN6iL5e" width=100% height="200" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 
-> Table of contents
-> - [Introduction](#introduction)    
-> - [The Album](#the-album)    
->   - [Opening](#opening)    
->   - [The Journey Begins](#the-journey-begins)    
-> - [Where to Buy](#where-to-buy)     
-> - [Verdict](#verdict)   
-
 ## Introduction
 
 The YouTube-based VGM (videogame music) cover scene has grown a lot over the last couple of years. While you might think that it's still a tiny space in the huge world of music productions on the video streaming platform, chances are, you've probably encountered one of the many up and coming VGM artists, especially if you watch anything gaming-related on YouTube.

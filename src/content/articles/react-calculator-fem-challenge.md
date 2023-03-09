@@ -2,13 +2,14 @@
 title: "Building a Calculator App with React"
 slug: react-calculator-fem-challenge
 description: |
-  A project write-up on how I built a multi-theme 4-function calculator with React and Vite as part of a Frontend Mentor coding challenge
+  A project write-up on how I built a multi-theme, 4-function calculator with React + Vite for a Frontend Mentor coding challenge
 tags: [programming, projects, frontend, react, web design]
 img-preview: |  
   /images/calc-themes-mobile-preview.jpg
 date: 2022-10-01 13:00:00
 public: true
 --- 
+
 
 Ever since I got back into web development some 6-ish weeks ago I started looking for ways to brush up on my HTML and CSS. I enrolled in Scrimba's [Learn React for free](https://scrimba.com/learn/learnreact) course but I was still feeling a bit rusty and I wanted to get some practice before diving deeper into React. 
 
@@ -21,32 +22,6 @@ Warning - there will be a fair amount of React lingo in the coming sections, but
 You can also [try out the calculator for yourself](https://calculator-app-weld-xi.vercel.app/) or [view the full source code on GitHub](https://github.com/ChromeUniverse/calculator-app).
 
 ![img](/images/calc-themes-mobile-preview.jpg) 
-
-> **Table of Contents**
-> - [Getting started](#getting-started)
->   - [Setting up React + Vite](#setting-up-react--vite)
->   - [FEM Starter Files](#fem-starter-files)
-> - [Layout and CSS](#layout-and-css)
-> - [Using React Context for the themes](#using-react-context-for-the-themes)
-> - [Building out the components](#building-out-the-components)
->   - [Main App component](#main-app-component)
->   - [Header](#header)
->   - [Display](#display)
->   - [Keypad](#keypad)
->   - [Key](#key)
-> - [Adding multiple themes, the easy-ish way](#adding-multiple-themes-the-easy-ish-way)
->   - [Conditional rendering in React](#conditional-rendering-in-react)
->   - [Theme-specific stylesheets](#theme-specific-stylesheets)
-> - [Implementing the calculator algorithm](#implementing-the-calculator-algorithm)
->   - [State](#state)
->   - [Main calculation function](#main-calculation-function)
->   - [Adding a character](#adding-a-character)
->   - [Operator](#operator)
->   - [Equals](#equals)
->   - [Reset](#reset)
-> - [Deploying to Vercel](#deploying-to-vercel)
-> - [Wrapping up](#wrapping-up)
-
 
 ---
 ## Getting started

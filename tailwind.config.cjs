@@ -8,5 +8,6 @@ module.exports = {
       body: ['"Noto Sans"'],
     },
   },
-  plugins: [require("@tailwindcss/forms")],
+  plugins: [require("@tailwindcss/forms"), require("@tailwindcss/typography")],
+  darkMode: "class",
 };

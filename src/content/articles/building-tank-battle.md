@@ -3,7 +3,7 @@ title: Building Tank Battle, an online multiplayer combat game
 slug: building-tank-battle
 description: |
   The full project write-up and development log for Tank Battle.
-tags: [programming, projects, games, frontend, backend, web design]
+tags: [programming, projects, games, frontend, backend]
 img-preview: |  
   https://media.discordapp.net/attachments/760252264723644426/895442475278274580/unknown.png?width=1343&height=665
 date: 2021-10-13 23:43:00
@@ -24,7 +24,6 @@ Over the next couple of months, I would work on the project sporadically, implem
 
 ![](https://media.discordapp.net/attachments/760252264723644426/895442475278274580/unknown.png?width=1343&height=665)
 
-<p class="img-caption"> <i>Tank Battle</i> game room with two players </p>
 
 > **Table of Contents**
 > - [Goals](#goals)  
@@ -74,7 +73,6 @@ In the end, these were the final goals I decided on:
 Fortunately, I was actually able to meet nearly 100% of the goals I had outlined for this project, even the ones that were added to the to-do list during the later stages of development. As a guy who still sees himself as an "advanced beginner" programmer, seeing this project through to the end was incredibly rewarding and satisfying.
 
 !["oh, what, wow, he's the greatest dancer"](https://c.tenor.com/fJh-W38iA3oAAAAC/dance-kid.gif)
-<p class="img-caption"> tfw you finish your cool new online game </p>
 
 ---
 
@@ -88,7 +86,6 @@ As with all my web dev projects so far, I'm using vanilla HTML, CSS and JS on th
 
 ![](https://media.discordapp.net/attachments/760252264723644426/895500676749213776/unknown.png?width=739&height=665)
 
-<p class="img-caption"><i>Tank Battle</i> Home Page</p>
 
 The frontend code is also pretty straightforward - most of it is just HTTP requests made with the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) and DOM manipulation with vanilla JS.
 
@@ -112,7 +109,6 @@ One of them acts as the main [webserver](https://developer.mozilla.org/en-US/doc
 
 ![](https://media.discordapp.net/attachments/760252264723644426/895442180104126544/unknown.png?width=730&height=665)
 
-<p class="img-caption"> <i>Tank Battle</i> Leaderboard </p>
 
 
 * Connecting to a MySQL 8.0 database with a connection pool and perform SQL queries using [mysql2](https://www.npmjs.com/package/mysql2)
@@ -197,15 +193,11 @@ The [Elo rating system](https://en.wikipedia.org/wiki/Elo_rating_system) was cre
 
 A very popular Elo-based system in use today is Microsoft's [TrueSkill rating system](https://en.wikipedia.org/wiki/TrueSkill). Being proprietary software, though, you'd have to pay Big M some hefty dough to get a license to use TrueSkill in your own project. Fortunately, Tom Kerrigan, an independent iOS app developer from Seattle, WA, created a much simpler (and free!) implementation of a multiplayer rating system which he calls [Simple Multiplayer Elo](http://www.tckerrigan.com/Misc/Multiplayer_Elo/). Here's how he describes it:
 
-<blockquote>
-I've come up with a simple and effective way to apply the two-player Elo system to multiplayer scenarios: 
-<ul>
-<li>At the end of a game, make a list of all the players and sort it by performance.   </li>
-<li>Think of each player as having played two matches: a loss vs. the player right above him on the list, and a win vs. the player right below him.   </li>
-<li>Update each player's rating accordingly using the two-player Elo equations.   </li>
-</ul>
-I call this method "Simple Multiplayer Elo" (SME) and am making it public domain.  
-</blockquote>
+> I've come up with a simple and effective way to apply the two-player Elo system to multiplayer scenarios:    
+> - At the end of a game, make a list of all the players and sort it by performance.  
+> - Think of each player as having played two matches: a loss vs. the player right above him on the list, and a win vs. the player right below him.  
+> - Update each player's rating accordingly using the two-player Elo equations.  
+> I call this method "Simple Multiplayer Elo" (SME) and am making it public domain.  
 
 Implementing SME from scratch is very straightforward - all you need is to loop over your ranked list of players and run the classic Elo algorithm on pairs of players in a "top-down" manner: first players 1 and 2, then players 2 and 3, etc. The reverse ("bottom-up") approach (first players `n` and `n-1`, then players `n-1` and `n-2`, etc.) will yield very similar results (although not exactly the same as "top-down").
 
