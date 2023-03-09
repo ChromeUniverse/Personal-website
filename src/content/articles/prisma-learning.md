@@ -2,7 +2,7 @@
 title: SQL is dead — long live Prisma!
 slug: prisma-learning
 description: |
-  Some thoughts on Prisma and how I've been using it on several full-stack TypeScript projects over the past few months.
+  An introduction to Prisma for beginners and my thoughts on integrating it into my own full-stack TypeScript projects.
 tags: [programming, databases, backend]
 img-preview: |  
   /images/prisma-thumbnail.png
