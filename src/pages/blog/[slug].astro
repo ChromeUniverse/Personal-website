@@ -75,6 +75,28 @@ const formattedDate = date.toLocaleDateString("en-US", {
     }
   </div>
 
+  <!-- Private post notice -->
+
+  {
+    !frontmatter.public && (
+      <div class="mt-6 space-y-3.5 rounded-r-lg border-l-4 border-blue-500 bg-blue-900 bg-opacity-20 py-6 pl-6 pr-5">
+        <div class="flex items-center gap-1.5 text-lg font-bold tracking-tight text-blue-500">
+          <i class="ph-bold ph-info text-xl" />
+          <span>Private Post</span>
+        </div>
+        <p class="text-base leading-relaxed text-zinc-300">
+          Hey, Lucca here!
+          <span class="font-semibold text-white">
+            This post hasn't been released yet.
+          </span>
+          If you're reading this, I've probably linked you here directly, and
+          I'd really appreciate your feedback before this post goes live. Thank
+          you! 😄
+        </p>
+      </div>
+    )
+  }
+
   <!-- Content -->
   <!-- prose-blockquote:rounded-r-xl prose-blockquote:border-blue-500 prose-blockquote:bg-zinc-800 prose-blockquote:bg-opacity-30 prose-blockquote:py-0.5 prose-blockquote:pr-2 -->
   <main
