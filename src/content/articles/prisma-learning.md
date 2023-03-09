@@ -6,8 +6,8 @@ description: |
 tags: [programming, databases, backend]
 img-preview: |  
   /images/prisma-thumbnail.png
-date: 2023-03-07 16:15:00
-public: false
+date: 2023-03-09 14:46:00
+public: true
 --- 
 
 There's no way to sugarcoat it: **databases are hard**. 
@@ -129,5 +129,7 @@ Prisma is the database toolkit I've always wanted in my JS/TS stack. The ORM is 
 It's far from being perfect though, and like any technology, it's not without its faults and limitations. But that's what alternatives like Drizzle are for -- and it's great to see more competition in the DB tooling space.
 
 I hope this post has helped you learn a bit more about this awesome piece of DB tooling, and maybe even convinced you to try it out for yourself. 😉
+
+Special thanks to [Alana Caporale](https://github.com/alanacapcreates) and [Tracy Black](https://github.com/psuedoo) for sharing their feedback on this post before it went live.
 
 Peace ✌
