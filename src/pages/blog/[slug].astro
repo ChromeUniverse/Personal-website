@@ -15,8 +15,9 @@ export async function getStaticPaths() {
   });
 }
 
-const { frontmatter, rawContent, Content } = Astro.props
-  .post as MarkdownInstance<Record<string, any>>;
+const { frontmatter, Content } = Astro.props.post as MarkdownInstance<
+  Record<string, any>
+>;
 
 const date = new Date(frontmatter.date);
 const formattedDate = date.toLocaleDateString("en-US", {

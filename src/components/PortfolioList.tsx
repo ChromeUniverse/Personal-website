@@ -1,7 +1,6 @@
 import type { MarkdownInstance } from "astro";
 import React, { useMemo, useState } from "react";
-import { techInfo } from "../techInfo";
-import type { TechType } from "../types";
+import { techInfo, TechType } from "../techInfo";
 import PortfolioCard from "./PortfolioCard";
 
 type Props = {
@@ -34,12 +33,12 @@ function PortfolioList({ projects }: Props) {
   return (
     <>
       {/* Filtering section */}
-      <div className="flex flex-col font-heading mt-4 select-none">
+      <div className="mt-4 flex select-none flex-col font-heading">
         {/* Dropdown container */}
-        <div className="bg-zinc-800 py-2 ml-auto rounded-lg relative">
+        <div className="relative ml-auto rounded-lg bg-zinc-800 py-2">
           {/* Dropdown toggle */}
           <div
-            className={`cursor-pointer px-5 flex items-center transition-all
+            className={`flex cursor-pointer items-center px-5 transition-all
               ${open ? "w-48" : selected.length === 0 ? "w-32" : "w-36"}
             `}
             onClick={() => setOpen((prevOpen) => !prevOpen)}
@@ -50,7 +49,7 @@ function PortfolioList({ projects }: Props) {
             </p>
             {/* Rotating arrow Icon */}
             <i
-              className={`ml-auto fa-solid fa-angle-down transition-all ${
+              className={`fa-solid fa-angle-down ml-auto transition-all ${
                 open ? "rotate-180" : "rotate-0"
               }`}
             ></i>
@@ -58,7 +57,7 @@ function PortfolioList({ projects }: Props) {
           {/* Dropdown menu */}
           <div
             className={`
-              absolute top-14 h-72 overflow-y-scroll right-0 rounded-lg py-4 px-3 bg-zinc-800 w-48 flex-shrink-0 flex flex-col gap-1 transition-all drop-shadow-2xl
+              absolute top-14 right-0 flex h-72 w-48 flex-shrink-0 flex-col gap-1 overflow-y-scroll rounded-lg bg-zinc-800 py-4 px-3 drop-shadow-2xl transition-all
               ${open ? "z-10" : "-z-10 opacity-0"}
             `}
           >
@@ -71,7 +70,7 @@ function PortfolioList({ projects }: Props) {
                   key={tech}
                   onClick={() => toggleTech(tech)}
                   className={`
-                    flex items-center pl-2 py-1.5 rounded-md gap-2 cursor-pointer transition-all
+                    flex cursor-pointer items-center gap-2 rounded-md py-1.5 pl-2 transition-all
                     ${
                       selected.includes(tech)
                         ? "bg-zinc-700 hover:bg-zinc-600 hover:bg-opacity-50"
@@ -105,7 +104,7 @@ function PortfolioList({ projects }: Props) {
       {/* Content */}
       <main>
         {/* Container */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 px-2 mt-8 mb-8">
+        <div className="mt-8 mb-8 grid grid-cols-1 gap-5 px-2 md:grid-cols-2">
           {/* Portfolio cards */}
           {filteredAndSortedProjects.map((project) => (
             <PortfolioCard
