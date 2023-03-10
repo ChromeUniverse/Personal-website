@@ -2,7 +2,7 @@
 title: Trying out Prism.js
 slug: prism-testing
 description: | 
-  Testing **Prism.js**, a frontend library for awesome code snippets with syntax highlighting and other neat things
+  Testing Prism.js, a frontend library for awesome code snippets with syntax highlighting and other neat things
 tags: [web design, meta]
 date: 2021-05-30 17:38:00
 public: true

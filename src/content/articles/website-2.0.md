@@ -1,6 +1,6 @@
 ---
 title: The Lucca Logs 2.0 - Vue and Improved!
-slug: website2.0
+slug: website-2.0
 description: |
   The full project write-up and development log of my personal blog's second major release, powered by Vue.js
 tags: [programming, frontend, vue, web design, meta]
