@@ -4,8 +4,9 @@ subtitle: My personal website, blog and portfolio. You're viewing it right now!
 slug: blaring-net
 main-image: /images/portfolio/blaring-net/home.png
 source: https://github.com/ChromeUniverse/Personal-website
+article: website-3.0
 demo: https://blaring.net
-tech: [astro, react, tailwind, ts, js, netlify]
+tech: [astro, react, tailwind, ts, netlify]
 images: [
   /images/portfolio/blaring-net/home.png,
   # /images/portfolio/blaring-net/skills.png,
@@ -27,4 +28,4 @@ The site's [Portfolio section](/portfolio) was very fun to work on! I used a com
 
 The [Blog section](/blog) is almost a carbon copy of **The Lucca Logs** - in fact, the articles were carried straight over during the Vue to Astro migration without any major alterations. The article pages still display a handy list of links to tag pages, which show a filtered list of public articles that have that specific tag.
 
-Finally, I also added a [nifty contact form](/contact). Setting this up was surprisingly easy thanks to [Netlify's Form service](https://www.netlify.com/products/forms/). In fact, their form service works so freaking well I switched over from [Vercel](https://vercel.com/) in a heartbeat. Sorry, it's nothing personal! 🤭
+Finally, I also added a [nifty contact form](/contact). Setting this up was surprisingly easy thanks to [Netlify's Form service](https://www.netlify.com/products/forms/). In fact, their form service works so freaking well I switched over from [Vercel](https://vercel.com/) in a heartbeat. Sorry, nothing personal! 🤭

@@ -4,8 +4,8 @@ import PortfolioList from "../../components/PortfolioList";
 
 // ordered list of portfolio project slugs
 const projectsList = [
-  "luccachat",
   "luccanotes",
+  "luccachat",
   "tank-battle",
   "luccaboard",
   "blaring-net",
@@ -40,10 +40,10 @@ const orderedProjects = projectsList.map((targetSlug) => {
   description="Personal and freelance projects I'm most proud of"
 >
   <!-- Title -->
-  <h1 class="font-bold font-heading text-4xl text-center pb-2">My Portfolio</h1>
+  <h1 class="pb-2 text-center font-heading text-4xl font-bold">My Portfolio</h1>
 
   <!-- Subtitle -->
-  <h2 class="font-heading text-xl text-center text-zinc-400 leading-relaxed">
+  <h2 class="text-center font-heading text-xl leading-relaxed text-zinc-400">
     Personal and freelance projects I'm most proud of
   </h2>
   <PortfolioList projects={orderedProjects} client:load />

@@ -14,13 +14,13 @@ const labels = {
 ---
 
 <a
-  target="_blank"
-  rel="noreferrer noopener"
+  target={type === "article" ? "_self" : "_blank"}
+  rel={type === "article" ? "" : "noreferrer noopener"}
   class={`
-    font-heading font-normal px-4 py-2 rounded-md space-x-1 text-base hover:brightness-125 transition-all
-    ${type === "source" && "bg-black"}
-    ${type === "demo" && "bg-blue-500"}
-    ${type === "article" && "bg-zinc-700"}
+    font-heading font-normal px-4 py-2 rounded-md space-x-1 text-base transition-all
+    ${type === "source" && "bg-black hover:bg-opacity-40"}
+    ${type === "demo" && "bg-blue-500 hover:brightness-125"}
+    ${type === "article" && "bg-zinc-700 hover:brightness-125"}
   `}
   href={link}
 >
@@ -28,15 +28,3 @@ const labels = {
   <p class="inline">{labels[type]}</p>
   {type === "demo" && <i class="fa-solid fa-arrow-up-right-from-square" />}
 </a>
-
-<style>
-  @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
-
-  @layer components {
-    .project-link {
-      @apply font-heading text-lg bg-black px-4 py-2 rounded-lg;
-    }
-  }
-</style>
