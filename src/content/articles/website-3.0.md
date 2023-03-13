@@ -7,7 +7,7 @@ tags: [programming, frontend, astro, web design, meta]
 img-preview: |
   /images/website-3.0-astro.png
 date: 2023-03-09 18:48:00
-public: false
+public: true
 ---
 
 Welp, it's that time again of year again when I decide my website needs a total makeover.
