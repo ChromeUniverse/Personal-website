@@ -207,14 +207,7 @@ declare module 'astro:content' {
 } & { render(): Render[".md"] };
 "building-luccachat.md": {
 	id: "building-luccachat.md";
-  slug: "building-luccanotes";
-  body: string;
-  collection: "articles";
-  data: any
-} & { render(): Render[".md"] };
-"building-luccanotes.md": {
-	id: "building-luccanotes.md";
-  slug: "building-luccanotes";
+  slug: "building-luccachat";
   body: string;
   collection: "articles";
   data: any
@@ -341,6 +334,13 @@ declare module 'astro:content' {
 "sinnohvation.md": {
 	id: "sinnohvation.md";
   slug: "sinnohvation-review";
+  body: string;
+  collection: "articles";
+  data: any
+} & { render(): Render[".md"] };
+"t3-stack.md": {
+	id: "t3-stack.md";
+  slug: "t3-stack";
   body: string;
   collection: "articles";
   data: any
