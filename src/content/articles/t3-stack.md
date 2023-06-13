@@ -4,17 +4,19 @@ slug: t3-stack
 description: |
   My brief experience with one of the most promising tech stacks for modern TypeScript and Next.js web development, and some tips on how to adopt it.
 tags: [programming, frontend, backend]
-date: 2023-06-12 14:40:00
-public: false
+date: 2023-06-13 14:40:00
+img-preview: |  
+  /images/t3-thumb-2.png
+public: true
 --- 
 
-Ever since I got back into web dev around a year ago, I've been chasing the full-stack dream: learn a modern technology stack that would allow to build complete web apps from start to finish: frontend, backend, APIs, database and deployments. 
+Ever since I got back into web dev around a year ago, I've been chasing the full-stack dream and learn to use a modern technology stack that would allow to build complete web apps from start to finish: frontend, backend, APIs, database and deployments. 
 
-The backend and API parts seemed pretty much figured out to me, after all, that's where most of the problems for my game [Tank Battle](/blog/building-tank-battle/) had to be solved. Other projects like [LuccaBoard](/portfolio/luccaboard/) and [LuccaChat](/portfolio/luccachat/) allowed me to really put my React frontend skills to the test by building out complex stateful UIs using a [MERN](https://www.mongodb.com/mern-stack)-style architecture (minus the MongoDB part) to make it truly full-stack. These last two projects were also a great way to learn several new technologies too: TypeScript for enhanced typesafety, Tailwind CSS for consistent and cohesive styling, among other cool things.
+The backend and API parts seemed pretty much figured out to me, after all, that's where most of the problems for my game [Tank Battle](/blog/building-tank-battle/) had to be solved. Other projects like [LuccaBoard](/portfolio/luccaboard/) and [LuccaChat](/portfolio/luccachat/) allowed me to really put my React frontend skills to the test by building out complex UIs and backend systems using a [MERN](https://www.mongodb.com/mern-stack)-style architecture (minus the MongoDB part) to make it truly full-stack. These last two projects were also a great way to learn several new technologies too: TypeScript for enhanced typesafety, Tailwind CSS for consistent and cohesive styling, among other cool things.
 
 ## Problems
 
-As the age-old saying goes, "practice makes perfect", and my hard work was paying off. I felt like I could now tackle more challenging problems and my development workflow improved too. There were still some workflow and architectural problems that persisted:
+My hard work was paying off and I felt like I could now tackle more challenging problems and my development workflow improved too. But there were still some workflow and architectural problems that persisted:
 
 - SEO and related metrics (FCP, TTFB) for Vite and CRA-based React apps suck because the app isn't prerendered.
 - Plain ol' REST APIs don't offer any typesafety at all. At best, this will just lead to wasting time fixing silly bugs, and at worst, you'll screw up your entire client-side type inference and end up littering your  TypeScript code with nasty `any`s and/or incorrect type assertions.
@@ -52,7 +54,7 @@ There are a couple of downsides to serverless computing, though:
 
 ## The learning curve
 
-That sounds all fine and dandy, but that's a lot of stuff of learn. There are much easier ways to build full-stack apps (MERN stack included), and at the end of the day, developer experience is a convenience for *developers*, and it won't always translate to a better *user* experience.
+That sounds all fine and dandy, but that's a lot of stuff to learn. There are much easier ways to build full-stack apps (MERN stack included), and at the end of the day, developer experience is a convenience for *developers*, and it won't always translate to a better *user* experience.
 
 But speaking from personal experience, the investment is well worth it. Building apps with T3 not only introduces you to the serverless model, but you'll squash a lot more bugs and ship stuff way faster. Let's break it down.
 
