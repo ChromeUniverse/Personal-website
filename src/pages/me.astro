@@ -4,12 +4,14 @@ import Layout from "../layouts/Layout.astro";
 import { Content } from "../content/general/me.mdx";
 ---
 
+<!-- md:prose-img:max-w-xl  -->
+
 <Layout title="About Me" description="Get to know more about me and my work">
   <h1 class="text-center text-4xl font-bold">About Me</h1>
 
   <!-- Content -->
   <main
-    class="prose prose-lg prose-zinc mt-10 max-w-none px-2 prose-p:leading-relaxed prose-a:text-white hover:prose-a:text-blue-500 prose-blockquote:rounded-r-xl prose-blockquote:border-blue-500 prose-blockquote:bg-zinc-800 prose-blockquote:bg-opacity-30 prose-blockquote:py-0.5 prose-blockquote:pr-6 prose-blockquote:pl-6 prose-img:mx-auto dark:prose-invert md:prose-img:max-w-xl"
+    class="prose prose-lg prose-zinc mt-10 max-w-none px-2 prose-p:leading-relaxed prose-a:text-white hover:prose-a:text-blue-500 prose-blockquote:rounded-r-xl prose-blockquote:border-blue-500 prose-blockquote:bg-zinc-800 prose-blockquote:bg-opacity-30 prose-blockquote:py-0.5 prose-blockquote:pr-6 prose-blockquote:pl-6 prose-img:mx-auto dark:prose-invert "
   >
     <Content />
   </main>
