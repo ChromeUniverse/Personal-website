@@ -68,7 +68,7 @@ const formattedDate = date.toLocaleDateString("en-US", {
       frontmatter.tags.map((tag: string) => (
         <a
           href={`/blog/tag/${tag}`}
-          class="text-normal font-heading rounded-lg border-2 border-blue-500 px-3 py-1 font-bold transition-all hover:bg-blue-500 hover:text-zinc-900"
+          class="text-normal rounded-lg border-2 border-blue-500 px-3 py-1 font-heading font-bold transition-all hover:bg-blue-500 hover:text-zinc-900"
         >
           {tag}
         </a>
@@ -101,7 +101,7 @@ const formattedDate = date.toLocaleDateString("en-US", {
   <!-- Content -->
   <!-- prose-blockquote:rounded-r-xl prose-blockquote:border-blue-500 prose-blockquote:bg-zinc-800 prose-blockquote:bg-opacity-30 prose-blockquote:py-0.5 prose-blockquote:pr-2 -->
   <main
-    class="prose prose-lg prose-zinc mt-10 max-w-none px-2 prose-p:leading-relaxed prose-a:text-white hover:prose-a:text-blue-500 prose-blockquote:rounded-r-xl prose-blockquote:border-blue-500 prose-blockquote:bg-zinc-800 prose-blockquote:bg-opacity-30 prose-blockquote:py-0.5 prose-blockquote:pr-6 prose-blockquote:pl-6 prose-img:mx-auto prose-img:rounded-xl dark:prose-invert md:prose-img:max-w-xl"
+    class="prose prose-lg prose-zinc mt-10 max-w-none px-2 prose-p:leading-relaxed prose-a:text-white hover:prose-a:text-blue-500 prose-blockquote:rounded-r-xl prose-blockquote:border-blue-500 prose-blockquote:bg-zinc-800 prose-blockquote:bg-opacity-30 prose-blockquote:py-0.5 prose-blockquote:pr-6 prose-blockquote:pl-6 prose-blockquote:font-normal prose-blockquote:text-zinc-200 prose-pre:leading-snug prose-img:mx-auto prose-img:rounded-xl dark:prose-invert md:prose-img:max-w-xl"
   >
     <Content />
   </main>

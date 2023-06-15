@@ -14,6 +14,7 @@ Ever since I got back into web dev around a year ago, I've been chasing the full
 
 The backend and API parts seemed pretty much figured out to me, after all, that's where most of the problems for my game [Tank Battle](/blog/building-tank-battle/) had to be solved. Other projects like [LuccaBoard](/portfolio/luccaboard/) and [LuccaChat](/portfolio/luccachat/) allowed me to really put my React frontend skills to the test by building out complex UIs and backend systems using a [MERN](https://www.mongodb.com/mern-stack)-style architecture (minus the MongoDB part) to make it truly full-stack. These last two projects were also a great way to learn several new technologies too: TypeScript for enhanced typesafety, Tailwind CSS for consistent and cohesive styling, among other cool things.
 
+---
 ## Problems
 
 My hard work was paying off and I felt like I could now tackle more challenging problems and my development workflow improved too. But there were still some workflow and architectural problems that persisted:
@@ -23,6 +24,7 @@ My hard work was paying off and I felt like I could now tackle more challenging 
 - Authentication is pretty rough if you're not using a full platform like [Firebase](https://en.wikipedia.org/wiki/Firebase?useskin=vector). You have to either stick to a single provider/solution with good enough documentation like [Google Identity](https://developers.google.com/identity)'s one-tap login, or good luck navigating [Passport.js](https://www.passportjs.org/)'s docs.
 - Spinning up Linux VMs like [AWS Lightsail](https://lightsail.aws.amazon.com/) or [DigitalOcean droplets](https://www.digitalocean.com/products/droplets) to deploy your apps takes way too long. You gotta download Node.js (don't forget to use [nvm](https://github.com/nvm-sh/nvm)), set up and seed your database from scratch, configure NGINX, set up (and inevitably troubleshoot) your DNS settings, connect your auth providers, run your backend with a process manager like [PM2](https://pm2.keymetrics.io/)... It's insane!
 
+---
 ## T3 stack
 
 The T3 stack is an opinionated technology stack for building end-to-end typesafe, full-stack Next.js web apps, heavily popularized by [Theo Browne](https://t3.gg/) (T followed by 3 letters, hence the "T3"). The stack relies on six core technologies:
@@ -52,6 +54,7 @@ There are a couple of downsides to serverless computing, though:
 - Another problem to be aware of is that serverless functions are [stateless by design](https://twitter.com/devagrawal09/status/1580624271147008000): if you need long-running backend tasks that can't be implemented using the simple request/response model (think CRON jobs or WebSockets), you're out of luck.
 - And of course, serverless pricing can be quite unpredictable. Unless you're a solo dev or small team shipping product on Vercel's Pro offering, AWS Lambda will [eat away at your budget](https://twitter.com/devagrawal09/status/1588015639935045633) _very_ quickly. [Runaway Lambdas](https://asankha.medium.com/lambda-programming-errors-that-could-cost-you-thousands-of-dollars-a-day-265dfac354f) are also a very real danger, so beware.
 
+---
 ## The learning curve
 
 That sounds all fine and dandy, but that's a lot of stuff to learn. There are much easier ways to build full-stack apps (MERN stack included), and at the end of the day, developer experience is a convenience for *developers*, and it won't always translate to a better *user* experience.
@@ -129,6 +132,7 @@ Under the hood, tRPC just relies on good ol' HTTP and REST endpoints, but it can
 
 Web Dev Simplified has a great [45-minute tutorial](https://www.youtube.com/watch?v=UfUbBWIFdJs&pp=ygUYdHJwYyB3ZWIgZGV2IHNpbXBsZmlmaWVk) to get you started with tRPC. And, of course, [RTFM](https://trpc.io/docs/) afterward.
 
+---
 ## Deployment bliss
 
 The Next.js deployment and CI/CD experience on Vercel is unmatched. Link your GitHub repo, add environment variables, and you'll automatically get deployments for your main branch (production), additional branches (previews) and your pull requests too (staging). 
@@ -151,6 +155,7 @@ You could argue that [Vercel is just way ahead of the curve](https://www.youtube
 
 At the end of the day, it's your call. I enjoy Vercel's services (their free tier is quite generous!) and the developer experience offered by their platform is leagues ahead of the competition. But you'll never see me complaining about having more options to choose from.
 
+---
 ## Missing features? More like modularity
 
 You might have noticed that the T3 stack is missing some pieces. What database should I use? What about CRON jobs? Message queues? File uploads? Mailing system?
@@ -159,6 +164,7 @@ That's the cool part about T3: you can use whatever you want. Unlike MERN, you d
 
 That said, the [T3 docs have some great recommendations](https://create.t3.gg/en/other-recs) for other things you might want to include in your stack, including databases, analytics, WebSockets, hosting and deployment options, component libraries, and much more. 
 
+---
 ## Conclusion
 
 I've been really impressed with the level of developer experience that T3 stack offers. It's quite empowering too, and I'm not joking when I say that it actually does make you feel like a 10x developer hackerman. The amount of productivity you get and the quality of apps you can build with T3, especially for someone used to "plain" React development, is nothing short of amazing. 

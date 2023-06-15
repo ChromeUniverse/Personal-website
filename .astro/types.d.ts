@@ -212,6 +212,13 @@ declare module 'astro:content' {
   collection: "articles";
   data: any
 } & { render(): Render[".md"] };
+"building-luccanotes.md": {
+	id: "building-luccanotes.md";
+  slug: "building-luccanotes";
+  body: string;
+  collection: "articles";
+  data: any
+} & { render(): Render[".md"] };
 "building-tank-battle.md": {
 	id: "building-tank-battle.md";
   slug: "building-tank-battle";
