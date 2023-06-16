@@ -19,10 +19,12 @@ const title = TitleProp ? `${TitleProp} | Lucca Rodrigues` : "Lucca Rodrigues";
 
 const url = import.meta.env.DEV
   ? Astro.url.pathname
-  : import.meta.env.SITE + Astro.url.pathname.slice(1);
+  : import.meta.env.SITE + Astro.url.pathname;
 const imageURL = import.meta.env.DEV
   ? ImageURlProp
-  : import.meta.env.SITE + ImageURlProp.slice(1);
+  : import.meta.env.SITE + ImageURlProp;
+
+console.log("imageUrl is", imageURL);
 ---
 
 <!DOCTYPE html>
@@ -64,8 +66,7 @@ const imageURL = import.meta.env.DEV
 
     <script
       src="https://kit.fontawesome.com/34fb59c22e.js"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous"></script>
 
     <link
       rel="stylesheet"
