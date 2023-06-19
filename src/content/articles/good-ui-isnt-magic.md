@@ -1,5 +1,5 @@
 ---
-title: Good UIs aren't all magic, but design systems sure are
+title: Good UI design isn't all magic, but a design system sure is
 slug: good-ui-isnt-magic
 description: |
   Award-winning designers aren't the only ones who can build beautiful UIs. Discover the power of design systems to build user-friendly web experiences.
@@ -7,7 +7,7 @@ tags: [frontend, web design]
 img-preview: |  
   https://images.unsplash.com/photo-1561070791-2526d30994b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY4MTg3MTk0NQ&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080
 date: 2023-06-19 17:00:00
-public: false
+public: true
 --- 
 
 Learning to code is hard, but at least the process is pretty cut and dry. If you're interested in a particular topic, you can read about it (on Wikipedia, books, docs, etc.), watch a YouTube video or two, and put your newfound knowledge to use by solving a specific problem. Rinse and repeat until you get good at it. With coding, it's usually pretty easy to gauge if you've successfully learned and retained a specific concept.
