@@ -2,19 +2,22 @@
 title: Good UI design isn't all magic, but a design system sure is
 slug: good-ui-isnt-magic
 description: |
-  Award-winning designers aren't the only ones who can build beautiful UIs. Discover the power of design systems to build user-friendly web experiences.
+  Artsy designers aren't the only ones who can build beautiful UIs. Learn how good principles and design systems can turbocharge your UI design process.
 tags: [frontend, web design]
 img-preview: |  
-  https://images.unsplash.com/photo-1561070791-2526d30994b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY4MTg3MTk0NQ&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080
+  /images/design-system-unsplash.jpg
 date: 2023-06-19 17:00:00
 public: true
 --- 
 
 Learning to code is hard, but at least the process is pretty cut and dry. If you're interested in a particular topic, you can read about it (on Wikipedia, books, docs, etc.), watch a YouTube video or two, and put your newfound knowledge to use by solving a specific problem. Rinse and repeat until you get good at it. With coding, it's usually pretty easy to gauge if you've successfully learned and retained a specific concept.
 
-But after reading [*Refactoring UI*](https://www.refactoringui.com/) to learn some basic web design principles, I noticed that the process isn't as straightforward with UI/UX stuff. Design work is basically applied art, so what makes a particular design "good" or "bad" (mostly) depends on who you ask. That said, the book does provide some great ideas for approaching web design methodically.
+But after reading [*Refactoring UI*](https://www.refactoringui.com/) to learn some basic web design principles, I noticed that the process isn't as straightforward with UI/UX stuff. Design work is basically applied art, so what makes a particular design "good" or "bad" (mostly) depends on who you ask. That said, the book does provide some great ideas for approaching web design methodically. And when used to implement a full-fledged design system, these principles can level up your UIs in ways you might not have thought possible.
 
-## Usability and consistency
+![Unsplash](https://images.unsplash.com/photo-1573867639040-6dd25fa5f597?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80)
+
+---
+## Key principles for simplifying UI design
 
 At its core, a good UI is all about usability and consistency, not about following trends or expressing your innate artistic talent. Your app's visual identity should follow its functionality, and not the other way around. The good news is that building usable and consistent UIs only requires following a few basic rules.
 
@@ -40,7 +43,7 @@ And here is one of my favorite tips.
 
 I tried to incorporate as many of these tips as I could during the design phase of [LuccaNotes](/portfolio/luccanotes), a Next.js-based Markdown note-taking app. Below is the Figma file I created with all of the various iterations of the desktop and mobile designs for LuccaNotes.
 
-<!-- <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="600" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F9Vnnbj7m862xY9C8uAF8Pn%2FLuccaNotes%3Ftype%3Ddesign%26node-id%3D0%253A1%26t%3DJC6R6ZdF1aqGYy2m-1" allowfullscreen></iframe> -->
+<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="600" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F9Vnnbj7m862xY9C8uAF8Pn%2FLuccaNotes%3Ftype%3Ddesign%26node-id%3D0%253A1%26t%3DJC6R6ZdF1aqGYy2m-1" allowfullscreen></iframe>
 
 Heading from left to right, you can see how I started designing the UI in grayscale and only much later added in color. I created several iterations for each page, trying out new layouts, adjusting the visual hierarchy in the page and inside individual components, and removing redundancies, all while trying to stick to Tailwind's defaults.
 
@@ -138,3 +141,5 @@ Planning out your UI in advance, prototyping and building design systems will le
 If you haven't tried using some sort of design system yet, this is your chance. [Tru Narla](https://twitter.com/trunarla), a Twitch streamer and frontend software engineer at Discord, did a great overview of CVA during [her talk](https://www.youtube.com/watch?v=T-Zv73yZ_QI) at Next.js Conf 2022. Go check it out for more juicy details on CVA, and let your imagination run wild!
 
 That's all I've got for now. Peace ✌
+
+![unsplash](https://images.unsplash.com/photo-1606161290889-77950cfb67d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80)

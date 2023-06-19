@@ -261,6 +261,13 @@ declare module 'astro:content' {
   collection: "articles";
   data: any
 } & { render(): Render[".md"] };
+"good-ui-isnt-magic.md": {
+	id: "good-ui-isnt-magic.md";
+  slug: "good-ui-isnt-magic";
+  body: string;
+  collection: "articles";
+  data: any
+} & { render(): Render[".md"] };
 "index.md": {
 	id: "index.md";
   slug: "index";
