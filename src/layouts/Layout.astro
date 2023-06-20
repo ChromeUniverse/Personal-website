@@ -7,15 +7,21 @@ export interface Props {
   title?: string;
   description?: string;
   imageURL?: string;
+  omitName?: boolean;
 }
 
 const {
   title: TitleProp,
   description = "Lucca Rodrigues' website",
-  imageURL: ImageURlProp = "/bass-cropped.png",
+  imageURL: ImageURlProp = "/images/banner.png",
+  omitName = false,
 } = Astro.props as Props;
 
-const title = TitleProp ? `${TitleProp} | Lucca Rodrigues` : "Lucca Rodrigues";
+const title = TitleProp
+  ? omitName
+    ? TitleProp
+    : `${TitleProp} | Lucca Rodrigues`
+  : "Lucca Rodrigues";
 
 const url = import.meta.env.DEV
   ? Astro.url.pathname
