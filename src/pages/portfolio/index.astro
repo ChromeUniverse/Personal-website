@@ -35,16 +35,13 @@ const orderedProjects = projectsList.map((targetSlug) => {
 });
 ---
 
-<Layout
-  title="Portfolio"
-  description="Personal and freelance projects I'm most proud of."
->
+<Layout title="Portfolio" description="Here is some cool stuff I've worked on">
   <!-- Title -->
-  <h1 class="pb-2 text-center font-heading text-4xl font-bold">My Portfolio</h1>
+  <h1 class="pb-2 text-center font-heading text-4xl font-bold">Portfolio</h1>
 
   <!-- Subtitle -->
   <h2 class="text-center font-heading text-xl leading-relaxed text-zinc-400">
-    Personal and freelance projects I'm most proud of
+    A collection of really cool projects I've worked on
   </h2>
   <PortfolioList projects={orderedProjects} client:load />
 </Layout>

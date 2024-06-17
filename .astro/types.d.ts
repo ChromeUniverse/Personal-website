@@ -1,14 +1,5 @@
 declare module 'astro:content' {
 	interface Render {
-		'.mdx': Promise<{
-			Content: import('astro').MarkdownInstance<{}>['Content'];
-			headings: import('astro').MarkdownHeading[];
-			remarkPluginFrontmatter: Record<string, any>;
-		}>;
-	}
-}
-declare module 'astro:content' {
-	interface Render {
 		'.md': Promise<{
 			Content: import('astro').MarkdownInstance<{}>['Content'];
 			headings: import('astro').MarkdownHeading[];
@@ -19,7 +10,9 @@ declare module 'astro:content' {
 
 declare module 'astro:content' {
 	export { z } from 'astro/zod';
-	export type CollectionEntry<C extends keyof AnyEntryMap> = AnyEntryMap[C][keyof AnyEntryMap[C]];
+
+	type Flatten<T> = T extends { [K: string]: infer U } ? U : never;
+	export type CollectionEntry<C extends keyof AnyEntryMap> = Flatten<AnyEntryMap[C]>;
 
 	// TODO: Remove this when having this fallback is no longer relevant. 2.3? 3.0? - erika, 2023-04-04
 	/**
@@ -60,12 +53,9 @@ declare module 'astro:content' {
 
 	type BaseSchemaWithoutEffects =
 		| import('astro/zod').AnyZodObject
-		| import('astro/zod').ZodUnion<import('astro/zod').AnyZodObject[]>
+		| import('astro/zod').ZodUnion<[BaseSchemaWithoutEffects, ...BaseSchemaWithoutEffects[]]>
 		| import('astro/zod').ZodDiscriminatedUnion<string, import('astro/zod').AnyZodObject[]>
-		| import('astro/zod').ZodIntersection<
-				import('astro/zod').AnyZodObject,
-				import('astro/zod').AnyZodObject
-		  >;
+		| import('astro/zod').ZodIntersection<BaseSchemaWithoutEffects, BaseSchemaWithoutEffects>;
 
 	type BaseSchema =
 		| BaseSchemaWithoutEffects
@@ -226,6 +216,13 @@ declare module 'astro:content' {
   collection: "articles";
   data: any
 } & { render(): Render[".md"] };
+"cmu-2023-retro.md": {
+	id: "cmu-2023-retro.md";
+  slug: "cmr-2023-retrospective";
+  body: string;
+  collection: "articles";
+  data: any
+} & { render(): Render[".md"] };
 "cmu-acceptance.md": {
 	id: "cmu-acceptance.md";
   slug: "cmu-acceptance";
@@ -236,6 +233,13 @@ declare module 'astro:content' {
 "college-application-grievances.md": {
 	id: "college-application-grievances.md";
   slug: "college-application-grievances";
+  body: string;
+  collection: "articles";
+  data: any
+} & { render(): Render[".md"] };
+"diff-match-patch.md": {
+	id: "diff-match-patch.md";
+  slug: "building-luccanotes";
   body: string;
   collection: "articles";
   data: any
@@ -411,15 +415,6 @@ declare module 'astro:content' {
   data: any
 } & { render(): Render[".md"] };
 };
-"general": {
-"me.mdx": {
-	id: "me.mdx";
-  slug: "me";
-  body: string;
-  collection: "general";
-  data: any
-} & { render(): Render[".mdx"] };
-};
 "portfolio": {
 "blaring-net.md": {
 	id: "blaring-net.md";
@@ -552,7 +547,9 @@ declare module 'astro:content' {
 	};
 
 	type DataEntryMap = {
-		
+		"general": {
+};
+
 	};
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
