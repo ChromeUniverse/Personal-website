@@ -35,14 +35,14 @@ const formattedDate = date.toLocaleDateString("en-US", {
 >
   <!-- Title -->
   <h1
-    class="mx-auto max-w-2xl text-center font-heading text-3xl font-extrabold tracking-tight md:text-4xl"
+    class="mx-auto max-w-2xl text-center font-heading font-extrabold tracking-tight md:text-4xl"
   >
     {frontmatter.title}
   </h1>
 
   <!-- Author (desktop) -->
   <p
-    class="mx-auto mt-4 mb-6 hidden text-center font-heading text-lg text-zinc-400 md:block"
+    class="mx-auto mt-4 mb-6 hidden text-center font-heading text-zinc-400 md:block"
   >
     Written by <a
       class="border-b-[2px] border-blue-500 font-bold text-white hover:text-blue-500"
@@ -52,7 +52,7 @@ const formattedDate = date.toLocaleDateString("en-US", {
 
   <!-- Author (mobile) -->
   <p
-    class="mt-4 mb-6 block text-center font-heading text-lg text-zinc-400 md:hidden"
+    class="mt-4 mb-6 block text-center font-heading text-zinc-400 md:hidden"
   >
     <a
       class="border-b-[2px] border-blue-500 font-bold text-white hover:text-blue-500"
@@ -87,13 +87,12 @@ const formattedDate = date.toLocaleDateString("en-US", {
           <span>Private Post</span>
         </div>
         <p class="text-base leading-relaxed text-zinc-300">
-          Hey, Lucca here!
+          Hey, Lucca here --
           <span class="font-semibold text-white">
-            This post hasn't been released yet.
+            This post hasn't gone live yet.
           </span>
           If you're reading this, I've probably linked you here directly, and
-          I'd really appreciate your feedback before this post goes live. Thank
-          you! 😄
+          I'd really appreciate heading your feedback before this post goes live. Thanks! 😄
         </p>
       </div>
     )
@@ -102,7 +101,7 @@ const formattedDate = date.toLocaleDateString("en-US", {
   <!-- Content -->
   <!-- prose-blockquote:rounded-r-xl prose-blockquote:border-blue-500 prose-blockquote:bg-zinc-800 prose-blockquote:bg-opacity-30 prose-blockquote:py-0.5 prose-blockquote:pr-2 -->
   <main
-    class="prose prose-lg prose-zinc mt-10 max-w-none px-2 prose-p:leading-relaxed prose-a:text-white hover:prose-a:text-blue-500 prose-blockquote:rounded-r-xl prose-blockquote:border-blue-500 prose-blockquote:bg-zinc-800 prose-blockquote:bg-opacity-30 prose-blockquote:py-0.5 prose-blockquote:pr-6 prose-blockquote:pl-6 prose-blockquote:font-normal prose-blockquote:text-zinc-200 prose-pre:leading-snug prose-img:mx-auto prose-img:rounded-xl dark:prose-invert md:prose-img:max-w-xl"
+    class="prose prose-zinc mt-10 max-w-none px-2 prose-p:leading-normal prose-a:text-white hover:prose-a:text-blue-500 prose-blockquote:rounded-r-xl prose-blockquote:border-blue-500 prose-blockquote:bg-zinc-800 prose-blockquote:bg-opacity-30 prose-blockquote:py-0.5 prose-blockquote:pr-6 prose-blockquote:pl-6 prose-blockquote:font-normal prose-blockquote:text-zinc-200 prose-pre:leading-snug prose-img:mx-auto prose-img:rounded-lg dark:prose-invert md:prose-img:max-w-xl prose-li:my-1 prose-hr:my-8"
   >
     <Content />
   </main>

@@ -1,7 +1,7 @@
 ---
 title: Formally verifying a tiny cache with JasperGold
 slug: 341-cache-formal
-description: A small project write-up about getting started with JasperGold by building a formal testbench for a tiny cache controller.
+description: Getting started with Formal Verification flows with JasperGold by building a formal testbench around a tiny cache controller.
 tags:
   - asic
   - hardware

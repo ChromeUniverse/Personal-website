@@ -188,6 +188,34 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"articles": {
+"341-cache-formal.md": {
+	id: "341-cache-formal.md";
+  slug: "341-cache-formal";
+  body: string;
+  collection: "articles";
+  data: any
+} & { render(): Render[".md"] };
+"academics/Tech Fellow 2024.md": {
+	id: "academics/Tech Fellow 2024.md";
+  slug: "academics/tech-fellow-2024";
+  body: string;
+  collection: "articles";
+  data: any
+} & { render(): Render[".md"] };
+"academics/application/michigan-jose-luis.md": {
+	id: "academics/application/michigan-jose-luis.md";
+  slug: "academics/application/michigan-jose-luis";
+  body: string;
+  collection: "articles";
+  data: any
+} & { render(): Render[".md"] };
+"academics/lattes.md": {
+	id: "academics/lattes.md";
+  slug: "academics/lattes";
+  body: string;
+  collection: "articles";
+  data: any
+} & { render(): Render[".md"] };
 "avr-intro.md": {
 	id: "avr-intro.md";
   slug: "avr-intro";
@@ -282,6 +310,13 @@ declare module 'astro:content' {
 "me.md": {
 	id: "me.md";
   slug: "me";
+  body: string;
+  collection: "articles";
+  data: any
+} & { render(): Render[".md"] };
+"memcpy-deep-dive.md": {
+	id: "memcpy-deep-dive.md";
+  slug: "memcpy-deep-dive.md";
   body: string;
   collection: "articles";
   data: any
@@ -416,6 +451,13 @@ declare module 'astro:content' {
 } & { render(): Render[".md"] };
 };
 "portfolio": {
+"447-core.md": {
+	id: "447-core.md";
+  slug: "447-core";
+  body: string;
+  collection: "portfolio";
+  data: any
+} & { render(): Render[".md"] };
 "blaring-net.md": {
 	id: "blaring-net.md";
   slug: "blaring-net";
@@ -433,6 +475,13 @@ declare module 'astro:content' {
 "crowdfunding.md": {
 	id: "crowdfunding.md";
   slug: "crowdfunding";
+  body: string;
+  collection: "portfolio";
+  data: any
+} & { render(): Render[".md"] };
+"daqzilla.md": {
+	id: "daqzilla.md";
+  slug: "daqzilla";
   body: string;
   collection: "portfolio";
   data: any
